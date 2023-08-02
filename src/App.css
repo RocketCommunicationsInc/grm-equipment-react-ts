@@ -26,8 +26,7 @@ rux-container footer[slot='footer'] {
   height: calc(100% - var(--spacing-24));
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);
-  /* color: var(--color-text-primary); */
-  color: white;
+  color: var(--color-text-primary);
   display: grid;
   gap: var(--spacing-3);
   grid-template-columns: calc(20% - 10px) auto;
