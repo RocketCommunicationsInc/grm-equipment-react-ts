@@ -3,7 +3,7 @@ import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
 
 const Dashboard = () => {
   return (
-    <main className={`$jdashboard page`}>
+    <main className='dashboard'>
       <EquipmentTree />
       <InoperableEquipment />
     </main>
