@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+rux-container {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+rux-container::part(container) {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: calc(100% - 2px);
+  overflow-y: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+rux-container::part(body) {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+rux-container footer[slot='footer'] {
+  display: flex;
+  gap: var(--spacing-2);
+  justify-content: flex-end;
+}
+
+/* GLOBAL PAGE STYLES */
+
+.page {
+  /* calculated height of interior pages so that gsb doesn't have scrollbar */
+  max-height: calc(100vh - 10.25rem);
+  display: flex;
+  flex-flow: column;
+  overflow: overlay;
+}
+
+/* GlOBAL TABLE STYLES */
+
+.table-wrapper {
+  overflow-y: scroll;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  margin-top: 40px;
+}
+
+rux-table-header {
+  top: 0;
+  position: sticky;
+  z-index: 10;
+}
+
+rux-status::part(status) {
+  margin-inline: auto;
+}
+
+/* Global RuxContainer child styles */
+.child-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  box-sizing: border-box;
+  height: initial;
+}
+
+.child-container::part(container) {
+  height: 100%;
+  border: 1px solid var(--color-border-interactive-muted);
+}
+
+.child-container::part(header) {
+  background-color: transparent;
+  padding-block-start: var(--spacing-3);
+  padding-block-end: 0px;
+}
+
+.child-container::part(body) {
+  gap: var(--spacing-3);
+  flex-grow: 1;
+  overflow: auto;
+}
+
+/* readonly textarea */
+
+.description-message {
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-interactive-muted);
+  background-color: var(--color-background-base-default);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-base);
+  padding: var(--spacing-2);
+}
+
+.description-message:focus-visible {
+  outline: 1px solid var(--color-border-focus-default);
+  outline-offset: var(--spacing-focus-default);
+}
+
+/* Global Filter Notification Style */
+.filter-notification {
+  background-color: var(--color-background-surface-default);
+  padding: var(--spacing-2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.filter-notification rux-button::part(container) {
+  padding-inline: var(--spacing-2);
+  box-shadow: none;
 }

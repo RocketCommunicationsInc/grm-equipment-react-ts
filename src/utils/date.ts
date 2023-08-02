@@ -6,6 +6,15 @@ export const setHhMmSs = (time: number | string) => {
   return `${hour}:${minute}:${second}`;
 };
 
+export const getDayOfYear = (date: Date) => {
+  const now = new Date(date);
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff = Number(now) - Number(start);
+  const oneDay = 1000 * 60 * 60 * 24;
+  const day = Math.floor(diff / oneDay);
+  return day;
+};
+
 export const determineTimeString = (originalValue: Date) =>
   new Date(originalValue).toTimeString().slice(0, 8);
 
@@ -31,3 +40,4 @@ export const determineTimeString = (originalValue: Date) =>
       hour12: false,
     });
   }
+  

@@ -17,6 +17,10 @@
   export const getRandomInt = (max: number, min: number = 0) => {
     return Math.floor(Math.random() * (max - min) + min);
   };
+
+  export const randomIndex = (arr: number[]) => {
+    return getRandomInt(0, arr.length - 1);
+  };
   
   export function capitalize(str: string) {
     if (!str) return;

@@ -1,8 +1,12 @@
-import { RuxTree } from '@astrouxds/react';
+import { RuxContainer, RuxTree } from '@astrouxds/react';
 import './EquipmentTree.css';
 
 const EquipmentTree = () => {
-  return <RuxTree>Tree</RuxTree>;
+  return (
+    <RuxContainer className='equipment-tree'>
+      <RuxTree>Tree</RuxTree>
+    </RuxContainer>
+  );
 };
 
 export default EquipmentTree;

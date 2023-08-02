@@ -1,9 +1,10 @@
-import { getDayOfYear } from '../util/date';
-import { randInt, randomIndex } from '../util/util';
+import { getDayOfYear } from '../utils';
+import { getRandomInt, randomIndex } from '../utils';
 import contacts from './contacts.json';
 import { options } from './options';
 
-export const randomContact = () => contacts[randInt(0, contacts.length - 1)];
+export const randomContact = () =>
+  contacts[getRandomInt(0, contacts.length - 1)];
 
 let lastAlertId = 1;
 const alertBlueprints = contacts.reduce((alerts, contact) => {
@@ -11,7 +12,7 @@ const alertBlueprints = contacts.reduce((alerts, contact) => {
 }, []);
 
 export function getRandomAlert() {
-  const bp = alertBlueprints[randInt(0, alertBlueprints.length - 1)];
+  const bp = alertBlueprints[getRandomInt(0, alertBlueprints.length - 1)];
   const alert = Object.assign({}, bp);
   alert.errorId = lastAlertId++;
   return alert;
@@ -28,17 +29,17 @@ export function getRandomContact() {
     contactBeginTimestamp: contact.contactBeginTimestamp * 1000,
     contactEndTimestamp: contact.contactEndTimestamp * 1000,
     contactDOY: getDayOfYear(contact.contactBeginTimestamp * 1000),
-    contactEquipmentConfig: `Config ${randInt(1, 5)}`,
+    contactEquipmentConfig: `Config ${getRandomInt(1, 5)}`,
     contactAOS: contact.contactBeginTimestamp * 1000,
     contactLOS: contact.contactEndTimestamp * 1000,
     contactMode: options.modes[randomIndex(options.modes)],
     contactPriority: options.priorities[randomIndex(options.priorities)],
-    contactREV: randInt(1, 9999).toString().padStart(4, '0'),
+    contactREV: getRandomInt(1, 9999).toString().padStart(4, '0'),
   };
 }
 
 export function generateEvents() {
-  return contacts.slice(0, randInt(10, 100)).map((c) => ({
+  return contacts.slice(0, getRandomInt(10, 100)).map((c) => ({
     timestamp: c.contactBeginTimestamp * 1000,
     status: c.status,
     message: c.contactDetail,
