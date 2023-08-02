@@ -1,0 +1,37 @@
+.maintenance-panel {
+  padding: var(--spacing-0) var(--spacing-3) var(--spacing-4);
+  gap: var(--spacing-3);
+}
+
+rux-container.jobs-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: inline-block;
+  padding: var(--spacing-3) var(--spacing-3) var(--spacing-0) var(--spacing-3);
+}
+
+.maintenance-panel rux-container:nth-of-type(1) {
+  flex-direction: row;
+}
+
+.job-card-wrapper {
+  margin: var(--spacing-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.maintenance-history-panel {
+  padding: var(--spacing-3);
+}
+
+.maintenance-wrapper {
+  height: 19rem;
+  margin-bottom: var(--spacing-6);
+}
+
+.maintenance-wrapper h2,
+.jobs-section h2 {
+  margin: var(--spacing-3);
+}

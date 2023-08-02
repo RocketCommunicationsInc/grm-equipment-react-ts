@@ -1,0 +1,69 @@
+.jobs-wrapper {
+  display: flex;
+  padding: var(--spacing-4);
+}
+
+.jobs-wrapper rux-textarea {
+  margin-bottom: var(--spacing-6);
+}
+
+.jobs-wrapper rux-input,
+.jobs-wrapper rux-select {
+  margin-block: var(--spacing-2);
+}
+
+.jobs-wrapper rux-input::part(form-field) {
+  flex-direction: row;
+  width: 18rem;
+}
+
+.jobs-wrapper rux-select::part(select) {
+  width: 11.5rem;
+  margin-left: -4rem;
+}
+
+.jobs-wrapper rux-input::part(label),
+.jobs-wrapper rux-select::part(label) {
+  margin-right: var(--spacing-2);
+  margin-top: var(--spacing-1);
+  width: 10rem;
+}
+
+.jobs-details-section {
+  padding-inline-end: var(--spacing-6);
+}
+
+.jobs-details-section rux-checkbox {
+  padding-top: var(--spacing-3);
+}
+
+.job-details-conflicts-section {
+  height: 56.5rem;
+  width: 130%;
+}
+
+.job-details-conflicts-section h2 {
+  margin: var(--spacing-4);
+}
+
+.job-details-panel {
+  padding: var(--spacing-0) var(--spacing-3) var(--spacing-3) var(--spacing-3);
+}
+
+.job-details-panel footer[slot='footer'] {
+  justify-content: flex-end;
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.job-details-log {
+  margin-top: var(--spacing-8);
+  max-height: 22.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 42rem;
+}
+
+.job-details-log rux-log::part(log-notification) {
+  max-width: 38.5rem;
+}

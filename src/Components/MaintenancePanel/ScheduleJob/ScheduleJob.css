@@ -1,0 +1,89 @@
+.schedule-job {
+  padding: var(--spacing-0) var(--spacing-3) var(--spacing-3) var(--spacing-3);
+}
+
+.schedule-job-wrapper {
+  display: flex;
+  padding: var(--spacing-4);
+}
+
+.schedule-job-wrapper rux-textarea {
+  margin-bottom: var(--spacing-4);
+}
+
+.schedule-job-wrapper rux-input,
+.schedule-job-wrapper rux-select {
+  margin-block: var(--spacing-2);
+}
+
+.schedule-job-wrapper rux-input::part(form-field),
+.schedule-job-wrapper rux-select::part(select) {
+  flex-direction: row;
+  width: 14rem;
+}
+
+.schedule-job-wrapper rux-input::part(label),
+.schedule-job-wrapper rux-select::part(label) {
+  margin-right: var(--spacing-4);
+  margin-top: var(--spacing-1);
+}
+
+.conflicts-section h2 {
+  margin: var(--spacing-4);
+}
+
+.conflicts-section span {
+  padding-inline: var(--spacing-4);
+}
+
+.table-section {
+  margin-top: var(--spacing-6);
+}
+
+.table-section {
+  height: 30rem;
+}
+
+.conflicts-placeholder {
+  display: flex;
+  justify-content: center;
+  margin-top: 18%;
+  font-size: var(--font-size-xl);
+}
+
+.job-request-section {
+  width: 40rem;
+  padding-inline-end: var(--spacing-4);
+}
+
+.job-request-section rux-checkbox {
+  padding-top: var(--spacing-3);
+}
+
+.job-request-section rux-button {
+  padding-top: var(--spacing-12);
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  width: 90%;
+}
+
+.conflicts-section {
+  flex: 1;
+}
+
+.schedule-job footer[slot='footer'] {
+  justify-content: flex-end;
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.schedule-job ul li {
+  border-bottom: none;
+}
+
+.schedule-job ul li:nth-of-type(2),
+.schedule-job ul li:nth-of-type(3),
+.schedule-job ul li:nth-of-type(4) {
+  margin-top: var(--spacing-8);
+}

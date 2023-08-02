@@ -1,0 +1,59 @@
+.contacts-table {
+  padding: var(--spacing-0) var(--spacing-3) var(--spacing-4);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+}
+
+.contacts-table::part(body) {
+  padding: 0;
+}
+
+/* HEADER STYLES */
+
+.Current-contacts-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  padding-top: var(--spacing-0);
+  background-color: var(--color-background-surface-header);
+}
+
+.Current-contacts-panel__group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  line-height: calc(28 / 24);
+}
+
+.summary-data {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  font-size: var(--font-size-base);
+}
+
+.summary-data > span {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weights-bold);
+}
+
+.table-wrapper rux-table-header-row rux-icon {
+  vertical-align: middle;
+  width: 32px;
+}
+
+.table-wrapper rux-table-header-row .visible {
+  visibility: visible;
+}
+.table-wrapper rux-table-header-row .hidden {
+  visibility: hidden;
+}
+
+.contacts-list-page {
+  /* 100vh - (height of global status bar + height of breadcrumb element) */
+  height: calc(100vh - 10.25rem);
+  padding: var(--spacing-0) var(--spacing-6) var(--spacing-4);
+}
