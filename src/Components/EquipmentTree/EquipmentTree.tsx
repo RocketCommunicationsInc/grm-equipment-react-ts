@@ -1,18 +1,28 @@
 import { RuxContainer, RuxTree, RuxTreeNode } from '@astrouxds/react';
 import './EquipmentTree.css';
 
-const EquipmentTree = () => {
-  return (
-    <RuxContainer className='equipment-tree'>
-      <RuxTree>
-        Tree
-        <RuxTreeNode>
-          Node
-          <RuxTreeNode>Child Node</RuxTreeNode>
-        </RuxTreeNode>
-      </RuxTree>
-    </RuxContainer>
-  );
-};
+// type PropTypes = {
+//   selectEquipment: () => void;
+// };
+
+const EquipmentTree = () =>
+  //{ selectEquipment }: PropTypes
+  {
+    return (
+      <RuxContainer className='equipment-tree'>
+        <RuxTree>
+          Tree
+          <RuxTreeNode>
+            Node
+            <RuxTreeNode
+            //onRuxtreenodeselected={() => selectEquipment()}
+            >
+              Child Node
+            </RuxTreeNode>
+          </RuxTreeNode>
+        </RuxTree>
+      </RuxContainer>
+    );
+  };
 
 export default EquipmentTree;
