@@ -1,4 +1,9 @@
-import { RuxContainer, RuxTree, RuxTreeNode } from '@astrouxds/react';
+import {
+  RuxContainer,
+  RuxStatus,
+  RuxTree,
+  RuxTreeNode,
+} from '@astrouxds/react';
 import './EquipmentTree.css';
 
 // type PropTypes = {
@@ -11,11 +16,42 @@ const EquipmentTree = () =>
     return (
       <RuxContainer className='equipment-tree'>
         <RuxTree>
-          Tree
           <RuxTreeNode>
-            Node
+            Comms
             <RuxTreeNode
-            //onRuxtreenodeselected={() => selectEquipment()}
+              slot='node'
+              //onRuxtreenodeselected={() => selectEquipment()}
+            >
+              Child Node
+              <RuxTreeNode slot='node'>
+                <RuxStatus slot='prefix' status='caution' />
+                Grandchild
+              </RuxTreeNode>
+            </RuxTreeNode>
+          </RuxTreeNode>
+          <RuxTreeNode>
+            Digital
+            <RuxTreeNode
+              slot='node'
+              //onRuxtreenodeselected={() => selectEquipment()}
+            >
+              Child Node
+            </RuxTreeNode>
+          </RuxTreeNode>
+          <RuxTreeNode>
+            Facilities
+            <RuxTreeNode
+              slot='node'
+              //onRuxtreenodeselected={() => selectEquipment()}
+            >
+              Child Node
+            </RuxTreeNode>
+          </RuxTreeNode>
+          <RuxTreeNode>
+            RF
+            <RuxTreeNode
+              slot='node'
+              //onRuxtreenodeselected={() => selectEquipment()}
             >
               Child Node
             </RuxTreeNode>

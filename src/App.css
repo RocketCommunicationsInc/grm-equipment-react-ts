@@ -23,7 +23,8 @@ rux-container footer[slot='footer'] {
 }
 
 .dashboard {
-  height: calc(100% - var(--spacing-24));
+  height: calc(100vh - 6rem);
+  overflow-y: hidden;
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);
   color: var(--color-text-primary);

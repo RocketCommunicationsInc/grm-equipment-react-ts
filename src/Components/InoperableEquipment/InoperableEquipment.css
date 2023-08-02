@@ -1,3 +1,22 @@
 .inoperable-equipment {
-color: var(--color-text-primary);
+  color: var(--color-text-primary);
+}
+
+.inoperable-equipment span {
+  font-weight: var(--font-weights-medium);
+  font-size: var(--font-size-xl);
+}
+
+.inoperable-equipment .section {
+  margin-bottom: var(--spacing-4);
+  height: 8rem;
+}
+
+.no-equipment {
+  background-color: var(--color-background-base-hover);
+  display: flex;
+  align-items: center;
+  height: var(--spacing-12);
+  margin-block: auto;
+  padding-inline: var(--spacing-4);
 }

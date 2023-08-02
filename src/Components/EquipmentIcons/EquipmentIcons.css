@@ -4,4 +4,5 @@
   margin-top: var(--spacing-3);
   justify-content: flex-start;
   gap: 0.7rem;
+  cursor: pointer;
 }
