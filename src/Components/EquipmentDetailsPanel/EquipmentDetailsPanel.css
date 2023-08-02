@@ -1,0 +1,32 @@
+.equipment-details {
+  padding: var(--spacing-0) var(--spacing-3) var(--spacing-4);
+  gap: var(--spacing-3);
+}
+
+.segmented-button-group {
+  padding-bottom: var(--spacing-4);
+}
+
+.segmented-button-group rux-segmented-button {
+  margin: var(--spacing-2);
+}
+
+.equipment-details-log {
+  min-height: 16.5rem;
+  max-height: 17rem;
+  height: calc(100% - 0.5rem);
+}
+
+.equipment-details-log rux-log::part(log-notification) {
+  max-width: 42rem;
+}
+
+.alert-description {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+
+.alert-description::last-child {
+  flex: 1;
+}
