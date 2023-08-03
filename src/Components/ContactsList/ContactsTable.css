@@ -1,5 +1,5 @@
 .contacts-table {
-  padding: var(--spacing-0) var(--spacing-3) var(--spacing-4);
+  padding-left: var(--spacing-3);
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -56,4 +56,9 @@
   /* 100vh - (height of global status bar + height of breadcrumb element) */
   height: calc(100vh - 10.25rem);
   padding: var(--spacing-0) var(--spacing-6) var(--spacing-4);
+}
+
+.contacts-table [slot="header"] {
+  display: flex;
+  justify-content: space-between;
 }

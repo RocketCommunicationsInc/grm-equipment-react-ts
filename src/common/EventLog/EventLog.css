@@ -10,8 +10,3 @@ rux-log {
   flex: 1;
   min-width: 40rem;
 }
-/* 
-.log-wrapper rux-log::part(log-notification) {
-  max-width: 38.5rem;
-  padding-right: none;
-} */

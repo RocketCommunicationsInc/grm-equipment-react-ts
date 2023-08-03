@@ -1,5 +1,5 @@
 .maintenance-panel {
-  padding: var(--spacing-0) var(--spacing-3) var(--spacing-4);
+  padding-top: var(--spacing-3) ;
   gap: var(--spacing-3);
 }
 

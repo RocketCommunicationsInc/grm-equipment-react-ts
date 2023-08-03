@@ -1,5 +1,5 @@
 import { useMemo, useCallback } from 'react';
-import { RuxButton, RuxContainer } from '@astrouxds/react';
+import { RuxButton, RuxContainer, RuxSegmentedButton } from '@astrouxds/react';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import type { Contact } from '@astrouxds/mock-data';
 import type { ColumnDef } from '../../common/Table/Table';
@@ -13,7 +13,6 @@ type PropTypes = {
 };
 
 const columnDefs: ColumnDef[] = [
-  { label: 'Priority', property: 'priority' },
   { label: 'Status', property: 'status' },
   { label: 'IRON', property: 'satellite' },
   { label: 'Ground Station', property: 'ground' },
@@ -77,8 +76,24 @@ const ContactsTable = ({ searchValue = '', setSearchValue }: PropTypes) => {
   }, [contacts, filterContacts, searchValue]);
 
   return (
-    <main className=' page'>
+    <main className='contacts page'>
       <RuxContainer className='contacts-table'>
+        <div slot='header'>
+          <span>Current Contacts</span>
+          <div className='active-contacts'>
+            <span>10 Contacts</span>
+            <span>1 Failed</span>
+            <span>9 Executing</span>
+          </div>
+          <RuxSegmentedButton
+            // onRuxchange={(e) => setFilterValue(e.target.selected)}
+            data={[
+              { label: 'All' },
+              { label: 'Executing' },
+              { label: 'Failed' },
+            ]}
+          />
+        </div>
         <div className='filter-notification' hidden={searchValue === ''}>
           One or more filters selected.
           <RuxButton

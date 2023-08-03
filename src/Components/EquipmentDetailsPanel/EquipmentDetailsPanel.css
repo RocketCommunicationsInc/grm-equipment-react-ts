@@ -1,6 +1,11 @@
 .equipment-details {
-  padding: var(--spacing-0) var(--spacing-3) var(--spacing-4);
-  gap: var(--spacing-3);
+  height: 100%;
+  width: 100%;
+  padding-bottom: var(--spacing-3) ;
+}
+
+.equipment-alerts {
+display: flex;
 }
 
 .segmented-button-group {
@@ -15,6 +20,7 @@
   min-height: 16.5rem;
   max-height: 17rem;
   height: calc(100% - 0.5rem);
+  flex: 1;
 }
 
 .equipment-details-log rux-log::part(log-notification) {
@@ -25,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-content: stretch;
+  padding: var(--spacing-3) 
 }
 
 .alert-description::last-child {

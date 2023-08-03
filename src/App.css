@@ -35,6 +35,38 @@ rux-container footer[slot='footer'] {
     "equipment-tree inoperable-equipment"
 }
 
+.equip-details {
+  height: 100%;
+  padding: var(--spacing-3);
+  background-color: var(--color-background-base-default);
+  /* background-color: var(--color-background-surface-default); */
+  color: var(--color-text-primary);
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-template-rows: 20%, 35%, auto;
+  grid-template-areas:
+    "equipment-details equipment-details"
+    "alerts contacts-table"
+    "maintenance-panel maintenance-panel"
+}
+
+rux-container.equipment-details {
+  grid-area: equipment-details;
+}
+
+rux-container.maintenance-panel {
+  grid-area: maintenance-panel;
+}
+
+rux-conainer.contacts-table {
+  grid-area: contacts-table;
+}
+
+rux-container.alerts {
+  grid-area: alerts;
+}
+
+
 rux-container.equipment-tree {
   grid-area: equipment-tree;
 }

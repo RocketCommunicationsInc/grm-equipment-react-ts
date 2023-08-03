@@ -30,15 +30,13 @@ const EquipmentDetailsPanel = () => {
   return (
     <RuxContainer className='equipment-details'>
       <header slot='header'>Equipment Details</header>
-      <RuxContainer className='child-container'>
-        <header slot='header'>Black FEP 6566</header>
-        {/* <DetailsCommonGrid> */}
+      <span>Black FEP 6566</span>
+      <div className='equipment-alerts'>
         <div>
           <section className='segmented-button-group'>
             <RuxSegmentedButton size='small' data={firstButton} />
             <RuxSegmentedButton size='small' data={secondButton} />
           </section>
-          {/* <DetailsGrid details={equipmentGeneralDetails} /> */}
         </div>
         <div className='alert-description'>
           <header>Description</header>
@@ -59,8 +57,7 @@ const EquipmentDetailsPanel = () => {
         <div className='equipment-details-log'>
           <EventLog />
         </div>
-        {/* </DetailsCommonGrid> */}
-      </RuxContainer>
+      </div>
     </RuxContainer>
   );
 };
