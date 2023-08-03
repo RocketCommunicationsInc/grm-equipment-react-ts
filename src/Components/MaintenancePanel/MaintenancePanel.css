@@ -11,6 +11,12 @@ rux-container.jobs-section {
   padding: var(--spacing-3) var(--spacing-3) var(--spacing-0) var(--spacing-3);
 }
 
+.maintenance-panel h2{
+  font-size: var(--font-size-2xl);
+  padding-bottom: var(--spacing-2);
+  font-weight: var(--font-weights-regular);
+}
+
 .maintenance-panel rux-container:nth-of-type(1) {
   flex-direction: row;
 }
@@ -19,6 +25,7 @@ rux-container.jobs-section {
   margin: var(--spacing-4);
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: var(--spacing-3);
 }
 

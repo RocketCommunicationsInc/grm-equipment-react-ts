@@ -40,7 +40,9 @@ const router = createBrowserRouter(
           }
         >
           <Route index element={<Navigate to={'/'} />} />
-          <Route path=':id'>
+          <Route
+          //path=':id'
+          >
             <Route
               path='schedule-job'
               element={<ScheduleJobPage />}
