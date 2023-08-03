@@ -1,6 +1,11 @@
-import { RuxSegmentedButton, RuxContainer } from '@astrouxds/react';
+import {
+  RuxSegmentedButton,
+  RuxContainer,
+  RuxInput,
+  RuxStatus,
+} from '@astrouxds/react';
 import { EventLog } from '../../common/EventLog/EventLog';
-// import { capitalize } from '../../utils';
+import { capitalize } from '../../utils';
 import './EquipmentDetailsPanel.css';
 
 const firstButton = [{ label: 'Online', selected: true }, { label: 'Offline' }];
@@ -10,32 +15,25 @@ const secondButton = [
 ];
 
 const EquipmentDetailsPanel = () => {
-  // const equipmentGeneralDetails = [
-  //   {
-  //     label: 'Status',
-  //     node: <RuxInput value={capitalize('active')} readonly size='small' />,
-  //   },
-
-  //   {
-  //     label: 'Type',
-  //     node: <RuxInput value={'Iron'} readonly size='small' />,
-  //   },
-
-  //   {
-  //     label: 'Category',
-  //     node: <RuxInput value={'RF'} readonly size='small' />,
-  //   },
-  // ];
-
   return (
     <RuxContainer className='equipment-details'>
       <header slot='header'>Equipment Details</header>
-      <span>Black FEP 6566</span>
+      <span>
+        <RuxStatus status='caution' slot='prefix' /> Black FEP 6566
+      </span>
       <div className='equipment-alerts'>
         <div>
           <section className='segmented-button-group'>
             <RuxSegmentedButton size='small' data={firstButton} />
             <RuxSegmentedButton size='small' data={secondButton} />
+            <RuxInput
+              label='Status'
+              value={capitalize('active')}
+              readonly
+              size='small'
+            />
+            <RuxInput label='Type' value={'Iron'} readonly size='small' />
+            <RuxInput label='Category' value={'RF'} readonly size='small' />
           </section>
         </div>
         <div className='alert-description'>

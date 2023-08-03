@@ -14,8 +14,9 @@
 }
 
 .active-alerts > span {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   font-weight: var(--font-weights-bold);
+  margin-top: var(--spacing-4);
 }
 
 .select-menu-div {
@@ -37,6 +38,7 @@
   position: sticky;
   top: 0;
   z-index: 90;
+  height: 1.6rem;
 }
 
 .alert-list-headers rux-icon {
@@ -55,15 +57,11 @@
   margin-top: 0;
 }
 
-/* ACCORDION ITEM STYLES */
-
-/* .alerts rux-accordion-item::part(label-wrapper) {
-  flex-direction: row-reverse;
+ rux-container.alerts::part(body) {
+  padding: 0;
 }
 
-.alerts rux-accordion-item::part(indicator) {
-  transform: rotate(-90deg);
-} */
+/* ACCORDION ITEM STYLES */
 
 .alert-list-label {
   display: flex;

@@ -30,8 +30,8 @@ const Alerts = () => {
 
   return (
     <RuxContainer className='alerts'>
+      <span slot='header'>Alerts</span>
       <div slot='header'>
-        <span>Alerts</span>
         <div className='active-alerts'>
           <span>{alertIds.length}</span> Active Alerts
         </div>

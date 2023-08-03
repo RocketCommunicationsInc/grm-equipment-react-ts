@@ -8,40 +8,13 @@ import { Status } from '@astrouxds/mock-data';
 import equipment from '../../data/equipment.json';
 import './EquipmentTree.css';
 import { useState } from 'react';
-
-// type PropTypes = {
-//   selectEquipment: () => void;
-// };
-
-interface Equipment {
-  equipmentString: string;
-  description: string;
-  online: boolean;
-  considered: boolean;
-  id: string;
-  status: Status;
-  category: string;
-  config: string;
-  scehduledJobs: {
-    jobId: number;
-    jobType: string;
-    description: string;
-    startTime: string;
-    stopTime: string;
-    technician: string;
-    follow: boolean;
-    status: Status;
-    createdOn: string;
-    equipment: string;
-  }[];
-}
+import { Equipment } from '../../Types/Equipment';
 
 const EquipmentTree = () => {
   const [selectedEquipment, setSelectedEquipment] = useState<Equipment[]>([]);
 
   const handleSelectedEquipment = (equipmentItem: Equipment) => {
-    setSelectedEquipment([...selectedEquipment, ...(equipmentItem as any)]);
-    console.log(selectedEquipment);
+    setSelectedEquipment([...selectedEquipment, { ...equipmentItem }]);
   };
   return (
     <RuxContainer className='equipment-tree'>

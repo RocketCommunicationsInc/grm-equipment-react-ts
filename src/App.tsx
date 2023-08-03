@@ -8,7 +8,6 @@ import {
   Route,
   Outlet,
   Navigate,
-  Routes,
 } from 'react-router-dom';
 import { BreadcrumbNav } from './common/BreadcrumbNav/BreadcrumbNav';
 import Dashboard from './Components/Dashboard/DashboardPage';
@@ -16,8 +15,6 @@ import ScheduleJobPage from './Components/MaintenancePanel/ScheduleJob/ScheduleJ
 import NoDataFound from './common/Error/NoDataFound';
 import JobDetailsPage from './Components/JobDetails/JobDetailsPage';
 import './App.css';
-import Alerts from './Components/AlertsPanel/Alerts';
-import EquipmentDetailsPanel from './Components/EquipmentDetailsPanel/EquipmentDetailsPanel';
 import EquipmentDetailsPage from './Components/ContactsList/EquipmentDetailsPage';
 // import ContactsTable from './Components/ContactsList/ContactsTable';
 // import { SetStateAction } from 'react';

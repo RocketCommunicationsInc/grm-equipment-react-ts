@@ -1,4 +1,4 @@
-import { useMemo, useCallback } from 'react';
+import { useMemo, useCallback, useState } from 'react';
 import { RuxButton, RuxContainer, RuxSegmentedButton } from '@astrouxds/react';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import type { Contact } from '@astrouxds/mock-data';
@@ -39,6 +39,7 @@ const columnDefs: ColumnDef[] = [
 
 const ContactsTable = ({ searchValue = '', setSearchValue }: PropTypes) => {
   const { dataArray: contacts } = useTTCGRMContacts();
+  const [filterValue, setFilterValue] = useState('All');
 
   const handleClearFilter = () => {
     setSearchValue('');
@@ -71,22 +72,40 @@ const ContactsTable = ({ searchValue = '', setSearchValue }: PropTypes) => {
     []
   );
 
+  const failedContacts = contacts.filter((val) => val.state === 'failed');
+  const executingContacts = contacts.filter((val) => val.state === 'executing');
+
+  const filteredState =
+    filterValue === 'Executing'
+      ? executingContacts
+      : filterValue === 'Failed'
+      ? failedContacts
+      : contacts;
+
   const filteredContacts = useMemo(() => {
-    return filterContacts(contacts, searchValue);
-  }, [contacts, filterContacts, searchValue]);
+    return filterContacts(filteredState, searchValue);
+  }, [filteredState, filterContacts, searchValue]);
 
   return (
     <main className='contacts page'>
       <RuxContainer className='contacts-table'>
+        <span slot='header'>Current Contacts</span>
         <div slot='header'>
-          <span>Current Contacts</span>
           <div className='active-contacts'>
-            <span>10 Contacts</span>
-            <span>1 Failed</span>
-            <span>9 Executing</span>
+            <li className='total-section'>
+              <span className='total'>{contacts.length} </span>Contacts
+            </li>
+            <li className='total-section'>
+              <span className='total'>{failedContacts.length} </span>Failed
+            </li>
+            <li className='total-section'>
+              <span className='total'>{executingContacts.length} </span>
+              Executing
+            </li>
           </div>
           <RuxSegmentedButton
-            // onRuxchange={(e) => setFilterValue(e.target.selected)}
+            selected={filterValue}
+            onRuxchange={(e) => setFilterValue(e.target.selected)}
             data={[
               { label: 'All' },
               { label: 'Executing' },

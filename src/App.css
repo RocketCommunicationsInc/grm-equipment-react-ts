@@ -58,12 +58,14 @@ rux-container.maintenance-panel {
   grid-area: maintenance-panel;
 }
 
-rux-conainer.contacts-table {
+rux-container.contacts-table {
   grid-area: contacts-table;
+  height: 35rem;
 }
 
 rux-container.alerts {
   grid-area: alerts;
+  height: 35rem;
 }
 
 
