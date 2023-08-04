@@ -1,4 +1,3 @@
-import React from 'react';
 import ScheduleJob from './ScehduleJob';
 
 const ScheduleJobPage = () => {

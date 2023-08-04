@@ -2,7 +2,11 @@ import { RuxContainer } from '@astrouxds/react';
 import './InoperableEquipment.css';
 import EquipmentIcons from '../EquipmentIcons/EqupimentIcons';
 
-const InoperableEquipment = () => {
+type PropTypes = {
+  selectEquipment: () => void;
+};
+
+const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
   return (
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>
@@ -12,15 +16,15 @@ const InoperableEquipment = () => {
       </RuxContainer>
       <RuxContainer className='section'>
         <span>Digital (#)</span>
-        <EquipmentIcons equipmentString={''} />
+        <EquipmentIcons equipmentString={'SFEP19'} onClick={selectEquipment} />
       </RuxContainer>
       <RuxContainer className='section'>
         <span>Facilities (#)</span>
-        <EquipmentIcons equipmentString={''} />
+        <EquipmentIcons equipmentString={'ECEU15'} onClick={selectEquipment} />
       </RuxContainer>
       <RuxContainer className='section'>
         <span>RF (#)</span>
-        <EquipmentIcons equipmentString={''} />
+        <EquipmentIcons equipmentString={'RVC14'} onClick={selectEquipment} />
       </RuxContainer>
     </RuxContainer>
   );

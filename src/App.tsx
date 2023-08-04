@@ -11,11 +11,13 @@ import {
 } from 'react-router-dom';
 import { BreadcrumbNav } from './common/BreadcrumbNav/BreadcrumbNav';
 import Dashboard from './Components/Dashboard/DashboardPage';
-import ContactsTablePage from './Components/ContactsList/ContactsTablePage';
 import ScheduleJobPage from './Components/MaintenancePanel/ScheduleJob/ScheduleJobPage';
 import NoDataFound from './common/Error/NoDataFound';
 import JobDetailsPage from './Components/JobDetails/JobDetailsPage';
 import './App.css';
+import EquipmentDetailsPage from './Components/ContactsList/EquipmentDetailsPage';
+// import ContactsTable from './Components/ContactsList/ContactsTable';
+// import { SetStateAction } from 'react';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,22 +31,18 @@ const router = createBrowserRouter(
           </>
         }
       >
-        <Route path='contacts'>
-          <Route index element={<ContactsTablePage />} />
-          <Route
-            path=':contactId'
-            // element={<ContactsTable />}
-            errorElement={<NoDataFound dataType='contact' />}
-          />
-        </Route>
-        <Route path='alerts'>
+        <Route
+          path='equipment-details'
+          element={
+            <>
+              <EquipmentDetailsPage />
+            </>
+          }
+        >
           <Route index element={<Navigate to={'/'} />} />
-          <Route path=':alertId'>
-            {/* <Route
-              index
-              element={<AlertDetailsPage />}
-              errorElement={<NoDataFound dataType='alert' />}
-            /> */}
+          <Route
+          //path=':id'
+          >
             <Route
               path='schedule-job'
               element={<ScheduleJobPage />}

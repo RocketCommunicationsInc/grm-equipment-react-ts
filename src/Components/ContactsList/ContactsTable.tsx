@@ -1,5 +1,5 @@
-import { useMemo, useCallback } from 'react';
-import { RuxButton, RuxContainer } from '@astrouxds/react';
+import { useMemo, useCallback, useState } from 'react';
+import { RuxButton, RuxContainer, RuxSegmentedButton } from '@astrouxds/react';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import type { Contact } from '@astrouxds/mock-data';
 import type { ColumnDef } from '../../common/Table/Table';
@@ -13,7 +13,6 @@ type PropTypes = {
 };
 
 const columnDefs: ColumnDef[] = [
-  { label: 'Priority', property: 'priority' },
   { label: 'Status', property: 'status' },
   { label: 'IRON', property: 'satellite' },
   { label: 'Ground Station', property: 'ground' },
@@ -40,6 +39,7 @@ const columnDefs: ColumnDef[] = [
 
 const ContactsTable = ({ searchValue = '', setSearchValue }: PropTypes) => {
   const { dataArray: contacts } = useTTCGRMContacts();
+  const [filterValue, setFilterValue] = useState('All');
 
   const handleClearFilter = () => {
     setSearchValue('');
@@ -72,13 +72,47 @@ const ContactsTable = ({ searchValue = '', setSearchValue }: PropTypes) => {
     []
   );
 
+  const failedContacts = contacts.filter((val) => val.state === 'failed');
+  const executingContacts = contacts.filter((val) => val.state === 'executing');
+
+  const filteredState =
+    filterValue === 'Executing'
+      ? executingContacts
+      : filterValue === 'Failed'
+      ? failedContacts
+      : contacts;
+
   const filteredContacts = useMemo(() => {
-    return filterContacts(contacts, searchValue);
-  }, [contacts, filterContacts, searchValue]);
+    return filterContacts(filteredState, searchValue);
+  }, [filteredState, filterContacts, searchValue]);
 
   return (
-    <main className=' page'>
+    <main className='contacts page'>
       <RuxContainer className='contacts-table'>
+        <span slot='header'>Current Contacts</span>
+        <div slot='header'>
+          <div className='active-contacts'>
+            <li className='total-section'>
+              <span className='total'>{contacts.length} </span>Contacts
+            </li>
+            <li className='total-section'>
+              <span className='total'>{failedContacts.length} </span>Failed
+            </li>
+            <li className='total-section'>
+              <span className='total'>{executingContacts.length} </span>
+              Executing
+            </li>
+          </div>
+          <RuxSegmentedButton
+            selected={filterValue}
+            onRuxchange={(e) => setFilterValue(e.target.selected)}
+            data={[
+              { label: 'All' },
+              { label: 'Executing' },
+              { label: 'Failed' },
+            ]}
+          />
+        </div>
         <div className='filter-notification' hidden={searchValue === ''}>
           One or more filters selected.
           <RuxButton

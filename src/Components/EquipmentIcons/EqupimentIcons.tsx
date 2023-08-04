@@ -4,9 +4,10 @@ import './EquipmentIcons.css';
 
 type PropTypes = {
   equipmentString: string;
+  onClick: () => void;
 };
 
-const EquipmentIcons = ({ equipmentString }: PropTypes) => {
+const EquipmentIcons = ({ equipmentString, onClick }: PropTypes) => {
   return (
     <div className='equipment-icons'>
       {equipmentString.split(' ').map((equipmentSubString: string) => (
@@ -15,6 +16,7 @@ const EquipmentIcons = ({ equipmentString }: PropTypes) => {
           status='normal'
           icon='center-focus-weak'
           label={equipmentSubString}
+          onClick={onClick}
         />
       ))}
     </div>

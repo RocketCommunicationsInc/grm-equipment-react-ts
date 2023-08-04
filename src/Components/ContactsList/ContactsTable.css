@@ -1,5 +1,5 @@
 .contacts-table {
-  padding: var(--spacing-0) var(--spacing-3) var(--spacing-4);
+  padding-left: var(--spacing-3);
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -56,4 +56,61 @@
   /* 100vh - (height of global status bar + height of breadcrumb element) */
   height: calc(100vh - 10.25rem);
   padding: var(--spacing-0) var(--spacing-6) var(--spacing-4);
+}
+
+.contacts-table [slot='header'] {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active-contacts span {
+  padding-right: var(--spacing-3);
+}
+
+.segmented-button-group rux-input::part(form-field) {
+  flex-direction: row;
+  align-items: center;
+  width: 16.5rem;
+  margin-top: var(--spacing-4);
+}
+
+.segmented-button-group rux-input::part(label) {
+  margin-right: var(--spacing-2);
+  width: 6rem;
+}
+
+.segmented-button-group rux-input:nth-of-type(1) {
+  margin-top: var(--spacing-14);
+}
+
+.equipment-details span:nth-of-type(1) {
+  font-weight: var(--font-weights-medium);
+  font-size: var(--font-size-xl);
+  padding-bottom: var(--spacing-2);
+  display: flex;
+  margin-left: var(--spacing-2);
+}
+
+.equipment-details rux-status {
+  margin-right: var(--spacing-2);
+  align-items: center;
+  display: flex;
+}
+
+.active-contacts {
+  display: flex;
+  font-size: var(--font-size-base);
+}
+
+.active-contacts li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--spacing-4);
+  margin-right: var(--spacing-6);
+}
+
+.active-contacts .total {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weights-bold);
 }
