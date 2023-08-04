@@ -5,7 +5,7 @@ import {
   RuxTreeNode,
 } from '@astrouxds/react';
 import { Status } from '@astrouxds/mock-data';
-import equipment from '../../data/equipment.json';
+import { initialState } from '../../providers/AppProvider';
 import './EquipmentTree.css';
 import { Equipment } from '../../Types/Equipment';
 import { Dispatch, SetStateAction } from 'react';
@@ -35,7 +35,7 @@ const EquipmentTree = ({
           Comms
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'comms' && (
@@ -59,7 +59,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'comms' && (
@@ -83,7 +83,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'comms' && (
@@ -107,7 +107,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'comms' && (
@@ -131,7 +131,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'comms' && (
@@ -158,7 +158,7 @@ const EquipmentTree = ({
           Digital
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'digital' && (
@@ -182,7 +182,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'digital' && (
@@ -206,7 +206,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'digital' && (
@@ -230,7 +230,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'digital' && (
@@ -254,7 +254,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'digital' && (
@@ -281,7 +281,7 @@ const EquipmentTree = ({
           Facilities
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'facilities' && (
@@ -305,7 +305,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'facilities' && (
@@ -329,7 +329,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'facilities' && (
@@ -353,7 +353,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'facilities' && (
@@ -377,7 +377,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'facilities' && (
@@ -404,7 +404,7 @@ const EquipmentTree = ({
           RF
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'rf' && (
@@ -428,7 +428,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'rf' && (
@@ -452,7 +452,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'rf' && (
@@ -476,7 +476,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'rf' && (
@@ -500,7 +500,7 @@ const EquipmentTree = ({
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'rf' && (
