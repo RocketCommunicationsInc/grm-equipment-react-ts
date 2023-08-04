@@ -1,12 +1,17 @@
 import {
   RuxSegmentedButton,
-  RuxContainer,
   RuxInput,
   RuxStatus,
+  RuxContainer,
 } from '@astrouxds/react';
 import { EventLog } from '../../common/EventLog/EventLog';
+import { Equipment } from '../../Types/Equipment';
 import { capitalize } from '../../utils';
 import './EquipmentDetailsPanel.css';
+
+type PropTypes = {
+  activeEquipment?: Equipment | null;
+};
 
 const firstButton = [{ label: 'Online', selected: true }, { label: 'Offline' }];
 const secondButton = [
@@ -14,12 +19,12 @@ const secondButton = [
   { label: 'Deconsidered' },
 ];
 
-const EquipmentDetailsPanel = () => {
+const EquipmentDetailsPanel = ({ activeEquipment }: PropTypes) => {
   return (
-    <RuxContainer className='equipment-details'>
-      <header slot='header'>Equipment Details</header>
+    <RuxContainer className="equipment-details_details">
       <span>
-        <RuxStatus status='caution' slot='prefix' /> Black FEP 6566
+        <RuxStatus status={activeEquipment?.status} slot='prefix' />{' '}
+        {activeEquipment?.equipmentString}
       </span>
       <div className='equipment-alerts'>
         <div>
@@ -33,7 +38,12 @@ const EquipmentDetailsPanel = () => {
               size='small'
             />
             <RuxInput label='Type' value={'Iron'} readonly size='small' />
-            <RuxInput label='Category' value={'RF'} readonly size='small' />
+            <RuxInput
+              label='Category'
+              value={activeEquipment?.category}
+              readonly
+              size='small'
+            />
           </section>
         </div>
         <div className='alert-description'>
@@ -44,11 +54,7 @@ const EquipmentDetailsPanel = () => {
             aria-readonly='true'
             role='textbox'
           >
-            <p>
-              Aenean ac sagittis odio. Pellentesque vehicula, justo et
-              sollicitudin bibendum, urna libero ornare augue, a bibendum nulla
-              ipsum eu ante…
-            </p>
+            <p>{activeEquipment?.description}</p>
           </div>
         </div>
 
