@@ -10,12 +10,6 @@ type PropTypes = {
 
 const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
   const { state }: any = useAppContext();
-  console.log(state.equpimentByCategory.digital);
-
-  // const category = Object.values(state.equipmentByCategory).filter(
-  //   (equip: any) => equip === 'digital'
-  // );
-  // console.log(Object.values(state.equipmentByCategory));
 
   return (
     <RuxContainer className='inoperable-equipment'>
