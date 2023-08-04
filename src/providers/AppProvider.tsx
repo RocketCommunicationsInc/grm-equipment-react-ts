@@ -1,15 +1,13 @@
 import { createContext, ReactNode, useContext, useReducer } from 'react';
 
 import { appReducer } from './AppReducer';
-import { dummyJob } from '../data/data';
+import { scehduledJobs, equipmentArr, equpimentByCategory } from '../data/data';
 
 export const initialState = {
-  contacts: [],
-  alerts: [],
-  currentAlert: null,
-  currentContact: null,
-  affectedContacts: [],
-  scheduledJobs: [dummyJob],
+  equipment: equipmentArr,
+  currentEquipment: null,
+  equpimentByCategory: equpimentByCategory,
+  scheduledJobs: scehduledJobs,
   currentJob: null,
 };
 
