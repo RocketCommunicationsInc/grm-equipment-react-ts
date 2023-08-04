@@ -1,7 +1,6 @@
-export const appReducer = (
-  state: { scheduledJobs: any[] },
-  { type, payload }: any
-) => {
+import { Job } from '../Types/Equipment';
+
+export const appReducer = (state: any, { type, payload }: any) => {
   switch (type) {
     case 'SCHEDULE_NEW_JOB': {
       return {
@@ -12,10 +11,10 @@ export const appReducer = (
 
     case 'EDIT_JOB': {
       const selectedJob = state.scheduledJobs.find(
-        (job) => job.jobId === payload
+        (job: { jobId: any }) => job.jobId === payload
       );
       const modifiedJob = { ...selectedJob, ...payload };
-      const updatedJobs = state.scheduledJobs.map((job) => {
+      const updatedJobs = state.scheduledJobs.map((job: { jobId: any }) => {
         if (job.jobId === payload.jobId) {
           return modifiedJob;
         }
@@ -25,6 +24,23 @@ export const appReducer = (
         ...state,
         scheduledJobs: updatedJobs,
         currentJob: modifiedJob ? modifiedJob : {},
+      };
+    }
+
+    case 'CURRENT_EQUIPMENT': {
+      const selectedEquipment = () => {
+        for (const item of state.equipment) {
+          console.log(item, 'jobs');
+          if (item.scheduledJobs.some((job: Job) => job.jobId === payload)) {
+            console.log(item, 'item');
+            return item;
+          }
+        }
+        return null;
+      };
+      return {
+        ...state,
+        currentEquipment: { ...selectedEquipment, ...payload } || null,
       };
     }
 

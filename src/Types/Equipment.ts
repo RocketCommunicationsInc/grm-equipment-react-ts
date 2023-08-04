@@ -22,3 +22,16 @@ export interface Equipment {
     equipment: string;
   }[];
 }
+
+export interface Job {
+  jobId: number;
+  jobType: string;
+  description: string;
+  startTime: string;
+  stopTime: string;
+  technician: string;
+  follow: boolean;
+  status: Status;
+  createdOn: string;
+  equipment: string;
+}

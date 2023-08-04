@@ -4,525 +4,121 @@ import {
   RuxTree,
   RuxTreeNode,
 } from '@astrouxds/react';
-import { Status } from '@astrouxds/mock-data';
-import { initialState } from '../../providers/AppProvider';
+import { useAppContext } from '../../providers/AppProvider';
+// import { Equipment, Job } from '../../Types/Equipment';
+import { useState } from 'react';
+import { capitalize } from '../../utils';
 import './EquipmentTree.css';
-import { Equipment } from '../../Types/Equipment';
-import { Dispatch, SetStateAction } from 'react';
 
-type PropTypes = {
-  selectedEquipment: Equipment[];
-  setSelectedEquipment: Dispatch<SetStateAction<Equipment[]>>;
-};
+const EquipmentTree = () => {
+  const { state, dispatch }: any = useAppContext();
+  const [equipment, setEquipment] = useState(null);
 
-const EquipmentTree = ({
-  selectedEquipment,
-  setSelectedEquipment,
-}: PropTypes) => {
-  const handleSelectEquipment = (equipmentItem: Equipment) => {
-    //? I'm not sure why the first one doesn't work. In theory it should
-    if (selectedEquipment.includes(equipmentItem)) return;
-    for (const item of selectedEquipment) {
-      if (item.equipmentString === equipmentItem.equipmentString) return;
-    }
-    setSelectedEquipment([...selectedEquipment, { ...equipmentItem }]);
+  // const selectedEquipment = (id: number) => {
+  //   for (const item of state.equipment) {
+  //     console.log(item, 'item');
+  //     if (item.scheduledJobs.some((job: Job) => job.jobId === id)) {
+  //       return item;
+  //     }
+  //   }
+  //   return null;
+  // };
+
+  // const handleSelectedEquipment = (equipment: any) => {
+  //   dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+  //   setEquipment(equipment);
+  // };
+  // console.log(state, 'state');
+
+  // const handleSelectedEquipment = (category: string, index: string) => {
+  //   const selectedJob = state.equpimentByCategory[category][index];
+  //   console.log(selectedJob);
+
+  //   // const mainEquipment = state.equipment.find(
+  //   //   (equipmentParent: any) =>
+  //   //   equipmentParent.equipment === selectedJob.equipment
+  //   //   console.log(equipmentParent, "plz")
+  //   //   );
+  //   setEquipment(equipment);
+
+  //   dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+  // };
+  // console.log(state);
+
+  const handleSelectedEquipment = (
+    category: string
+    // config: string,
+    // jobId: any
+  ) => {
+    const selectedEquipment = state.equpimentByCategory[category];
+    //    const selectedEquipment = state.equpimentByCategory[category][config];
+    console.log(state.equpimentByCategory[category], 'selected equip');
+    setEquipment(equipment);
+    dispatch({ type: 'CURRENT_EQUIPMENT', payload: selectedEquipment });
   };
+  console.log(equipment, 'equipment');
+
+  // const handleSelectedEquipment = (
+  //   category: string,
+  //   index: number,
+  //   id: number
+  // ) => {
+  //   // const selectedJob = state.equpimentByCategory[category][
+  //   //   index
+  //   // ].scheduledJobs.find((job: any) => job.jobId === id);
+
+  //   const selectedEquip = state.equipment.find((item: any) =>
+  //     item.scheduledJobs.some((job: any) => job.jobId === id)
+  //   );
+  //   console.log(selectedEquip, 'equip that is selected plz');
+
+  //   let selectedEquipment = null;
+  //   // for (const category in state.equpimentByCategory) {
+  //   //   if (state.equpimentByCategory.hasOwnProperty(category)) {
+  //   //     const equipByCategory = state.equpimentByCategory[category];
+  //   //     console.log(equipByCategory);
+  //   //     // for (const jobsByCategory of equipByCategory) {
+  //   //     //   for (const item of jobsByCategory) {
+  //   //     //     if (item.scheduledJobs.some((job: any) => job.jobId === id)) {
+  //   //     //       selectedEquipment = item;
+  //   //     //     }
+  //   //     //   }
+  //   //     // }
+  //   //   }
+  //   //   if (selectedEquipment) {
+  //   //     setEquipment(selectedEquipment);
+  //   //   }
+  //   // }
+  //   dispatch({ type: 'CURRENT_EQUIPMENT', payload: selectedEquip });
+  // };
 
   return (
     <RuxContainer className='equipment-tree'>
       <RuxTree>
-        <RuxTreeNode>
-          Comms
-          <RuxTreeNode slot='node'>
-            Component A
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'A' &&
-                equipmentItem.category === 'comms' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    A-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
+        {Object.keys(state.equpimentByCategory).map((category) => (
+          <RuxTreeNode key={category}>
+            {category === 'rf' ? category.toUpperCase() : capitalize(category)}
+            {Object.keys(state.equpimentByCategory[category]).map((config) => (
+              <RuxTreeNode slot='node' key={`${category}${config}`}>
+                Component {config}
+                {Object.values(state.equpimentByCategory[category][config]).map(
+                  (job: any, i: any) => (
+                    <RuxTreeNode
+                      key={`${category}${config}${i}`}
+                      slot='node'
+                      onRuxtreenodeselected={() =>
+                        handleSelectedEquipment(category)
+                      }
+                    >
+                      <RuxStatus slot='prefix' status={job.equipmentStatus} />
+                      A-{job.equipment}
+                    </RuxTreeNode>
+                  )
+                )}
+              </RuxTreeNode>
+            ))}
           </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component B
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'B' &&
-                equipmentItem.category === 'comms' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    B-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component C
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'C' &&
-                equipmentItem.category === 'comms' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    C-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component D
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'D' &&
-                equipmentItem.category === 'comms' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    D-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component E
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'E' &&
-                equipmentItem.category === 'comms' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    E-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-        </RuxTreeNode>
-        <RuxTreeNode>
-          Digital
-          <RuxTreeNode slot='node'>
-            Component A
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'A' &&
-                equipmentItem.category === 'digital' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    A-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component B
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'B' &&
-                equipmentItem.category === 'digital' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    B-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component C
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'C' &&
-                equipmentItem.category === 'digital' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    C-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component D
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'D' &&
-                equipmentItem.category === 'digital' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    D-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component E
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'E' &&
-                equipmentItem.category === 'digital' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    E-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-        </RuxTreeNode>
-        <RuxTreeNode>
-          Facilities
-          <RuxTreeNode slot='node'>
-            Component A
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'A' &&
-                equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    A-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component B
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'B' &&
-                equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    B-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component C
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'C' &&
-                equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    C-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component D
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'D' &&
-                equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    D-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component E
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'E' &&
-                equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    E-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-        </RuxTreeNode>
-        <RuxTreeNode>
-          RF
-          <RuxTreeNode slot='node'>
-            Component A
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'A' &&
-                equipmentItem.category === 'rf' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    A-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component B
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'B' &&
-                equipmentItem.category === 'rf' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    B-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component C
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'C' &&
-                equipmentItem.category === 'rf' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    C-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component D
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'D' &&
-                equipmentItem.category === 'rf' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    D-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-          <RuxTreeNode slot='node'>
-            Component E
-            {initialState.equipment.map(
-              (equipmentItem) =>
-                equipmentItem.config === 'E' &&
-                equipmentItem.category === 'rf' && (
-                  <RuxTreeNode
-                    key={equipmentItem.id}
-                    slot='node'
-                    onRuxtreenodeselected={() =>
-                      handleSelectEquipment(
-                        equipmentItem as unknown as Equipment
-                      )
-                    }
-                  >
-                    <RuxStatus
-                      slot='prefix'
-                      status={equipmentItem.status as Status | undefined}
-                    />
-                    E-{equipmentItem.equipmentString}
-                  </RuxTreeNode>
-                )
-            )}
-          </RuxTreeNode>
-        </RuxTreeNode>
+        ))}
       </RuxTree>
     </RuxContainer>
   );

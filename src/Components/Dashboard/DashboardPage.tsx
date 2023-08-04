@@ -13,9 +13,10 @@ import './DashboardPage.css';
 import { useState } from 'react';
 import { RuxTabsCustomEvent } from '@astrouxds/astro-web-components';
 import EquipmentDetailsPage from '../EquipmentDetailsPage/EquipmentDetailsPage';
-import { initialState } from '../../providers/AppProvider';
+import { initialState, useAppContext } from '../../providers/AppProvider';
 
 const Dashboard = () => {
+  const { state }: any = useAppContext();
   const [selectedEquipment, setSelectedEquipment] = useState<Equipment[]>([]);
   const [activeEquipment, setActiveEquipment] = useState<Equipment | null>(
     initialState.currentEquipment
@@ -40,14 +41,14 @@ const Dashboard = () => {
     //     setSelectedEquipment(selectedEquipment.splice(itemIndex, 1))
     //   }
     // }
-    console.log('hi')
-  }
+    console.log('hi');
+  };
 
   return (
     <main className='dashboard'>
       <EquipmentTree
-        selectedEquipment={selectedEquipment}
-        setSelectedEquipment={setSelectedEquipment}
+      // selectedEquipment={selectedEquipment}
+      // setSelectedEquipment={setSelectedEquipment}
       />
       <div className='dashboard_equipment-wrapper'>
         <RuxTabs
@@ -62,7 +63,12 @@ const Dashboard = () => {
           {selectedEquipment.map((equipment, index) => (
             <RuxTab key={index} id={equipment.id}>
               {equipment.config}-{equipment.equipmentString}
-              <RuxButton iconOnly borderless icon='clear' onClick={() => handleClearClick(equipment.id)} />
+              <RuxButton
+                iconOnly
+                borderless
+                icon='clear'
+                onClick={() => handleClearClick(equipment.id)}
+              />
             </RuxTab>
           ))}
         </RuxTabs>
@@ -71,7 +77,10 @@ const Dashboard = () => {
             <InoperableEquipment selectEquipment={selectEquipment} />
           </RuxTabPanel>
           {selectedEquipment.map((equipment) => (
-            <RuxTabPanel key={equipment.id} aria-labelledby={equipment.id}>
+            <RuxTabPanel
+              key={equipment.id}
+              aria-labelledby={state.currentEquipment.equipment}
+            >
               <EquipmentDetailsPage activeEquipment={activeEquipment} />
             </RuxTabPanel>
           ))}

@@ -1,33 +1,73 @@
 import { RuxContainer } from '@astrouxds/react';
 import './InoperableEquipment.css';
 import EquipmentIcons from '../EquipmentIcons/EqupimentIcons';
+import { useAppContext } from '../../providers/AppProvider';
+import { capitalize } from '../../utils';
 
 type PropTypes = {
   selectEquipment: () => void;
 };
 
 const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
+  const { state }: any = useAppContext();
+  console.log(state.equpimentByCategory.digital);
+
+  // const category = Object.values(state.equipmentByCategory).filter(
+  //   (equip: any) => equip === 'digital'
+  // );
+  // console.log(Object.values(state.equipmentByCategory));
+
   return (
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>
-      <RuxContainer className='section'>
-        <span>Comms (0)</span>
-        <div className='no-equipment'>No Inoperable Equipment</div>
-      </RuxContainer>
-      <RuxContainer className='section'>
-        <span>Digital (#)</span>
-        <EquipmentIcons equipmentString={'SFEP19'} onClick={selectEquipment} />
-      </RuxContainer>
-      <RuxContainer className='section'>
-        <span>Facilities (#)</span>
-        <EquipmentIcons equipmentString={'ECEU15'} onClick={selectEquipment} />
-      </RuxContainer>
-      <RuxContainer className='section'>
-        <span>RF (#)</span>
-        <EquipmentIcons equipmentString={'RVC14'} onClick={selectEquipment} />
-      </RuxContainer>
+      {Object.keys(state.equpimentByCategory).map((category) => (
+        <>
+          <RuxContainer className='section'>
+            <span>
+              {category === 'rf'
+                ? category.toUpperCase()
+                : capitalize(category)}
+            </span>
+
+            {/* <div className='no-equipment'>No Inoperable Equipment</div> */}
+            {Object.keys(state.equpimentByCategory[category]).map((config) => (
+              <EquipmentIcons
+                equipmentString={config}
+                onClick={selectEquipment}
+              />
+            ))}
+          </RuxContainer>
+        </>
+      ))}
     </RuxContainer>
   );
 };
 
 export default InoperableEquipment;
+
+//         {/* {Object.values(state.equpimentByCategory).map((job: any) =>
+//       job.map((val: any) => ( */}
+//       <RuxContainer className='section'>
+//       <span>Digital </span>
+//       <EquipmentIcons
+//         equipmentString={'SFEP19'}
+//         onClick={selectEquipment}
+//       />
+//     </RuxContainer>
+//     {/* ))
+// )} */}
+//     <RuxContainer className='section'>
+//       <span>Facilities (#)</span>
+//       <EquipmentIcons
+//         equipmentString={'ECEU15'}
+//         onClick={selectEquipment}
+//       />
+//     </RuxContainer>
+//     <RuxContainer className='section'>
+//       <span>RF (#)</span>
+//       <EquipmentIcons
+//         equipmentString={'RVC14'}
+//         onClick={selectEquipment}
+//       />
+//     </RuxContainer>
+//   </>
