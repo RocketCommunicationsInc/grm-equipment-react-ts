@@ -22,7 +22,6 @@ export const useAppContext = () => useContext(AppContext);
 
 const AppProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
-  console.log(state);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
