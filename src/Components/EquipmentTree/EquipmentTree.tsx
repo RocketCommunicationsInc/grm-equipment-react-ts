@@ -28,6 +28,7 @@ const EquipmentTree = () => {
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'comms' && (
                   <RuxTreeNode
+                  key={equipmentItem.id}
                     slot='node'
                     onRuxtreenodeselected={() =>
                       handleSelectedEquipment(equipmentItem as any)
@@ -48,7 +49,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -64,7 +65,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -80,7 +81,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -96,7 +97,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -115,7 +116,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -131,7 +132,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -147,7 +148,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -163,7 +164,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -179,7 +180,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -198,7 +199,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -214,7 +215,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -230,7 +231,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -246,7 +247,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -262,7 +263,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -281,7 +282,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -297,7 +298,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -313,7 +314,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -329,7 +330,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -345,7 +346,7 @@ const EquipmentTree = () => {
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode key={equipmentItem.id} slot='node'>
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
