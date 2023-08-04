@@ -1,6 +1,7 @@
 import { getDayOfYear } from '../utils';
 import { getRandomInt, randomIndex } from '../utils';
 import contacts from './contacts.json';
+import equipment from './equipment.json';
 import { options } from './options';
 
 export const randomContact = () =>
@@ -46,15 +47,17 @@ export function generateEvents() {
   }));
 }
 
-export const dummyJob = {
-  jobId: 76029,
-  jobType: 'IT Support',
-  description: 'Updates needed on all desktop computers in main building',
-  startTime: '2023-06-08T16:31',
-  stopTime: '2023-09-08T18:31',
-  technician: 'M. Scott',
-  follow: true,
-  status: 'Approved',
-  createdOn: '2023-06-06T11:42',
-  equpiment: 'ANT7',
-};
+export const equipmentArr = equipment.map((equipment) => equipment);
+
+export const scehduledJobs = equipment.flatMap(
+  (equipment) => equipment.scehduledJobs
+);
+
+export const equpimentByCategory = {};
+equipment.forEach((item) => {
+  const { category, config, scehduledJobs } = item;
+  if (!equpimentByCategory[category]) {
+    equpimentByCategory[category] = { A: {}, B: {}, C: {}, D: {}, E: {} };
+  }
+  equpimentByCategory[category][config] = scehduledJobs;
+});
