@@ -3,6 +3,10 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: var(--spacing-16);
 }
 
 .Breadcrumb-nav::part(container) {
@@ -31,4 +35,5 @@ rux-breadcrumb-item:hover {
 .breadcrumb-search-wrapper rux-input {
   margin-block: auto;
   margin-right: var(--spacing-6);
+  padding-top: var(--spacing-3);
 }

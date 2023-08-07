@@ -6,4 +6,5 @@
 .tabs-and-search {
   display: flex;
   justify-content: space-between;
+  margin-right: var(--spacing-2);
 }

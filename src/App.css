@@ -36,7 +36,8 @@ rux-container footer[slot='footer'] {
 }
 
 .equip-details {
-  height: 100%;
+  height: calc(100vh - 13rem);
+  overflow-y: auto;
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);
   /* background-color: var(--color-background-surface-default); */

@@ -114,3 +114,10 @@
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weights-bold);
 }
+
+.equip-details-search-wrapper {
+display: flex;
+justify-content: flex-end;
+padding-right: var(--spacing-4);
+align-items: center;
+}
