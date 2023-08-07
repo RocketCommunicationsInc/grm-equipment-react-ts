@@ -2,6 +2,7 @@ import { RuxBreadcrumb, RuxBreadcrumbItem } from '@astrouxds/react';
 import { useMatches, useParams, useNavigate } from 'react-router-dom';
 import './BreadcrumbNav.css';
 import { capitalize } from '../../utils';
+import SearchBar from '../SearchBar/SearchBar';
 
 export const BreadcrumbNav = () => {
   const navigate = useNavigate();
@@ -41,6 +42,12 @@ export const BreadcrumbNav = () => {
           );
         })}
       </RuxBreadcrumb>
+      <SearchBar
+        searchValue={''}
+        setSearchValue={function (value: string): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
     </div>
   );
 };

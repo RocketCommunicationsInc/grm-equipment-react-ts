@@ -2,7 +2,7 @@
   display: inline-flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
 }
 
 .Breadcrumb-nav::part(container) {

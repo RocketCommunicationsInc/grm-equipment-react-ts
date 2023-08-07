@@ -1,3 +1,4 @@
+import EquipmentDetailsPanel from '../Components/EquipmentDetailsPanel/EquipmentDetailsPanel';
 import { getDayOfYear } from '../utils';
 import { getRandomInt, randomIndex } from '../utils';
 import contacts from './contacts.json';
@@ -55,9 +56,14 @@ export const scehduledJobs = equipment.flatMap(
 
 export const equpimentByCategory = {};
 equipment.forEach((item) => {
-  const { category, config, scehduledJobs } = item;
+  const category = item.category;
+  const config = item.config;
   if (!equpimentByCategory[category]) {
-    equpimentByCategory[category] = { A: {}, B: {}, C: {}, D: {}, E: {} };
+    equpimentByCategory[category] = [];
   }
-  equpimentByCategory[category][config] = scehduledJobs;
+  if (!equpimentByCategory[category][config]) {
+    equpimentByCategory[category][config] = [];
+  }
+  equpimentByCategory[category][config].push(item);
+  item = equpimentByCategory;
 });
