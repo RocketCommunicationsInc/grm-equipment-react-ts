@@ -5,17 +5,29 @@ import {
   RuxTreeNode,
 } from '@astrouxds/react';
 import { Status } from '@astrouxds/mock-data';
-import equipment from '../../data/equipment.json';
+import { initialState } from '../../providers/AppProvider';
 import './EquipmentTree.css';
-import { useState } from 'react';
 import { Equipment } from '../../Types/Equipment';
+import { Dispatch, SetStateAction } from 'react';
 
-const EquipmentTree = () => {
-  const [selectedEquipment, setSelectedEquipment] = useState<Equipment[]>([]);
+type PropTypes = {
+  selectedEquipment: Equipment[];
+  setSelectedEquipment: Dispatch<SetStateAction<Equipment[]>>;
+};
 
-  const handleSelectedEquipment = (equipmentItem: Equipment) => {
+const EquipmentTree = ({
+  selectedEquipment,
+  setSelectedEquipment,
+}: PropTypes) => {
+  const handleSelectEquipment = (equipmentItem: Equipment) => {
+    //? I'm not sure why the first one doesn't work. In theory it should
+    if (selectedEquipment.includes(equipmentItem)) return;
+    for (const item of selectedEquipment) {
+      if (item.equipmentString === equipmentItem.equipmentString) return;
+    }
     setSelectedEquipment([...selectedEquipment, { ...equipmentItem }]);
   };
+
   return (
     <RuxContainer className='equipment-tree'>
       <RuxTree>
@@ -23,14 +35,17 @@ const EquipmentTree = () => {
           Comms
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'comms' && (
                   <RuxTreeNode
+                    key={equipmentItem.id}
                     slot='node'
                     onRuxtreenodeselected={() =>
-                      handleSelectedEquipment(equipmentItem as any)
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
                     }
                   >
                     <RuxStatus
@@ -44,11 +59,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -60,11 +83,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -76,11 +107,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -92,11 +131,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'comms' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -111,11 +158,19 @@ const EquipmentTree = () => {
           Digital
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -127,11 +182,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -143,11 +206,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -159,11 +230,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -175,11 +254,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'digital' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -194,11 +281,19 @@ const EquipmentTree = () => {
           Facilities
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -210,11 +305,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -226,11 +329,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -242,11 +353,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -258,11 +377,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'facilities' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -277,11 +404,19 @@ const EquipmentTree = () => {
           RF
           <RuxTreeNode slot='node'>
             Component A
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'A' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -293,11 +428,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component B
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'B' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -309,11 +452,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component C
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'C' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -325,11 +476,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component D
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'D' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}
@@ -341,11 +500,19 @@ const EquipmentTree = () => {
           </RuxTreeNode>
           <RuxTreeNode slot='node'>
             Component E
-            {equipment.map(
+            {initialState.equipment.map(
               (equipmentItem) =>
                 equipmentItem.config === 'E' &&
                 equipmentItem.category === 'rf' && (
-                  <RuxTreeNode slot='node'>
+                  <RuxTreeNode
+                    key={equipmentItem.id}
+                    slot='node'
+                    onRuxtreenodeselected={() =>
+                      handleSelectEquipment(
+                        equipmentItem as unknown as Equipment
+                      )
+                    }
+                  >
                     <RuxStatus
                       slot='prefix'
                       status={equipmentItem.status as Status | undefined}

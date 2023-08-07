@@ -15,7 +15,7 @@ import ScheduleJobPage from './Components/MaintenancePanel/ScheduleJob/ScheduleJ
 import NoDataFound from './common/Error/NoDataFound';
 import JobDetailsPage from './Components/JobDetails/JobDetailsPage';
 import './App.css';
-import EquipmentDetailsPage from './Components/ContactsList/EquipmentDetailsPage';
+import EquipmentDetailsPage from './Components/EquipmentDetailsPage/EquipmentDetailsPage';
 // import ContactsTable from './Components/ContactsList/ContactsTable';
 // import { SetStateAction } from 'react';
 
@@ -31,30 +31,22 @@ const router = createBrowserRouter(
           </>
         }
       >
-        <Route
-          path='equipment-details'
-          element={
-            <>
-              <EquipmentDetailsPage />
-            </>
-          }
-        >
-          <Route
-            path='schedule-job'
-            element={
-              <>
-                <ScheduleJobPage />
-              </>
-            }
-            errorElement={<NoDataFound dataType='alert' />}
-          />
-          <Route
-            path='job-details'
-            element={<JobDetailsPage />}
-            errorElement={<NoDataFound dataType='alert' />}
-          />
+        <Route path='equipment-details'>
           <Route index element={<Navigate to={'/'} />} />
-          <Route path=':id'></Route>
+          <Route path=':id'>
+            <Route element={<EquipmentDetailsPage />}>
+              <Route
+                path='schedule-job'
+                element={<ScheduleJobPage />}
+                errorElement={<NoDataFound dataType='alert' />}
+              />
+              <Route
+                path='job-details'
+                element={<JobDetailsPage />}
+                errorElement={<NoDataFound dataType='alert' />}
+              />
+            </Route>
+          </Route>
         </Route>
       </Route>
     </>
