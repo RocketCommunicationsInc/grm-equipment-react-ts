@@ -56,6 +56,7 @@ const SearchBar = ({ searchValue }: PropTypes) => {
         payload: { searchedContacts: searchedContacts },
       });
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [dispatch, state.equipment]
   );
 

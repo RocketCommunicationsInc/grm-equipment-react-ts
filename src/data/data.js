@@ -1,4 +1,3 @@
-import EquipmentDetailsPanel from '../Components/EquipmentDetailsPanel/EquipmentDetailsPanel';
 import { getDayOfYear } from '../utils';
 import { getRandomInt, randomIndex } from '../utils';
 import contacts from './contacts.json';
