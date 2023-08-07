@@ -10,7 +10,9 @@ export const BreadcrumbNav = () => {
   if (matches.length === 0) return null;
 
   const filteredMatches = matches.filter(
-    (match) => match.pathname.slice(-1) !== '/' && match.pathname !== '/alerts'
+    (match) =>
+      match.pathname.slice(-1) !== '/' &&
+      match.pathname !== '/equipment-details'
   );
 
   const getLastPath = (pathname: string) => {
@@ -18,8 +20,7 @@ export const BreadcrumbNav = () => {
     const lastPath = pathname.substring(index + 1);
 
     if (lastPath.length === 36) {
-      if (params.alertId) return `Alert ${lastPath} Details`;
-      if (params.contactId) return `Contact ${lastPath} Details`;
+      if (params.id) return ` ${lastPath}`;
     }
     return capitalize(lastPath);
   };

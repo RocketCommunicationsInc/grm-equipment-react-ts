@@ -39,21 +39,22 @@ const router = createBrowserRouter(
             </>
           }
         >
-          <Route index element={<Navigate to={'/'} />} />
           <Route
-          //path=':id'
-          >
-            <Route
-              path='schedule-job'
-              element={<ScheduleJobPage />}
-              errorElement={<NoDataFound dataType='alert' />}
-            />
-            <Route
-              path='job-details'
-              element={<JobDetailsPage />}
-              errorElement={<NoDataFound dataType='alert' />}
-            />
-          </Route>
+            path='schedule-job'
+            element={
+              <>
+                <ScheduleJobPage />
+              </>
+            }
+            errorElement={<NoDataFound dataType='alert' />}
+          />
+          <Route
+            path='job-details'
+            element={<JobDetailsPage />}
+            errorElement={<NoDataFound dataType='alert' />}
+          />
+          <Route index element={<Navigate to={'/'} />} />
+          <Route path=':id'></Route>
         </Route>
       </Route>
     </>
