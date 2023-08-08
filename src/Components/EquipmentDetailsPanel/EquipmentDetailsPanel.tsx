@@ -5,13 +5,9 @@ import {
   RuxContainer,
 } from '@astrouxds/react';
 import { EventLog } from '../../common/EventLog/EventLog';
-import { Equipment } from '../../Types/Equipment';
+import { useAppContext } from '../../providers/AppProvider';
 import { capitalize } from '../../utils';
 import './EquipmentDetailsPanel.css';
-
-type PropTypes = {
-  activeEquipment?: Equipment | null;
-};
 
 const firstButton = [{ label: 'Online', selected: true }, { label: 'Offline' }];
 const secondButton = [
@@ -19,12 +15,14 @@ const secondButton = [
   { label: 'Deconsidered' },
 ];
 
-const EquipmentDetailsPanel = ({ activeEquipment }: PropTypes) => {
+const EquipmentDetailsPanel = () => {
+  const { state }: any = useAppContext();
+
   return (
     <RuxContainer className="equipment-details_details">
       <span>
-        <RuxStatus status={activeEquipment?.status} slot='prefix' />{' '}
-        {activeEquipment?.equipmentString}
+        <RuxStatus status={state.currentEquipment.status} slot='prefix' />{' '}
+        {state.currentEquipment.equipmentString}
       </span>
       <div className='equipment-alerts'>
         <div>
@@ -40,7 +38,7 @@ const EquipmentDetailsPanel = ({ activeEquipment }: PropTypes) => {
             <RuxInput label='Type' value={'Iron'} readonly size='small' />
             <RuxInput
               label='Category'
-              value={activeEquipment?.category}
+              value={state.currentEquipment.category}
               readonly
               size='small'
             />
@@ -54,7 +52,7 @@ const EquipmentDetailsPanel = ({ activeEquipment }: PropTypes) => {
             aria-readonly='true'
             role='textbox'
           >
-            <p>{activeEquipment?.description}</p>
+            <p>{state.currentEquipment.description}</p>
           </div>
         </div>
 

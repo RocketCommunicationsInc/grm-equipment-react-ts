@@ -4,13 +4,9 @@ import ContactsTable from '../ContactsList/ContactsTable';
 import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPanel';
 import Alerts from '../AlertsPanel/Alerts';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
-import { Equipment } from '../../Types/Equipment';
 import { RuxContainer } from '@astrouxds/react';
 
-type PropTypes = {
-  activeEquipment?: Equipment | null;
-}
-const EquipmentDetailsPage = ({ activeEquipment }: PropTypes) => {
+const EquipmentDetailsPage = () => {
   const [searchValue, setSearchValue] = useState<string>('');
 
   return (
@@ -19,7 +15,7 @@ const EquipmentDetailsPage = ({ activeEquipment }: PropTypes) => {
       <header slot='header'>Equipment Details</header>
       {/* <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /> */}
       <div className="equipment-details_wrapper">
-      <EquipmentDetailsPanel activeEquipment={activeEquipment} />
+      <EquipmentDetailsPanel />
       <Alerts />
       <ContactsTable
         searchValue={searchValue}

@@ -13,19 +13,19 @@ import './DashboardPage.css';
 import { useState } from 'react';
 import { RuxTabsCustomEvent } from '@astrouxds/astro-web-components';
 import EquipmentDetailsPage from '../EquipmentDetailsPage/EquipmentDetailsPage';
-import { initialState, useAppContext } from '../../providers/AppProvider';
+import { useAppContext } from '../../providers/AppProvider';
 
 const Dashboard = () => {
-  const { state }: any = useAppContext();
+  const { state, dispatch }: any = useAppContext();
   const [selectedEquipment, setSelectedEquipment] = useState<Equipment[]>([]);
-  const [activeEquipment, setActiveEquipment] = useState<Equipment | null>(
-    initialState.currentEquipment
-  );
   const navigate = useNavigate();
 
   const setEquipment = (e: RuxTabsCustomEvent<any>) => {
     for (const equipment of selectedEquipment) {
-      if (e.detail.id === equipment.id) setActiveEquipment(equipment);
+      if (e.detail.id === equipment.id) {
+        dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+        console.log(state.currentEquipment);
+      }
     }
   };
 
@@ -34,8 +34,6 @@ const Dashboard = () => {
   };
 
   const handleClearClick = (equipment: Equipment) => {
-    console.log(state.currentEquipment);
-    console.log(equipment);
     setSelectedEquipment((currentState) =>
       currentState.filter(
         (equipmentItem: Equipment) => equipmentItem.id !== equipment.id
@@ -72,9 +70,9 @@ const Dashboard = () => {
           <RuxTabPanel aria-labelledby='inoperable-equipment'>
             <InoperableEquipment selectEquipment={selectEquipment} />
           </RuxTabPanel>
-          {selectedEquipment.map((equipment) => (
+          {state.currentEquipment && selectedEquipment.map((equipment) => (
             <RuxTabPanel key={equipment.id} aria-labelledby={equipment.id}>
-              <EquipmentDetailsPage activeEquipment={activeEquipment} />
+              <EquipmentDetailsPage />
             </RuxTabPanel>
           ))}
         </RuxTabPanels>
