@@ -1,10 +1,11 @@
 import {
   RuxSegmentedButton,
-  RuxContainer,
   RuxInput,
   RuxStatus,
+  RuxContainer,
 } from '@astrouxds/react';
 import { EventLog } from '../../common/EventLog/EventLog';
+import { useAppContext } from '../../providers/AppProvider';
 import { capitalize } from '../../utils';
 import './EquipmentDetailsPanel.css';
 
@@ -15,11 +16,13 @@ const secondButton = [
 ];
 
 const EquipmentDetailsPanel = () => {
+  const { state }: any = useAppContext();
+
   return (
-    <RuxContainer className='equipment-details'>
-      <header slot='header'>Equipment Details</header>
+    <RuxContainer className="equipment-details_details">
       <span>
-        <RuxStatus status='caution' slot='prefix' /> Black FEP 6566
+        <RuxStatus status={state.currentEquipment.status} slot='prefix' />{' '}
+        {state.currentEquipment.equipmentString}
       </span>
       <div className='equipment-alerts'>
         <div>
@@ -33,7 +36,12 @@ const EquipmentDetailsPanel = () => {
               size='small'
             />
             <RuxInput label='Type' value={'Iron'} readonly size='small' />
-            <RuxInput label='Category' value={'RF'} readonly size='small' />
+            <RuxInput
+              label='Category'
+              value={state.currentEquipment.category}
+              readonly
+              size='small'
+            />
           </section>
         </div>
         <div className='alert-description'>
@@ -44,11 +52,7 @@ const EquipmentDetailsPanel = () => {
             aria-readonly='true'
             role='textbox'
           >
-            <p>
-              Aenean ac sagittis odio. Pellentesque vehicula, justo et
-              sollicitudin bibendum, urna libero ornare augue, a bibendum nulla
-              ipsum eu ante…
-            </p>
+            <p>{state.currentEquipment.description}</p>
           </div>
         </div>
 

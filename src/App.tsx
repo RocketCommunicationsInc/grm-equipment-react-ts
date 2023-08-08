@@ -15,7 +15,7 @@ import ScheduleJobPage from './Components/MaintenancePanel/ScheduleJob/ScheduleJ
 import NoDataFound from './common/Error/NoDataFound';
 import JobDetailsPage from './Components/JobDetails/JobDetailsPage';
 import './App.css';
-import EquipmentDetailsPage from './Components/ContactsList/EquipmentDetailsPage';
+import EquipmentDetailsPage from './Components/EquipmentDetailsPage/EquipmentDetailsPage';
 // import ContactsTable from './Components/ContactsList/ContactsTable';
 // import { SetStateAction } from 'react';
 
