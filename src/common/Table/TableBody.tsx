@@ -14,10 +14,10 @@ const TableBody = ({ columnDefs, sortedData }: PropTypes) => {
 
   return (
     <RuxTableBody>
-      {sortedData.map((data) => {
+      {sortedData.map((data, index) => {
         return (
           <TableBodyRow
-            key={data.id}
+            key={`${data.id}${index}`}
             columnDefs={columnDefs}
             rowData={data}
             handleRowClick={() => navigate(`/contacts/${data.id}`)}
