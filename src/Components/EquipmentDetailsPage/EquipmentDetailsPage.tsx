@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import ContactsTable from './ContactsTable';
 import SearchBar from '../../common/SearchBar/SearchBar';
 import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPanel';
 import Alerts from '../AlertsPanel/Alerts';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
+import ContactsTable from '../ContactsList/ContactsTable';
 
-const ContactsTablePage = () => {
+const EquipmentDetailsPage = () => {
   const [searchValue, setSearchValue] = useState<string>('');
 
   return (
@@ -26,4 +26,4 @@ const ContactsTablePage = () => {
   );
 };
 
-export default ContactsTablePage;
+export default EquipmentDetailsPage;

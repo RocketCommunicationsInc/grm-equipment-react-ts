@@ -24,49 +24,66 @@ rux-container footer[slot='footer'] {
 
 .dashboard {
   height: calc(100vh - 6rem);
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);
   color: var(--color-text-primary);
   display: grid;
   gap: var(--spacing-3);
-  grid-template-columns: calc(20% - 10px) auto;
+  grid-template-columns: calc(20% - 6px) calc(80% - 6px);
   grid-template-areas:
-    "equipment-tree inoperable-equipment"
+    "equipment-tree equipment-panel"
 }
 
 .equip-details {
-  height: calc(100vh - 13rem);
+  /* height: calc(100vh - 13rem);
   overflow-y: auto;
-  padding: var(--spacing-3);
+  padding: var(--spacing-3); */
+  height: 100%;
+  /* padding: var(--spacing-3); */
   background-color: var(--color-background-base-default);
   /* background-color: var(--color-background-surface-default); */
   color: var(--color-text-primary);
   display: grid;
-  grid-template-columns: 35% auto;
-  grid-template-rows: 20%, 35%, auto;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 1fr;
   grid-template-areas:
-    "equipment-details equipment-details"
-    "alerts contacts-table"
-    "maintenance-panel maintenance-panel"
+    "equipment-details"
+    "maintenance-panel"
 }
 
-rux-container.equipment-details {
+.equipment-details {
   grid-area: equipment-details;
+  padding-block-start: var(--spacing-3);
+}
+
+.equipment-details_wrapper {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  grid-template-rows: 40% 60%r;
+  grid-template-areas:
+    "details details"
+    "alerts contacts-table"
 }
 
 rux-container.maintenance-panel {
   grid-area: maintenance-panel;
 }
 
+rux-container.equipment-details_details {
+  grid-area: details;
+}
+
 rux-container.contacts-table {
   grid-area: contacts-table;
-  height: 35rem;
+  max-height: 35rem;
+  overflow: hidden;
 }
 
 rux-container.alerts {
   grid-area: alerts;
-  height: 35rem;
+  max-height: 35rem;
+  overflow: hidden;
 }
 
 
@@ -74,8 +91,8 @@ rux-container.equipment-tree {
   grid-area: equipment-tree;
 }
 
-rux-container.inoperable-equipment {
-  grid-area: inoperable-equipment;
+.dashboard_equipment-wrapper {
+  grid-area: equipment-panel;
 }
 
 /* GLOBAL PAGE STYLES */
