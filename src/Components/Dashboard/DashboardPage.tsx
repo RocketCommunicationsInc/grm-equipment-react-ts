@@ -34,8 +34,8 @@ const Dashboard = () => {
   };
 
   const handleClearClick = (equipment: Equipment) => {
-    setSelectedEquipment((currentState) =>
-      currentState.filter(
+    setSelectedEquipment((prevState) =>
+      prevState.filter(
         (equipmentItem: Equipment) => equipmentItem.id !== equipment.id
       )
     );

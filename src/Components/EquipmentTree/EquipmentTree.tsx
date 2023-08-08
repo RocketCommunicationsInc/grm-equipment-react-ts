@@ -13,20 +13,28 @@ import './EquipmentTree.css';
 type PropTypes = {
   selectedEquipment: Equipment[];
   setSelectedEquipment: Dispatch<SetStateAction<Equipment[]>>;
-}
+};
 
-const EquipmentTree = ({ selectedEquipment, setSelectedEquipment }: PropTypes) => {
+const EquipmentTree = ({
+  selectedEquipment,
+  setSelectedEquipment,
+}: PropTypes) => {
   const { state, dispatch }: any = useAppContext();
 
-  const handleSelectedEquipment = (
-    equipment: Equipment
-  ) => {
+  const handleSelectedEquipment = (equipment: Equipment) => {
+    // always set the selected equipment to the current equipment in app state.
     dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
-    //? I'm not sure why the first one doesn't work. In theory it should
-    if (selectedEquipment.includes(equipment)) return;
-    for (const item of selectedEquipment) {
-      if (item.equipmentString === equipment.equipmentString) return;
-    }
+
+    // check if equipment already has an existing tab (if it is in selectedEquipment state)
+    const equipmentFound = selectedEquipment.some(equipmentItem => {
+      if (equipmentItem.id === equipment.id) return true;
+      return false;
+    });
+
+    //if it already has a tab, don't add it
+    if (equipmentFound) return
+
+    // if it doesn't have a tab, add to selectedEquipment state, which will then re-render component and create new tab.
     setSelectedEquipment([...selectedEquipment, { ...equipment }]);
   };
 
