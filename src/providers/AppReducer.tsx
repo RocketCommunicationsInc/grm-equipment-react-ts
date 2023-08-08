@@ -1,5 +1,3 @@
-import { Job } from '../Types/Equipment';
-
 export const appReducer = (state: any, { type, payload }: any) => {
   switch (type) {
     case 'SCHEDULE_NEW_JOB': {
@@ -28,19 +26,16 @@ export const appReducer = (state: any, { type, payload }: any) => {
     }
 
     case 'CURRENT_EQUIPMENT': {
-      const selectedEquipment = () => {
-        for (const item of state.equipment) {
-          console.log(item, 'jobs');
-          if (item.scheduledJobs.some((job: Job) => job.jobId === payload)) {
-            console.log(item, 'item');
-            return item;
-          }
+      let selectedEquipment
+      state.equipment.map((equipment: { id: any }) => {
+        if (equipment.id === payload.id) {
+          return selectedEquipment = equipment;
         }
-        return null;
-      };
+        return null
+      });
       return {
         ...state,
-        currentEquipment: { ...selectedEquipment, ...payload } || null,
+        currentEquipment: selectedEquipment
       };
     }
 

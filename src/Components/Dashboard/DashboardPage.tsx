@@ -33,7 +33,9 @@ const Dashboard = () => {
     navigate('/equipment-details');
   };
 
-  const handleClearClick = (equipmentId: string) => {
+  const handleClearClick = (equipment: Equipment) => {
+    console.log(state.currentEquipment)
+    console.log(equipment)
     // for (const item of selectedEquipment) {
     //   if (item.id === equipmentId) {
     //     const itemIndex = selectedEquipment.indexOf(item)
@@ -41,14 +43,13 @@ const Dashboard = () => {
     //     setSelectedEquipment(selectedEquipment.splice(itemIndex, 1))
     //   }
     // }
-    console.log('hi');
   };
 
   return (
     <main className='dashboard'>
       <EquipmentTree
-      // selectedEquipment={selectedEquipment}
-      // setSelectedEquipment={setSelectedEquipment}
+        selectedEquipment={selectedEquipment}
+        setSelectedEquipment={setSelectedEquipment}
       />
       <div className='dashboard_equipment-wrapper'>
         <RuxTabs
@@ -67,7 +68,7 @@ const Dashboard = () => {
                 iconOnly
                 borderless
                 icon='clear'
-                onClick={() => handleClearClick(equipment.id)}
+                onClick={() => handleClearClick(equipment)}
               />
             </RuxTab>
           ))}
@@ -79,7 +80,7 @@ const Dashboard = () => {
           {selectedEquipment.map((equipment) => (
             <RuxTabPanel
               key={equipment.id}
-              aria-labelledby={state.currentEquipment.equipment}
+              aria-labelledby={equipment.id}
             >
               <EquipmentDetailsPage activeEquipment={activeEquipment} />
             </RuxTabPanel>
