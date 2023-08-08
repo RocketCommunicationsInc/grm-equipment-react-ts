@@ -26,16 +26,20 @@ const EquipmentTree = ({
     dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
 
     // check if equipment already has an existing tab (if it is in selectedEquipment state)
-    const equipmentFound = selectedEquipment.some(equipmentItem => {
-      if (equipmentItem.id === equipment.id) return true;
+    const equipmentFound = selectedEquipment.some((equipmentItem) => {
+      if (equipmentItem.id === equipment.id) {
+        return true;
+      }
       return false;
     });
 
-    //if it already has a tab, don't add it
-    if (equipmentFound) return
-
-    // if it doesn't have a tab, add to selectedEquipment state, which will then re-render component and create new tab.
-    setSelectedEquipment([...selectedEquipment, { ...equipment }]);
+    //if it has a tab, don't add it, return
+    if (equipmentFound) {
+      return;
+    } else {
+      // if it doesn't have a tab, add to selectedEquipment state array, which will then re-render component and create new tab.
+      setSelectedEquipment([...selectedEquipment, { ...equipment }]);
+    }
   };
 
   return (
@@ -48,7 +52,7 @@ const EquipmentTree = ({
               <RuxTreeNode slot='node' key={`${category}${config}`}>
                 Component {config}
                 {Object.values(state.equipmentByCategory[category][config]).map(
-                  (equipment: any, index: any) => (
+                  (equipment: any, index: number) => (
                     <RuxTreeNode
                       key={`${category}${config}${index}`}
                       slot='node'
@@ -57,7 +61,7 @@ const EquipmentTree = ({
                       }
                     >
                       <RuxStatus slot='prefix' status={equipment.status} />
-                      A-{equipment.equipmentString}
+                      {equipment.config}-{equipment.equipmentString}
                     </RuxTreeNode>
                   )
                 )}

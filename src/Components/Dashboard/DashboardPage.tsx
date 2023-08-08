@@ -24,7 +24,6 @@ const Dashboard = () => {
     for (const equipment of selectedEquipment) {
       if (e.detail.id === equipment.id) {
         dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
-        console.log(state.currentEquipment);
       }
     }
   };
@@ -53,9 +52,9 @@ const Dashboard = () => {
           id='equipment-tabs'
           onRuxselected={(e) => setEquipment(e)}
         >
-          <RuxTab id='inoperable-equipment'>Inoperable</RuxTab>
-          {selectedEquipment.map((equipment, index) => (
-            <RuxTab key={index} id={equipment.id}>
+          <RuxTab id='inoperable-equipment' selected={state.currentEquipment === null ? true : false}>Inoperable</RuxTab>
+          {selectedEquipment.map((equipment) => (
+            <RuxTab key={equipment.id} id={equipment.id} selected={equipment.id === state.currentEquipment.id ? true : false}>
               {equipment.config}-{equipment.equipmentString}
               <RuxButton
                 iconOnly
@@ -70,11 +69,12 @@ const Dashboard = () => {
           <RuxTabPanel aria-labelledby='inoperable-equipment'>
             <InoperableEquipment selectEquipment={selectEquipment} />
           </RuxTabPanel>
-          {state.currentEquipment && selectedEquipment.map((equipment) => (
-            <RuxTabPanel key={equipment.id} aria-labelledby={equipment.id}>
-              <EquipmentDetailsPage />
-            </RuxTabPanel>
-          ))}
+          {state.currentEquipment &&
+            selectedEquipment.map((equipment) => (
+              <RuxTabPanel key={equipment.id} aria-labelledby={equipment.id}>
+                <EquipmentDetailsPage />
+              </RuxTabPanel>
+            ))}
         </RuxTabPanels>
       </div>
     </main>
