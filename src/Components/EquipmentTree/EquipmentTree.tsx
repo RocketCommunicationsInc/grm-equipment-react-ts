@@ -20,6 +20,7 @@ const EquipmentTree = ({
   setSelectedEquipment,
 }: PropTypes) => {
   const { state, dispatch }: any = useAppContext();
+  const configArray: string[] = ['A', 'B', 'C', 'D', 'E']
 
   const handleSelectedEquipment = (equipment: Equipment) => {
     // always set the selected equipment to the current equipment in app state.
@@ -48,7 +49,7 @@ const EquipmentTree = ({
         {Object.keys(state.equipmentByCategory).map((category) => (
           <RuxTreeNode key={category}>
             {category === 'rf' ? category.toUpperCase() : capitalize(category)}
-            {Object.keys(state.equipmentByCategory[category]).map((config) => (
+            {configArray.map((config) => (
               <RuxTreeNode slot='node' key={`${category}${config}`}>
                 Component {config}
                 {Object.values(state.equipmentByCategory[category][config]).map(
