@@ -46,6 +46,7 @@ const EquipmentDetailsPage = () => {
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
     }
   };
+
   return (
     <main className='dashboard'>
       <EquipmentTree
