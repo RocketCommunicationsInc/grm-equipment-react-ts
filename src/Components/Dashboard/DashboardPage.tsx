@@ -34,15 +34,13 @@ const Dashboard = () => {
   };
 
   const handleClearClick = (equipment: Equipment) => {
-    console.log(state.currentEquipment)
-    console.log(equipment)
-    // for (const item of selectedEquipment) {
-    //   if (item.id === equipmentId) {
-    //     const itemIndex = selectedEquipment.indexOf(item)
-    //     console.log(itemIndex)
-    //     setSelectedEquipment(selectedEquipment.splice(itemIndex, 1))
-    //   }
-    // }
+    console.log(state.currentEquipment);
+    console.log(equipment);
+    setSelectedEquipment((currentState) =>
+      currentState.filter(
+        (equipmentItem: Equipment) => equipmentItem.id !== equipment.id
+      )
+    );
   };
 
   return (
@@ -57,10 +55,7 @@ const Dashboard = () => {
           id='equipment-tabs'
           onRuxselected={(e) => setEquipment(e)}
         >
-          <RuxTab id='inoperable-equipment'>
-            Inoperable
-            <RuxButton iconOnly borderless icon='clear' />
-          </RuxTab>
+          <RuxTab id='inoperable-equipment'>Inoperable</RuxTab>
           {selectedEquipment.map((equipment, index) => (
             <RuxTab key={index} id={equipment.id}>
               {equipment.config}-{equipment.equipmentString}
@@ -78,10 +73,7 @@ const Dashboard = () => {
             <InoperableEquipment selectEquipment={selectEquipment} />
           </RuxTabPanel>
           {selectedEquipment.map((equipment) => (
-            <RuxTabPanel
-              key={equipment.id}
-              aria-labelledby={equipment.id}
-            >
+            <RuxTabPanel key={equipment.id} aria-labelledby={equipment.id}>
               <EquipmentDetailsPage activeEquipment={activeEquipment} />
             </RuxTabPanel>
           ))}
