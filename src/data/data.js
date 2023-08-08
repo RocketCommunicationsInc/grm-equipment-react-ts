@@ -53,15 +53,6 @@ export const scehduledJobs = equipment.flatMap(
   (equipment) => equipment.scehduledJobs
 );
 
-// export const equipmentByCategory = {};
-// equipment.forEach((item) => {
-//   const { category, config, scehduledJobs } = item;
-//   if (!equipmentByCategory[category]) {
-//     equipmentByCategory[category] = { A: {}, B: {}, C: {}, D: {}, E: {} };
-//   }
-//   equipmentByCategory[category][config] = scehduledJobs;
-// });
-
 export const equipmentByCategory = [];
 equipment.forEach((item) => {
   const category = item.category;
