@@ -4,6 +4,7 @@ import { useAppContext } from '../../providers/AppProvider';
 import JobIDCard from './JobIDCard/JobIDCard';
 import Table from '../../common/Table/Table';
 import './MaintenancePanel.css';
+import JobsTable from './JobsTable/JobsTable';
 
 const MaintenancePanel = () => {
   const navigate = useNavigate();
@@ -51,7 +52,8 @@ const MaintenancePanel = () => {
       <RuxContainer className='maintenance-history-panel'>
         <div className='maintenance-wrapper'>
           <h2>Maintenance History</h2>
-          <Table columnDefs={columnDefs} filteredData={jobs} />
+          <JobsTable jobs={jobs} />
+          {/* <Table columnDefs={columnDefs} filteredData={jobs} /> */}
         </div>
       </RuxContainer>
     </RuxContainer>
