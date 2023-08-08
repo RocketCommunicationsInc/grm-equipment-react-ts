@@ -4,8 +4,13 @@ import { useAppContext } from '../../providers/AppProvider';
 import JobIDCard from './JobIDCard/JobIDCard';
 import Table from '../../common/Table/Table';
 import './MaintenancePanel.css';
+import { setHhMmSs } from '../../utils';
 
-const MaintenancePanel = () => {
+type PropTypes = {
+  searchValue: string;
+};
+
+const MaintenancePanel = ({ searchValue }: PropTypes) => {
   const navigate = useNavigate();
   const { state, dispatch } = useAppContext() as any;
 
@@ -24,7 +29,17 @@ const MaintenancePanel = () => {
     { label: 'Description', property: 'description' },
   ];
 
-  const jobs = state.scheduledJobs.map((job: any) => job);
+  const filteredJobs = state.scheduledJobs.filter((job: any) =>
+    job === 'startTime' || job === 'stopTime' || job === 'createdOn'
+      ? Object.values(setHhMmSs(job))
+          .toString()
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      : Object.values(job)
+          .toString()
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+  );
 
   return (
     <RuxContainer className='maintenance-panel'>
@@ -51,7 +66,7 @@ const MaintenancePanel = () => {
       <RuxContainer className='maintenance-history-panel'>
         <div className='maintenance-wrapper'>
           <h2>Maintenance History</h2>
-          <Table columnDefs={columnDefs} filteredData={jobs} />
+          <Table columnDefs={columnDefs} filteredData={filteredJobs} />
         </div>
       </RuxContainer>
     </RuxContainer>

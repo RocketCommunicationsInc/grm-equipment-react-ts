@@ -11,20 +11,19 @@ const EquipmentDetailsPage = () => {
 
   return (
     <main className='equip-details'>
-       <RuxContainer className='equipment-details'>
-      <header slot='header'>Equipment Details</header>
-      {/* <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /> */}
-      <div className="equipment-details_wrapper">
-      <EquipmentDetailsPanel />
-      <Alerts />
-      <ContactsTable
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      </div>
-      
+      <RuxContainer className='equipment-details'>
+        <header slot='header'>Equipment Details</header>
+        {/* <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /> */}
+        <div className='equipment-details_wrapper'>
+          <EquipmentDetailsPanel />
+          <Alerts />
+          <ContactsTable
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </div>
       </RuxContainer>
-      <MaintenancePanel />
+      {/* <MaintenancePanel /> */}
     </main>
   );
 };

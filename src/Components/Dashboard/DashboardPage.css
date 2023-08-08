@@ -1,3 +1,9 @@
 .dashboard_equipment-wrapper rux-tabs {
     height: auto;
+    padding-bottom: var(--spacing-3);
+}
+
+.tabs-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
