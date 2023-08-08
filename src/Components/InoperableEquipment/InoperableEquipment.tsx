@@ -14,9 +14,8 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
   return (
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>
-      {Object.keys(state.equipmentByCategory).map((category) => (
-        <>
-          <RuxContainer className='section'>
+      {Object.keys(state.equipmentByCategory).map((category, index) => (
+          <RuxContainer className='section' key={`${category}${index}`}>
             <span>
               {category === 'rf'
                 ? category.toUpperCase()
@@ -24,14 +23,14 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
             </span>
 
             {/* <div className='no-equipment'>No Inoperable Equipment</div> */}
-            {Object.keys(state.equipmentByCategory[category]).map((config) => (
+            {Object.keys(state.equipmentByCategory[category]).map((config, index) => (
               <EquipmentIcons
+                key={`${config}${index}`}
                 equipmentString={config}
                 onClick={selectEquipment}
               />
             ))}
           </RuxContainer>
-        </>
       ))}
     </RuxContainer>
   );

@@ -26,16 +26,22 @@ export const appReducer = (state: any, { type, payload }: any) => {
     }
 
     case 'CURRENT_EQUIPMENT': {
-      let selectedEquipment
-      state.equipment.map((equipment: { id: any }) => {
-        if (equipment.id === payload.id) {
-          return selectedEquipment = equipment;
-        }
-        return null
-      });
+      let selectedEquipment;
+
+      if (payload === null) {
+        selectedEquipment = null;
+      } else {
+        state.equipment.map((equipment: { id: any }) => {
+          if (equipment.id === payload.id) {
+            return (selectedEquipment = equipment);
+          }
+          return null;
+        });
+      }
+
       return {
         ...state,
-        currentEquipment: selectedEquipment
+        currentEquipment: selectedEquipment,
       };
     }
 

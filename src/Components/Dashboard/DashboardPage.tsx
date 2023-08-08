@@ -38,6 +38,8 @@ const Dashboard = () => {
         (equipmentItem: Equipment) => equipmentItem.id !== equipment.id
       )
     );
+
+    if (state.currentEquipment.id === equipment.id) {dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });}
   };
 
   return (
@@ -52,9 +54,21 @@ const Dashboard = () => {
           id='equipment-tabs'
           onRuxselected={(e) => setEquipment(e)}
         >
-          <RuxTab id='inoperable-equipment' selected={state.currentEquipment === null ? true : false}>Inoperable</RuxTab>
+          <RuxTab
+            id='inoperable-equipment'
+            key='inoperable-equipment'
+            selected={state.currentEquipment === null ? true : false}
+          >
+            Inoperable
+          </RuxTab>
           {selectedEquipment.map((equipment) => (
-            <RuxTab key={equipment.id} id={equipment.id} selected={equipment.id === state.currentEquipment.id ? true : false}>
+            <RuxTab
+              key={equipment.id}
+              id={equipment.id}
+              selected={
+                equipment.id === state.currentEquipment.id ? true : false
+              }
+            >
               {equipment.config}-{equipment.equipmentString}
               <RuxButton
                 iconOnly
