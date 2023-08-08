@@ -50,17 +50,8 @@ export function generateEvents() {
 export const equipmentArr = equipment.map((equipment) => equipment);
 
 export const scehduledJobs = equipment.flatMap(
-  (equipment) => equipment.scehduledJobs
+  (equipment) => equipment.scheduledJobs
 );
-
-// export const equipmentByCategory = {};
-// equipment.forEach((item) => {
-//   const { category, config, scehduledJobs } = item;
-//   if (!equipmentByCategory[category]) {
-//     equipmentByCategory[category] = { A: {}, B: {}, C: {}, D: {}, E: {} };
-//   }
-//   equipmentByCategory[category][config] = scehduledJobs;
-// });
 
 export const equipmentByCategory = [];
 equipment.forEach((item) => {

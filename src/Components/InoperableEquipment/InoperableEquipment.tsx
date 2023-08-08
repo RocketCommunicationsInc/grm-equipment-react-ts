@@ -15,52 +15,25 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>
       {Object.keys(state.equipmentByCategory).map((category, index) => (
-          <RuxContainer className='section' key={`${category}${index}`}>
-            <span>
-              {category === 'rf'
-                ? category.toUpperCase()
-                : capitalize(category)}
-            </span>
+        <RuxContainer className='section' key={`${category}${index}`}>
+          <span>
+            {category === 'rf' ? category.toUpperCase() : capitalize(category)}
+          </span>
 
-            {/* <div className='no-equipment'>No Inoperable Equipment</div> */}
-            {Object.keys(state.equipmentByCategory[category]).map((config, index) => (
+          {/* <div className='no-equipment'>No Inoperable Equipment</div> */}
+          {Object.keys(state.equipmentByCategory[category]).map(
+            (config, index) => (
               <EquipmentIcons
                 key={`${config}${index}`}
                 equipmentString={config}
                 onClick={selectEquipment}
               />
-            ))}
-          </RuxContainer>
+            )
+          )}
+        </RuxContainer>
       ))}
     </RuxContainer>
   );
 };
 
 export default InoperableEquipment;
-
-//         {/* {Object.values(state.equipmentByCategory).map((job: any) =>
-//       job.map((val: any) => ( */}
-//       <RuxContainer className='section'>
-//       <span>Digital </span>
-//       <EquipmentIcons
-//         equipmentString={'SFEP19'}
-//         onClick={selectEquipment}
-//       />
-//     </RuxContainer>
-//     {/* ))
-// )} */}
-//     <RuxContainer className='section'>
-//       <span>Facilities (#)</span>
-//       <EquipmentIcons
-//         equipmentString={'ECEU15'}
-//         onClick={selectEquipment}
-//       />
-//     </RuxContainer>
-//     <RuxContainer className='section'>
-//       <span>RF (#)</span>
-//       <EquipmentIcons
-//         equipmentString={'RVC14'}
-//         onClick={selectEquipment}
-//       />
-//     </RuxContainer>
-//   </>

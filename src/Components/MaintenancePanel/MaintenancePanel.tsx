@@ -3,11 +3,15 @@ import { RuxButton, RuxContainer } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
 import JobIDCard from './JobIDCard/JobIDCard';
 import Table from '../../common/Table/Table';
+import { setHhMmSs } from '../../utils';
+import SearchBar from '../../common/SearchBar/SearchBar';
+import { useState } from 'react';
 import './MaintenancePanel.css';
 
 const MaintenancePanel = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useAppContext() as any;
+  const [searchValue, setSearchValue] = useState('');
 
   const handleJobDetailsClick = (job: any) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
@@ -24,11 +28,27 @@ const MaintenancePanel = () => {
     { label: 'Description', property: 'description' },
   ];
 
-  const jobs = state.scheduledJobs.map((job: any) => job);
-
+  const filteredJobs = state.scheduledJobs.filter((job: any) =>
+    job === 'startTime' || job === 'stopTime' || job === 'createdOn'
+      ? Object.values(setHhMmSs(job))
+          .toString()
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      : Object.values(job)
+          .toString()
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+  );
   return (
     <RuxContainer className='maintenance-panel'>
-      <header slot='header'>Maintenance</header>
+      <header slot='header'>
+        Maintenance
+        <SearchBar
+          placeholder='Search jobs...'
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
+      </header>
       <RuxContainer className='jobs-section'>
         <h2>Jobs</h2>
         <div className='job-card-wrapper'>
@@ -51,7 +71,7 @@ const MaintenancePanel = () => {
       <RuxContainer className='maintenance-history-panel'>
         <div className='maintenance-wrapper'>
           <h2>Maintenance History</h2>
-          <Table columnDefs={columnDefs} filteredData={jobs} />
+          <Table columnDefs={columnDefs} filteredData={filteredJobs} />
         </div>
       </RuxContainer>
     </RuxContainer>
