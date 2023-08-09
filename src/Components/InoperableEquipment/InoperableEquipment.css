@@ -8,9 +8,8 @@
 }
 
 .inoperable-equipment .section {
-  margin-bottom: var(--spacing-4);
   height: auto;
-  max-height: 11.5rem
+  max-height: 12.6rem
 }
 
 .no-equipment {
@@ -23,6 +22,7 @@
 }
 
 .section ul {
+  margin-bottom: var(--spacing-4);
   display: flex;
   flex-direction: row;
   cursor: pointer;
