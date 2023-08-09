@@ -108,7 +108,7 @@ const ScheduleJob = () => {
               placeholder='Enter Description'
               label='Description'
               value={newJob.jobDescription}
-              name='description'
+              name='jobDescription'
             />
 
             <li>2. Select Time</li>

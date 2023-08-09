@@ -32,7 +32,7 @@ const MaintenancePanel = () => {
                 .toLowerCase()
                 .includes(searchValue.toLowerCase())
         )
-    : state.scheduledJobs.map((job: any) => job);
+    : null;
 
   return (
     <RuxContainer className='maintenance-panel'>

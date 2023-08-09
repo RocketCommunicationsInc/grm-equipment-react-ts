@@ -18,7 +18,6 @@ export const appReducer = (state: any, { type, payload }: any) => {
       const updatedJobs = state.currentEquipment.scheduledJobs.map(
         (job: { jobId: any }) => {
           if (job.jobId === payload.jobId) {
-            console.log({ ...job, ...payload });
             return { ...job, ...payload };
           }
           return job;

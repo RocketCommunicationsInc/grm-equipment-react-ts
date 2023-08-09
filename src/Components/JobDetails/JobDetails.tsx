@@ -16,6 +16,7 @@ import { filterContacts } from '../../utils/filterContacts';
 import Stepper from './Stepper/Stepper';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../common/SearchBar/SearchBar';
+import { capitalize } from '../../utils';
 import './JobDetails.css';
 
 const JobDetails = () => {
@@ -25,7 +26,7 @@ const JobDetails = () => {
   const [job, setJob] = useState(state.currentJob);
   const [isModifying, setIsModifying] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-  console.log(state);
+
   const handleCancel = () => {
     if (isModifying) {
       setJob(job);
@@ -107,8 +108,8 @@ const JobDetails = () => {
                 onRuxinput={handleChange}
                 placeholder='Enter Description'
                 label='Description'
-                value={job.description}
-                name='description'
+                value={capitalize(job.jobDescription)}
+                name='jobDescription'
               />
               <RuxInput
                 onRuxinput={handleChange}
@@ -156,7 +157,7 @@ const JobDetails = () => {
               <RuxTextarea
                 disabled
                 label='Description'
-                value={job.description}
+                value={capitalize(job.jobDescription)}
               />
               <RuxInput
                 readonly

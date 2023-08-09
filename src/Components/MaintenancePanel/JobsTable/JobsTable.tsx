@@ -19,7 +19,10 @@ type Job = {
   startTime: string;
   stopTime: string;
   technician: string;
-  description: string;
+  jobDescription: string;
+  equipment: string;
+  equipmentStatus: string;
+  jobStatus: string;
 };
 
 const columnDefs: any[] = [
