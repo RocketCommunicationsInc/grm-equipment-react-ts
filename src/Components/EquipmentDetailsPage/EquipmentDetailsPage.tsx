@@ -8,7 +8,7 @@ import { RuxTabsCustomEvent } from '@astrouxds/astro-web-components';
 import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPanel';
 import Alerts from '../AlertsPanel/Alerts';
 import ContactsTable from '../ContactsList/ContactsTable';
-import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
+// import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 
 type PropType = {
   selectedEquipment: Equipment[];
@@ -111,12 +111,10 @@ const EquipmentDetailsPage = ({
 
               <Alerts />
               <ContactsTable />
-               {/* <MaintenancePanel /> */}
+              {/* <MaintenancePanel /> */}
             </div>
           </RuxContainer>
         </div>
-
-       
       </div>
     </div>
   );
