@@ -31,5 +31,5 @@
   flex-wrap: wrap;
   margin-top: var(--spacing-3);
   justify-content: flex-start;
-  gap: var(--spacing-4);
+  gap: var(--spacing-3);
 }
