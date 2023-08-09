@@ -18,18 +18,21 @@ import { useAppContext } from '../../providers/AppProvider';
 const Dashboard = () => {
   const { state, dispatch }: any = useAppContext();
   const [selectedEquipment, setSelectedEquipment] = useState<Equipment[]>([]);
-  const navigate = useNavigate();
+  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(true);
 
-  const setEquipment = (e: RuxTabsCustomEvent<any>) => {
-    for (const equipment of selectedEquipment) {
-      if (e.detail.id === equipment.id) {
-        dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+  const setCurrentEquipment = (e: RuxTabsCustomEvent<any>) => {
+    if (e.detail.id === 'inoperable-equipment') {
+      setInoperablePanelShow(true)
+      dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
+    } else {
+      for (const equipment of selectedEquipment) {
+        if (e.detail.id === equipment.id) {
+          dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+        }
       }
+      setInoperablePanelShow(false)
     }
-  };
-
-  const selectEquipment = () => {
-    navigate('/equipment-details');
+    
   };
 
   const handleClearClick = (equipment: Equipment) => {
@@ -38,9 +41,11 @@ const Dashboard = () => {
         (equipmentItem: Equipment) => equipmentItem.id !== equipment.id
       )
     );
-    
+
     // if the tab being cleared is the currently selected one, fallback to inoperable equipment
-    if (state.currentEquipment.id === equipment.id) {dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });}
+    if (state.currentEquipment && state.currentEquipment.id === equipment.id) {
+      dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
+    }
   };
 
   return (
@@ -53,7 +58,7 @@ const Dashboard = () => {
         <RuxTabs
           small={true}
           id='equipment-tabs'
-          onRuxselected={(e) => setEquipment(e)}
+          onRuxselected={(e) => setCurrentEquipment(e)}
         >
           <RuxTab
             id='inoperable-equipment'
@@ -67,7 +72,7 @@ const Dashboard = () => {
               key={equipment.id}
               id={equipment.id}
               selected={
-                equipment.id === state.currentEquipment.id ? true : false
+                (state.currentEquipment && equipment.id === state.currentEquipment.id) ? true : false
               }
             >
               {equipment.config}-{equipment.equipmentString}
@@ -80,17 +85,12 @@ const Dashboard = () => {
             </RuxTab>
           ))}
         </RuxTabs>
-        <RuxTabPanels aria-labelledby='equipment-tabs'>
-          <RuxTabPanel aria-labelledby='inoperable-equipment'>
-            <InoperableEquipment selectEquipment={selectEquipment} />
-          </RuxTabPanel>
-          {state.currentEquipment &&
-            selectedEquipment.map((equipment) => (
-              <RuxTabPanel key={equipment.id} aria-labelledby={equipment.id}>
-                <EquipmentDetailsPage />
-              </RuxTabPanel>
-            ))}
-        </RuxTabPanels>
+        <EquipmentDetailsPage inoperablePanelShow={inoperablePanelShow} selectedEquipment={selectedEquipment} />
+        {/* {selectedEquipment.map((equipment) => (
+            <RuxTabPanel key={equipment.id} aria-labelledby={equipment.id}>
+              <EquipmentDetailsPage />
+            </RuxTabPanel>
+          ))} */}
       </div>
     </main>
   );

@@ -35,7 +35,7 @@ const router = createBrowserRouter(
           path='equipment-details'
           element={
             <>
-              <EquipmentDetailsPage />
+              {/* <EquipmentDetailsPage /> */}
             </>
           }
         >

@@ -177,3 +177,7 @@ rux-status::part(status) {
   padding-inline: var(--spacing-2);
   box-shadow: none;
 }
+
+.hidden {
+  display: none;
+}
