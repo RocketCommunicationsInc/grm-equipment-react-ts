@@ -4,12 +4,13 @@
 
 .inoperable-equipment span {
   font-weight: var(--font-weights-medium);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
 }
 
 .inoperable-equipment .section {
   margin-bottom: var(--spacing-4);
-  height: 8rem;
+  height: auto;
+  max-height: 12.5rem
 }
 
 .no-equipment {
@@ -30,5 +31,5 @@
   flex-wrap: wrap;
   margin-top: var(--spacing-3);
   justify-content: flex-start;
-  gap: var(--spacing-3);
+  gap: var(--spacing-4);
 }
