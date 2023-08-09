@@ -50,7 +50,7 @@ export function generateEvents() {
 export const equipmentArr = equipment.map((equipment) => equipment);
 
 export const scehduledJobs = equipment.flatMap(
-  (equipment) => equipment.scehduledJobs
+  (equipment) => equipment.scheduledJobs
 );
 
 export const equipmentByCategory = [];

@@ -114,3 +114,8 @@
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weights-bold);
 }
+
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+}

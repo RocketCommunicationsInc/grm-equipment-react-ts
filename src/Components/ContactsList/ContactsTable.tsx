@@ -6,11 +6,7 @@ import type { ColumnDef } from '../../common/Table/Table';
 import Table from '../../common/Table/Table';
 import { determineTimeString, setHhMmSs, capitalize } from '../../utils';
 import './ContactsTable.css';
-
-type PropTypes = {
-  searchValue: string;
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
-};
+import SearchBar from '../../common/SearchBar/SearchBar';
 
 const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
@@ -37,9 +33,10 @@ const columnDefs: ColumnDef[] = [
   },
 ];
 
-const ContactsTable = ({ searchValue = '', setSearchValue }: PropTypes) => {
+const ContactsTable = () => {
   const { dataArray: contacts } = useTTCGRMContacts();
   const [filterValue, setFilterValue] = useState('All');
+  const [searchValue, setSearchValue] = useState('');
 
   const handleClearFilter = () => {
     setSearchValue('');
@@ -103,15 +100,22 @@ const ContactsTable = ({ searchValue = '', setSearchValue }: PropTypes) => {
               Executing
             </li>
           </div>
-          <RuxSegmentedButton
-            selected={filterValue}
-            onRuxchange={(e) => setFilterValue(e.target.selected)}
-            data={[
-              { label: 'All' },
-              { label: 'Executing' },
-              { label: 'Failed' },
-            ]}
-          />
+          <div className='filter-wrapper'>
+            <SearchBar
+              placeholder='Search...'
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+            />
+            <RuxSegmentedButton
+              selected={filterValue}
+              onRuxchange={(e) => setFilterValue(e.target.selected)}
+              data={[
+                { label: 'All' },
+                { label: 'Executing' },
+                { label: 'Failed' },
+              ]}
+            />
+          </div>
         </div>
         <div className='filter-notification' hidden={searchValue === ''}>
           One or more filters selected.

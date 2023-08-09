@@ -27,8 +27,11 @@ export const BreadcrumbNav = () => {
   return (
     <div className='breadcrumb-search-wrapper'>
       <RuxBreadcrumb className='Breadcrumb-nav'>
-        <RuxBreadcrumbItem key={'Dashboard'} onClick={() => navigate('/')}>
-          Dashboard
+        <RuxBreadcrumbItem
+          key={'Equipment Manager'}
+          onClick={() => navigate('/')}
+        >
+          Equipment Manager
         </RuxBreadcrumbItem>
         {filteredMatches.map((match, index) => {
           return (

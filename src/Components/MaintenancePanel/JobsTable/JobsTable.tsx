@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   RuxTable,
   RuxTableHeader,
@@ -22,15 +22,15 @@ type Job = {
   description: string;
 };
 
-// const columnDefs: any[] = [
-//   { label: 'Job ID', property: 'jobId' },
-//   { label: 'Type', property: 'jobType' },
-//   { label: 'Created On', property: 'createdOn' },
-//   { label: 'Started On', property: 'startTime' },
-//   { label: 'Completed On', property: 'stopTime' },
-//   { label: 'Technician', property: 'technician' },
-//   { label: 'Description', property: 'description' },
-// ];
+const columnDefs: any[] = [
+  { label: 'Job ID', property: 'jobId' },
+  { label: 'Type', property: 'jobType' },
+  { label: 'Created On', property: 'createdOn' },
+  { label: 'Started On', property: 'startTime' },
+  { label: 'Completed On', property: 'stopTime' },
+  { label: 'Technician', property: 'technician' },
+  { label: 'Description', property: 'description' },
+];
 
 type PropTypes = {
   jobs: Job[];
@@ -42,18 +42,6 @@ const JobsTable = ({ jobs }: PropTypes) => {
   const [sortDirection, setSortDirection] = useState<'ASC' | 'DESC'>('ASC');
   const [sortProp, setSortProp] = useState<keyof Job>('jobId');
   const [sortedData, setSortedData] = useState<Job[]>([]);
-
-  const columnDefs = useMemo<any[]>(() => {
-    return [
-        { label: 'Job ID', property: 'jobId' },
-        { label: 'Type', property: 'jobType' },
-        { label: 'Created On', property: 'createdOn' },
-        { label: 'Started On', property: 'startTime' },
-        { label: 'Completed On', property: 'stopTime' },
-        { label: 'Technician', property: 'technician' },
-        { label: 'Description', property: 'description' },
-      ]
-  },[])
 
   const sortData = useCallback(
     (property: keyof Job, sortDirection: 'ASC' | 'DESC') => {
