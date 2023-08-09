@@ -43,3 +43,8 @@ rux-container.jobs-section {
 .jobs-section h2 {
   margin: var(--spacing-3);
 }
+
+.maintenance-panel header[slot='header'] {
+  display: flex;
+  justify-content: space-between;
+}

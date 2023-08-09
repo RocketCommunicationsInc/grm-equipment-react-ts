@@ -1,8 +1,11 @@
-import { RuxContainer } from '@astrouxds/react';
-import { useTTCGRMContacts } from '@astrouxds/mock-data';
+import { Contact } from '@astrouxds/mock-data';
 import { capitalize, determineTimeString } from '../../utils';
 import Table from '../../common/Table/Table';
 import type { ColumnDef } from '../../common/Table/Table';
+
+type PropTypes = {
+  filteredData: Contact[];
+};
 
 const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
@@ -29,14 +32,8 @@ const columnDefs: ColumnDef[] = [
   },
 ];
 
-const ConflictsTable = () => {
-  const { dataArray: contacts } = useTTCGRMContacts();
-
-  return (
-    <RuxContainer>
-      <Table columnDefs={columnDefs} filteredData={contacts} />
-    </RuxContainer>
-  );
+const ConflictsTable = ({ filteredData }: PropTypes) => {
+  return <Table columnDefs={columnDefs} filteredData={filteredData} />;
 };
 
 export default ConflictsTable;
