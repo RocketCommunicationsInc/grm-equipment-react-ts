@@ -9,7 +9,7 @@ import {
   RuxOption,
 } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { EventLog } from '../../common/EventLog/EventLog';
 import ConflictsTable from './ConflictsTable';
 import { filterContacts } from '../../utils/filterContacts';
@@ -21,7 +21,6 @@ import './JobDetails.css';
 const JobDetails = () => {
   const { state, dispatch }: any = useAppContext();
   const navigate = useNavigate();
-  const params = useParams();
   const { dataArray: contacts } = useTTCGRMContacts();
   const [job, setJob] = useState(state.currentJob);
   const [isModifying, setIsModifying] = useState(false);
@@ -32,7 +31,7 @@ const JobDetails = () => {
       setJob(job);
       setIsModifying(false);
     } else {
-      navigate(`/alerts/${params.alertId}`);
+      navigate('/');
     }
   };
 

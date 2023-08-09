@@ -12,7 +12,7 @@ import {
   RuxTableHeaderRow,
 } from '@astrouxds/react';
 import { useMemo, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import ConflictsTable from '../../JobDetails/ConflictsTable';
 import './ScheduleJob.css';
@@ -22,7 +22,6 @@ import { filterContacts } from '../../../utils/filterContacts';
 
 const ScheduleJob = () => {
   const navigate = useNavigate();
-  const params = useParams();
   const { dispatch } = useAppContext() as any;
   const { dataArray: contacts } = useTTCGRMContacts();
   const [calculateConflicts, setCalculateConflicts] = useState(false);
@@ -55,13 +54,13 @@ const ScheduleJob = () => {
   });
 
   const handleCancel = () => {
-    navigate(`/alerts/${params.alertId}`);
+    navigate('/');
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     dispatch({ type: 'SCHEDULE_NEW_JOB', payload: newJob });
-    navigate(`/alerts/${params.alertId}`);
+    navigate('/');
   };
 
   const handleChange = (e: any) => {

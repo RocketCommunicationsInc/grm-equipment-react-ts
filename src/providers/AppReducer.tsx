@@ -3,24 +3,32 @@ export const appReducer = (state: any, { type, payload }: any) => {
     case 'SCHEDULE_NEW_JOB': {
       return {
         ...state,
-        scheduledJobs: [...state.scheduledJobs, payload],
+        currentEquipment: {
+          ...state.currentEquipment,
+          scheduledJobs: [...state.currentEquipment.scheduledJobs, payload],
+        },
       };
     }
 
     case 'EDIT_JOB': {
-      const selectedJob = state.scheduledJobs.find(
+      const selectedJob = state.currentEquipment.scheduledJobs.find(
         (job: { jobId: any }) => job.jobId === payload
       );
       const modifiedJob = { ...selectedJob, ...payload };
-      const updatedJobs = state.scheduledJobs.map((job: { jobId: any }) => {
-        if (job.jobId === payload.jobId) {
-          return modifiedJob;
+      const updatedJobs = state.currentEquipment.scheduledJobs.map(
+        (job: { jobId: any }) => {
+          if (job.jobId === payload.jobId) {
+            return modifiedJob;
+          }
+          return job;
         }
-        return job;
-      });
+      );
       return {
         ...state,
-        scheduledJobs: updatedJobs,
+        currentEquipment: {
+          ...state.currentEquipment,
+          scheduledJobs: updatedJobs,
+        },
         currentJob: modifiedJob ? modifiedJob : {},
       };
     }

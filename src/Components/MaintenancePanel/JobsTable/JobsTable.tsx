@@ -29,7 +29,7 @@ const columnDefs: any[] = [
   { label: 'Started On', property: 'startTime' },
   { label: 'Completed On', property: 'stopTime' },
   { label: 'Technician', property: 'technician' },
-  { label: 'Description', property: 'description' },
+  { label: 'Description', property: 'jobDescription' },
 ];
 
 type PropTypes = {
