@@ -2,9 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import { RuxButton, RuxContainer } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
 import JobIDCard from './JobIDCard/JobIDCard';
-import Table from '../../common/Table/Table';
+// import Table from '../../common/Table/Table';
 import './MaintenancePanel.css';
 import JobsTable from './JobsTable/JobsTable';
+import { setHhMmSs } from '../../utils';
 
 const MaintenancePanel = () => {
   const navigate = useNavigate();
@@ -15,17 +16,29 @@ const MaintenancePanel = () => {
     navigate('job-details');
   };
 
-  const columnDefs: any[] = [
-    { label: 'Job ID', property: 'jobId' },
-    { label: 'Type', property: 'jobType' },
-    { label: 'Created On', property: 'createdOn' },
-    { label: 'Started On', property: 'startTime' },
-    { label: 'Completed On', property: 'stopTime' },
-    { label: 'Technician', property: 'technician' },
-    { label: 'Description', property: 'description' },
-  ];
+  // const columnDefs: any[] = [
+  //   { label: 'Job ID', property: 'jobId' },
+  //   { label: 'Type', property: 'jobType' },
+  //   { label: 'Created On', property: 'createdOn' },
+  //   { label: 'Started On', property: 'startTime' },
+  //   { label: 'Completed On', property: 'stopTime' },
+  //   { label: 'Technician', property: 'technician' },
+  //   { label: 'Description', property: 'description' },
+  // ];
 
-  const jobs = state.scheduledJobs.map((job: any) => job);
+  // const jobs = state.scheduledJobs.map((job: any) => job);
+
+  const filteredJobs = state.scheduledJobs.filter((job: any) =>
+  job === 'startTime' || job === 'stopTime' || job === 'createdOn'
+    ? Object.values(setHhMmSs(job))
+        .toString()
+        .toLowerCase()
+        // .includes(job.toLowerCase())
+    : Object.values(job)
+        .toString()
+        .toLowerCase()
+        // .includes(job.toLowerCase())
+);
 
   return (
     <RuxContainer className='maintenance-panel'>
@@ -52,7 +65,7 @@ const MaintenancePanel = () => {
       <RuxContainer className='maintenance-history-panel'>
         <div className='maintenance-wrapper'>
           <h2>Maintenance History</h2>
-          <JobsTable jobs={jobs} />
+          <JobsTable jobs={filteredJobs} />
           {/* <Table columnDefs={columnDefs} filteredData={jobs} /> */}
         </div>
       </RuxContainer>
