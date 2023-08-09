@@ -55,7 +55,7 @@ const JobDetails = () => {
 
     for (let i = 0; i < stepperTitle.length; i++) {
       const element = stepperTitle[i].parentElement;
-      if (stepperTitle[i].innerHTML === job.status) {
+      if (stepperTitle[i].innerHTML.toLowerCase() === job.jobStatus) {
         element?.classList.add('active');
       }
     }

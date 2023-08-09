@@ -17,7 +17,6 @@ const MaintenancePanel = () => {
     dispatch({ type: 'EDIT_JOB', payload: job });
     navigate('job-details');
   };
-  console.log(state.currentEquipment);
 
   const filteredJobs = state.currentEquipment
     ? state.currentEquipment.scheduledJobs

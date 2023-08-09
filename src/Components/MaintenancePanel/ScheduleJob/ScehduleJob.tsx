@@ -43,14 +43,15 @@ const ScheduleJob = () => {
   const [newJob, setNewJob] = useState({
     jobId: uniqueJobId,
     jobType: '',
-    description: '',
+    jobDescription: '',
     startTime: '',
     stopTime: '',
     technician: '',
     follow: true,
-    status: statusValues[randomStatus],
+    jobStatus: statusValues[randomStatus],
     createdOn: Date.now(),
-    equpiment: equipmentValues[randomEqupiment],
+    equipment: '',
+    equipmentStatus: equipmentValues[randomEqupiment],
   });
 
   const handleCancel = () => {
@@ -106,7 +107,7 @@ const ScheduleJob = () => {
               onRuxinput={handleChange}
               placeholder='Enter Description'
               label='Description'
-              value={newJob.description}
+              value={newJob.jobDescription}
               name='description'
             />
 
