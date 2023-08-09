@@ -13,8 +13,10 @@ const Dashboard = () => {
         selectedEquipment={selectedEquipment}
         setSelectedEquipment={setSelectedEquipment}
       />
-     
-        <EquipmentDetailsPage selectedEquipment={selectedEquipment} setSelectedEquipment={setSelectedEquipment} />
+      <EquipmentDetailsPage
+        selectedEquipment={selectedEquipment}
+        setSelectedEquipment={setSelectedEquipment}
+      />
     </main>
   );
 };

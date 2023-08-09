@@ -89,8 +89,7 @@ const EquipmentDetailsPage = ({
           </RuxTab>
         ))}
       </RuxTabs>
-
-      <div className='equip-details'>
+      <div>
         <div
           id='inoperable-equipment-panel'
           className={`${!inoperablePanelShow && 'hidden'}`}
@@ -98,22 +97,22 @@ const EquipmentDetailsPage = ({
           <InoperableEquipment selectEquipment={selectEquipment} />
         </div>
 
-        <div
-          id='equipment-panel'
-          className={`${inoperablePanelShow && 'hidden'}`}
-        >
-          <RuxContainer className='equipment-details'>
-            <header slot='header'>Equipment Details</header>
-            {/* <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} /> */}
-            <div className='equipment-details_wrapper'>
-              {state.currentEquipment && <EquipmentDetailsPanel />}
+        <div className='equip-details'>
+          <div
+            id='equipment-panel'
+            className={`${inoperablePanelShow && 'hidden'}`}
+          >
+            <RuxContainer className='equipment-details'>
+              <header slot='header'>Equipment Details</header>
+              <div className='equipment-details_wrapper'>
+                {state.currentEquipment && <EquipmentDetailsPanel />}
 
-              <Alerts />
-              <ContactsTable />
-              
-            </div>
+                <Alerts />
+                <ContactsTable />
+              </div>
+            </RuxContainer>
             <MaintenancePanel />
-          </RuxContainer>
+          </div>
         </div>
       </div>
     </div>

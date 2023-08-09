@@ -23,7 +23,7 @@ rux-container footer[slot='footer'] {
 }
 
 .dashboard {
-  height: calc(100vh - 6rem);
+  height: calc(100% - 6rem);
   /* overflow-y: hidden; */
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);
@@ -36,14 +36,12 @@ rux-container footer[slot='footer'] {
 }
 
 .equip-details {
-  height: 100%;
-  /* padding: var(--spacing-3); */
+  height: calc(100% - 6rem);
   background-color: var(--color-background-base-default);
-  /* background-color: var(--color-background-surface-default); */
   color: var(--color-text-primary);
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 40% 1fr;
+  grid-template-rows: 50% auto;
   grid-template-areas:
     "equipment-details"
     "maintenance-panel"
