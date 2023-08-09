@@ -20,3 +20,15 @@
   margin-block: auto;
   padding-inline: var(--spacing-4);
 }
+
+.section ul {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  padding: 0;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-3);
+  justify-content: flex-start;
+  gap: 0.7rem;
+}
