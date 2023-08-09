@@ -27,6 +27,8 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
     .filter((category: any) => category.category === 'rf')
     .map((equip: any) => equip.equipmentString);
 
+  console.log(state);
+
   return (
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>

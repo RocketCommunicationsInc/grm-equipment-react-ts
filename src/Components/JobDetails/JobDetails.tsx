@@ -25,7 +25,7 @@ const JobDetails = () => {
   const [job, setJob] = useState(state.currentJob);
   const [isModifying, setIsModifying] = useState(false);
   const [searchValue, setSearchValue] = useState('');
-
+  console.log(state);
   const handleCancel = () => {
     if (isModifying) {
       setJob(job);
@@ -41,6 +41,14 @@ const JobDetails = () => {
     if (job.jobId) {
       dispatch({ type: 'EDIT_JOB', payload: job });
     }
+  };
+
+  const handleDelete = (e: any) => {
+    e.preventDefault();
+    if (job.jobId) {
+      dispatch({ type: 'DELETE_JOB', payload: job });
+    }
+    navigate('/');
   };
 
   const handleChange = (e: any) => {
@@ -195,6 +203,9 @@ const JobDetails = () => {
       </div>
 
       <footer slot='footer'>
+        <RuxButton secondary onClick={handleDelete}>
+          Delete
+        </RuxButton>
         <RuxButton secondary onClick={handleCancel}>
           Cancel
         </RuxButton>
