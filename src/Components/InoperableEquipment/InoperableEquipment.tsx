@@ -3,7 +3,7 @@ import './InoperableEquipment.css';
 import { useAppContext } from '../../providers/AppProvider';
 
 type PropTypes = {
-  selectEquipment: () => void;
+  selectEquipment: (e: any) => void;
 };
 
 const InoperableEquipment = ({ selectEquipment }: PropTypes) => {

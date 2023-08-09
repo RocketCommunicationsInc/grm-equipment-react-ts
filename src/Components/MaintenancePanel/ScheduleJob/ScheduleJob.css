@@ -87,3 +87,8 @@
 .schedule-job ul li:nth-of-type(4) {
   margin-top: var(--spacing-8);
 }
+
+.schedule-job header[slot='header'] {
+  display: flex;
+  justify-content: space-between;
+}

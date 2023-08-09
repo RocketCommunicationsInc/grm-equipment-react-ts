@@ -99,7 +99,7 @@ const EquipmentDetailsPage = () => {
                     <ContactsTable />
                   </div>
                   <MaintenancePanel />
-                </RuxContainer>{' '}
+                </RuxContainer>
               </RuxTabPanel>
             ))}
         </RuxTabPanels>

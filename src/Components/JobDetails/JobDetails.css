@@ -67,3 +67,8 @@
 .job-details-log rux-log::part(log-notification) {
   max-width: 38.5rem;
 }
+
+.job-details-panel header[slot='header'] {
+  display: flex;
+  justify-content: space-between;
+}
