@@ -45,7 +45,7 @@ const MaintenancePanel = () => {
           <RuxButton onClick={() => navigate('schedule-job')}>
             Schedule Job
           </RuxButton>
-          {state.currentEquipment.scheduledJobs && state.currentEquipment.scehduledJobs.map((job: any) => (
+          {state.currentEquipment && state.currentEquipment.scheduledJobs.map((job: any) => (
             <JobIDCard
               key={job.jobId}
               type={job.jobType}

@@ -8,7 +8,7 @@ import { RuxTabsCustomEvent } from '@astrouxds/astro-web-components';
 import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPanel';
 import Alerts from '../AlertsPanel/Alerts';
 import ContactsTable from '../ContactsList/ContactsTable';
-// import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
+import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 
 type PropType = {
   selectedEquipment: Equipment[];
@@ -19,10 +19,9 @@ const EquipmentDetailsPage = ({
   selectedEquipment,
   setSelectedEquipment,
 }: PropType) => {
+  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(true);
   const { state, dispatch }: any = useAppContext();
   const navigate = useNavigate();
-
-  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(true);
 
   const setCurrentEquipment = (e: RuxTabsCustomEvent<any>) => {
     if (e.detail.id === 'inoperable-equipment') {
@@ -111,8 +110,9 @@ const EquipmentDetailsPage = ({
 
               <Alerts />
               <ContactsTable />
-              {/* <MaintenancePanel /> */}
+              
             </div>
+            <MaintenancePanel />
           </RuxContainer>
         </div>
       </div>
