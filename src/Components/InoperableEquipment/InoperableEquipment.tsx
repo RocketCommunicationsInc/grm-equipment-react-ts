@@ -34,10 +34,10 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
         <span>Digital</span>
         {/* <div className='no-equipment'>No Inoperable Equipment</div> */}
         <ul>
-          {digital.map((equip: string) => (
-            <li>
+          {digital.map((equip: string, index: number) => (
+            <li key={index}>
               <RuxMonitoringIcon
-                key={equip}
+                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
                 label={equip}
@@ -50,10 +50,10 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <RuxContainer className='section'>
         <span>Facilities</span>
         <ul>
-          {facilities.map((equip: string) => (
-            <li>
+          {facilities.map((equip: string, index: number) => (
+            <li key={index}>
               <RuxMonitoringIcon
-                key={equip}
+                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
                 label={equip}
@@ -66,10 +66,10 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <RuxContainer className='section'>
         <span>Comms</span>
         <ul>
-          {comms.map((equip: string) => (
-            <li>
+          {comms.map((equip: string, index: number) => (
+            <li key={index}>
               <RuxMonitoringIcon
-                key={equip}
+                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
                 label={equip}
@@ -82,10 +82,10 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <RuxContainer className='section'>
         <span>RF</span>
         <ul>
-          {RF.map((equip: string) => (
-            <li>
+          {RF.map((equip: string, index: number) => (
+            <li key={index}>
               <RuxMonitoringIcon
-                key={equip}
+                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
                 label={equip}

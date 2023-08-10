@@ -11,23 +11,24 @@ import { capitalize } from '../../utils';
 import './EquipmentTree.css';
 
 type PropTypes = {
-  selectedEquipment: Equipment[];
-  setSelectedEquipment: Dispatch<SetStateAction<Equipment[]>>;
+  setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
 };
 
 const EquipmentTree = ({
-  selectedEquipment,
-  setSelectedEquipment,
+  setInoperablePanelShow,
 }: PropTypes) => {
   const { state, dispatch }: any = useAppContext();
-  const configArray: string[] = ['A', 'B', 'C', 'D', 'E']
+  const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
 
   const handleSelectedEquipment = (equipment: Equipment) => {
     // always set the selected equipment to the current equipment in app state.
     dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
 
+    // hide the inoperable panel in favor of the equipment panel
+    setInoperablePanelShow(false)
+
     // check if equipment already has an existing tab (if it is in selectedEquipment state)
-    const equipmentFound = selectedEquipment.some((equipmentItem) => {
+    const equipmentFound = state.selectedEquipment && state.selectedEquipment.some((equipmentItem: Equipment) => {
       if (equipmentItem.id === equipment.id) {
         return true;
       }
@@ -39,7 +40,7 @@ const EquipmentTree = ({
       return;
     } else {
       // if it doesn't have a tab, add to selectedEquipment state array, which will then re-render component and create new tab.
-      setSelectedEquipment([...selectedEquipment, { ...equipment }]);
+      dispatch({ type: 'ADD_SELECTED_EQUIPMENT', payload: equipment });
     }
   };
 
