@@ -1,6 +1,9 @@
 .inoperable-equipment {
   color: var(--color-text-primary);
 }
+.inoperable-equipment::part(body) {
+  gap: var(--spacing-4);
+}
 
 .inoperable-equipment span {
   font-weight: var(--font-weights-medium);
@@ -9,7 +12,7 @@
 
 .inoperable-equipment .section {
   height: auto;
-  max-height: 12.6rem
+  max-height: 12.6rem;
 }
 
 .no-equipment {

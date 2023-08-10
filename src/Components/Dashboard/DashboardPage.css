@@ -1,3 +1,27 @@
+.dashboard {
+  height: calc(100vh - 6rem);
+  overflow-y: overlay;
+  padding: var(--spacing-3);
+  background-color: var(--color-background-base-default);
+  color: var(--color-text-primary);
+  display: grid;
+  gap: var(--spacing-3);
+  grid-template-columns: calc(20% - 6px) calc(80% - 6px);
+  grid-template-areas: 'equipment-tree equipment-panel';
+}
+
+.dashboard_equipment-wrapper {
+  grid-area: equipment-panel;
+  display: grid;
+  grid-template-rows: max-content auto;
+  grid-template-areas: 'tab-navigation' 'tab-panel';
+}
+
 .dashboard_equipment-wrapper rux-tabs {
-    height: auto;
+  height: auto;
+  grid-area: tab-navigation;
+}
+#inoperable-equipment-panel,
+#equipment-panel {
+  grid-area: tab-panel;
 }
