@@ -6,10 +6,9 @@ export const appReducer = (state: any, { type, payload }: any) => {
       const updatedSelectedEquipment = state.selectedEquipment.map(
         (equip: any) => {
           if (equip.id === state.currentEquipment.id) {
-            const updatedJobs = [...equip.scheduledJobs, { ...payload }];
             return {
               ...equip,
-              scheduledJobs: updatedJobs,
+              scheduledJobs: [...equip.scheduledJobs, { ...payload }],
             };
           }
           return equip;

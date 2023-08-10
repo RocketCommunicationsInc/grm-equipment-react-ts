@@ -49,7 +49,7 @@ export function generateEvents() {
 
 export const equipmentArr = equipment.map((equipment) => equipment);
 
-export const scehduledJobs = equipment.flatMap(
+export const scheduledJobs = equipment.flatMap(
   (equipment) => equipment.scheduledJobs
 );
 

@@ -6,8 +6,8 @@ import JobIDCard from './JobIDCard/JobIDCard';
 import { capitalize, setHhMmSs } from '../../utils';
 import SearchBar from '../../common/SearchBar/SearchBar';
 import JobsTable from './JobsTable/JobsTable';
-import './MaintenancePanel.css';
 import { Job } from '../../Types/Equipment';
+import './MaintenancePanel.css';
 
 const MaintenancePanel = () => {
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ const MaintenancePanel = () => {
       <RuxContainer className='maintenance-history-panel'>
         <div className='maintenance-wrapper'>
           <h2>Maintenance History</h2>
-          <JobsTable jobs={state.currentEquipment && filteredJobs} />
+          <JobsTable jobs={filteredJobs} />
         </div>
       </RuxContainer>
     </RuxContainer>

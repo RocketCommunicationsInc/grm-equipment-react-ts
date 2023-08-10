@@ -1,4 +1,4 @@
-import ScheduleJob from './ScehduleJob';
+import ScheduleJob from './ScheduleJob';
 
 const ScheduleJobPage = () => {
   return (

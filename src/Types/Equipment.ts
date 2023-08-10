@@ -9,7 +9,7 @@ export interface Equipment {
   status: Status;
   category: string;
   config: string;
-  scehduledJobs: {
+  scheduledJobs: {
     jobId: number;
     jobType: string;
     description: string;
