@@ -60,3 +60,7 @@
 .alert-description header {
   padding-bottom: var(--spacing-3);
 }
+
+.dashboard_equipment-wrapper rux-tabs {
+  margin-bottom: var(--spacing-2);
+}

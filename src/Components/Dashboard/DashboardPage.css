@@ -1,6 +1,6 @@
 .dashboard {
   height: calc(100vh - 6rem);
-  overflow-y: overlay;
+  overflow-y: hidden;
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);
   color: var(--color-text-primary);
@@ -21,6 +21,7 @@
   height: auto;
   grid-area: tab-navigation;
 }
+
 #inoperable-equipment-panel,
 #equipment-panel {
   grid-area: tab-panel;

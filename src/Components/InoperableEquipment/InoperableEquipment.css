@@ -1,7 +1,6 @@
 .inoperable-equipment {
   color: var(--color-text-primary);
-  margin-top: var(--spacing-3);
-  height: calc(100% - .75rem);
+  height: calc(100% - .1rem);
 }
 
 .inoperable-equipment::part(body) {
