@@ -6,16 +6,20 @@ import './DashboardPage.css';
 
 const Dashboard = () => {
   const [selectedEquipment, setSelectedEquipment] = useState<Equipment[]>([]);
+  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(true);
 
   return (
     <main className='dashboard'>
       <EquipmentTree
         selectedEquipment={selectedEquipment}
         setSelectedEquipment={setSelectedEquipment}
+        setInoperablePanelShow={setInoperablePanelShow}
       />
       <EquipmentDetailsPage
         selectedEquipment={selectedEquipment}
         setSelectedEquipment={setSelectedEquipment}
+        inoperablePanelShow={inoperablePanelShow}
+        setInoperablePanelShow={setInoperablePanelShow}
       />
     </main>
   );

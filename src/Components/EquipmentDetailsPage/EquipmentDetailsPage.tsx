@@ -1,7 +1,7 @@
 import { RuxButton, RuxContainer, RuxTab, RuxTabs } from '@astrouxds/react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../providers/AppProvider';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { Equipment } from '../../Types/Equipment';
 import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
 import { RuxTabsCustomEvent } from '@astrouxds/astro-web-components';
@@ -13,13 +13,16 @@ import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 type PropType = {
   selectedEquipment: Equipment[];
   setSelectedEquipment: Dispatch<SetStateAction<Equipment[]>>;
+  inoperablePanelShow: boolean;
+  setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
 };
 
 const EquipmentDetailsPage = ({
   selectedEquipment,
   setSelectedEquipment,
+  inoperablePanelShow,
+  setInoperablePanelShow,
 }: PropType) => {
-  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(true);
   const { state, dispatch }: any = useAppContext();
   const navigate = useNavigate();
 
