@@ -1,15 +1,26 @@
 .inoperable-equipment {
   color: var(--color-text-primary);
   margin-top: var(--spacing-3);
+  height: calc(100% - .75rem);
+}
+
+.inoperable-equipment::part(body) {
+  gap: var(--spacing-4);
 }
 
 .inoperable-equipment span {
   font-weight: var(--font-weights-medium);
   font-size: var(--font-size-lg);
+  margin-top: 0
 }
 
 .inoperable-equipment .section {
-  max-height: 12.6rem;
+  height: auto;
+  max-height: 11.5rem;
+}
+
+.inoperable-equipment .section::part(body) {
+ padding-top: var(--spacing-2);
 }
 
 .section ul {
