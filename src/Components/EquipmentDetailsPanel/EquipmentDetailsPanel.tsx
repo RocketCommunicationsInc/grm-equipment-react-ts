@@ -19,8 +19,8 @@ const EquipmentDetailsPanel = () => {
   const { state }: any = useAppContext();
 
   return (
-    <RuxContainer className="equipment-details_details">
-      <span>
+    <RuxContainer className='equipment-details_details'>
+      <span className='equipment-title'>
         <RuxStatus status={state.currentEquipment.status} slot='prefix' />{' '}
         {state.currentEquipment.equipmentString}
       </span>

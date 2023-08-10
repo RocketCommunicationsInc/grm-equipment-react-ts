@@ -32,7 +32,6 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <div slot='header'>Inoperable Equipment</div>
       <RuxContainer className='section'>
         <span>Digital</span>
-        {/* <div className='no-equipment'>No Inoperable Equipment</div> */}
         <ul>
           {digital.map((equip: string) => (
             <li>

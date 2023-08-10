@@ -90,7 +90,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
   };
 
   return (
-    <div className='table-wrapper'>
+    <div className='table-wrapper maintenance'>
       <RuxTable>
         <RuxTableHeader>
           <RuxTableHeaderRow>

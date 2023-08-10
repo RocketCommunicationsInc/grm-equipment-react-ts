@@ -33,10 +33,9 @@ rux-container.jobs-section {
   padding: var(--spacing-3);
 }
 
-.maintenance-wrapper {
+.maintenance-wrapper .maintenance {
   overflow-y: auto;
-  max-height: 19rem;
-  margin-bottom: var(--spacing-6);
+  max-height: 18rem;
 }
 
 .maintenance-wrapper h2,

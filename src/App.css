@@ -73,12 +73,14 @@ rux-container.contacts-table {
   grid-area: contacts-table;
   max-height: 35rem;
   overflow: hidden;
+  margin-block: var(--spacing-3);
 }
 
 rux-container.alerts {
   grid-area: alerts;
   max-height: 35rem;
   overflow: hidden;
+  margin-block: var(--spacing-3);
 }
 
 

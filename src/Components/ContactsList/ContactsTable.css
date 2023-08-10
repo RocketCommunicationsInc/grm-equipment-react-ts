@@ -35,11 +35,6 @@
   font-size: var(--font-size-base);
 }
 
-.summary-data > span {
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weights-bold);
-}
-
 .table-wrapper rux-table-header-row rux-icon {
   vertical-align: middle;
   width: 32px;
@@ -83,7 +78,7 @@
   margin-top: var(--spacing-14);
 }
 
-.equipment-details span:nth-of-type(1) {
+.equipment-details .equipment-title {
   font-weight: var(--font-weights-medium);
   font-size: var(--font-size-xl);
   padding-bottom: var(--spacing-2);

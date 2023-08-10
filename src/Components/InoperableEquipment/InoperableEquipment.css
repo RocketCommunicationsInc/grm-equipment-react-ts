@@ -1,5 +1,6 @@
 .inoperable-equipment {
   color: var(--color-text-primary);
+  margin-top: var(--spacing-3);
 }
 
 .inoperable-equipment span {
@@ -8,28 +9,18 @@
 }
 
 .inoperable-equipment .section {
-  height: auto;
-  max-height: 12.6rem
-}
-
-.no-equipment {
-  background-color: var(--color-background-base-hover);
-  display: flex;
-  align-items: center;
-  height: var(--spacing-12);
-  margin-block: auto;
-  padding-inline: var(--spacing-4);
+  max-height: 12.6rem;
 }
 
 .section ul {
-  margin-bottom: var(--spacing-4);
   display: flex;
   flex-direction: row;
   cursor: pointer;
   padding: 0;
   list-style-type: none;
   flex-wrap: wrap;
-  margin-top: var(--spacing-3);
+  margin-top: var(--spacing-1);
+  margin-bottom: var(--spacing-1);
   justify-content: flex-start;
   gap: var(--spacing-3);
 }
