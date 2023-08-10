@@ -15,10 +15,10 @@ import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import ConflictsTable from '../../JobDetails/ConflictsTable';
-import './ScheduleJob.css';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../../common/SearchBar/SearchBar';
 import { filterContacts } from '../../../utils/filterContacts';
+import './ScheduleJob.css';
 
 const ScheduleJob = () => {
   const navigate = useNavigate();
@@ -61,7 +61,6 @@ const ScheduleJob = () => {
   };
 
   const handleSubmit = (e: any) => {
-    console.log(newJob, 'newJob');
     e.preventDefault();
     dispatch({ type: 'SCHEDULE_NEW_JOB', payload: newJob });
     navigate('/');

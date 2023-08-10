@@ -36,23 +36,20 @@ const JobDetails = () => {
     }
   };
   console.log(state, 'details');
-  useEffect(() => {
-    console.log(state.currentJob, 'currentJob');
-  });
 
   const handleSubmit = (e: any) => {
+    const modifiedJob = { ...job };
     e.preventDefault();
     setIsModifying(false);
     if (job.jobId) {
-      dispatch({ type: 'EDIT_JOB', payload: job });
-      console.log(job, 'job');
+      dispatch({ type: 'EDIT_JOB', payload: modifiedJob });
     }
   };
 
   const handleDelete = (e: any) => {
     e.preventDefault();
     if (job.jobId) {
-      dispatch({ type: 'DELETE_JOB', payload: job });
+      dispatch({ type: 'DELETE_JOB', payload: job.jobId });
     }
     navigate('/');
   };

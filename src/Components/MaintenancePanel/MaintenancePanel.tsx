@@ -74,7 +74,7 @@ const MaintenancePanel = () => {
       <RuxContainer className='maintenance-history-panel'>
         <div className='maintenance-wrapper'>
           <h2>Maintenance History</h2>
-          <JobsTable jobs={filteredJobs} />
+          <JobsTable jobs={state.currentEquipment && filteredJobs} />
         </div>
       </RuxContainer>
     </RuxContainer>

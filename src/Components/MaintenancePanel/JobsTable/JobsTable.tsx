@@ -116,7 +116,6 @@ const JobsTable = ({ jobs }: PropTypes) => {
               >
                 {columnDefs.map((colDef, index) => {
                   const property: keyof Job = colDef.property;
-                  console.log(job[property], 'property');
                   return (
                     <RuxTableCell key={colDef.label}>
                       {job[property]}
