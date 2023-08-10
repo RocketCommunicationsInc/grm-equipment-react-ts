@@ -94,8 +94,9 @@ const JobsTable = ({ jobs }: PropTypes) => {
       <RuxTable>
         <RuxTableHeader>
           <RuxTableHeaderRow>
-            {columnDefs.map((colDef) => (
+            {columnDefs.map((colDef, index) => (
               <RuxTableHeaderCell
+                key={`${colDef.property}${index}`}
                 data-sortprop={colDef.property}
                 onClick={handleHeaderCellClick}
               >
@@ -116,10 +117,10 @@ const JobsTable = ({ jobs }: PropTypes) => {
           </RuxTableHeaderRow>
         </RuxTableHeader>
         <RuxTableBody>
-          {sortedData.map((job) => {
+          {sortedData.map((job, index) => {
             return (
               <RuxTableRow
-                key={job.jobId}
+                key={`${job.jobId}${index}`}
                 onClick={() => handleTabeRowClick(job)}
               >
                 {columnDefs.map((colDef, index) => {
