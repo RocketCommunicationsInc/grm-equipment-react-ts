@@ -6,6 +6,7 @@ import { scehduledJobs, equipmentArr, equipmentByCategory } from '../data/data';
 export const initialState = {
   equipment: equipmentArr,
   currentEquipment: null,
+  selectedEquipment: [],
   equipmentByCategory: equipmentByCategory,
   scheduledJobs: scehduledJobs,
   currentJob: null,

@@ -10,30 +10,28 @@ import ContactsTable from '../ContactsList/ContactsTable';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 
 type PropType = {
-  selectedEquipment: Equipment[];
-  setSelectedEquipment: Dispatch<SetStateAction<Equipment[]>>;
   inoperablePanelShow: boolean;
   setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
 };
 
 const EquipmentDetailsPage = ({
-  selectedEquipment,
-  setSelectedEquipment,
   inoperablePanelShow,
   setInoperablePanelShow,
 }: PropType) => {
   const { state, dispatch }: any = useAppContext();
   const navigate = useNavigate();
 
-  const setCurrentEquipment = (e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>) => {
-    const target = e.target as HTMLElement
+  const setCurrentEquipment = (
+    e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>
+  ) => {
+    const target = e.target as HTMLElement;
     if (target.classList.contains('equipment-panel_tab-clear-button')) return;
 
     if (target.id === 'inoperable-equipment') {
       setInoperablePanelShow(true);
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
     } else {
-      for (const equipment of selectedEquipment) {
+      for (const equipment of state.selectedEquipment) {
         if (target.id === equipment.id) {
           dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
         }
@@ -43,17 +41,13 @@ const EquipmentDetailsPage = ({
   };
 
   const handleClearClick = (equipment: Equipment) => {
-    console.log('handle clear')
     // if the tab being cleared is the currently selected one, fallback to inoperable equipment
     if (state.currentEquipment && state.currentEquipment.id === equipment.id) {
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
+      setInoperablePanelShow(true);
     }
 
-    setSelectedEquipment((prevState) =>
-      prevState.filter(
-        (equipmentItem: Equipment) => equipmentItem.id !== equipment.id
-      )
-    );
+    dispatch({ type: 'REMOVE_SELECTED_EQUIPMENT', payload: equipment });
   };
 
   const selectEquipment = () => {
@@ -65,7 +59,6 @@ const EquipmentDetailsPage = ({
       <RuxTabs
         small={true}
         id='equipment-tabs'
-        // onRuxselected={(e) => setCurrentEquipment(e)}
         onClick={(e) => setCurrentEquipment(e)}
       >
         <RuxTab
@@ -75,7 +68,7 @@ const EquipmentDetailsPage = ({
         >
           Inoperable
         </RuxTab>
-        {selectedEquipment.map((equipment) => (
+        {state.selectedEquipment.map((equipment: Equipment) => (
           <RuxTab
             key={equipment.id}
             id={equipment.id}
@@ -88,7 +81,7 @@ const EquipmentDetailsPage = ({
           >
             {equipment.config}-{equipment.equipmentString}
             <RuxButton
-            className="equipment-panel_tab-clear-button"
+              className='equipment-panel_tab-clear-button'
               iconOnly
               borderless
               icon='clear'

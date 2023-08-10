@@ -45,6 +45,20 @@ export const appReducer = (state: any, { type, payload }: any) => {
       };
     }
 
+    case 'ADD_SELECTED_EQUIPMENT': {
+      return {
+        ...state,
+        selectedEquipment: [...state.selectedEquipment, payload],
+      };
+    }
+
+    case 'REMOVE_SELECTED_EQUIPMENT': {
+      return {
+        ...state,
+        selectedEquipment: state.selectedEquipment.filter((equipmentItem: { id: string; }) => equipmentItem.id !== payload.id  ),
+      };
+    }
+
     default: {
       throw new Error(`Unhandled app reducer type: ${type}`);
     }
