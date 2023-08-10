@@ -27,7 +27,6 @@ rux-container.jobs-section {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--spacing-3);
-  height: 40rem;
 }
 
 .maintenance-history-panel {
