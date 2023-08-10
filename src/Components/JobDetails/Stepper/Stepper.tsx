@@ -12,8 +12,8 @@ const Stepper = () => {
 
   return (
     <div className='stepper-wrapper'>
-      {steps.map(({ title }) => (
-        <div className='stepper-item'>
+      {steps.map(({ title }, index) => (
+        <div className='stepper-item' key={index}>
           <div className='step-counter'>
             <RuxIcon className='checkmark' icon='check' size='1.5rem' />
           </div>

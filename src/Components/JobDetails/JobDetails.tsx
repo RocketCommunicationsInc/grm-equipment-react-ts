@@ -49,6 +49,7 @@ const JobDetails = () => {
   const handleDelete = (e: any) => {
     e.preventDefault();
     if (job.jobId) {
+      // dispatch({ type: 'DELETE_JOB', payload: job.job });
       dispatch({ type: 'DELETE_JOB', payload: job.jobId });
     }
     navigate('/');
@@ -75,6 +76,8 @@ const JobDetails = () => {
   const filteredContacts = useMemo(() => {
     return filterContacts(contacts, searchValue);
   }, [contacts, searchValue]);
+
+  useEffect(() => {}, [job]);
 
   return (
     <RuxContainer className='job-details-panel'>

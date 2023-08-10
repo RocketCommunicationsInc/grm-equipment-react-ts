@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RuxButton, RuxContainer } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
@@ -40,6 +40,8 @@ const MaintenancePanel = () => {
         []
       )
     : state.scheduledJobs.map((job: Job) => job);
+
+  useEffect(() => {}, [filteredJobs]);
 
   return (
     <RuxContainer className='maintenance-panel'>

@@ -3,10 +3,22 @@ import { Job } from '../Types/Equipment';
 export const appReducer = (state: any, { type, payload }: any) => {
   switch (type) {
     case 'SCHEDULE_NEW_JOB': {
-      // const updatedSelectedEquipment = state.selectedEquipment.map(
+      const updatedSelectedEquipment = state.selectedEquipment.map(
+        (equip: any) => {
+          if (equip.id === state.currentEquipment.id) {
+            const updatedJobs = [...equip.scheduledJobs, payload];
+            return {
+              ...equip,
+              scheduledJobs: updatedJobs,
+            };
+          }
+          return equip;
+        }
+      );
+      // const updatedCurrentEquipment = Object.values(state.currentEquipment).map(
       //   (equip: any) => {
-      //     if (equip.id === state.currentEquipment.id) {
-      //       const updatedJobs = [...equip.scheduledJobs, { ...payload }];
+      //     if (equip.jobId === state.currentEquipment.id) {
+      //       const updatedJobs = [...equip.currentEquipment, payload];
       //       return {
       //         ...equip,
       //         scheduledJobs: updatedJobs,
@@ -21,8 +33,9 @@ export const appReducer = (state: any, { type, payload }: any) => {
           ...state.currentEquipment,
           scheduledJobs: [...state.currentEquipment.scheduledJobs, payload],
         },
+        //currentEquipment: updatedCurrentEquipment,
         scheduledJobs: [...state.scheduledJobs, payload],
-        //selectedEquipment: updatedSelectedEquipment,
+        selectedEquipment: updatedSelectedEquipment,
       };
     }
 
@@ -39,17 +52,17 @@ export const appReducer = (state: any, { type, payload }: any) => {
           return job;
         }
       );
-      // const updatedSelectedEquipment = state.selectedEquipment.map(
-      //   (equip: any) => {
-      //     if (equip.id === state.currentEquipment.id) {
-      //       return {
-      //         ...equip,
-      //         scheduledJobs: updatedJobs,
-      //       };
-      //     }
-      //     return equip;
-      //   }
-      // );
+      const updatedSelectedEquipment = state.selectedEquipment.map(
+        (equip: any) => {
+          if (equip.id === state.currentEquipment.id) {
+            return {
+              ...equip,
+              scheduledJobs: updatedJobs,
+            };
+          }
+          return equip;
+        }
+      );
 
       return {
         ...state,
@@ -59,7 +72,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
         },
         scheduledJobs: updatedJobs,
         currentJob: modifiedJob ? modifiedJob : {},
-        //selectedEquipment: updatedSelectedEquipment,
+        selectedEquipment: updatedSelectedEquipment,
       };
     }
 
@@ -81,27 +94,27 @@ export const appReducer = (state: any, { type, payload }: any) => {
       //     return equip;
       //   }
       // );
-      // const jobIndex = state.currentEquipment.scheduledJobs.findIndex(
-      //   (job: Job) => job.jobId === payload.jobId
-      // );
-      // if (payload.jobId === -1) {
-      //   return state;
-      // }
-      // const remainingJobs = [
-      //   ...state.currentEquipment.scheduledJobs.slice(0, jobIndex),
-      //   ...state.currentEquipment.scheduledJobs.slice(jobIndex + 1),
-      // ];
-      // const updatedSelectedEquipment = state.selectedEquipment.map(
-      //   (equip: any) => {
-      //     if (equip.id === state.currentEquipment.id) {
-      //       return {
-      //         ...equip,
-      //         scheduledJobs: remainingJobs,
-      //       };
-      //     }
-      //     return equip;
-      //   }
-      // );
+      const jobIndex = state.currentEquipment.scheduledJobs.findIndex(
+        (job: Job) => job.jobId === payload.jobId
+      );
+      if (payload.jobId === -1) {
+        return state;
+      }
+      const remainingJobs = [
+        ...state.currentEquipment.scheduledJobs.slice(0, jobIndex),
+        ...state.currentEquipment.scheduledJobs.slice(jobIndex + 1),
+      ];
+      const updatedSelectedEquipment = state.selectedEquipment.map(
+        (equip: any) => {
+          if (equip.id === state.currentEquipment.id) {
+            return {
+              ...equip,
+              scheduledJobs: remainingJobs,
+            };
+          }
+          return equip;
+        }
+      );
       return {
         ...state,
         currentEquipment: {
@@ -110,7 +123,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
         },
         scheduledJobs: updatedJobs,
         currentJob: null,
-        //selectedEquipment: updatedSelectedEquipment,
+        selectedEquipment: updatedSelectedEquipment,
       };
     }
 
