@@ -44,6 +44,7 @@ const EquipmentDetailsPage = ({
     // if the tab being cleared is the currently selected one, fallback to inoperable equipment
     if (state.currentEquipment && state.currentEquipment.id === equipment.id) {
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
+      // sets fallback panel
       setInoperablePanelShow(true);
     }
 
