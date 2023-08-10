@@ -35,13 +35,17 @@ const JobDetails = () => {
       navigate('/');
     }
   };
-  console.log(state);
+  console.log(state, 'details');
+  useEffect(() => {
+    console.log(state.currentJob, 'currentJob');
+  });
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     setIsModifying(false);
     if (job.jobId) {
       dispatch({ type: 'EDIT_JOB', payload: job });
+      console.log(job, 'job');
     }
   };
 

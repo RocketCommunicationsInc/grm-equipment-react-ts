@@ -1,3 +1,5 @@
+import { Job } from '../Types/Equipment';
+
 export const appReducer = (state: any, { type, payload }: any) => {
   switch (type) {
     case 'SCHEDULE_NEW_JOB': {
@@ -12,11 +14,11 @@ export const appReducer = (state: any, { type, payload }: any) => {
 
     case 'EDIT_JOB': {
       const selectedJob = state.scheduledJobs.find(
-        (job: { jobId: any }) => job.jobId === payload
+        (job: { jobId: number }) => job.jobId === payload
       );
       const modifiedJob = { ...selectedJob, ...payload };
       const updatedJobs = state.currentEquipment.scheduledJobs.map(
-        (job: { jobId: any }) => {
+        (job: { jobId: number }) => {
           if (job.jobId === payload.jobId) {
             return { ...job, ...payload };
           }
@@ -36,7 +38,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
 
     case 'DELETE_JOB': {
       const updatedJobs = state.currentEquipment.scheduledJobs.filter(
-        (job: any) => job.jobId !== payload.jobId
+        (job: Job) => job.jobId !== payload.jobId
       );
       return {
         ...state,
@@ -55,7 +57,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
       if (payload === null) {
         selectedEquipment = null;
       } else {
-        state.equipment.map((equipment: { id: any }) => {
+        state.equipment.map((equipment: { id: string }) => {
           if (equipment.id === payload.id) {
             return (selectedEquipment = equipment);
           }
@@ -66,6 +68,22 @@ export const appReducer = (state: any, { type, payload }: any) => {
       return {
         ...state,
         currentEquipment: selectedEquipment,
+      };
+    }
+
+    case 'ADD_SELECTED_EQUIPMENT': {
+      return {
+        ...state,
+        selectedEquipment: [...state.selectedEquipment, payload],
+      };
+    }
+
+    case 'REMOVE_SELECTED_EQUIPMENT': {
+      return {
+        ...state,
+        selectedEquipment: state.selectedEquipment.filter(
+          (equipmentItem: { id: string }) => equipmentItem.id !== payload.id
+        ),
       };
     }
 

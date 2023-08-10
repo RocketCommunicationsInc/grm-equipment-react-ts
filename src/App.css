@@ -52,6 +52,10 @@ rux-container footer[slot='footer'] {
   padding-block-start: var(--spacing-3);
 }
 
+#inoperable-equipment-panel {
+  padding-block-start: var(--spacing-3);
+}
+
 .equipment-details_wrapper {
   display: grid;
   grid-template-columns: 35% 1fr;

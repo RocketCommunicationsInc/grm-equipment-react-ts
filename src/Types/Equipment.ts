@@ -23,15 +23,15 @@ export interface Equipment {
   }[];
 }
 
-export interface Job {
-  jobId: number;
+export type Job = {
+  jobId: string;
   jobType: string;
-  description: string;
+  createdOn: string;
   startTime: string;
   stopTime: string;
   technician: string;
-  follow: boolean;
-  status: Status;
-  createdOn: string;
+  jobDescription: string;
   equipment: string;
-}
+  equipmentStatus: string;
+  jobStatus: string;
+};

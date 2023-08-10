@@ -22,7 +22,7 @@ import { filterContacts } from '../../../utils/filterContacts';
 
 const ScheduleJob = () => {
   const navigate = useNavigate();
-  const { dispatch } = useAppContext() as any;
+  const { dispatch, state } = useAppContext() as any;
   const { dataArray: contacts } = useTTCGRMContacts();
   const [calculateConflicts, setCalculateConflicts] = useState(false);
   const [inputsFilledOut, setInputsFilledOut] = useState(false);
@@ -39,6 +39,8 @@ const ScheduleJob = () => {
   const randomStatus = Math.floor(Math.random() * statusValues.length);
   const equipmentValues = ['ANT3', 'BAFB4', 'ANT9', 'BAFB5', 'ANT12', 'BAFB8'];
   const randomEqupiment = Math.floor(Math.random() * equipmentValues.length);
+
+  console.log(state, 'schedule');
 
   const [newJob, setNewJob] = useState({
     jobId: uniqueJobId,
@@ -59,6 +61,7 @@ const ScheduleJob = () => {
   };
 
   const handleSubmit = (e: any) => {
+    console.log(newJob, 'newJob');
     e.preventDefault();
     dispatch({ type: 'SCHEDULE_NEW_JOB', payload: newJob });
     navigate('/');

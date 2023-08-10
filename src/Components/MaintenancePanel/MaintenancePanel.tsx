@@ -7,13 +7,14 @@ import { capitalize, setHhMmSs } from '../../utils';
 import SearchBar from '../../common/SearchBar/SearchBar';
 import JobsTable from './JobsTable/JobsTable';
 import './MaintenancePanel.css';
+import { Job } from '../../Types/Equipment';
 
 const MaintenancePanel = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useAppContext() as any;
   const [searchValue, setSearchValue] = useState('');
 
-  const handleJobDetailsClick = (job: any) => {
+  const handleJobDetailsClick = (job: Job) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
     navigate('job-details');
   };
@@ -38,7 +39,7 @@ const MaintenancePanel = () => {
         },
         []
       )
-    : state.scheduledJobs.map((job: any) => job);
+    : state.scheduledJobs.map((job: Job) => job);
 
   return (
     <RuxContainer className='maintenance-panel'>
@@ -57,11 +58,11 @@ const MaintenancePanel = () => {
             Schedule Job
           </RuxButton>
           {state.currentEquipment &&
-            state.currentEquipment.scheduledJobs.map((job: any) => (
+            state.currentEquipment.scheduledJobs.map((job: Job) => (
               <JobIDCard
                 key={job.jobId}
                 type={job.jobType}
-                id={job.jobId}
+                id={Number(job.jobId)}
                 startTime={job.startTime}
                 stopTime={job.stopTime}
                 status={capitalize(job.jobStatus) as string}
