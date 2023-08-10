@@ -19,19 +19,25 @@ const MaintenancePanel = () => {
   };
 
   const filteredJobs = state.currentEquipment
-    ? state.currentEquipment.scheduledJobs
-        .map((jobs: any[]) => jobs)
-        .filter((job: any) =>
-          job === 'startTime' || job === 'stopTime' || job === 'createdOn'
-            ? Object.values(setHhMmSs(job))
-                .toString()
-                .toLowerCase()
-                .includes(searchValue.toLowerCase())
-            : Object.values(job)
-                .toString()
-                .toLowerCase()
-                .includes(searchValue.toLowerCase())
-        )
+    ? state.currentEquipment.scheduledJobs.reduce(
+        (results: any[], job: any) => {
+          if (
+            job === 'startTime' || job === 'stopTime' || job === 'createdOn'
+              ? Object.values(setHhMmSs(job))
+                  .toString()
+                  .toLowerCase()
+                  .includes(searchValue.toLowerCase())
+              : Object.values(job)
+                  .toString()
+                  .toLowerCase()
+                  .includes(searchValue.toLowerCase())
+          ) {
+            results.push(job);
+          }
+          return results;
+        },
+        []
+      )
     : state.scheduledJobs.map((job: any) => job);
 
   return (

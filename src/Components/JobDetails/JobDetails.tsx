@@ -35,6 +35,7 @@ const JobDetails = () => {
       navigate('/');
     }
   };
+  console.log(state);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
