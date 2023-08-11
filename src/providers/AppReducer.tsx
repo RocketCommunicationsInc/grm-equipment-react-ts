@@ -52,17 +52,15 @@ export const appReducer = (state: any, { type, payload }: any) => {
           return job;
         }
       );
-      const updatedSelectedEquipment = state.selectedEquipment.map(
-        (equip: any) => {
-          if (equip.id === state.currentEquipment.id) {
-            return {
-              ...equip,
-              scheduledJobs: updatedJobs,
-            };
+
+      const updatedSelectedEquipment = state.selectedEquipment.filter(
+        // eslint-disable-next-line array-callback-return
+        (equipmentItem: { id: any; scheduledJobs: any; }) => {
+          if (equipmentItem.id === state.currentEquipment.id) {
+            return equipmentItem.scheduledJobs = updatedJobs
           }
-          return equip;
-        }
-      );
+        } 
+      )
 
       return {
         ...state,
@@ -70,9 +68,9 @@ export const appReducer = (state: any, { type, payload }: any) => {
           ...state.currentEquipment,
           scheduledJobs: updatedJobs,
         },
+        selectedEquipment: updatedSelectedEquipment,
         scheduledJobs: updatedJobs,
         currentJob: modifiedJob ? modifiedJob : {},
-        selectedEquipment: updatedSelectedEquipment,
       };
     }
 
@@ -104,17 +102,14 @@ export const appReducer = (state: any, { type, payload }: any) => {
         ...state.currentEquipment.scheduledJobs.slice(0, jobIndex),
         ...state.currentEquipment.scheduledJobs.slice(jobIndex + 1),
       ];
-      const updatedSelectedEquipment = state.selectedEquipment.map(
-        (equip: any) => {
-          if (equip.id === state.currentEquipment.id) {
-            return {
-              ...equip,
-              scheduledJobs: remainingJobs,
-            };
+      const updatedSelectedEquipment = state.selectedEquipment.filter(
+        // eslint-disable-next-line array-callback-return
+        (equipmentItem: { id: any; scheduledJobs: any; }) => {
+          if (equipmentItem.id === state.currentEquipment.id) {
+            return equipmentItem.scheduledJobs = updatedJobs
           }
-          return equip;
-        }
-      );
+        } 
+      )
       return {
         ...state,
         currentEquipment: {

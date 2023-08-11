@@ -15,10 +15,10 @@ import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import ConflictsTable from '../../JobDetails/ConflictsTable';
+import './ScheduleJob.css';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../../common/SearchBar/SearchBar';
 import { filterContacts } from '../../../utils/filterContacts';
-import './ScheduleJob.css';
 
 const ScheduleJob = () => {
   const navigate = useNavigate();

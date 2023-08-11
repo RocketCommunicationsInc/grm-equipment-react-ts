@@ -35,7 +35,6 @@ const JobDetails = () => {
       navigate('/');
     }
   };
-  console.log(state, 'details');
 
   const handleSubmit = (e: any) => {
     const modifiedJob = { ...job };
