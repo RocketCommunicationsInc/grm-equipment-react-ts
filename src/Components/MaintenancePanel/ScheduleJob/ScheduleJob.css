@@ -59,6 +59,10 @@
   gap: var(--spacing-3);
 }
 
+.schedule-job ul {
+  padding-left: 0;
+}
+
 .schedule-job ul li {
   border-bottom: none;
   margin-bottom: var(--spacing-3);

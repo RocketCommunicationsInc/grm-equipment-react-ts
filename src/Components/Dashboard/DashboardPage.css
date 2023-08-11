@@ -6,7 +6,7 @@
   color: var(--color-text-primary);
   display: grid;
   gap: var(--spacing-3);
-  grid-template-columns: calc(20% - 6px) calc(80% - 6px);
+  grid-template-columns: calc(20% - 8px) calc(80% - 8px);
   grid-template-areas: 'equipment-tree equipment-panel';
 }
 
