@@ -1,6 +1,6 @@
 import { RuxContainer, RuxMonitoringIcon } from '@astrouxds/react';
-import './InoperableEquipment.css';
 import { useAppContext } from '../../providers/AppProvider';
+import './InoperableEquipment.css';
 
 type PropTypes = {
   selectEquipment: (e: any) => void;
@@ -32,7 +32,6 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <div slot='header'>Inoperable Equipment</div>
       <RuxContainer className='section'>
         <span>Digital</span>
-        {/* <div className='no-equipment'>No Inoperable Equipment</div> */}
         <ul>
           {digital.map((equip: string, index: number) => (
             <li key={index}>

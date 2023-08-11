@@ -1,34 +1,48 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RuxButton, RuxContainer } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
 import JobIDCard from './JobIDCard/JobIDCard';
-import { setHhMmSs } from '../../utils';
+import { capitalize, setHhMmSs } from '../../utils';
 import SearchBar from '../../common/SearchBar/SearchBar';
-import { useState } from 'react';
-import './MaintenancePanel.css';
 import JobsTable from './JobsTable/JobsTable';
+import { Job } from '../../Types/Equipment';
+import './MaintenancePanel.css';
 
 const MaintenancePanel = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useAppContext() as any;
   const [searchValue, setSearchValue] = useState('');
 
-  const handleJobDetailsClick = (job: any) => {
+  const handleJobDetailsClick = (job: Job) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
     navigate('job-details');
   };
 
-  const filteredJobs = state.scheduledJobs.filter((job: any) =>
-    job === 'startTime' || job === 'stopTime' || job === 'createdOn'
-      ? Object.values(setHhMmSs(job))
-          .toString()
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      : Object.values(job)
-          .toString()
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-  );
+  const filteredJobs = state.currentEquipment
+    ? state.currentEquipment.scheduledJobs.reduce(
+        (results: any[], job: any) => {
+          if (
+            job === 'startTime' || job === 'stopTime' || job === 'createdOn'
+              ? Object.values(setHhMmSs(job))
+                  .toString()
+                  .toLowerCase()
+                  .includes(searchValue.toLowerCase())
+              : Object.values(job)
+                  .toString()
+                  .toLowerCase()
+                  .includes(searchValue.toLowerCase())
+          ) {
+            results.push(job);
+          }
+          return results;
+        },
+        []
+      )
+    : state.scheduledJobs.map((job: Job) => job);
+
+  useEffect(() => {}, [filteredJobs]);
+
   return (
     <RuxContainer className='maintenance-panel'>
       <header slot='header'>
@@ -45,17 +59,18 @@ const MaintenancePanel = () => {
           <RuxButton onClick={() => navigate('schedule-job')}>
             Schedule Job
           </RuxButton>
-          {state.currentEquipment && state.currentEquipment.scheduledJobs.map((job: any) => (
-            <JobIDCard
-              key={job.jobId}
-              type={job.jobType}
-              id={job.jobId}
-              startTime={job.startTime}
-              stopTime={job.stopTime}
-              status={job.jobStatus}
-              viewJob={() => handleJobDetailsClick(job)}
-            />
-          ))}
+          {state.currentEquipment &&
+            state.currentEquipment.scheduledJobs.map((job: Job) => (
+              <JobIDCard
+                key={job.jobId}
+                type={job.jobType}
+                id={Number(job.jobId)}
+                startTime={job.startTime}
+                stopTime={job.stopTime}
+                status={capitalize(job.jobStatus) as string}
+                viewJob={() => handleJobDetailsClick(job)}
+              />
+            ))}
         </div>
       </RuxContainer>
       <RuxContainer className='maintenance-history-panel'>

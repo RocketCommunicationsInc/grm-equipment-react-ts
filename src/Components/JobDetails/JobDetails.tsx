@@ -9,19 +9,19 @@ import {
   RuxOption,
 } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { EventLog } from '../../common/EventLog/EventLog';
 import ConflictsTable from './ConflictsTable';
 import { filterContacts } from '../../utils/filterContacts';
 import Stepper from './Stepper/Stepper';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../common/SearchBar/SearchBar';
+import { capitalize } from '../../utils';
 import './JobDetails.css';
 
 const JobDetails = () => {
   const { state, dispatch }: any = useAppContext();
   const navigate = useNavigate();
-  const params = useParams();
   const { dataArray: contacts } = useTTCGRMContacts();
   const [job, setJob] = useState(state.currentJob);
   const [isModifying, setIsModifying] = useState(false);
@@ -32,16 +32,26 @@ const JobDetails = () => {
       setJob(job);
       setIsModifying(false);
     } else {
-      navigate(`/alerts/${params.alertId}`);
+      navigate('/');
     }
   };
 
   const handleSubmit = (e: any) => {
+    const modifiedJob = { ...job };
     e.preventDefault();
     setIsModifying(false);
     if (job.jobId) {
-      dispatch({ type: 'EDIT_JOB', payload: job });
+      dispatch({ type: 'EDIT_JOB', payload: modifiedJob });
     }
+  };
+
+  const handleDelete = (e: any) => {
+    e.preventDefault();
+    if (job.jobId) {
+      // dispatch({ type: 'DELETE_JOB', payload: job.job });
+      dispatch({ type: 'DELETE_JOB', payload: job.jobId });
+    }
+    navigate('/');
   };
 
   const handleChange = (e: any) => {
@@ -56,7 +66,7 @@ const JobDetails = () => {
 
     for (let i = 0; i < stepperTitle.length; i++) {
       const element = stepperTitle[i].parentElement;
-      if (stepperTitle[i].innerHTML === job.status) {
+      if (stepperTitle[i].innerHTML.toLowerCase() === job.jobStatus) {
         element?.classList.add('active');
       }
     }
@@ -65,6 +75,8 @@ const JobDetails = () => {
   const filteredContacts = useMemo(() => {
     return filterContacts(contacts, searchValue);
   }, [contacts, searchValue]);
+
+  useEffect(() => {}, [job]);
 
   return (
     <RuxContainer className='job-details-panel'>
@@ -100,8 +112,8 @@ const JobDetails = () => {
                 onRuxinput={handleChange}
                 placeholder='Enter Description'
                 label='Description'
-                value={job.description}
-                name='description'
+                value={capitalize(job.jobDescription)}
+                name='jobDescription'
               />
               <RuxInput
                 onRuxinput={handleChange}
@@ -149,7 +161,7 @@ const JobDetails = () => {
               <RuxTextarea
                 disabled
                 label='Description'
-                value={job.description}
+                value={capitalize(job.jobDescription)}
               />
               <RuxInput
                 readonly
@@ -196,6 +208,9 @@ const JobDetails = () => {
       </div>
 
       <footer slot='footer'>
+        <RuxButton secondary onClick={handleDelete}>
+          Delete
+        </RuxButton>
         <RuxButton secondary onClick={handleCancel}>
           Cancel
         </RuxButton>
