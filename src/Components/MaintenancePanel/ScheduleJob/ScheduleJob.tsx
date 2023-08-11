@@ -22,7 +22,7 @@ import './ScheduleJob.css';
 
 const ScheduleJob = () => {
   const navigate = useNavigate();
-  const { dispatch, state } = useAppContext() as any;
+  const { dispatch } = useAppContext() as any;
   const { dataArray: contacts } = useTTCGRMContacts();
   const [calculateConflicts, setCalculateConflicts] = useState(false);
   const [inputsFilledOut, setInputsFilledOut] = useState(false);
