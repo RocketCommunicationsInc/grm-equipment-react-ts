@@ -37,7 +37,7 @@
 }
 
 .job-details-conflicts-section {
-  height: 56.5rem;
+  height: 52.5rem;
   width: 130%;
 }
 
@@ -58,7 +58,7 @@
 
 .job-details-log {
   margin-top: var(--spacing-8);
-  max-height: 18.525rem;
+  max-height: 14.5rem;
   overflow-y: auto;
   overflow-x: hidden;
   min-width: 42rem;
