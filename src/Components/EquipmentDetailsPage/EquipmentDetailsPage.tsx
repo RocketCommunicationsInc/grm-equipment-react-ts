@@ -1,35 +1,38 @@
 import { RuxButton, RuxContainer, RuxTab, RuxTabs } from '@astrouxds/react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../providers/AppProvider';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, MouseEvent, SetStateAction } from 'react';
 import { Equipment } from '../../Types/Equipment';
 import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
-import { RuxTabsCustomEvent } from '@astrouxds/astro-web-components';
 import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPanel';
 import Alerts from '../AlertsPanel/Alerts';
 import ContactsTable from '../ContactsList/ContactsTable';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 
 type PropType = {
-  selectedEquipment: Equipment[];
-  setSelectedEquipment: Dispatch<SetStateAction<Equipment[]>>;
+  inoperablePanelShow: boolean;
+  setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
 };
 
 const EquipmentDetailsPage = ({
-  selectedEquipment,
-  setSelectedEquipment,
+  inoperablePanelShow,
+  setInoperablePanelShow,
 }: PropType) => {
-  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(true);
   const { state, dispatch }: any = useAppContext();
   const navigate = useNavigate();
 
-  const setCurrentEquipment = (e: RuxTabsCustomEvent<any>) => {
-    if (e.detail.id === 'inoperable-equipment') {
+  const setCurrentEquipment = (
+    e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>
+  ) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('equipment-panel_tab-clear-button')) return;
+
+    if (target.id === 'inoperable-equipment') {
       setInoperablePanelShow(true);
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
     } else {
-      for (const equipment of selectedEquipment) {
-        if (e.detail.id === equipment.id) {
+      for (const equipment of state.selectedEquipment) {
+        if (target.id === equipment.id) {
           dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
         }
       }
@@ -38,16 +41,14 @@ const EquipmentDetailsPage = ({
   };
 
   const handleClearClick = (equipment: Equipment) => {
-    setSelectedEquipment((prevState) =>
-      prevState.filter(
-        (equipmentItem: Equipment) => equipmentItem.id !== equipment.id
-      )
-    );
-
     // if the tab being cleared is the currently selected one, fallback to inoperable equipment
     if (state.currentEquipment && state.currentEquipment.id === equipment.id) {
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
+      // sets fallback panel
+      setInoperablePanelShow(true);
     }
+
+    dispatch({ type: 'REMOVE_SELECTED_EQUIPMENT', payload: equipment });
   };
 
   const selectEquipment = () => {
@@ -59,7 +60,7 @@ const EquipmentDetailsPage = ({
       <RuxTabs
         small={true}
         id='equipment-tabs'
-        onRuxselected={(e) => setCurrentEquipment(e)}
+        onClick={(e) => setCurrentEquipment(e)}
       >
         <RuxTab
           id='inoperable-equipment'
@@ -68,7 +69,7 @@ const EquipmentDetailsPage = ({
         >
           Inoperable
         </RuxTab>
-        {selectedEquipment.map((equipment) => (
+        {state.selectedEquipment.map((equipment: Equipment) => (
           <RuxTab
             key={equipment.id}
             id={equipment.id}
@@ -81,6 +82,7 @@ const EquipmentDetailsPage = ({
           >
             {equipment.config}-{equipment.equipmentString}
             <RuxButton
+              className='equipment-panel_tab-clear-button'
               iconOnly
               borderless
               icon='clear'

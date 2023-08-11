@@ -11,16 +11,7 @@ import {
 } from '@astrouxds/react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
-
-type Job = {
-  jobId: string;
-  jobType: string;
-  createdOn: string;
-  startTime: string;
-  stopTime: string;
-  technician: string;
-  description: string;
-};
+import { Job } from '../../../Types/Equipment';
 
 const columnDefs: any[] = [
   { label: 'Job ID', property: 'jobId' },
@@ -29,7 +20,7 @@ const columnDefs: any[] = [
   { label: 'Started On', property: 'startTime' },
   { label: 'Completed On', property: 'stopTime' },
   { label: 'Technician', property: 'technician' },
-  { label: 'Description', property: 'description' },
+  { label: 'Description', property: 'jobDescription' },
 ];
 
 type PropTypes = {
@@ -94,8 +85,9 @@ const JobsTable = ({ jobs }: PropTypes) => {
       <RuxTable>
         <RuxTableHeader>
           <RuxTableHeaderRow>
-            {columnDefs.map((colDef) => (
+            {columnDefs.map((colDef, index) => (
               <RuxTableHeaderCell
+                key={`${colDef.property}${index}`}
                 data-sortprop={colDef.property}
                 onClick={handleHeaderCellClick}
               >
@@ -116,10 +108,10 @@ const JobsTable = ({ jobs }: PropTypes) => {
           </RuxTableHeaderRow>
         </RuxTableHeader>
         <RuxTableBody>
-          {sortedData.map((job) => {
+          {sortedData.map((job, index) => {
             return (
               <RuxTableRow
-                key={job.jobId}
+                key={`${job.jobId}${index}`}
                 onClick={() => handleTabeRowClick(job)}
               >
                 {columnDefs.map((colDef, index) => {

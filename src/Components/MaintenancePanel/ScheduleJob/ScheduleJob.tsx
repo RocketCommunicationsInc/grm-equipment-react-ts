@@ -12,17 +12,16 @@ import {
   RuxTableHeaderRow,
 } from '@astrouxds/react';
 import { useMemo, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import ConflictsTable from '../../JobDetails/ConflictsTable';
-import './ScheduleJob.css';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../../common/SearchBar/SearchBar';
 import { filterContacts } from '../../../utils/filterContacts';
+import './ScheduleJob.css';
 
 const ScheduleJob = () => {
   const navigate = useNavigate();
-  const params = useParams();
   const { dispatch } = useAppContext() as any;
   const { dataArray: contacts } = useTTCGRMContacts();
   const [calculateConflicts, setCalculateConflicts] = useState(false);
@@ -44,24 +43,25 @@ const ScheduleJob = () => {
   const [newJob, setNewJob] = useState({
     jobId: uniqueJobId,
     jobType: '',
-    description: '',
+    jobDescription: '',
     startTime: '',
     stopTime: '',
     technician: '',
     follow: true,
-    status: statusValues[randomStatus],
+    jobStatus: statusValues[randomStatus],
     createdOn: Date.now(),
-    equpiment: equipmentValues[randomEqupiment],
+    equipment: '',
+    equipmentStatus: equipmentValues[randomEqupiment],
   });
 
   const handleCancel = () => {
-    navigate(`/alerts/${params.alertId}`);
+    navigate('/');
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     dispatch({ type: 'SCHEDULE_NEW_JOB', payload: newJob });
-    navigate(`/alerts/${params.alertId}`);
+    navigate('/');
   };
 
   const handleChange = (e: any) => {
@@ -107,8 +107,8 @@ const ScheduleJob = () => {
               onRuxinput={handleChange}
               placeholder='Enter Description'
               label='Description'
-              value={newJob.description}
-              name='description'
+              value={newJob.jobDescription}
+              name='jobDescription'
             />
 
             <li>2. Select Time</li>
