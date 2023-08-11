@@ -6,7 +6,7 @@ import {
 } from '@astrouxds/react';
 import { EventLog } from '../../common/EventLog/EventLog';
 import { useAppContext } from '../../providers/AppProvider';
-import { capitalize } from '../../utils';
+import { addToast, capitalize } from '../../utils';
 import './EquipmentDetailsPanel.css';
 
 const firstButton = [{ label: 'Online', selected: true }, { label: 'Offline' }];
@@ -18,17 +18,29 @@ const secondButton = [
 const EquipmentDetailsPanel = () => {
   const { state }: any = useAppContext();
 
+  const handleSegmentedButton = () => {
+    addToast('This feature has not been implemented', false, 3000);
+  };
+
   return (
     <RuxContainer className='equipment-details_details'>
       <span className='equipment-title'>
-        <RuxStatus status={state.currentEquipment.status} slot='prefix' />{' '}
+        <RuxStatus status={state.currentEquipment.status} slot='prefix' />
         {state.currentEquipment.equipmentString}
       </span>
       <div className='equipment-alerts'>
         <div>
           <section className='segmented-button-group'>
-            <RuxSegmentedButton size='small' data={firstButton} />
-            <RuxSegmentedButton size='small' data={secondButton} />
+            <RuxSegmentedButton
+              onRuxchange={handleSegmentedButton}
+              size='small'
+              data={firstButton}
+            />
+            <RuxSegmentedButton
+              onRuxchange={handleSegmentedButton}
+              size='small'
+              data={secondButton}
+            />
             <RuxInput
               label='Status'
               value={capitalize('active')}
@@ -38,7 +50,7 @@ const EquipmentDetailsPanel = () => {
             <RuxInput label='Type' value={'Iron'} readonly size='small' />
             <RuxInput
               label='Category'
-              value={state.currentEquipment.category}
+              value={capitalize(state.currentEquipment.category)}
               readonly
               size='small'
             />
@@ -52,7 +64,7 @@ const EquipmentDetailsPanel = () => {
             aria-readonly='true'
             role='textbox'
           >
-            <p>{state.currentEquipment.description}</p>
+            <p>{capitalize(state.currentEquipment.description)}</p>
           </div>
         </div>
 

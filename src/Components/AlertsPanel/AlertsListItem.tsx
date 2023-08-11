@@ -5,22 +5,21 @@ import {
   RuxAccordion,
   RuxAccordionItem,
 } from '@astrouxds/react';
-import { useNavigate } from 'react-router-dom';
 import { useTTCGRMActions } from '@astrouxds/mock-data';
 import type { Alert } from '@astrouxds/mock-data';
+import { addToast } from '../../utils';
 
 type PropTypes = {
   alertItem: Alert;
 };
 
 const AlertListItem = ({ alertItem }: PropTypes) => {
-  const navigate = useNavigate();
   const { modifyAlert } = useTTCGRMActions();
   const toggleSelected = (alert: Alert) =>
     modifyAlert({ ...alert, selected: !alertItem.selected });
 
   const handleClick = () => {
-    navigate(`alerts/${alertItem.id}`);
+    addToast('This feature has not been implemented', false, 3000);
   };
 
   return (

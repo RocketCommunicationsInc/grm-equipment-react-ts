@@ -12,6 +12,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import { Job } from '../../../Types/Equipment';
+import { capitalize } from '../../../utils';
 
 const columnDefs: any[] = [
   { label: 'Job ID', property: 'jobId' },
@@ -118,7 +119,9 @@ const JobsTable = ({ jobs }: PropTypes) => {
                   const property: keyof Job = colDef.property;
                   return (
                     <RuxTableCell key={colDef.label}>
-                      {job[property]}
+                      {property === 'jobDescription'
+                        ? capitalize(job[property])
+                        : job[property]}
                     </RuxTableCell>
                   );
                 })}

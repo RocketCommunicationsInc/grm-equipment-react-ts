@@ -1,6 +1,5 @@
 .jobs-wrapper {
   display: flex;
-  padding: var(--spacing-4);
 }
 
 .jobs-wrapper rux-textarea {
@@ -42,7 +41,8 @@
   width: 130%;
 }
 
-.job-details-conflicts-section h2 {
+.job-details-conflicts-section span:nth-of-type(2),
+.job-details-conflicts-section span:nth-of-type(3) {
   margin: var(--spacing-4);
 }
 
@@ -58,7 +58,7 @@
 
 .job-details-log {
   margin-top: var(--spacing-8);
-  max-height: 22.5rem;
+  max-height: 18.525rem;
   overflow-y: auto;
   overflow-x: hidden;
   min-width: 42rem;
@@ -71,4 +71,9 @@
 .job-details-panel header[slot='header'] {
   display: flex;
   justify-content: space-between;
+}
+
+.job-details-conflicts-section span:nth-of-type(1),
+.jobs-details-section span:nth-of-type(1) {
+ font-size: var(--font-size-2xl);
 }

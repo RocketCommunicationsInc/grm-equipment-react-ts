@@ -1,5 +1,5 @@
 .dashboard {
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 7rem);
   overflow-y: hidden;
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);

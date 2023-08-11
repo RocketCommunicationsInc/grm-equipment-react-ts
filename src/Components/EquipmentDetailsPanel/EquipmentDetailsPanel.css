@@ -1,5 +1,5 @@
 #equipment-panel:not(.hidden) {
-  height: calc(100vh - 10rem); /* accounts for the GSB & the tabs */
+  height: calc(100vh - 11rem); /* accounts for the GSB & the tabs */
   overflow: scroll;
   display: grid;
   grid-template-rows: auto auto;

@@ -24,14 +24,7 @@ const GlobalStatusBar = () => {
   const [notifications3, setNotifications3] = useState(4);
   const [lightTheme, setLightTheme] = useState(false);
 
-  const statusValuesArr = [
-    'off',
-    'caution',
-    'critical',
-    'normal',
-    'serious',
-    'standby',
-  ];
+  const statusValuesArr = ['off', 'caution', 'normal', 'standby'];
 
   const notificationsArr = [12, 14, 23, 42, 6, 37, 25, 38, 9];
 
@@ -52,7 +45,7 @@ const GlobalStatusBar = () => {
       setNotifications1(notificationsArr[randomNumber]);
       setNotifications2(notificationsArr[randomNumber2]);
       setNotifications3(notificationsArr[randomNumber3]);
-    }, 3000);
+    }, 9000);
     return () => clearInterval(interval);
   });
 
