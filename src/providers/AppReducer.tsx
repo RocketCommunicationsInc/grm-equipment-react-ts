@@ -76,32 +76,11 @@ export const appReducer = (state: any, { type, payload }: any) => {
 
     case 'DELETE_JOB': {
       const updatedJobs = state.currentEquipment.scheduledJobs.filter(
-        (job: Job) => job.jobId !== payload.jobId
+        (job: Job) => {
+          return job.jobId !== payload
+        }
       );
-      // const updatedSelectedEquipment = state.selectedEquipment.map(
-      //   (equip: any) => {
-      //     if (equip.id === state.currentEquipment.id) {
-      //       const updatedScheduledJobs = equip.scheduledJobs.filter(
-      //         (job: Job) => job.jobId !== payload.jobId
-      //       );
-      //       return {
-      //         ...equip,
-      //         scheduledJobs: updatedScheduledJobs,
-      //       };
-      //     }
-      //     return equip;
-      //   }
-      // );
-      const jobIndex = state.currentEquipment.scheduledJobs.findIndex(
-        (job: Job) => job.jobId === payload.jobId
-      );
-      if (payload.jobId === -1) {
-        return state;
-      }
-      const remainingJobs = [
-        ...state.currentEquipment.scheduledJobs.slice(0, jobIndex),
-        ...state.currentEquipment.scheduledJobs.slice(jobIndex + 1),
-      ];
+
       const updatedSelectedEquipment = state.selectedEquipment.filter(
         // eslint-disable-next-line array-callback-return
         (equipmentItem: { id: any; scheduledJobs: any; }) => {
@@ -110,6 +89,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
           }
         } 
       )
+
       return {
         ...state,
         currentEquipment: {
