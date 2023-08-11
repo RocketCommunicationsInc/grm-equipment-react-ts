@@ -15,12 +15,26 @@ export const appReducer = (state: any, { type, payload }: any) => {
           return equip;
         }
       );
+
+      const updatedEquipment = state.equipment.map(
+        (equip: any) => {
+          if (equip.id === state.currentEquipment.id) {
+            const updatedJobs = [...equip.scheduledJobs, payload];
+            return {
+              ...equip,
+              scheduledJobs: updatedJobs,
+            };
+          }
+          return equip;
+        }
+      );
       return {
         ...state,
         currentEquipment: {
           ...state.currentEquipment,
           scheduledJobs: [...state.currentEquipment.scheduledJobs, payload],
         },
+        equipment: updatedEquipment,
         scheduledJobs: [...state.scheduledJobs, payload],
         selectedEquipment: updatedSelectedEquipment,
       };
@@ -69,7 +83,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
           scheduledJobs: updatedJobs,
         },
         selectedEquipment: updatedSelectedEquipment,
-        equipmentArr: updatedEquipment,
+        equipment: updatedEquipment,
         scheduledJobs: updatedJobs,
         currentJob: modifiedJob ? modifiedJob : {},
       };
@@ -81,6 +95,16 @@ export const appReducer = (state: any, { type, payload }: any) => {
           return job.jobId !== payload;
         }
       );
+
+      const updatedEquipment = state.equipment.map((equip: any) => {
+        if (equip.id === state.currentEquipment.id) {
+          return {
+            ...equip,
+            scheduledJobs: updatedJobs,
+          };
+        }
+        return equip;
+      });
 
       const updatedSelectedEquipment = state.selectedEquipment.map(
         (equip: any) => {
@@ -101,6 +125,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
           scheduledJobs: updatedJobs,
         },
         scheduledJobs: updatedJobs,
+        equipment: updatedEquipment,
         currentJob: null,
         selectedEquipment: updatedSelectedEquipment,
       };
