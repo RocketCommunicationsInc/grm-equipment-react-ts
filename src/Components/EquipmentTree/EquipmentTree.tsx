@@ -50,7 +50,7 @@ const EquipmentTree = ({ setInoperablePanelShow }: PropTypes) => {
       <RuxTree>
         {categoryArray.map((category) => (
           <RuxTreeNode key={category}>
-            {category}
+            {category === 'rf' ? category.toUpperCase() : capitalize(category)}
             {configArray.map((config) => (
               <RuxTreeNode slot='node' key={`${category}${config}`}>
                 Component {config}
