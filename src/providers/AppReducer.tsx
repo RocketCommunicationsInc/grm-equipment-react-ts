@@ -53,14 +53,27 @@ export const appReducer = (state: any, { type, payload }: any) => {
         }
       );
 
-      const updatedSelectedEquipment = state.selectedEquipment.filter(
-        // eslint-disable-next-line array-callback-return
-        (equipmentItem: { id: any; scheduledJobs: any; }) => {
-          if (equipmentItem.id === state.currentEquipment.id) {
-            return equipmentItem.scheduledJobs = updatedJobs
+      const updatedEquipment = state.equipment.map((equip: any) => {
+        if (equip.id === state.currentEquipment.id) {
+          return {
+            ...equip,
+            scheduledJobs: updatedJobs,
+          };
+        }
+        return equip;
+      });
+
+      const updatedSelectedEquipment = state.selectedEquipment.map(
+        (equip: any) => {
+          if (equip.id === state.currentEquipment.id) {
+            return {
+              ...equip,
+              scheduledJobs: updatedJobs,
+            };
           }
-        } 
-      )
+          return equip;
+        }
+      );
 
       return {
         ...state,
@@ -69,6 +82,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
           scheduledJobs: updatedJobs,
         },
         selectedEquipment: updatedSelectedEquipment,
+        equipmentArr: updatedEquipment,
         scheduledJobs: updatedJobs,
         currentJob: modifiedJob ? modifiedJob : {},
       };
@@ -77,18 +91,21 @@ export const appReducer = (state: any, { type, payload }: any) => {
     case 'DELETE_JOB': {
       const updatedJobs = state.currentEquipment.scheduledJobs.filter(
         (job: Job) => {
-          return job.jobId !== payload
+          return job.jobId !== payload;
         }
       );
 
-      const updatedSelectedEquipment = state.selectedEquipment.filter(
-        // eslint-disable-next-line array-callback-return
-        (equipmentItem: { id: any; scheduledJobs: any; }) => {
-          if (equipmentItem.id === state.currentEquipment.id) {
-            return equipmentItem.scheduledJobs = updatedJobs
+      const updatedSelectedEquipment = state.selectedEquipment.map(
+        (equip: any) => {
+          if (equip.id === state.currentEquipment.id) {
+            return {
+              ...equip,
+              scheduledJobs: updatedJobs,
+            };
           }
-        } 
-      )
+          return equip;
+        }
+      );
 
       return {
         ...state,
