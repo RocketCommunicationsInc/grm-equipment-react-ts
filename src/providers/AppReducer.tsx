@@ -15,25 +15,12 @@ export const appReducer = (state: any, { type, payload }: any) => {
           return equip;
         }
       );
-      // const updatedCurrentEquipment = Object.values(state.currentEquipment).map(
-      //   (equip: any) => {
-      //     if (equip.jobId === state.currentEquipment.id) {
-      //       const updatedJobs = [...equip.currentEquipment, payload];
-      //       return {
-      //         ...equip,
-      //         scheduledJobs: updatedJobs,
-      //       };
-      //     }
-      //     return equip;
-      //   }
-      // );
       return {
         ...state,
         currentEquipment: {
           ...state.currentEquipment,
           scheduledJobs: [...state.currentEquipment.scheduledJobs, payload],
         },
-        //currentEquipment: updatedCurrentEquipment,
         scheduledJobs: [...state.scheduledJobs, payload],
         selectedEquipment: updatedSelectedEquipment,
       };

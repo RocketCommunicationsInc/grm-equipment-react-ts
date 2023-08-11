@@ -9,7 +9,6 @@ import { Equipment } from '../../Types/Equipment';
 import { Dispatch, SetStateAction } from 'react';
 import { capitalize } from '../../utils';
 import './EquipmentTree.css';
-import { equipmentByCategory } from '../../data/data';
 
 type PropTypes = {
   setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
@@ -18,8 +17,7 @@ type PropTypes = {
 const EquipmentTree = ({ setInoperablePanelShow }: PropTypes) => {
   const { state, dispatch }: any = useAppContext();
   const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
-
-  console.log(equipmentByCategory)
+  const categoryArray: string[] = ['digital', 'facilities', 'comms', 'rf'];
 
   const handleSelectedEquipment = (equipment: Equipment) => {
     // always set the selected equipment to the current equipment in app state.
@@ -50,25 +48,27 @@ const EquipmentTree = ({ setInoperablePanelShow }: PropTypes) => {
   return (
     <RuxContainer className='equipment-tree'>
       <RuxTree>
-        {Object.keys(state.equipmentByCategory).map((category) => (
+        {categoryArray.map((category) => (
           <RuxTreeNode key={category}>
-            {category === 'rf' ? category.toUpperCase() : capitalize(category)}
+            {category}
             {configArray.map((config) => (
               <RuxTreeNode slot='node' key={`${category}${config}`}>
                 Component {config}
-                {Object.values(state.equipmentByCategory[category][config]).map(
-                  (equipment: any, index: number) => (
-                    <RuxTreeNode
-                      key={`${category}${config}${index}`}
-                      slot='node'
-                      onRuxtreenodeselected={() =>
-                        handleSelectedEquipment(equipment)
-                      }
-                    >
-                      <RuxStatus slot='prefix' status={equipment.status} />
-                      {equipment.config}-{equipment.equipmentString}
-                    </RuxTreeNode>
-                  )
+                {state.equipment.map(
+                  (equipment: any, index: number) =>
+                    equipment.category === category &&
+                    equipment.config === config && (
+                      <RuxTreeNode
+                        key={`${category}${config}${index}`}
+                        slot='node'
+                        onRuxtreenodeselected={() =>
+                          handleSelectedEquipment(equipment)
+                        }
+                      >
+                        <RuxStatus slot='prefix' status={equipment.status} />
+                        {equipment.config}-{equipment.equipmentString}
+                      </RuxTreeNode>
+                    )
                 )}
               </RuxTreeNode>
             ))}
