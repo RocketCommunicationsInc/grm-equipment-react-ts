@@ -28,15 +28,12 @@ const ScheduleJob = () => {
   const [inputsFilledOut, setInputsFilledOut] = useState(false);
   const [searchValue, setSearchValue] = useState('');
 
+  const statusValues = ['off', 'caution', 'normal', 'standby'];
   const uniqueJobId = Math.floor(Math.random() * 90000) + 10000;
-  const statusValues = [
-    'Approved',
-    'Started',
-    'Stopped',
-    'Submitted',
-    'Online',
-  ];
+  const jobValues = ['Approved', 'Started', 'Stopped', 'Submitted', 'Online'];
+
   const randomStatus = Math.floor(Math.random() * statusValues.length);
+  const randomJobStatus = Math.floor(Math.random() * jobValues.length);
   const equipmentValues = ['ANT3', 'BAFB4', 'ANT9', 'BAFB5', 'ANT12', 'BAFB8'];
   const randomEqupiment = Math.floor(Math.random() * equipmentValues.length);
 
@@ -48,10 +45,10 @@ const ScheduleJob = () => {
     stopTime: '',
     technician: '',
     follow: true,
-    jobStatus: statusValues[randomStatus],
+    jobStatus: jobValues[randomJobStatus],
     createdOn: Date.now(),
-    equipment: '',
-    equipmentStatus: equipmentValues[randomEqupiment],
+    equipment: equipmentValues[randomEqupiment],
+    equipmentStatus: statusValues[randomStatus],
   });
 
   const handleCancel = () => {
@@ -87,7 +84,7 @@ const ScheduleJob = () => {
         />
       </header>
       <div className='schedule-job-wrapper'>
-        <div className='job-request-section'>
+        <RuxContainer className='job-request-section'>
           <ul>
             <li>1. Select Job Type</li>
             <RuxSelect
@@ -163,19 +160,18 @@ const ScheduleJob = () => {
               </RuxButton>
             )}
           </ul>
-        </div>
+        </RuxContainer>
 
         <RuxContainer className='conflicts-section'>
           {!calculateConflicts ? (
-            <h2>Conflicts (0)</h2>
+            <span>Conflicts (0)</span>
           ) : (
-            <h2>Conflicts ({filteredContacts.length})</h2>
+            <span>Conflicts ({filteredContacts.length})</span>
           )}
           <span>
             This equpiment may be allocated to contacts within the timeframe of
             this maintenance job. A list of these contacts is provided below
             after clicking "Calculate Conflicts".
-            <br /> <br />
           </span>
           <span>
             To ensure that these contacts have the equpiment they need to
@@ -183,13 +179,10 @@ const ScheduleJob = () => {
             Start/Stop fields, or change the equipment allocated to these
             contacts in the GRM Schedule app.
           </span>
-
-          <div className='table-section'>
-            {calculateConflicts ? (
-              <div className='conflicts-wrapper'>
-                <ConflictsTable filteredData={filteredContacts} />
-              </div>
-            ) : (
+          {calculateConflicts ? (
+            <ConflictsTable filteredData={filteredContacts} />
+          ) : (
+            <div>
               <RuxTable>
                 <RuxTableHeader>
                   <RuxTableHeaderRow>
@@ -207,11 +200,11 @@ const ScheduleJob = () => {
                   </RuxTableHeaderRow>
                 </RuxTableHeader>
               </RuxTable>
-            )}
-            <span className='conflicts-placeholder'>
-              Conflicts have not been calculated.
-            </span>
-          </div>
+              <span className='conflicts-placeholder'>
+                Conflicts have not been calculated.
+              </span>
+            </div>
+          )}
         </RuxContainer>
       </div>
       <footer slot='footer'>

@@ -1,11 +1,29 @@
+#equipment-panel:not(.hidden) {
+  height: calc(100vh - 11rem); /* accounts for the GSB & the tabs */
+  overflow: scroll;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'equipment-details'
+    'maintenance-panel';
+}
+
 .equipment-details {
   height: 100%;
   width: 100%;
-  padding-bottom: var(--spacing-3) ;
+}
+
+.equipment-details_wrapper {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  grid-template-rows: 40% 60%r;
+  grid-template-areas:
+    'details details'
+    'alerts contacts-table';
 }
 
 .equipment-alerts {
-display: flex;
+  display: flex;
 }
 
 .segmented-button-group {
@@ -41,4 +59,8 @@ display: flex;
 
 .alert-description header {
   padding-bottom: var(--spacing-3);
+}
+
+.dashboard_equipment-wrapper rux-tabs {
+  margin-bottom: var(--spacing-2);
 }

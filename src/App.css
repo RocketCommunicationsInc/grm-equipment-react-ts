@@ -22,76 +22,30 @@ rux-container footer[slot='footer'] {
   justify-content: flex-end;
 }
 
-.dashboard {
-  height: calc(100% - 6rem);
-  /* overflow-y: hidden; */
-  padding: var(--spacing-3);
-  background-color: var(--color-background-base-default);
-  color: var(--color-text-primary);
-  display: grid;
-  gap: var(--spacing-3);
-  grid-template-columns: calc(20% - 6px) calc(80% - 6px);
-  grid-template-areas:
-    "equipment-tree equipment-panel"
-}
-
-.equip-details {
-  height: calc(100% - 6rem);
-  background-color: var(--color-background-base-default);
-  color: var(--color-text-primary);
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50% auto;
-  grid-template-areas:
-    "equipment-details"
-    "maintenance-panel"
-}
-
-.equipment-details {
-  grid-area: equipment-details;
-  padding-block-start: var(--spacing-3);
-}
-
-#inoperable-equipment-panel {
-  padding-block-start: var(--spacing-3);
-}
-
-.equipment-details_wrapper {
-  display: grid;
-  grid-template-columns: 35% 1fr;
-  grid-template-rows: 40% 60%r;
-  grid-template-areas:
-    "details details"
-    "alerts contacts-table"
-}
-
-rux-container.maintenance-panel {
+.maintenance-panel {
   grid-area: maintenance-panel;
 }
 
-rux-container.equipment-details_details {
+.equipment-details_details {
   grid-area: details;
 }
 
-rux-container.contacts-table {
+.contacts-table {
   grid-area: contacts-table;
   max-height: 35rem;
   overflow: hidden;
+  margin-block: var(--spacing-3);
 }
 
-rux-container.alerts {
+.alerts {
   grid-area: alerts;
   max-height: 35rem;
   overflow: hidden;
+  margin-block: var(--spacing-3);
 }
 
-
-rux-container.equipment-tree {
+.equipment-tree {
   grid-area: equipment-tree;
-}
-
-.dashboard_equipment-wrapper {
-  grid-area: equipment-panel;
 }
 
 /* GLOBAL PAGE STYLES */

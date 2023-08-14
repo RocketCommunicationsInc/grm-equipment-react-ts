@@ -84,3 +84,7 @@
 .stepper-item:last-child::after {
   content: none;
 }
+
+.stepper-item .step-counter rux-icon {
+  margin-right: var(--spacing-3);
+}

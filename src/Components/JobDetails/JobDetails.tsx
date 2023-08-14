@@ -66,7 +66,10 @@ const JobDetails = () => {
 
     for (let i = 0; i < stepperTitle.length; i++) {
       const element = stepperTitle[i].parentElement;
-      if (stepperTitle[i].innerHTML.toLowerCase() === job.jobStatus) {
+      if (
+        stepperTitle[i].innerHTML === job.jobStatus ||
+        stepperTitle[i].innerHTML.toLowerCase() === job.jobStatus
+      ) {
         element?.classList.add('active');
       }
     }
@@ -89,8 +92,8 @@ const JobDetails = () => {
         />
       </header>
       <div className='jobs-wrapper'>
-        <div className='jobs-details-section'>
-          <h2 slot='toolbar'>Job Details</h2>
+        <RuxContainer className='jobs-details-section'>
+          <span>Job Details</span>
           <Stepper />
           {isModifying ? (
             <>
@@ -188,14 +191,13 @@ const JobDetails = () => {
               </div>
             </>
           )}
-        </div>
+        </RuxContainer>
         <RuxContainer className='job-details-conflicts-section'>
-          <h2>Conflicts ({filteredContacts.length})</h2>
+          <span>Conflicts ({filteredContacts.length})</span>
           <span>
             This equpiment may be allocated to contacts within the timeframe of
             this maintenance job. A list of these contacts is provided below
             after clicking "Calculate Conflicts".
-            <br />
           </span>
           <span>
             To ensure that these contacts have the equpiment they need to
