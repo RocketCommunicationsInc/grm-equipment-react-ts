@@ -1,12 +1,13 @@
 .dashboard {
-  height: calc(100vh - 7rem);
+  height: calc(100vh - 96px);
   overflow-y: hidden;
   padding: var(--spacing-3);
   background-color: var(--color-background-base-default);
   color: var(--color-text-primary);
   display: grid;
-  gap: var(--spacing-3);
-  grid-template-columns: calc(20% - 8px) calc(80% - 8px);
+  gap: var(--spacing-2);
+  grid-template-columns: calc(20% - 8px) 1fr;
+  grid-template-rows: minmax(0, 1fr);
   grid-template-areas: 'equipment-tree equipment-panel';
 }
 
