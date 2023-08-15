@@ -75,5 +75,5 @@
 
 .job-details-conflicts-section span:nth-of-type(1),
 .jobs-details-section span:nth-of-type(1) {
- font-size: var(--font-size-2xl);
+  font-size: var(--font-size-2xl);
 }
