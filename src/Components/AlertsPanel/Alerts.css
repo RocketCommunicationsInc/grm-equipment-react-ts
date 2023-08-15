@@ -30,7 +30,8 @@
 .alert-list-headers {
   display: flex;
   flex-flow: row nowrap;
-  margin: 0;
+  margin-left: 3px;
+  margin-block: 0px;
   font-size: var(--font-heading-5-font-size);
   box-shadow: 0px 3px 3px 0px rgb(0 0 0 / 40%);
   padding: var(--spacing-2) var(--spacing-4);
@@ -57,7 +58,7 @@
   margin-top: 0;
 }
 
- rux-container.alerts::part(body) {
+rux-container.alerts::part(body) {
   padding: 0;
 }
 
@@ -66,13 +67,17 @@
 .alert-list-label {
   display: flex;
   flex-flow: row nowrap;
-  height: 2rem;
+  min-height: 2rem;
   width: 100%;
   align-items: center;
 }
 
 .alerts rux-accordion-item::part(container) {
-  padding-inline: 0px;
+  padding-inline: 3px;
+}
+
+.alerts rux-accordion-item::part(label-wrapper):hover {
+  background-color: var(--color-background-surface-hover);
 }
 
 .alerts rux-accordion-item::part(label) {
@@ -87,7 +92,6 @@
 .alert-list-label span:nth-of-type(1) {
   width: 50%;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
@@ -95,11 +99,15 @@
 .alert-list-label span:nth-of-type(2) {
   width: 22%;
   text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .alert-list-headers span:nth-of-type(3),
 .alert-list-label span:nth-of-type(3) {
   width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .alert-list-headers span:nth-of-type(3) {
@@ -123,6 +131,7 @@ rux-accordion rux-status {
   flex-grow: 1;
   padding-left: 0;
   margin: 0;
+  padding-top: 3px;
 }
 
 li {
