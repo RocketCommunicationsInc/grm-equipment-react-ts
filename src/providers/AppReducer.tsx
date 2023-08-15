@@ -16,18 +16,16 @@ export const appReducer = (state: any, { type, payload }: any) => {
         }
       );
 
-      const updatedEquipment = state.equipment.map(
-        (equip: any) => {
-          if (equip.id === state.currentEquipment.id) {
-            const updatedJobs = [...equip.scheduledJobs, payload];
-            return {
-              ...equip,
-              scheduledJobs: updatedJobs,
-            };
-          }
-          return equip;
+      const updatedEquipment = state.equipment.map((equip: any) => {
+        if (equip.id === state.currentEquipment.id) {
+          const updatedJobs = [...equip.scheduledJobs, payload];
+          return {
+            ...equip,
+            scheduledJobs: updatedJobs,
+          };
         }
-      );
+        return equip;
+      });
       return {
         ...state,
         currentEquipment: {

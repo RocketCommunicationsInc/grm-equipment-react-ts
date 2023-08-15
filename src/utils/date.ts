@@ -18,26 +18,25 @@ export const getDayOfYear = (date: Date) => {
 export const determineTimeString = (originalValue: Date) =>
   new Date(originalValue).toTimeString().slice(0, 8);
 
-  export const getJulianDay = (date: Date) => {
-    return (
-      (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) -
-        Date.UTC(date.getFullYear(), 0, 0)) /
-      24 /
-      60 /
-      60 /
-      1000
-    );
-  };
+export const getJulianDay = (date: Date) => {
+  return (
+    (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) -
+      Date.UTC(date.getFullYear(), 0, 0)) /
+    24 /
+    60 /
+    60 /
+    1000
+  );
+};
 
-  export function formatReadableTime(timestamp: Date | number) {
-    // assumes timestamp is a UTC Epoch
-    const time = new Date(timestamp);
-  
-    return new Date(time).toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false,
-    });
-  }
-  
+export function formatReadableTime(timestamp: Date | number) {
+  // assumes timestamp is a UTC Epoch
+  const time = new Date(timestamp);
+
+  return new Date(time).toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  });
+}
