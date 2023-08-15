@@ -11,7 +11,12 @@ const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
   { label: 'IRON', property: 'satellite' },
   { label: 'Ground Station', property: 'ground' },
-  { label: 'REV', property: 'rev' },
+  {
+    label: 'REV',
+    property: 'rev',
+    cellClass: 'right-align-conflicts',
+    headerCellClass: 'right-align',
+  },
   { label: 'Equipment String', property: 'equipment' },
   { label: 'State', property: 'state', valueFn: capitalize },
   {
@@ -32,14 +37,12 @@ const columnDefs: ColumnDef[] = [
     property: 'aos',
     valueFn: determineTimeString,
     cellClass: 'right-align-conflicts-time',
-    headerCellClass: 'right-align',
   },
   {
     label: 'LOS',
     property: 'los',
     valueFn: determineTimeString,
     cellClass: 'right-align-conflicts-time',
-    headerCellClass: 'right-align',
   },
   {
     label: 'Stop Time',

@@ -12,7 +12,12 @@ const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
   { label: 'IRON', property: 'satellite' },
   { label: 'Ground Station', property: 'ground' },
-  { label: 'REV', property: 'rev', headerCellClass: 'rev-header' },
+  {
+    label: 'REV',
+    property: 'rev',
+    cellClass: 'right-align-conflicts',
+    headerCellClass: 'right-align',
+  },
   {
     label: 'Equipment',
     property: 'equipment',

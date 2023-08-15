@@ -55,14 +55,6 @@ rux-container .table-wrapper {
   text-align: right;
 }
 
-.rev-header {
-  border-left: transparent var(--spacing-050) solid; 
-}
-
-.equip-column {
-  width: 12%;
-}
-
 .right-align-current-c {
   text-align: right;
   border-right: transparent var(--spacing-4) solid;
@@ -71,7 +63,7 @@ rux-container .table-wrapper {
 
 .right-align-conflicts {
   text-align: right;
-  border-right: transparent var(--spacing-3) solid;
+  border-right: transparent var(--spacing-1) solid;
   width: 6.75%;
 }
 
