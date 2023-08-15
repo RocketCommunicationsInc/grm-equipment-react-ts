@@ -19,6 +19,7 @@ const TableHeaderCell = ({
     <RuxTableHeaderCell
       data-sortprop={columnDefinition.property}
       onClick={handleClick}
+      className={columnDefinition.headerCellClass}
     >
       {columnDefinition.label}
       <RuxIcon

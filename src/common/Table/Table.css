@@ -44,3 +44,39 @@ rux-container .table-wrapper {
   /* to color small space above scrollbar */
   background-color: var(--color-background-base-header);
 }
+
+.right-align-standard-space {
+  text-align: right;
+  border-right: transparent var(--spacing-8) solid; /* this is to make up for the sort icon */
+  width: 9.75%;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.rev-header {
+  border-left: transparent var(--spacing-050) solid; 
+}
+
+.equip-column {
+  width: 12%;
+}
+
+.right-align-current-c {
+  text-align: right;
+  border-right: transparent var(--spacing-4) solid;
+  width: 9.5%;
+}
+
+.right-align-conflicts {
+  text-align: right;
+  border-right: transparent var(--spacing-3) solid;
+  width: 6.75%;
+}
+
+.right-align-conflicts-time {
+  text-align: right;
+  border-right: transparent var(--spacing-2) solid;
+  width: 8.4%;
+}

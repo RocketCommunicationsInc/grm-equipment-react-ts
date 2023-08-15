@@ -12,24 +12,42 @@ const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
   { label: 'IRON', property: 'satellite' },
   { label: 'Ground Station', property: 'ground' },
-  { label: 'REV', property: 'rev' },
-  { label: 'Equipment', property: 'equipment' },
+  { label: 'REV', property: 'rev', headerCellClass: 'rev-header' },
+  {
+    label: 'Equipment',
+    property: 'equipment',
+    headerCellClass: 'equip-column',
+    cellClass: 'equip-column',
+  },
   { label: 'State', property: 'state', valueFn: capitalize },
   {
     label: 'DOY',
     property: 'dayOfYear',
+    cellClass: 'right-align-standard-space',
   },
   {
     label: 'Start Time',
     property: 'beginTimestamp',
     valueFn: determineTimeString,
+    headerCellClass: 'right-align',
   },
-  { label: 'AOS', property: 'aos', valueFn: determineTimeString },
-  { label: 'LOS', property: 'los', valueFn: determineTimeString },
+  {
+    label: 'AOS',
+    property: 'aos',
+    valueFn: determineTimeString,
+    headerCellClass: 'right-align',
+  },
+  {
+    label: 'LOS',
+    property: 'los',
+    valueFn: determineTimeString,
+    headerCellClass: 'right-align',
+  },
   {
     label: 'Stop Time',
     property: 'endTimestamp',
     valueFn: determineTimeString,
+    headerCellClass: 'right-align',
   },
 ];
 

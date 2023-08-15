@@ -9,6 +9,8 @@ export type ColumnDef = {
   label: string;
   property: keyof Contact;
   valueFn?: Function;
+  cellClass?: string;
+  headerCellClass?: string;
 };
 
 type PropTypes = {

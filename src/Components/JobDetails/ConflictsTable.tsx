@@ -17,18 +17,36 @@ const columnDefs: ColumnDef[] = [
   {
     label: 'DOY',
     property: 'dayOfYear',
+    cellClass: 'right-align-conflicts',
+    headerCellClass: 'right-align',
   },
   {
     label: 'Start Time',
     property: 'beginTimestamp',
     valueFn: determineTimeString,
+    cellClass: 'right-align-conflicts-time',
+    headerCellClass: 'right-align',
   },
-  { label: 'AOS', property: 'aos', valueFn: determineTimeString },
-  { label: 'LOS', property: 'los', valueFn: determineTimeString },
+  {
+    label: 'AOS',
+    property: 'aos',
+    valueFn: determineTimeString,
+    cellClass: 'right-align-conflicts-time',
+    headerCellClass: 'right-align',
+  },
+  {
+    label: 'LOS',
+    property: 'los',
+    valueFn: determineTimeString,
+    cellClass: 'right-align-conflicts-time',
+    headerCellClass: 'right-align',
+  },
   {
     label: 'Stop Time',
     property: 'endTimestamp',
     valueFn: determineTimeString,
+    cellClass: 'right-align-conflicts-time',
+    headerCellClass: 'right-align',
   },
 ];
 
