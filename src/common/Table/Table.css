@@ -45,30 +45,6 @@ rux-container .table-wrapper {
   background-color: var(--color-background-base-header);
 }
 
-.right-align-standard-space {
-  text-align: right;
-  border-right: transparent var(--spacing-8) solid; /* this is to make up for the sort icon */
-  width: 9.75%;
-}
-
 .right-align {
   text-align: right;
-}
-
-.right-align-current-c {
-  text-align: right;
-  border-right: transparent var(--spacing-4) solid;
-  width: 9.5%;
-}
-
-.right-align-conflicts {
-  text-align: right;
-  border-right: transparent var(--spacing-1) solid;
-  width: 6.75%;
-}
-
-.right-align-conflicts-time {
-  text-align: right;
-  border-right: transparent var(--spacing-2) solid;
-  width: 8.4%;
 }

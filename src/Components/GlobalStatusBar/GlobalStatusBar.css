@@ -1,47 +1,50 @@
 .status-indicators {
-    display: flex;
-  }
-  
-  .status-indicators rux-monitoring-icon {
-    margin-inline: var(--spacing-3);
-  }
-  
-  rux-toast-stack {
-    top: 96px;
-  }
-  
-  rux-toast:nth-child(n + 5) {
-    display: none;
-  }
-  
-  rux-menu-item[value="themeToggle"] span {
-    display: flex;
-    gap: var(--spacing-2);
-    align-items: center;
-  }
-  
-  .history-popup {
-    padding-inline: var(--spacing-1);
-    padding-block: var(--spacing-050);
-    height: 13rem;
-    overflow: auto;
-  }
-  
-  .history-popup span {
-    color: var(--color-text-secondary);
-    font-size: var(--font-size-sm);
-  }
-  
-  .history-popup ul {
-    padding-left: var(--spacing-2);
-    margin-block: var(--spacing-2);
-  }
-  
-  .app-icon-pop-up {
-    height: calc(var(--spacing-14, 3.5rem) + var(--spacing-050, 0.125rem));
-  }
+  display: flex;
+}
 
-  rux-global-status-bar {
-    padding-right: var(--spacing-3);
-  }
-  
+.status-indicators rux-monitoring-icon {
+  margin-inline: var(--spacing-3);
+}
+
+rux-toast-stack {
+  top: 96px;
+}
+
+rux-toast:nth-child(n + 5) {
+  display: none;
+}
+
+rux-menu-item[value='themeToggle'] span {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.history-popup {
+  padding-inline: var(--spacing-1);
+  padding-block: var(--spacing-050);
+  height: 13rem;
+  overflow: auto;
+}
+
+.history-popup span {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.history-popup ul {
+  padding-left: var(--spacing-2);
+  margin-block: var(--spacing-2);
+}
+
+.app-icon-pop-up {
+  height: calc(var(--spacing-14, 3.5rem) + var(--spacing-050, 0.125rem));
+}
+
+rux-icon:nth-of-type(1) {
+  padding-left: var(--spacing-3);
+}
+
+rux-global-status-bar {
+  padding-right: var(--spacing-3);
+}

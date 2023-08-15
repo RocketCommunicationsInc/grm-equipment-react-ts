@@ -86,10 +86,8 @@
   margin-left: var(--spacing-2);
 }
 
-.equipment-details rux-status {
-  margin-right: var(--spacing-2);
-  align-items: center;
-  display: flex;
+.contacts-table rux-status {
+  width: 100%;
 }
 
 .active-contacts {

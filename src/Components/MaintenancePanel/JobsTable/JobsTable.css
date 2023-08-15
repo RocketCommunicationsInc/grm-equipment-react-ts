@@ -19,14 +19,14 @@
 .table-wrapper .jobs-header-cell:nth-of-type(4),
 .table-wrapper .jobs-cell:nth-of-type(4) {
   text-align: right;
-  border-right: transparent var(--spacing-8) solid;
+  padding-right: var(--spacing-8);
   width: 12.75%;
 }
 
 .table-wrapper .jobs-header-cell:nth-of-type(5),
 .table-wrapper .jobs-cell:nth-of-type(5){
   text-align: right;
-  border-right: transparent var(--spacing-8) solid;
+  padding-right: var(--spacing-10);
   width: 15%;
 }
 
