@@ -41,7 +41,7 @@
     height: calc(var(--spacing-14, 3.5rem) + var(--spacing-050, 0.125rem));
   }
 
-  rux-icon:nth-of-type(1) {
+  rux-global-status-bar rux-icon {
     padding-left: var(--spacing-3);
   }
   
