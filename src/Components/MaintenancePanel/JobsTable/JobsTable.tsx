@@ -12,7 +12,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import { Job } from '../../../Types/Equipment';
-import { capitalize } from '../../../utils';
+import { capitalize, setHhMmSs } from '../../../utils';
+import './JobsTable.css';
 
 const columnDefs: any[] = [
   { label: 'Job ID', property: 'jobId' },
@@ -91,6 +92,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 key={`${colDef.property}${index}`}
                 data-sortprop={colDef.property}
                 onClick={handleHeaderCellClick}
+                className='jobs-header-cell'
               >
                 {colDef.label}
                 <RuxIcon
@@ -118,9 +120,13 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 {columnDefs.map((colDef, index) => {
                   const property: keyof Job = colDef.property;
                   return (
-                    <RuxTableCell key={colDef.label}>
+                    <RuxTableCell className='jobs-cell' key={colDef.label}>
                       {property === 'jobDescription'
                         ? capitalize(job[property])
+                        : property === 'createdOn' ||
+                          property === 'startTime' ||
+                          property === 'stopTime'
+                        ? setHhMmSs(job[property])
                         : job[property]}
                     </RuxTableCell>
                   );
