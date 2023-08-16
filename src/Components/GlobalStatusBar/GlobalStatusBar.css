@@ -41,10 +41,10 @@ rux-menu-item[value='themeToggle'] span {
   height: calc(var(--spacing-14, 3.5rem) + var(--spacing-050, 0.125rem));
 }
 
-rux-icon:nth-of-type(1) {
-  padding-left: var(--spacing-3);
-}
-
 rux-global-status-bar {
   padding-right: var(--spacing-3);
+}
+
+.app-switcher-icon:focus {
+  outline-offset: -1px;
 }
