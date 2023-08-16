@@ -16,12 +16,12 @@
   visibility: visible;
 }
 
-.table-wrapper rux-table-header-cell:has(rux-icon.visible) {
-  color: var(--color-text-interactive-default);
-}
-
 .table-wrapper rux-table-header-row .hidden {
   visibility: hidden;
+} 
+
+.table-wrapper rux-table-header-cell:has(rux-icon.visible) {
+  color: var(--color-text-interactive-default);
 }
 
 .table-wrapper rux-table-cell,
@@ -47,4 +47,10 @@ rux-container .table-wrapper {
 
 .right-align {
   text-align: right;
+}
+
+/* to make up the difference for the sort icon in header cell */
+.table-wrapper rux-table-cell.right-align::after {
+  content: '';
+  padding-right: var(--spacing-8);
 }

@@ -5,8 +5,8 @@ import type { Contact } from '@astrouxds/mock-data';
 import type { ColumnDef } from '../../common/Table/Table';
 import Table from '../../common/Table/Table';
 import { determineTimeString, setHhMmSs, capitalize } from '../../utils';
-import './ContactsTable.css';
 import SearchBar from '../../common/SearchBar/SearchBar';
+import './ContactsTable.css';
 
 const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
@@ -15,49 +15,42 @@ const columnDefs: ColumnDef[] = [
   {
     label: 'REV',
     property: 'rev',
-    cellClass: 'right-align',
-    headerCellClass: 'right-align',
+    isRightAligned: true,
   },
   {
     label: 'Equipment',
     property: 'equipment',
-    cellClass: 'right-align',
-    headerCellClass: 'right-align',
+    isRightAligned: true,
   },
   { label: 'State', property: 'state', valueFn: capitalize },
   {
     label: 'DOY',
     property: 'dayOfYear',
-    cellClass: 'right-align',
-    headerCellClass: 'right-align',
+    isRightAligned: true,
   },
   {
     label: 'Start Time',
     property: 'beginTimestamp',
     valueFn: determineTimeString,
-    cellClass: 'right-align',
-    headerCellClass: 'right-align',
+    isRightAligned: true,
   },
   {
     label: 'AOS',
     property: 'aos',
     valueFn: determineTimeString,
-    cellClass: 'right-align',
-    headerCellClass: 'right-align',
+    isRightAligned: true,
   },
   {
     label: 'LOS',
     property: 'los',
     valueFn: determineTimeString,
-    cellClass: 'right-align',
-    headerCellClass: 'right-align',
+    isRightAligned: true,
   },
   {
     label: 'Stop Time',
     property: 'endTimestamp',
     valueFn: determineTimeString,
-    cellClass: 'right-align',
-    headerCellClass: 'right-align',
+    isRightAligned: true,
   },
 ];
 
@@ -69,6 +62,8 @@ const ContactsTable = () => {
   const handleClearFilter = () => {
     setSearchValue('');
   };
+
+  console.log(contacts);
 
   const filterContacts = useCallback(
     (contactsArray: Contact[], searchValue: string) => {

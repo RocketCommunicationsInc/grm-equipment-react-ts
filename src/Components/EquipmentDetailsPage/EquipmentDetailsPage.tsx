@@ -93,13 +93,13 @@ const EquipmentDetailsPage = ({
       </RuxTabs>
       <div
         id='inoperable-equipment-panel'
-        className={`${!inoperablePanelShow && 'hidden'}`}
+        className={`${!inoperablePanelShow && 'hidden-panel'}`}
       >
         <InoperableEquipment selectEquipment={selectEquipment} />
       </div>
       <div
         id='equipment-panel'
-        className={`${inoperablePanelShow && 'hidden'}`}
+        className={`${inoperablePanelShow && 'hidden-panel'}`}
       >
         <RuxContainer className='equipment-details'>
           <header slot='header'>Equipment Details</header>

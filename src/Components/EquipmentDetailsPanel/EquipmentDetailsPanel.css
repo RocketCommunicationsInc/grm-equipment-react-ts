@@ -1,4 +1,4 @@
-#equipment-panel:not(.hidden) {
+#equipment-panel:not(.hidden-panel) {
   height: calc(100vh - 11rem); /* accounts for the GSB & the tabs */
   overflow: scroll;
   display: grid;

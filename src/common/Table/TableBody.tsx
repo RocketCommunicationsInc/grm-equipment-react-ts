@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { RuxTableBody } from '@astrouxds/react';
 import TableBodyRow from './TableBodyRow';
 import type { ColumnDef } from './Table';
@@ -10,8 +9,6 @@ type PropTypes = {
 };
 
 const TableBody = ({ columnDefs, sortedData }: PropTypes) => {
-  const navigate = useNavigate();
-
   return (
     <RuxTableBody>
       {sortedData.map((data, index) => {
@@ -20,7 +17,6 @@ const TableBody = ({ columnDefs, sortedData }: PropTypes) => {
             key={`${data.id}${index}`}
             columnDefs={columnDefs}
             rowData={data}
-            handleRowClick={() => navigate(`/contacts/${data.id}`)}
           />
         );
       })}

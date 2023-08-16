@@ -9,8 +9,7 @@ export type ColumnDef = {
   label: string;
   property: keyof Contact;
   valueFn?: Function;
-  cellClass?: string;
-  headerCellClass?: string;
+  isRightAligned?: boolean;
 };
 
 type PropTypes = {
