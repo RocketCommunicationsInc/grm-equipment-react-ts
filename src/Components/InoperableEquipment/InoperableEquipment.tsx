@@ -1,31 +1,30 @@
 import { RuxContainer, RuxMonitoringIcon } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
 import './InoperableEquipment.css';
+import { Equipment } from '../../Types/Equipment';
 
 type PropTypes = {
-  selectEquipment: (e: any) => void;
+  handleSelectedEquipment: (equipment: Equipment) => void;
 };
 
-const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
+const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
   const { state }: any = useAppContext();
 
   const category = state.equipment.map((equip: string) => equip);
 
-  const digital = category
-    .filter((category: any) => category.category === 'digital')
-    .map((equip: any) => equip.equipmentString);
+  const digital = category.filter(
+    (category: any) => category.category === 'digital'
+  );
 
-  const facilities = category
-    .filter((category: any) => category.category === 'facilities')
-    .map((equip: any) => equip.equipmentString);
+  const facilities = category.filter(
+    (category: any) => category.category === 'facilities'
+  );
 
-  const comms = category
-    .filter((category: any) => category.category === 'comms')
-    .map((equip: any) => equip.equipmentString);
+  const comms = category.filter(
+    (category: any) => category.category === 'comms'
+  );
 
-  const RF = category
-    .filter((category: any) => category.category === 'rf')
-    .map((equip: any) => equip.equipmentString);
+  const RF = category.filter((category: any) => category.category === 'rf');
 
   return (
     <RuxContainer className='inoperable-equipment'>
@@ -33,14 +32,13 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <RuxContainer className='section'>
         <span>Digital</span>
         <ul>
-          {digital.map((equip: string, index: number) => (
+          {digital.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
-                label={equip}
-                onClick={selectEquipment}
+                label={equipment.equipmentString}
+                onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>
           ))}
@@ -49,14 +47,13 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <RuxContainer className='section'>
         <span>Facilities</span>
         <ul>
-          {facilities.map((equip: string, index: number) => (
+          {facilities.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
-                label={equip}
-                onClick={selectEquipment}
+                label={equipment.equipmentString}
+                onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>
           ))}
@@ -65,14 +62,13 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <RuxContainer className='section'>
         <span>Comms</span>
         <ul>
-          {comms.map((equip: string, index: number) => (
+          {comms.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
-                label={equip}
-                onClick={selectEquipment}
+                label={equipment.equipmentString}
+                onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>
           ))}
@@ -81,14 +77,13 @@ const InoperableEquipment = ({ selectEquipment }: PropTypes) => {
       <RuxContainer className='section'>
         <span>RF</span>
         <ul>
-          {RF.map((equip: string, index: number) => (
+          {RF.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                key={`${equip}${index}`}
                 status='normal'
                 icon='center-focus-weak'
-                label={equip}
-                onClick={selectEquipment}
+                label={equipment.equipmentString}
+                onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>
           ))}
