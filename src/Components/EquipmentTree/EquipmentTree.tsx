@@ -5,45 +5,18 @@ import {
   RuxTreeNode,
 } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
-import { Equipment } from '../../Types/Equipment';
-import { Dispatch, SetStateAction } from 'react';
 import { capitalize } from '../../utils';
 import './EquipmentTree.css';
+import { Equipment } from '../../Types/Equipment';
 
 type PropTypes = {
-  setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
+  handleSelectedEquipment: (equipment: Equipment) => void;
 };
 
-const EquipmentTree = ({ setInoperablePanelShow }: PropTypes) => {
-  const { state, dispatch }: any = useAppContext();
+const EquipmentTree = ({ handleSelectedEquipment }: PropTypes) => {
+  const { state }: any = useAppContext();
   const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
   const categoryArray: string[] = ['digital', 'facilities', 'comms', 'rf'];
-
-  const handleSelectedEquipment = (equipment: Equipment) => {
-    // always set the selected equipment to the current equipment in app state.
-    dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
-
-    // hide the inoperable panel in favor of the equipment panel
-    setInoperablePanelShow(false);
-
-    // check if equipment already has an existing tab (if it is in selectedEquipment state)
-    const equipmentFound =
-      state.selectedEquipment &&
-      state.selectedEquipment.some((equipmentItem: Equipment) => {
-        if (equipmentItem.id === equipment.id) {
-          return true;
-        }
-        return false;
-      });
-
-    //if it has a tab, don't add it, return
-    if (equipmentFound) {
-      return;
-    } else {
-      // if it doesn't have a tab, add to selectedEquipment state array, which will then re-render component and create new tab.
-      dispatch({ type: 'ADD_SELECTED_EQUIPMENT', payload: equipment });
-    }
-  };
 
   return (
     <RuxContainer className='equipment-tree'>

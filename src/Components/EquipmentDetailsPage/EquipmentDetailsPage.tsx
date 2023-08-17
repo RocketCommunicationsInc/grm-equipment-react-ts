@@ -1,5 +1,4 @@
 import { RuxButton, RuxContainer, RuxTab, RuxTabs } from '@astrouxds/react';
-import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../providers/AppProvider';
 import { Dispatch, MouseEvent, SetStateAction } from 'react';
 import { Equipment } from '../../Types/Equipment';
@@ -12,24 +11,29 @@ import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 type PropType = {
   inoperablePanelShow: boolean;
   setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
+  handleSelectedEquipment: (equipment: Equipment) => void;
 };
 
 const EquipmentDetailsPage = ({
   inoperablePanelShow,
   setInoperablePanelShow,
+  handleSelectedEquipment,
 }: PropType) => {
   const { state, dispatch }: any = useAppContext();
-  const navigate = useNavigate();
 
   const setCurrentEquipment = (
     e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>
   ) => {
     const target = e.target as HTMLElement;
+    //if the target isn't a tab do nothing
+    if (!target.closest('rux-tab')) return;
+    //if the target is a tab but is the remove button don't change tabs
     if (target.classList.contains('equipment-panel_tab-clear-button')) return;
 
     if (target.id === 'inoperable-equipment') {
       setInoperablePanelShow(true);
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
+      return;
     } else {
       for (const equipment of state.selectedEquipment) {
         if (target.id === equipment.id) {
@@ -49,10 +53,6 @@ const EquipmentDetailsPage = ({
     }
 
     dispatch({ type: 'REMOVE_SELECTED_EQUIPMENT', payload: equipment });
-  };
-
-  const selectEquipment = () => {
-    navigate('/');
   };
 
   return (
@@ -95,7 +95,9 @@ const EquipmentDetailsPage = ({
         id='inoperable-equipment-panel'
         className={`${!inoperablePanelShow && 'hidden-panel'}`}
       >
-        <InoperableEquipment selectEquipment={selectEquipment} />
+        <InoperableEquipment
+          handleSelectedEquipment={handleSelectedEquipment}
+        />
       </div>
       <div
         id='equipment-panel'
