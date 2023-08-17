@@ -64,3 +64,8 @@
 .dashboard_equipment-wrapper rux-tabs {
   margin-bottom: var(--spacing-2);
 }
+
+.equipment-title {
+  align-items: center;
+  gap: var(--spacing-2);
+}
