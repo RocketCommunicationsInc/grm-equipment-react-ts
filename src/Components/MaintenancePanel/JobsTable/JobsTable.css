@@ -1,13 +1,10 @@
-.table-wrapper .jobs-header-cell:nth-of-type(3),
-.table-wrapper .jobs-header-cell:nth-of-type(4),
-.table-wrapper .jobs-header-cell:nth-of-type(5) {
-  text-align: right;
-}
-
 .table-wrapper .jobs-header-cell:nth-of-type(7) {
   width: 23%;
 }
 
+.table-wrapper .jobs-header-cell:nth-of-type(3),
+.table-wrapper .jobs-header-cell:nth-of-type(4),
+.table-wrapper .jobs-header-cell:nth-of-type(5) ,
 .table-wrapper .jobs-cell:nth-of-type(5),
 .table-wrapper .jobs-cell:nth-of-type(4),
 .table-wrapper .jobs-cell:nth-of-type(3) {
