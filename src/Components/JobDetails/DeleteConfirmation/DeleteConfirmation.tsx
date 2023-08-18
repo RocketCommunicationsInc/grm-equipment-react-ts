@@ -30,15 +30,15 @@ const DeleteConfirmation = ({
     <RuxDialog
       header='Delete Maintenance Job'
       open={setPendingDelete}
-      confirmText='Delete'
-      denyText='Cancel'
+      //   confirmText='Delete'
+      //   denyText='Cancel'
     >
       <div>
         Please confirm you would like to delete {job.equipment} Maintenance Job
         ID {job.jobId}
       </div>
-      {/* <RuxButton onClick={() => setPendingDelete(false)}>Cancel</RuxButton>
-      <RuxButton onClick={handleDelete}>Delete</RuxButton> */}
+      <RuxButton onClick={() => setPendingDelete(false)}>Cancel</RuxButton>
+      <RuxButton onClick={handleDelete}>Delete</RuxButton>
     </RuxDialog>
   );
 };
