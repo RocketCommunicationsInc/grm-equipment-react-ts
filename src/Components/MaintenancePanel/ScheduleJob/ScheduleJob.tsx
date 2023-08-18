@@ -29,6 +29,8 @@ const ScheduleJob = () => {
   const [searchValue, setSearchValue] = useState('');
   const [showOtherJob, setShowOtherJob] = useState(false);
   const [showOtherTech, setShowOtherTech] = useState(false);
+  const [disableJob, setDisableJob] = useState(false);
+  const [disableTech, setDisableTech] = useState(false);
 
   const statusValues = ['off', 'caution', 'normal', 'standby'];
   const uniqueJobId = Math.floor(Math.random() * 90000) + 10000;
@@ -81,6 +83,24 @@ const ScheduleJob = () => {
     return filterContacts(contacts, searchValue);
   }, [contacts, searchValue]);
 
+  const handleJobChange = (e: any) => {
+    e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
+  const handleTechChange = (e: any) => {
+    e.target.value !== '' ? setDisableTech(true) : setDisableTech(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
   return (
     <RuxContainer className='schedule-job'>
       <header slot='header'>
@@ -102,6 +122,7 @@ const ScheduleJob = () => {
                 label=' Job Type'
                 value={newJob.jobType}
                 name='jobType'
+                disabled={disableJob}
               >
                 <RuxOption value='' label='- Select -'></RuxOption>
                 <RuxOption value='Maintenence' label='Maintenence'></RuxOption>
@@ -113,7 +134,7 @@ const ScheduleJob = () => {
                 <RuxInput
                   label='Job Title'
                   name='jobType'
-                  onRuxinput={handleChange}
+                  onRuxinput={handleJobChange}
                   size='small'
                 />
               ) : null}
@@ -152,6 +173,7 @@ const ScheduleJob = () => {
                 label='Technician'
                 value={newJob.technician}
                 name='technician'
+                disabled={disableTech}
               >
                 <RuxOption value='' label='- Select -'></RuxOption>
                 <RuxOption value='R. Swanson' label='R. Swanson'></RuxOption>
@@ -165,7 +187,7 @@ const ScheduleJob = () => {
                   size='small'
                   label='Name'
                   name='technician'
-                  onRuxinput={handleChange}
+                  onRuxinput={handleTechChange}
                 />
               ) : null}
             </div>
