@@ -17,6 +17,7 @@ import Stepper from './Stepper/Stepper';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../common/SearchBar/SearchBar';
 import { capitalize } from '../../utils';
+import DeleteConfirmation from './DeleteConfirmation/DeleteConfirmation';
 import './JobDetails.css';
 
 const JobDetails = () => {
@@ -24,6 +25,7 @@ const JobDetails = () => {
   const navigate = useNavigate();
   const { dataArray: contacts } = useTTCGRMContacts();
   const [job, setJob] = useState(state.currentJob);
+  const [pendingDelete, setPendingDelete] = useState(false);
   const [isModifying, setIsModifying] = useState(false);
   const [searchValue, setSearchValue] = useState('');
 
@@ -43,15 +45,6 @@ const JobDetails = () => {
     if (job.jobId) {
       dispatch({ type: 'EDIT_JOB', payload: modifiedJob });
     }
-  };
-
-  const handleDelete = (e: any) => {
-    e.preventDefault();
-    if (job.jobId) {
-      // dispatch({ type: 'DELETE_JOB', payload: job.job });
-      dispatch({ type: 'DELETE_JOB', payload: job.jobId });
-    }
-    navigate('/');
   };
 
   const handleChange = (e: any) => {
@@ -80,6 +73,8 @@ const JobDetails = () => {
   }, [contacts, searchValue]);
 
   useEffect(() => {}, [job]);
+
+  const handleClose = () => {};
 
   return (
     <RuxContainer className='job-details-panel'>
@@ -208,9 +203,15 @@ const JobDetails = () => {
           <ConflictsTable filteredData={filteredContacts} />
         </RuxContainer>
       </div>
-
+      {pendingDelete ? (
+        <DeleteConfirmation
+          job={job}
+          setPendingDelete={setPendingDelete}
+          handleClose={handleClose}
+        />
+      ) : null}
       <footer slot='footer'>
-        <RuxButton secondary onClick={handleDelete}>
+        <RuxButton secondary onClick={() => setPendingDelete(true)}>
           Delete
         </RuxButton>
         <RuxButton secondary onClick={handleCancel}>
