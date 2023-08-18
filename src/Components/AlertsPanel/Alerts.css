@@ -50,6 +50,7 @@
 .alert-list-headers rux-icon.visible {
   visibility: visible;
 }
+
 .alert-list-headers rux-icon.hidden {
   visibility: hidden;
 }

@@ -9,6 +9,7 @@ export type ColumnDef = {
   label: string;
   property: keyof Contact;
   valueFn?: Function;
+  isRightAligned?: boolean;
 };
 
 type PropTypes = {

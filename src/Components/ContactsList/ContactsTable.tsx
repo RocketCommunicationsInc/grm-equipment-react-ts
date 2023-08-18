@@ -5,31 +5,52 @@ import type { Contact } from '@astrouxds/mock-data';
 import type { ColumnDef } from '../../common/Table/Table';
 import Table from '../../common/Table/Table';
 import { determineTimeString, setHhMmSs, capitalize } from '../../utils';
-import './ContactsTable.css';
 import SearchBar from '../../common/SearchBar/SearchBar';
+import './ContactsTable.css';
 
 const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
   { label: 'IRON', property: 'satellite' },
   { label: 'Ground Station', property: 'ground' },
-  { label: 'REV', property: 'rev' },
-  { label: 'Equipment', property: 'equipment' },
+  {
+    label: 'REV',
+    property: 'rev',
+    isRightAligned: true,
+  },
+  {
+    label: 'Equipment',
+    property: 'equipment',
+    isRightAligned: true,
+  },
   { label: 'State', property: 'state', valueFn: capitalize },
   {
     label: 'DOY',
     property: 'dayOfYear',
+    isRightAligned: true,
   },
   {
     label: 'Start Time',
     property: 'beginTimestamp',
     valueFn: determineTimeString,
+    isRightAligned: true,
   },
-  { label: 'AOS', property: 'aos', valueFn: determineTimeString },
-  { label: 'LOS', property: 'los', valueFn: determineTimeString },
+  {
+    label: 'AOS',
+    property: 'aos',
+    valueFn: determineTimeString,
+    isRightAligned: true,
+  },
+  {
+    label: 'LOS',
+    property: 'los',
+    valueFn: determineTimeString,
+    isRightAligned: true,
+  },
   {
     label: 'Stop Time',
     property: 'endTimestamp',
     valueFn: determineTimeString,
+    isRightAligned: true,
   },
 ];
 

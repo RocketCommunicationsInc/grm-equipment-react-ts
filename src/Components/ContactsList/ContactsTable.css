@@ -35,18 +35,6 @@
   font-size: var(--font-size-base);
 }
 
-.table-wrapper rux-table-header-row rux-icon {
-  vertical-align: middle;
-  width: 32px;
-}
-
-.table-wrapper rux-table-header-row .visible {
-  visibility: visible;
-}
-.table-wrapper rux-table-header-row .hidden {
-  visibility: hidden;
-}
-
 .contacts-list-page {
   /* 100vh - (height of global status bar + height of breadcrumb element) */
   height: calc(100vh - 10.25rem);

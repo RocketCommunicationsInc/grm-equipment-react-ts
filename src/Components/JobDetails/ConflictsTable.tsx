@@ -11,24 +11,41 @@ const columnDefs: ColumnDef[] = [
   { label: 'Status', property: 'status' },
   { label: 'IRON', property: 'satellite' },
   { label: 'Ground Station', property: 'ground' },
-  { label: 'REV', property: 'rev' },
+  {
+    label: 'REV',
+    property: 'rev',
+    isRightAligned: true,
+  },
   { label: 'Equipment String', property: 'equipment' },
   { label: 'State', property: 'state', valueFn: capitalize },
   {
     label: 'DOY',
     property: 'dayOfYear',
+    isRightAligned: true,
   },
   {
     label: 'Start Time',
     property: 'beginTimestamp',
     valueFn: determineTimeString,
+    isRightAligned: true,
   },
-  { label: 'AOS', property: 'aos', valueFn: determineTimeString },
-  { label: 'LOS', property: 'los', valueFn: determineTimeString },
+  {
+    label: 'AOS',
+    property: 'aos',
+    valueFn: determineTimeString,
+    isRightAligned: true,
+  },
+  {
+    label: 'LOS',
+    property: 'los',
+    valueFn: determineTimeString,
+    isRightAligned: true,
+  },
   {
     label: 'Stop Time',
     property: 'endTimestamp',
     valueFn: determineTimeString,
+    isRightAligned: true,
   },
 ];
 
