@@ -15,13 +15,16 @@
 .schedule-job-wrapper rux-input::part(form-field),
 .schedule-job-wrapper rux-select::part(select) {
   flex-direction: row;
-  width: 14rem;
+  width: 16rem;
 }
 
 .schedule-job-wrapper rux-input::part(label),
 .schedule-job-wrapper rux-select::part(label) {
   margin-right: var(--spacing-4);
-  margin-top: var(--spacing-1);
+}
+
+.schedule-job-wrapper rux-input::part(label){
+  width: 8rem;
 }
 
 .conflicts-placeholder {
@@ -50,7 +53,7 @@
 
 .conflicts-section {
   flex: 1;
-  height: 45.75rem;
+  height: 46.75rem;
 }
 
 .schedule-job footer[slot='footer'] {
@@ -87,4 +90,9 @@
 .conflicts-section span:nth-of-type(2),
 .conflicts-section span:nth-of-type(3) {
   margin: var(--spacing-4);
+}
+
+.other-options {
+  display: flex;
+  justify-content: space-between;
 }
