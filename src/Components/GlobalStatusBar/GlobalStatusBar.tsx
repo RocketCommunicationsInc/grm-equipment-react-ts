@@ -9,12 +9,15 @@ import {
   RuxToastStack,
   RuxMenuItemDivider,
   RuxClock,
+  RuxNotification,
 } from '@astrouxds/react';
 import type { Status } from '@astrouxds/mock-data';
 import { addToast } from '../../utils';
 import './GlobalStatusBar.css';
+import { useAppContext } from '../../providers/AppProvider';
 
 const GlobalStatusBar = () => {
+  const { state, dispatch }: any = useAppContext();
   const [status1, setStatus1] = useState<Status>('off');
   const [status2, setStatus2] = useState<Status>('standby');
   const [status3, setStatus3] = useState<Status>('normal');
@@ -58,6 +61,10 @@ const GlobalStatusBar = () => {
     }
     addToast('This feature has not been implemented', false, 3000);
   }
+
+  const resetNotification = () => {
+    dispatch({ type: 'RESET_NOTIFICATION' });
+  };
 
   return (
     <>
@@ -120,6 +127,14 @@ const GlobalStatusBar = () => {
           />
         </div>
       </RuxGlobalStatusBar>
+
+      <RuxNotification
+        small
+        message={state.notification}
+        open={!!state.notification}
+        closeAfter={4000}
+        onRuxclosed={() => resetNotification()}
+      />
     </>
   );
 };
