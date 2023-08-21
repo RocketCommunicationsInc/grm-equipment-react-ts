@@ -35,7 +35,7 @@ const DeleteConfirmation = ({
       confirmText='Delete'
       denyText='Cancel'
       onRuxdialogclosed={handleDelete}
-      message={`Please confirm you would like to delete ${job.equipment} Maintenance Job
+      message={`Please confirm you would like to DELETE ${job.equipment} Maintenance Job
         ID ${job.jobId}`}
     />
   );
