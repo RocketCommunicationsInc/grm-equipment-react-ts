@@ -27,6 +27,10 @@ const ScheduleJob = () => {
   const [calculateConflicts, setCalculateConflicts] = useState(false);
   const [inputsFilledOut, setInputsFilledOut] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const [showOtherJob, setShowOtherJob] = useState(false);
+  const [showOtherTech, setShowOtherTech] = useState(false);
+  const [disableJob, setDisableJob] = useState(false);
+  const [disableTech, setDisableTech] = useState(false);
 
   const statusValues = ['off', 'caution', 'normal', 'standby'];
   const uniqueJobId = Math.floor(Math.random() * 90000) + 10000;
@@ -62,6 +66,39 @@ const ScheduleJob = () => {
   };
 
   const handleChange = (e: any) => {
+    e.target.value === 'OtherTech'
+      ? setShowOtherTech(true)
+      : setShowOtherTech(false);
+
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
+  const handleJobSelection = (e: any) => {
+    e.target.value === 'OtherJob'
+      ? setShowOtherJob(true)
+      : setShowOtherJob(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
+  const handleJobInput = (e: any) => {
+    e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
+  const handleTechInput = (e: any) => {
+    e.target.value !== '' ? setDisableTech(true) : setDisableTech(false);
     setNewJob((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -87,19 +124,30 @@ const ScheduleJob = () => {
         <RuxContainer className='job-request-section'>
           <ul>
             <li>1. Select Job Type</li>
-            <RuxSelect
-              onRuxchange={handleChange}
-              size='small'
-              label=' Job Type'
-              value={newJob.jobType}
-              name='jobType'
-            >
-              <RuxOption value='' label='- Select -'></RuxOption>
-              <RuxOption value='Maintenence' label='Maintenence'></RuxOption>
-              <RuxOption value='IT Support' label='IT Support'></RuxOption>
-              <RuxOption value='Hardware' label='Hardware'></RuxOption>
-              <RuxOption value='Other' label='Other'></RuxOption>
-            </RuxSelect>
+            <div className='other-options'>
+              <RuxSelect
+                onRuxchange={handleJobSelection}
+                size='small'
+                label=' Job Type'
+                value={newJob.jobType}
+                name='jobType'
+                disabled={disableJob}
+              >
+                <RuxOption value='' label='- Select -'></RuxOption>
+                <RuxOption value='Maintenence' label='Maintenence'></RuxOption>
+                <RuxOption value='IT Support' label='IT Support'></RuxOption>
+                <RuxOption value='Hardware' label='Hardware'></RuxOption>
+                <RuxOption value='OtherJob' label='Other'></RuxOption>
+              </RuxSelect>
+              {showOtherJob ? (
+                <RuxInput
+                  label='Job Title'
+                  name='jobType'
+                  onRuxinput={handleJobInput}
+                  size='small'
+                />
+              ) : null}
+            </div>
             <RuxTextarea
               onRuxinput={handleChange}
               placeholder='Enter Description'
@@ -127,20 +175,31 @@ const ScheduleJob = () => {
             />
 
             <li>3. Select Technician</li>
-            <RuxSelect
-              onRuxchange={handleChange}
-              size='small'
-              label='Technician'
-              value={newJob.technician}
-              name='technician'
-            >
-              <RuxOption value='' label='- Select -'></RuxOption>
-              <RuxOption value='R. Swanson' label='R. Swanson'></RuxOption>
-              <RuxOption value='B. Stinson' label='B. Stinson'></RuxOption>
-              <RuxOption value='M. Scott' label='M. Scott'></RuxOption>
-              <RuxOption value='J. Day' label='J. Day'></RuxOption>
-            </RuxSelect>
-
+            <div className='other-options'>
+              <RuxSelect
+                onRuxchange={handleChange}
+                size='small'
+                label='Technician'
+                value={newJob.technician}
+                name='technician'
+                disabled={disableTech}
+              >
+                <RuxOption value='' label='- Select -'></RuxOption>
+                <RuxOption value='R. Swanson' label='R. Swanson'></RuxOption>
+                <RuxOption value='B. Stinson' label='B. Stinson'></RuxOption>
+                <RuxOption value='M. Scott' label='M. Scott'></RuxOption>
+                <RuxOption value='J. Day' label='J. Day'></RuxOption>
+                <RuxOption value='OtherTech' label='Other'></RuxOption>
+              </RuxSelect>
+              {showOtherTech ? (
+                <RuxInput
+                  size='small'
+                  label='Name'
+                  name='technician'
+                  onRuxinput={handleTechInput}
+                />
+              ) : null}
+            </div>
             <li>
               4. Would you like to follow this job? Following will send all
               updates and alerts from this job to the GRM Dashboard. If you do

@@ -124,8 +124,8 @@ const JobsTable = ({ jobs }: PropTypes) => {
                       {property === 'jobDescription'
                         ? capitalize(job[property])
                         : property === 'createdOn' ||
-                          property === 'startTime' ||
-                          property === 'stopTime'
+                          (property === 'startTime' && job[property] !== '') ||
+                          (property === 'stopTime' && job[property] !== '')
                         ? setHhMmSs(job[property])
                         : job[property]}
                     </RuxTableCell>
