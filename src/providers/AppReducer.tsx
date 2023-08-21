@@ -116,6 +116,12 @@ export const appReducer = (state: any, { type, payload }: any) => {
         }
       );
 
+      const deletedJob = state.currentEquipment.scheduledJobs.filter(
+        (job: Job) => {
+          return job.jobId === payload;
+        }
+      );
+
       return {
         ...state,
         currentEquipment: {
@@ -126,6 +132,8 @@ export const appReducer = (state: any, { type, payload }: any) => {
         equipment: updatedEquipment,
         currentJob: null,
         selectedEquipment: updatedSelectedEquipment,
+        deletedJob: deletedJob,
+        notification: 'Job ID ' + deletedJob[0].jobId + ' has been deleted',
       };
     }
 
@@ -150,6 +158,10 @@ export const appReducer = (state: any, { type, payload }: any) => {
           (equipmentItem: { id: string }) => equipmentItem.id !== payload.id
         ),
       };
+    }
+
+    case 'RESET_NOTIFICATION': {
+      return { ...state, notification: '' };
     }
 
     default: {

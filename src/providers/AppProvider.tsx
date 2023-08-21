@@ -9,6 +9,8 @@ export const initialState = {
   selectedEquipment: [],
   scheduledJobs: scheduledJobs,
   currentJob: null,
+  deletedJob: null,
+  notification: '',
 };
 
 interface CurrentContextType {

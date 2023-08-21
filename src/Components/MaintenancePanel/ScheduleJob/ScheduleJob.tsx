@@ -66,14 +66,46 @@ const ScheduleJob = () => {
   };
 
   const handleChange = (e: any) => {
-    e.target.value === 'OtherJob'
-      ? setShowOtherJob(true)
-      : setShowOtherJob(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
 
+  const handleTechSelection = (e: any) => {
     e.target.value === 'OtherTech'
       ? setShowOtherTech(true)
       : setShowOtherTech(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
 
+  const handleJobSelection = (e: any) => {
+    e.target.value === 'OtherJob'
+      ? setShowOtherJob(true)
+      : setShowOtherJob(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
+  const handleJobInput = (e: any) => {
+    e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
+  const handleTechInput = (e: any) => {
+    e.target.value !== '' ? setDisableTech(true) : setDisableTech(false);
     setNewJob((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -84,24 +116,6 @@ const ScheduleJob = () => {
   const filteredContacts = useMemo(() => {
     return filterContacts(contacts, searchValue);
   }, [contacts, searchValue]);
-
-  const handleJobChange = (e: any) => {
-    e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
-    setNewJob((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-    setInputsFilledOut(true);
-  };
-
-  const handleTechChange = (e: any) => {
-    e.target.value !== '' ? setDisableTech(true) : setDisableTech(false);
-    setNewJob((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-    setInputsFilledOut(true);
-  };
 
   return (
     <RuxContainer className='schedule-job'>
@@ -119,7 +133,7 @@ const ScheduleJob = () => {
             <li>1. Select Job Type</li>
             <div className='other-options'>
               <RuxSelect
-                onRuxchange={handleChange}
+                onRuxchange={handleJobSelection}
                 size='small'
                 label=' Job Type'
                 value={newJob.jobType}
@@ -136,7 +150,7 @@ const ScheduleJob = () => {
                 <RuxInput
                   label='Job Title'
                   name='jobType'
-                  onRuxinput={handleJobChange}
+                  onRuxinput={handleJobInput}
                   size='small'
                 />
               ) : null}
@@ -170,7 +184,7 @@ const ScheduleJob = () => {
             <li>3. Select Technician</li>
             <div className='other-options'>
               <RuxSelect
-                onRuxchange={handleChange}
+                onRuxchange={handleTechSelection}
                 size='small'
                 label='Technician'
                 value={newJob.technician}
@@ -189,7 +203,7 @@ const ScheduleJob = () => {
                   size='small'
                   label='Name'
                   name='technician'
-                  onRuxinput={handleTechChange}
+                  onRuxinput={handleTechInput}
                 />
               ) : null}
             </div>

@@ -17,6 +17,7 @@ import Stepper from './Stepper/Stepper';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../common/SearchBar/SearchBar';
 import { capitalize } from '../../utils';
+import DeleteConfirmation from './DeleteConfirmation/DeleteConfirmation';
 import './JobDetails.css';
 
 const JobDetails = () => {
@@ -24,6 +25,7 @@ const JobDetails = () => {
   const navigate = useNavigate();
   const { dataArray: contacts } = useTTCGRMContacts();
   const [job, setJob] = useState(state.currentJob);
+  const [pendingDelete, setPendingDelete] = useState(false);
   const [isModifying, setIsModifying] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [showOtherJob, setShowOtherJob] = useState(false);
@@ -49,23 +51,44 @@ const JobDetails = () => {
     }
   };
 
-  const handleDelete = (e: any) => {
-    e.preventDefault();
-    if (job.jobId) {
-      dispatch({ type: 'DELETE_JOB', payload: job.jobId });
-    }
-    navigate('/');
+  const handleChange = (e: any) => {
+    setJob((prevState: any) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
   };
 
-  const handleChange = (e: any) => {
-    e.target.value === 'OtherJob'
-      ? setShowOtherJob(true)
-      : setShowOtherJob(false);
-
+  const handleTechSelection = (e: any) => {
     e.target.value === 'OtherTech'
       ? setShowOtherTech(true)
       : setShowOtherTech(false);
 
+    setJob((prevState: any) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleJobSelection = (e: any) => {
+    e.target.value === 'OtherJob'
+      ? setShowOtherJob(true)
+      : setShowOtherJob(false);
+    setJob((prevState: any) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleJobInput = (e: any) => {
+    e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
+    setJob((prevState: any) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleTechInput = (e: any) => {
+    e.target.value !== '' ? setDisableTech(true) : setDisableTech(false);
     setJob((prevState: any) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -90,22 +113,6 @@ const JobDetails = () => {
     return filterContacts(contacts, searchValue);
   }, [contacts, searchValue]);
 
-  const handleJobChange = (e: any) => {
-    e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
-    setJob((prevState: any) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleTechChange = (e: any) => {
-    e.target.value !== '' ? setDisableTech(true) : setDisableTech(false);
-    setJob((prevState: any) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
     <RuxContainer className='job-details-panel'>
       <header slot='header'>
@@ -124,7 +131,7 @@ const JobDetails = () => {
             <>
               <div className='other-options'>
                 <RuxSelect
-                  onRuxchange={handleChange}
+                  onRuxchange={handleJobSelection}
                   size='small'
                   label=' Job Type'
                   value={job.jobType}
@@ -144,7 +151,7 @@ const JobDetails = () => {
                   <RuxInput
                     label='Job Title'
                     name='jobType'
-                    onRuxinput={handleJobChange}
+                    onRuxinput={handleJobInput}
                     size='small'
                   />
                 ) : null}
@@ -174,7 +181,7 @@ const JobDetails = () => {
               />
               <div className='other-options'>
                 <RuxSelect
-                  onRuxchange={handleChange}
+                  onRuxchange={handleTechSelection}
                   size='small'
                   label='Technician'
                   value={job.technician}
@@ -193,7 +200,7 @@ const JobDetails = () => {
                     size='small'
                     label='Name'
                     name='technician'
-                    onRuxinput={handleTechChange}
+                    onRuxinput={handleTechInput}
                   />
                 ) : null}
               </div>
@@ -258,9 +265,15 @@ const JobDetails = () => {
           <ConflictsTable filteredData={filteredContacts} />
         </RuxContainer>
       </div>
-
+      {pendingDelete ? (
+        <DeleteConfirmation
+          job={job}
+          setPendingDelete={setPendingDelete}
+          handleClose={() => setPendingDelete(false)}
+        />
+      ) : null}
       <footer slot='footer'>
-        <RuxButton secondary onClick={handleDelete}>
+        <RuxButton secondary onClick={() => setPendingDelete(true)}>
           Delete
         </RuxButton>
         <RuxButton secondary onClick={handleCancel}>
