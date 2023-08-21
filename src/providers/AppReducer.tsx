@@ -26,6 +26,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
         }
         return equip;
       });
+
       return {
         ...state,
         currentEquipment: {
@@ -35,6 +36,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
         equipment: updatedEquipment,
         scheduledJobs: [...state.scheduledJobs, payload],
         selectedEquipment: updatedSelectedEquipment,
+        notification: 'Job ID ' + payload.jobId + ' has been submitted',
       };
     }
 
