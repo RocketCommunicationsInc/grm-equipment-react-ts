@@ -66,10 +66,17 @@ const ScheduleJob = () => {
   };
 
   const handleChange = (e: any) => {
+    setNewJob((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setInputsFilledOut(true);
+  };
+
+  const handleTechSelection = (e: any) => {
     e.target.value === 'OtherTech'
       ? setShowOtherTech(true)
       : setShowOtherTech(false);
-
     setNewJob((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -177,7 +184,7 @@ const ScheduleJob = () => {
             <li>3. Select Technician</li>
             <div className='other-options'>
               <RuxSelect
-                onRuxchange={handleChange}
+                onRuxchange={handleTechSelection}
                 size='small'
                 label='Technician'
                 value={newJob.technician}

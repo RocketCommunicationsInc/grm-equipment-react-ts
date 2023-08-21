@@ -52,6 +52,13 @@ const JobDetails = () => {
   };
 
   const handleChange = (e: any) => {
+    setJob((prevState: any) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleTechSelection = (e: any) => {
     e.target.value === 'OtherTech'
       ? setShowOtherTech(true)
       : setShowOtherTech(false);
@@ -174,7 +181,7 @@ const JobDetails = () => {
               />
               <div className='other-options'>
                 <RuxSelect
-                  onRuxchange={handleChange}
+                  onRuxchange={handleTechSelection}
                   size='small'
                   label='Technician'
                   value={job.technician}
