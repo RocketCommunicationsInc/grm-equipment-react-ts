@@ -21,6 +21,13 @@
 .dashboard_equipment-wrapper rux-tabs {
   height: auto;
   grid-area: tab-navigation;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.dashboard_equipment-wrapper rux-tab::part(container) {
+  min-width: fit-content;
 }
 
 #inoperable-equipment-panel,
