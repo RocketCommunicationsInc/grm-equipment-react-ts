@@ -1,5 +1,5 @@
 #equipment-panel:not(.hidden-panel) {
-  height: calc(100vh - 11rem); /* accounts for the GSB & the tabs */
+  height: 100%;
   overflow: scroll;
   display: grid;
   grid-template-rows: auto auto;
@@ -16,7 +16,7 @@
 .equipment-details_wrapper {
   display: grid;
   grid-template-columns: 35% 1fr;
-  grid-template-rows: 40% 60%r;
+  grid-template-rows: 40% 60%;
   grid-template-areas:
     'details details'
     'alerts contacts-table';
@@ -26,12 +26,20 @@
   display: flex;
 }
 
+.equipment-alerts rux-input::part(label) {
+ margin-block: auto;
+}
+
 .segmented-button-group {
   padding-bottom: var(--spacing-4);
 }
 
 .segmented-button-group rux-segmented-button {
   margin: var(--spacing-2);
+}
+
+.segmented-button-group rux-segmented-button::part(label) {
+  width: 8rem;
 }
 
 .equipment-details-log {
@@ -45,20 +53,13 @@
   max-width: 42rem;
 }
 
-.alert-description {
-  display: flex;
-  flex-direction: column;
-  align-content: stretch;
-  padding: var(--spacing-3);
-  max-width: 40%;
+.equipment-alerts rux-textarea {
+  padding-inline: var(--spacing-8);
 }
 
-.alert-description::last-child {
-  flex: 1;
-}
-
-.alert-description header {
-  padding-bottom: var(--spacing-3);
+.equipment-alerts rux-textarea::part(textarea) {
+  width: 20rem;
+  height: 14.25rem;
 }
 
 .dashboard_equipment-wrapper rux-tabs {
@@ -68,4 +69,8 @@
 .equipment-title {
   align-items: center;
   gap: var(--spacing-2);
+}
+
+.equipment-title span {
+  font-size: var(--font-size-2xl);
 }

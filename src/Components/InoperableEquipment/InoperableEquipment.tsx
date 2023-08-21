@@ -30,7 +30,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>
       <RuxContainer className='section'>
-        <span>Digital</span>
+        <span>Digital ({digital.length})</span>
         <ul>
           {digital.map((equipment: Equipment, index: number) => (
             <li key={index}>
@@ -45,7 +45,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
         </ul>
       </RuxContainer>
       <RuxContainer className='section'>
-        <span>Facilities</span>
+        <span>Facilities ({facilities.length})</span>
         <ul>
           {facilities.map((equipment: Equipment, index: number) => (
             <li key={index}>
@@ -60,7 +60,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
         </ul>
       </RuxContainer>
       <RuxContainer className='section'>
-        <span>Comms</span>
+        <span>Comms ({comms.length})</span>
         <ul>
           {comms.map((equipment: Equipment, index: number) => (
             <li key={index}>
@@ -75,7 +75,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
         </ul>
       </RuxContainer>
       <RuxContainer className='section'>
-        <span>RF</span>
+        <span>RF ({RF.length})</span>
         <ul>
           {RF.map((equipment: Equipment, index: number) => (
             <li key={index}>
