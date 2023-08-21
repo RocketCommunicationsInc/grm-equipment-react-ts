@@ -55,22 +55,24 @@ const MaintenancePanel = () => {
       </header>
       <RuxContainer className='jobs-section'>
         <h2>Jobs</h2>
-        <div className='job-card-wrapper'>
+        <div className='schedule-job-wrapper'>
           <RuxButton onClick={() => navigate('schedule-job')}>
             Schedule Job
           </RuxButton>
-          {state.currentEquipment &&
-            state.currentEquipment.scheduledJobs.map((job: Job) => (
-              <JobIDCard
-                key={job.jobId}
-                type={job.jobType}
-                id={Number(job.jobId)}
-                startTime={job.startTime}
-                stopTime={job.stopTime}
-                status={capitalize(job.jobStatus) as string}
-                viewJob={() => handleJobDetailsClick(job)}
-              />
-            ))}
+          <div className='job-card-wrapper'>
+            {state.currentEquipment &&
+              filteredJobs.map((job: Job) => (
+                <JobIDCard
+                  key={job.jobId}
+                  type={job.jobType}
+                  id={Number(job.jobId)}
+                  startTime={job.startTime}
+                  stopTime={job.stopTime}
+                  status={capitalize(job.jobStatus) as string}
+                  viewJob={() => handleJobDetailsClick(job)}
+                />
+              ))}
+          </div>
         </div>
       </RuxContainer>
       <RuxContainer className='maintenance-history-panel'>

@@ -11,6 +11,19 @@ rux-container.jobs-section {
   padding: var(--spacing-3) var(--spacing-3) var(--spacing-0) var(--spacing-3);
 }
 
+rux-container.jobs-section h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+rux-container.jobs-section::part(body) {
+  display: flex;
+}
+
+rux-container.schedule-job-wrapper {
+  display: flex;
+}
+
 .maintenance-panel h2 {
   font-size: var(--font-size-2xl);
   padding-bottom: var(--spacing-2);
@@ -23,9 +36,11 @@ rux-container.jobs-section {
 
 .job-card-wrapper {
   margin: var(--spacing-4);
+  margin-top: 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-grow: 1;
   gap: var(--spacing-3);
 }
 
@@ -38,8 +53,7 @@ rux-container.jobs-section {
   max-height: 18rem;
 }
 
-.maintenance-wrapper h2,
-.jobs-section h2 {
+.maintenance-wrapper h2 {
   margin: var(--spacing-3);
 }
 
