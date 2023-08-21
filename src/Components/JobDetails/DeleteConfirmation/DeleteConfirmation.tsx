@@ -1,7 +1,6 @@
 import { RuxDialog } from '@astrouxds/react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
-import './DeleteConfirmation.css';
 import { Job } from '../../../Types/Equipment';
 
 type PropTypes = {
