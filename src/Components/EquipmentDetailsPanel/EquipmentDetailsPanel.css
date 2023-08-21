@@ -16,7 +16,7 @@
 .equipment-details_wrapper {
   display: grid;
   grid-template-columns: 35% 1fr;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 37% 63%;
   grid-template-areas:
     'details details'
     'alerts contacts-table';
@@ -30,16 +30,37 @@
  margin-block: auto;
 }
 
-.segmented-button-group {
-  padding-bottom: var(--spacing-4);
-}
-
 .segmented-button-group rux-segmented-button {
+  padding-block: var(--spacing-2);
   margin: var(--spacing-2);
 }
 
 .segmented-button-group rux-segmented-button::part(label) {
   width: 8rem;
+}
+
+.segmented-button-group rux-input::part(form-field) {
+  flex-direction: row;
+  align-items: center;
+  width: 16.5rem;
+  margin-top: var(--spacing-4);
+}
+
+.segmented-button-group rux-input::part(label) {
+  margin-right: var(--spacing-2);
+  width: 6rem;
+}
+
+.segmented-button-group rux-input:nth-of-type(1) {
+  margin-top: var(--spacing-8);
+}
+
+.equipment-details .equipment-title {
+  font-weight: var(--font-weights-medium);
+  font-size: var(--font-size-xl);
+  padding-bottom: var(--spacing-2);
+  display: flex;
+  margin-left: var(--spacing-2);
 }
 
 .equipment-details-log {
