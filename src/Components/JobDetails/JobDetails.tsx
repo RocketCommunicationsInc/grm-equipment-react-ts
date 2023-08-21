@@ -52,19 +52,20 @@ const JobDetails = () => {
   const handleDelete = (e: any) => {
     e.preventDefault();
     if (job.jobId) {
-      // dispatch({ type: 'DELETE_JOB', payload: job.job });
       dispatch({ type: 'DELETE_JOB', payload: job.jobId });
     }
     navigate('/');
   };
 
   const handleChange = (e: any) => {
-    if (e.target.value === 'OtherJob') {
-      setShowOtherJob(true);
-    }
-    if (e.target.value === 'OtherTech') {
-      setShowOtherTech(true);
-    }
+    e.target.value !== 'OtherJob'
+      ? setShowOtherJob(false)
+      : setShowOtherJob(true);
+
+    e.target.value === 'OtherTech'
+      ? setShowOtherTech(true)
+      : setShowOtherTech(false);
+
     setJob((prevState: any) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -88,8 +89,6 @@ const JobDetails = () => {
   const filteredContacts = useMemo(() => {
     return filterContacts(contacts, searchValue);
   }, [contacts, searchValue]);
-
-  useEffect(() => {}, [job]);
 
   const handleJobChange = (e: any) => {
     e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
