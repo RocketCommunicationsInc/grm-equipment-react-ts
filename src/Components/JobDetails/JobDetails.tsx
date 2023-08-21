@@ -72,10 +72,6 @@ const JobDetails = () => {
     return filterContacts(contacts, searchValue);
   }, [contacts, searchValue]);
 
-  useEffect(() => {}, [job]);
-
-  const handleClose = () => {};
-
   return (
     <RuxContainer className='job-details-panel'>
       <header slot='header'>
@@ -207,7 +203,7 @@ const JobDetails = () => {
         <DeleteConfirmation
           job={job}
           setPendingDelete={setPendingDelete}
-          handleClose={handleClose}
+          handleClose={() => setPendingDelete(false)}
         />
       ) : null}
       <footer slot='footer'>

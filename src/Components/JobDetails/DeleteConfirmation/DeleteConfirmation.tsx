@@ -1,4 +1,4 @@
-import { RuxButton, RuxDialog } from '@astrouxds/react';
+import { RuxDialog } from '@astrouxds/react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import './DeleteConfirmation.css';
@@ -20,26 +20,24 @@ const DeleteConfirmation = ({
 
   const handleDelete = (e: any) => {
     e.preventDefault();
-    if (job.jobId) {
+    if (e.detail && job.jobId) {
       dispatch({ type: 'DELETE_JOB', payload: job.jobId });
+      navigate('/');
+    } else if (e.detail === false) {
+      handleClose();
     }
-    navigate('/');
-    handleClose();
   };
+
   return (
     <RuxDialog
       header='Delete Maintenance Job'
       open={setPendingDelete}
-      //   confirmText='Delete'
-      //   denyText='Cancel'
-    >
-      <div>
-        Please confirm you would like to delete {job.equipment} Maintenance Job
-        ID {job.jobId}
-      </div>
-      <RuxButton onClick={() => setPendingDelete(false)}>Cancel</RuxButton>
-      <RuxButton onClick={handleDelete}>Delete</RuxButton>
-    </RuxDialog>
+      confirmText='Delete'
+      denyText='Cancel'
+      onRuxdialogclosed={handleDelete}
+      message={`Please confirm you would like to delete ${job.equipment} Maintenance Job
+        ID ${job.jobId}`}
+    />
   );
 };
 
