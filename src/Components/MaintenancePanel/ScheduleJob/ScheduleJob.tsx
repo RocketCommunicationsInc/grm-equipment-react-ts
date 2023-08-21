@@ -66,9 +66,9 @@ const ScheduleJob = () => {
   };
 
   const handleChange = (e: any) => {
-    e.target.value !== 'OtherJob'
-      ? setShowOtherJob(false)
-      : setShowOtherJob(true);
+    e.target.value === 'OtherJob'
+      ? setShowOtherJob(true)
+      : setShowOtherJob(false);
 
     e.target.value === 'OtherTech'
       ? setShowOtherTech(true)
