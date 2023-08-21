@@ -1,3 +1,7 @@
 rux-tree-node {
   cursor: pointer;
 }
+
+.equipment-tree::part(body) {
+  overflow: auto;
+}
