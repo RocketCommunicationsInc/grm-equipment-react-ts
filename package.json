@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@astrouxds/mock-data": "^0.6.3",
-    "@astrouxds/react": "^7.15.1",
+    "@astrouxds/react": "^7.16.0",
     "@astrouxds/tokens": "^1.9.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
