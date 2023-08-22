@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import {
   RuxCheckbox,
   RuxContainer,
@@ -49,10 +49,14 @@ const JobDetails = () => {
   const [showOtherTech, setShowOtherTech] = useState(false);
   const [disableJob, setDisableJob] = useState(false);
   const [disableTech, setDisableTech] = useState(false);
+  const jobSelect = useRef<HTMLRuxSelectElement | null>(null);
+  const techSelect = useRef<HTMLRuxSelectElement | null>(null);
 
   const handleCancel = () => {
     if (isModifying) {
       setJob(state.currentJob);
+      setShowOtherJob(false);
+      setShowOtherTech(false);
       setIsModifying(false);
     } else {
       navigate('/');
@@ -70,13 +74,20 @@ const JobDetails = () => {
   };
 
   const handleSubmit = (e: any) => {
-    const modifiedJob = { ...job };
+    let modifiedJob = { ...job };
+    if (job.jobType === '' && jobSelect.current!.value === 'OtherJob') {
+      modifiedJob = { ...modifiedJob, jobType: 'Other' };
+    }
+    if (job.technician === '' && techSelect.current!.value === 'OtherTech') {
+      modifiedJob = { ...modifiedJob, technician: 'Other' };
+    }
     e.preventDefault();
-    if (isOption(job, 'technician')) setShowOtherTech(false);
-    if (isOption(job, 'jobType')) setShowOtherJob(false);
+    setShowOtherTech(false);
+    setShowOtherJob(false);
     setIsModifying(false);
     if (job.jobId) {
       dispatch({ type: 'EDIT_JOB', payload: modifiedJob });
+      setJob(modifiedJob);
     }
   };
 
@@ -181,9 +192,11 @@ const JobDetails = () => {
                   }
                   name='jobType'
                   disabled={disableJob}
+                  ref={jobSelect}
                 >
-                  {jobOptions.map((option) => (
+                  {jobOptions.map((option, index) => (
                     <RuxOption
+                      key={index}
                       value={option.value}
                       label={option.label}
                     ></RuxOption>
@@ -236,9 +249,11 @@ const JobDetails = () => {
                   }
                   name='technician'
                   disabled={disableTech}
+                  ref={techSelect}
                 >
-                  {techOptions.map((option) => (
+                  {techOptions.map((option, index) => (
                     <RuxOption
+                      key={index}
                       value={option.value}
                       label={option.label}
                     ></RuxOption>
