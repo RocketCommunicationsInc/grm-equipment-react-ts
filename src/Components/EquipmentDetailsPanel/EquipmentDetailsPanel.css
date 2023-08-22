@@ -1,6 +1,6 @@
 #equipment-panel:not(.hidden-panel) {
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-areas:
