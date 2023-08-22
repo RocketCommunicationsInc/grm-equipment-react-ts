@@ -125,13 +125,13 @@ const EquipmentDetailsPage = ({
         ))}
         {showMenu && (
           <div className='tabs-menu'>
-            <RuxIcon icon='chevron-right' slot='trigger' />
             <RuxPopUp
               className='app-icon-pop-up'
               placement='bottom-start'
               slot='left-side'
               closeOnSelect
             >
+              <RuxIcon icon='chevron-right' slot='trigger' />
               {remainingEquipmentItems.map((equipment: Equipment) => (
                 <RuxMenu
                   onRuxmenuselected={() =>
