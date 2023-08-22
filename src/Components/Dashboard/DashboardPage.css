@@ -34,10 +34,23 @@
   grid-area: tab-panel;
 }
 
-.tabs-menu rux-icon {
+.tabs-and-menu-wrapper {
+  display: flex;
+}
+
+.tabs-and-menu-wrapperrux-icon {
 cursor: pointer;
 }
 
-.tabs-menu {
-  height: var(--spacing-14);
+/* .tabs-and-menu-wrapper rux-menu {
+  padding: 0;
+  display: flex;
+} */
+
+.tabs-and-menu-wrapper rux-menu-item {
+  display: flex;
+}
+
+.tabs-and-menu-wrapper rux-menu-item rux-button {
+align-items: center;
 }

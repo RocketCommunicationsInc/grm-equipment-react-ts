@@ -14,8 +14,8 @@ import {
   MouseEvent,
   SetStateAction,
   useState,
-  // useEffect,
-  useMemo,
+  useEffect,
+  //useMemo,
 } from 'react';
 import { Equipment } from '../../Types/Equipment';
 import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
@@ -72,11 +72,11 @@ const EquipmentDetailsPage = ({
     dispatch({ type: 'REMOVE_SELECTED_EQUIPMENT', payload: equipment });
   };
 
-  //if more than 9
   const openTabs = document.querySelectorAll('rux-tab').length;
 
-  useMemo(() => {
-    openTabs >= 8 ? setShowMenu(true) : setShowMenu(false);
+  useEffect(() => {
+    openTabs >= 9 ? setShowMenu(true) : setShowMenu(false);
+    console.log('running');
   }, [openTabs]);
 
   const firstEqupimentTabs = state.selectedEquipment
@@ -85,77 +85,86 @@ const EquipmentDetailsPage = ({
 
   const remainingEquipmentItems = state.selectedEquipment
     .map((equipment: Equipment) => equipment)
-    .slice(9, 56);
+    .slice(8, 56);
+
+  const equipmentSelect = (e: any) => {
+    const { detail } = e;
+    for (const equipment of state.selectedEquipment) {
+      if (detail.value === equipment.id) {
+        dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+      }
+    }
+    setInoperablePanelShow(false);
+  };
 
   return (
     <div className='dashboard_equipment-wrapper'>
-      <RuxTabs
-        small={true}
-        id='equipment-tabs'
-        onClick={(e) => setCurrentEquipment(e)}
-      >
-        <RuxTab
-          id='inoperable-equipment'
-          key='inoperable-equipment'
-          selected={state.currentEquipment === null ? true : false}
+      <div className='tabs-and-menu-wrapper'>
+        <RuxTabs
+          small={true}
+          id='equipment-tabs'
+          onClick={(e) => setCurrentEquipment(e)}
         >
-          Inoperable
-        </RuxTab>
-        {firstEqupimentTabs.map((equipment: Equipment) => (
-          <>
-            <RuxTab
-              key={equipment.id}
-              id={equipment.id}
-              selected={
-                state.currentEquipment &&
-                equipment.id === state.currentEquipment.id
-                  ? true
-                  : false
-              }
-            >
-              {equipment.config}-{equipment.equipmentString}
-              <RuxButton
-                className='equipment-panel_tab-clear-button'
-                iconOnly
-                borderless
-                icon='clear'
-                onClick={() => handleClearClick(equipment)}
-              />
-            </RuxTab>
-          </>
-        ))}
+          <RuxTab
+            id='inoperable-equipment'
+            key='inoperable-equipment'
+            selected={state.currentEquipment === null ? true : false}
+          >
+            Inoperable
+          </RuxTab>
+          {firstEqupimentTabs.map((equipment: Equipment) => (
+            <>
+              <RuxTab
+                key={equipment.id}
+                id={equipment.id}
+                selected={
+                  state.currentEquipment &&
+                  equipment.id === state.currentEquipment.id
+                    ? true
+                    : false
+                }
+              >
+                {equipment.config}-{equipment.equipmentString}
+                <RuxButton
+                  className='equipment-panel_tab-clear-button'
+                  iconOnly
+                  borderless
+                  icon='clear'
+                  onClick={() => handleClearClick(equipment)}
+                />
+              </RuxTab>
+            </>
+          ))}
+        </RuxTabs>
         {showMenu && (
-          <div className='tabs-menu'>
-            <RuxPopUp placement='bottom-start' closeOnSelect>
-              <RuxIcon icon='chevron-right' slot='trigger' />
+          <RuxPopUp placement='bottom-start' open>
+            <RuxIcon icon='chevron-right' slot='trigger' />
+            <RuxMenu onRuxmenuselected={(e) => equipmentSelect(e)}>
               {remainingEquipmentItems.map((equipment: Equipment) => (
-                <RuxMenu>
-                  <RuxMenuItem
-                    value={equipment.id}
-                    key={equipment.id}
-                    id={equipment.id}
-                    selected={
-                      state.currentEquipment &&
-                      equipment.id === state.currentEquipment.id
-                        ? true
-                        : false
-                    }
-                  >
-                    {equipment.config}-{equipment.equipmentString}
-                    <RuxButton
-                      className='equipment-panel_tab-clear-button'
-                      iconOnly
-                      borderless
-                      icon='clear'
-                      onClick={() => handleClearClick(equipment)}
-                    />
-                  </RuxMenuItem>
-                </RuxMenu>
+                <RuxMenuItem
+                  value={equipment.id}
+                  key={equipment.id}
+                  id={equipment.id}
+                  selected={
+                    state.currentEquipment &&
+                    equipment.id === state.currentEquipment.id
+                      ? true
+                      : false
+                  }
+                >
+                  {equipment.config}-{equipment.equipmentString}
+                  <RuxButton
+                    iconOnly
+                    borderless
+                    icon='clear'
+                    onClick={() => handleClearClick(equipment)}
+                  />
+                </RuxMenuItem>
               ))}
-            </RuxPopUp>
-          </div>
+            </RuxMenu>
+          </RuxPopUp>
         )}
-      </RuxTabs>
+      </div>
       <div
         id='inoperable-equipment-panel'
         className={`${!inoperablePanelShow && 'hidden-panel'}`}
