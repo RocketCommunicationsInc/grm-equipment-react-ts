@@ -14,7 +14,8 @@ import {
   MouseEvent,
   SetStateAction,
   useState,
-  useEffect,
+  // useEffect,
+  useMemo,
 } from 'react';
 import { Equipment } from '../../Types/Equipment';
 import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
@@ -74,7 +75,7 @@ const EquipmentDetailsPage = ({
   //if more than 9
   const openTabs = document.querySelectorAll('rux-tab').length;
 
-  useEffect(() => {
+  useMemo(() => {
     openTabs >= 8 ? setShowMenu(true) : setShowMenu(false);
   }, [openTabs]);
 
@@ -125,25 +126,20 @@ const EquipmentDetailsPage = ({
         ))}
         {showMenu && (
           <div className='tabs-menu'>
-            <RuxPopUp
-              className='app-icon-pop-up'
-              placement='bottom-start'
-              closeOnSelect
-            >
+            <RuxPopUp placement='bottom-start' closeOnSelect>
               <RuxIcon icon='chevron-right' slot='trigger' />
               {remainingEquipmentItems.map((equipment: Equipment) => (
-                <RuxMenu
-                  onRuxmenuselected={() =>
-                    state.currentEquipment &&
-                    equipment.id === state.currentEquipment.id
-                      ? true
-                      : false
-                  }
-                >
+                <RuxMenu>
                   <RuxMenuItem
                     value={equipment.id}
                     key={equipment.id}
                     id={equipment.id}
+                    selected={
+                      state.currentEquipment &&
+                      equipment.id === state.currentEquipment.id
+                        ? true
+                        : false
+                    }
                   >
                     {equipment.config}-{equipment.equipmentString}
                     <RuxButton
