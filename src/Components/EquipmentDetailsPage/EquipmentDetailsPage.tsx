@@ -128,7 +128,6 @@ const EquipmentDetailsPage = ({
             <RuxPopUp
               className='app-icon-pop-up'
               placement='bottom-start'
-              slot='left-side'
               closeOnSelect
             >
               <RuxIcon icon='chevron-right' slot='trigger' />
@@ -141,7 +140,11 @@ const EquipmentDetailsPage = ({
                       : false
                   }
                 >
-                  <RuxMenuItem key={equipment.id} id={equipment.id}>
+                  <RuxMenuItem
+                    value={equipment.id}
+                    key={equipment.id}
+                    id={equipment.id}
+                  >
                     {equipment.config}-{equipment.equipmentString}
                     <RuxButton
                       className='equipment-panel_tab-clear-button'

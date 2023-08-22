@@ -23,7 +23,6 @@
   grid-area: tab-navigation;
   overflow: hidden;
   white-space: nowrap;
-  overflow: auto;
 }
 
 .dashboard_equipment-wrapper rux-tab::part(container) {
