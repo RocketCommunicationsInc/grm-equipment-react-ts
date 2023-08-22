@@ -8,7 +8,6 @@ rux-container.jobs-section {
   flex-wrap: wrap;
   flex-direction: row;
   display: inline-block;
-  padding: var(--spacing-3) var(--spacing-3) var(--spacing-0) var(--spacing-3);
 }
 
 rux-container.jobs-section h2 {
@@ -45,7 +44,7 @@ rux-container.schedule-job-wrapper {
 }
 
 .maintenance-history-panel {
-  padding: var(--spacing-3);
+  padding-block-start: var(--spacing-4);
 }
 
 .maintenance-wrapper .maintenance {
