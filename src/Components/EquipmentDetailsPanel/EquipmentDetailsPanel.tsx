@@ -3,6 +3,7 @@ import {
   RuxInput,
   RuxStatus,
   RuxContainer,
+  RuxTextarea,
 } from '@astrouxds/react';
 import { EventLog } from '../../common/EventLog/EventLog';
 import { useAppContext } from '../../providers/AppProvider';
@@ -26,7 +27,7 @@ const EquipmentDetailsPanel = () => {
     <RuxContainer className='equipment-details_details'>
       <span className='equipment-title'>
         <RuxStatus status={state.currentEquipment.status} slot='prefix' />
-        {state.currentEquipment.equipmentString}
+        <span>{state.currentEquipment.equipmentString}</span>
       </span>
       <div className='equipment-alerts'>
         <div>
@@ -56,18 +57,12 @@ const EquipmentDetailsPanel = () => {
             />
           </section>
         </div>
-        <div className='alert-description'>
-          <header>Description</header>
-          <div
-            className='description-message'
-            tabIndex={0}
-            aria-readonly='true'
-            role='textbox'
-          >
-            <p>{capitalize(state.currentEquipment.description)}</p>
-          </div>
-        </div>
-
+        <RuxTextarea
+          label='Description'
+          size='large'
+          disabled
+          value={capitalize(state.currentEquipment.description)}
+        />
         <div className='equipment-details-log'>
           <EventLog />
         </div>
