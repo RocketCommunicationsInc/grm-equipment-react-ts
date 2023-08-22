@@ -25,6 +25,23 @@ const Table = ({ columnDefs, filteredData }: PropTypes) => {
   const sortData = useCallback(
     (property: keyof Contact, sortDirection: 'ASC' | 'DESC') => {
       const sortedData = [...filteredData].sort((a: Contact, b: Contact) => {
+        if (property === 'status') {
+          const statusOrder = [
+            'off',
+            'standby',
+            'normal',
+            'caution',
+            'serious',
+            'critical',
+          ];
+          const statusAsc = statusOrder.indexOf(a.status);
+          const statusDesc = statusOrder.indexOf(b.status);
+          if (sortDirection !== 'ASC') {
+            return statusAsc - statusDesc;
+          } else {
+            return statusDesc - statusAsc;
+          }
+        }
         const firstContactValue = a[property];
         const secondContactValue = b[property];
         if (sortDirection !== 'ASC') {
