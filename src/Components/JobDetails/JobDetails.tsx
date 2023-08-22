@@ -20,6 +20,23 @@ import { capitalize } from '../../utils';
 import DeleteConfirmation from './DeleteConfirmation/DeleteConfirmation';
 import './JobDetails.css';
 
+const jobOptions = [
+  { value: '', label: '- Select -' },
+  { value: 'Maintenence', label: 'Maintenence' },
+  { value: 'IT Support', label: 'IT Support' },
+  { value: 'Hardware', label: 'Hardware' },
+  { value: 'OtherJob', label: 'Other' },
+];
+
+const techOptions = [
+  { value: '', label: '- Select -' },
+  { value: 'R. Swanson', label: 'R. Swanson' },
+  { value: 'B. Stinson', label: 'B. Stinson' },
+  { value: 'M. Scott', label: 'M. Scott' },
+  { value: 'J. Day', label: 'J. Day' },
+  { value: 'OtherTech', label: 'Other' },
+];
+
 const JobDetails = () => {
   const { state, dispatch }: any = useAppContext();
   const navigate = useNavigate();
@@ -32,10 +49,9 @@ const JobDetails = () => {
   const [showOtherTech, setShowOtherTech] = useState(false);
   const [disableJob, setDisableJob] = useState(false);
   const [disableTech, setDisableTech] = useState(false);
-
   const handleCancel = () => {
     if (isModifying) {
-      setJob(job);
+      setJob(state.currentJob);
       setIsModifying(false);
     } else {
       navigate('/');
@@ -44,6 +60,14 @@ const JobDetails = () => {
 
   const handleSubmit = (e: any) => {
     const modifiedJob = { ...job };
+    //error handling
+    if (
+      modifiedJob.technician === 'OtherTech' ||
+      modifiedJob.jobType === 'OtherJob'
+    ) {
+      console.log('big nope');
+      return;
+    }
     e.preventDefault();
     setIsModifying(false);
     if (job.jobId) {
@@ -138,20 +162,19 @@ const JobDetails = () => {
                   name='jobType'
                   disabled={disableJob}
                 >
-                  <RuxOption value='' label='- Select -'></RuxOption>
-                  <RuxOption
-                    value='Maintenence'
-                    label='Maintenence'
-                  ></RuxOption>
-                  <RuxOption value='IT Support' label='IT Support'></RuxOption>
-                  <RuxOption value='Hardware' label='Hardware'></RuxOption>
-                  <RuxOption value='OtherJob' label='Other'></RuxOption>
+                  {jobOptions.map((option) => (
+                    <RuxOption
+                      value={option.value}
+                      label={option.label}
+                    ></RuxOption>
+                  ))}
                 </RuxSelect>
                 {showOtherJob ? (
                   <RuxInput
                     label='Job Title'
                     name='jobType'
                     onRuxinput={handleJobInput}
+                    value={job.jobType !== 'OtherJob' ? job.jobType : ''}
                     size='small'
                   />
                 ) : null}
@@ -188,18 +211,19 @@ const JobDetails = () => {
                   name='technician'
                   disabled={disableTech}
                 >
-                  <RuxOption value='' label='- Select -'></RuxOption>
-                  <RuxOption value='R. Swanson' label='R. Swanson'></RuxOption>
-                  <RuxOption value='B. Stinson' label='B. Stinson'></RuxOption>
-                  <RuxOption value='M. Scott' label='M. Scott'></RuxOption>
-                  <RuxOption value='J. Day' label='J. Day'></RuxOption>
-                  <RuxOption value='OtherTech' label='Other'></RuxOption>
+                  {techOptions.map((option) => (
+                    <RuxOption
+                      value={option.value}
+                      label={option.label}
+                    ></RuxOption>
+                  ))}
                 </RuxSelect>
                 {showOtherTech ? (
                   <RuxInput
                     size='small'
                     label='Name'
                     name='technician'
+                    value={job.technician !== 'OtherTech' ? job.technician : ''}
                     onRuxinput={handleTechInput}
                   />
                 ) : null}
