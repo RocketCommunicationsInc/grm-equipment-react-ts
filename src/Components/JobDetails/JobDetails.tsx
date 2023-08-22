@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import {
   RuxCheckbox,
   RuxContainer,
@@ -22,7 +22,7 @@ import './JobDetails.css';
 
 const jobOptions = [
   { value: '', label: '- Select -' },
-  { value: 'Maintenence', label: 'Maintenence' },
+  { value: 'Maintenance', label: 'Maintenance' },
   { value: 'IT Support', label: 'IT Support' },
   { value: 'Hardware', label: 'Hardware' },
   { value: 'OtherJob', label: 'Other' },
@@ -49,6 +49,9 @@ const JobDetails = () => {
   const [showOtherTech, setShowOtherTech] = useState(false);
   const [disableJob, setDisableJob] = useState(false);
   const [disableTech, setDisableTech] = useState(false);
+  const otherJob = useRef(null);
+  const otherTech = useRef(null);
+
   const handleCancel = () => {
     if (isModifying) {
       setJob(state.currentJob);
@@ -58,17 +61,21 @@ const JobDetails = () => {
     }
   };
 
+  const isOption = (job: any, type: string) => {
+    if (type === 'jobType') {
+      return jobOptions.some((option) => job.jobType === option.value);
+    }
+
+    if (type === 'technician') {
+      return techOptions.some((option) => job.technician === option.value);
+    }
+  };
+
   const handleSubmit = (e: any) => {
     const modifiedJob = { ...job };
-    //error handling
-    if (
-      modifiedJob.technician === 'OtherTech' ||
-      modifiedJob.jobType === 'OtherJob'
-    ) {
-      console.log('big nope');
-      return;
-    }
     e.preventDefault();
+    if (isOption(job, 'technician')) setShowOtherTech(false);
+    if (isOption(job, 'jobType')) setShowOtherJob(false);
     setIsModifying(false);
     if (job.jobId) {
       dispatch({ type: 'EDIT_JOB', payload: modifiedJob });
@@ -82,25 +89,34 @@ const JobDetails = () => {
     }));
   };
 
-  const handleTechSelection = (e: any) => {
-    e.target.value === 'OtherTech'
-      ? setShowOtherTech(true)
-      : setShowOtherTech(false);
+  const handleModify = () => {
+    if (!isOption(job, 'technician')) setShowOtherTech(true);
+    if (!isOption(job, 'jobType')) setShowOtherJob(true);
+    setIsModifying(true);
+  };
 
-    setJob((prevState: any) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+  const handleTechSelection = (e: any) => {
+    if (e.target.value === 'OtherTech') {
+      setShowOtherTech(true);
+    } else {
+      setShowOtherTech(false);
+      setJob((prevState: any) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   const handleJobSelection = (e: any) => {
-    e.target.value === 'OtherJob'
-      ? setShowOtherJob(true)
-      : setShowOtherJob(false);
-    setJob((prevState: any) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+    if (e.target.value === 'OtherJob') {
+      setShowOtherJob(true);
+    } else {
+      setShowOtherJob(false);
+      setJob((prevState: any) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+      }));
+    }
   };
 
   const handleJobInput = (e: any) => {
@@ -158,7 +174,13 @@ const JobDetails = () => {
                   onRuxchange={handleJobSelection}
                   size='small'
                   label=' Job Type'
-                  value={job.jobType}
+                  value={
+                    showOtherJob
+                      ? 'OtherJob'
+                      : isOption(job, 'jobType')
+                      ? job.jobType
+                      : 'OtherJob'
+                  }
                   name='jobType'
                   disabled={disableJob}
                 >
@@ -171,10 +193,11 @@ const JobDetails = () => {
                 </RuxSelect>
                 {showOtherJob ? (
                   <RuxInput
+                    ref={otherJob}
                     label='Job Title'
                     name='jobType'
                     onRuxinput={handleJobInput}
-                    value={job.jobType !== 'OtherJob' ? job.jobType : ''}
+                    value={isOption(job, 'jobType') ? '' : job.jobType}
                     size='small'
                   />
                 ) : null}
@@ -207,7 +230,13 @@ const JobDetails = () => {
                   onRuxchange={handleTechSelection}
                   size='small'
                   label='Technician'
-                  value={job.technician}
+                  value={
+                    showOtherTech
+                      ? 'OtherTech'
+                      : isOption(job, 'technician')
+                      ? job.technician
+                      : 'OtherTech'
+                  }
                   name='technician'
                   disabled={disableTech}
                 >
@@ -220,10 +249,11 @@ const JobDetails = () => {
                 </RuxSelect>
                 {showOtherTech ? (
                   <RuxInput
+                    ref={otherTech}
                     size='small'
                     label='Name'
                     name='technician'
-                    value={job.technician !== 'OtherTech' ? job.technician : ''}
+                    value={isOption(job, 'technician') ? '' : job.technician}
                     onRuxinput={handleTechInput}
                   />
                 ) : null}
@@ -306,7 +336,7 @@ const JobDetails = () => {
         {isModifying ? (
           <RuxButton onClick={handleSubmit}>Save</RuxButton>
         ) : (
-          <RuxButton onClick={() => setIsModifying(true)}>Modify</RuxButton>
+          <RuxButton onClick={handleModify}>Modify</RuxButton>
         )}
       </footer>
     </RuxContainer>
