@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useRef } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   RuxCheckbox,
   RuxContainer,
@@ -49,8 +49,6 @@ const JobDetails = () => {
   const [showOtherTech, setShowOtherTech] = useState(false);
   const [disableJob, setDisableJob] = useState(false);
   const [disableTech, setDisableTech] = useState(false);
-  const otherJob = useRef(null);
-  const otherTech = useRef(null);
 
   const handleCancel = () => {
     if (isModifying) {
@@ -193,7 +191,6 @@ const JobDetails = () => {
                 </RuxSelect>
                 {showOtherJob ? (
                   <RuxInput
-                    ref={otherJob}
                     label='Job Title'
                     name='jobType'
                     onRuxinput={handleJobInput}
@@ -249,7 +246,6 @@ const JobDetails = () => {
                 </RuxSelect>
                 {showOtherTech ? (
                   <RuxInput
-                    ref={otherTech}
                     size='small'
                     label='Name'
                     name='technician'
