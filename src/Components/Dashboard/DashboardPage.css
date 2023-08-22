@@ -34,3 +34,11 @@
 #equipment-panel {
   grid-area: tab-panel;
 }
+
+.equipment-tabs rux-icon {
+cursor: pointer;
+}
+
+.tabs-menu {
+  height: var(--spacing-14);
+}
