@@ -38,19 +38,16 @@
   display: flex;
 }
 
-.tabs-and-menu-wrapperrux-icon {
-cursor: pointer;
+.tabs-and-menu-wrapper rux-icon {
+  cursor: pointer;
+  margin-top: var(--spacing-1);
 }
 
-/* .tabs-and-menu-wrapper rux-menu {
-  padding: 0;
-  display: flex;
-} */
-
-.tabs-and-menu-wrapper rux-menu-item {
-  display: flex;
+.tabs-and-menu-wrapper rux-menu-item span {
+  height: 1rem;
+  /* background-color: rebeccapurple; */
 }
 
-.tabs-and-menu-wrapper rux-menu-item rux-button {
-align-items: center;
+.tabs-and-menu-wrapper rux-menu-item span rux-button rux-icon {
+  margin: auto;
 }

@@ -15,7 +15,6 @@ import {
   SetStateAction,
   useState,
   useEffect,
-  //useMemo,
 } from 'react';
 import { Equipment } from '../../Types/Equipment';
 import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
@@ -23,6 +22,7 @@ import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPane
 import Alerts from '../AlertsPanel/Alerts';
 import ContactsTable from '../ContactsList/ContactsTable';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
+import { stat } from 'graceful-fs';
 
 type PropType = {
   inoperablePanelShow: boolean;
@@ -37,6 +37,7 @@ const EquipmentDetailsPage = ({
 }: PropType) => {
   const { state, dispatch }: any = useAppContext();
   const [showMenu, setShowMenu] = useState(false);
+  const [openPopup, setOpenPopup] = useState(false);
 
   const setCurrentEquipment = (
     e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>
@@ -68,16 +69,14 @@ const EquipmentDetailsPage = ({
       // sets fallback panel
       setInoperablePanelShow(true);
     }
-
     dispatch({ type: 'REMOVE_SELECTED_EQUIPMENT', payload: equipment });
   };
 
-  const openTabs = document.querySelectorAll('rux-tab').length;
-
   useEffect(() => {
-    openTabs >= 9 ? setShowMenu(true) : setShowMenu(false);
-    console.log('running');
-  }, [openTabs]);
+    state.selectedEquipment.length >= 9
+      ? setShowMenu(true)
+      : setShowMenu(false);
+  }, [state.selectedEquipment.length]);
 
   const firstEqupimentTabs = state.selectedEquipment
     .map((equipment: Equipment) => equipment)
@@ -94,8 +93,15 @@ const EquipmentDetailsPage = ({
         dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
       }
     }
+    setOpenPopup(true);
     setInoperablePanelShow(false);
   };
+
+  const equipId = firstEqupimentTabs.filter(
+    (equipment: Equipment) => equipment.id === state.currentEquipment.id
+  );
+  console.log(equipId.pop(), 'equip');
+  console.log(state.currentEquipment);
 
   return (
     <div className='dashboard_equipment-wrapper'>
@@ -137,7 +143,10 @@ const EquipmentDetailsPage = ({
           ))}
         </RuxTabs>
         {showMenu && (
-          <RuxPopUp placement='bottom-start' open>
+          <RuxPopUp
+            placement='bottom-start'
+            open={equipId.pop() === state.currentEquipment ? false : true}
+          >
             <RuxIcon icon='chevron-right' slot='trigger' />
             <RuxMenu onRuxmenuselected={(e) => equipmentSelect(e)}>
               {remainingEquipmentItems.map((equipment: Equipment) => (
@@ -153,12 +162,14 @@ const EquipmentDetailsPage = ({
                   }
                 >
                   {equipment.config}-{equipment.equipmentString}
-                  <RuxButton
-                    iconOnly
-                    borderless
-                    icon='clear'
-                    onClick={() => handleClearClick(equipment)}
-                  />
+                  <span>
+                    <RuxButton
+                      iconOnly
+                      borderless
+                      icon='clear'
+                      onClick={() => handleClearClick(equipment)}
+                    />
+                  </span>
                 </RuxMenuItem>
               ))}
             </RuxMenu>
