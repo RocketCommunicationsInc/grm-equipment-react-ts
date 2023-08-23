@@ -33,4 +33,5 @@
 #inoperable-equipment-panel,
 #equipment-panel {
   grid-area: tab-panel;
+  overflow: auto;
 }

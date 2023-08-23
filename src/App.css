@@ -32,16 +32,16 @@ rux-container footer[slot='footer'] {
 
 .contacts-table {
   grid-area: contacts-table;
-  max-height: 35rem;
+  max-height: 37rem;
   overflow: hidden;
-  margin-block: var(--spacing-3);
+  margin-block-start: var(--spacing-4);
 }
 
 .alerts {
   grid-area: alerts;
-  max-height: 35rem;
+  max-height: 37rem;
   overflow: hidden;
-  margin-block: var(--spacing-3);
+  margin-block-start: var(--spacing-4);
 }
 
 .equipment-tree {

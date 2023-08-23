@@ -105,7 +105,6 @@ const ContactsTable = () => {
   }, [filteredState, filterContacts, searchValue]);
 
   return (
-    <main className='contacts page'>
       <RuxContainer className='contacts-table'>
         <span slot='header'>Current Contacts</span>
         <div slot='header'>
@@ -152,7 +151,6 @@ const ContactsTable = () => {
         </div>
         <Table columnDefs={columnDefs} filteredData={filteredContacts} />
       </RuxContainer>
-    </main>
   );
 };
 
