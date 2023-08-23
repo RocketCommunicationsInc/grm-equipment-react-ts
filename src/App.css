@@ -78,50 +78,6 @@ rux-status::part(status) {
   margin-inline: auto;
 }
 
-/* Global RuxContainer child styles */
-.child-container {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  gap: var(--spacing-3);
-  box-sizing: border-box;
-  height: initial;
-}
-
-.child-container::part(container) {
-  height: 100%;
-  border: 1px solid var(--color-border-interactive-muted);
-}
-
-.child-container::part(header) {
-  background-color: transparent;
-  padding-block-start: var(--spacing-3);
-  padding-block-end: 0px;
-}
-
-.child-container::part(body) {
-  gap: var(--spacing-3);
-  flex-grow: 1;
-  overflow: auto;
-}
-
-/* readonly textarea */
-
-.description-message {
-  height: 100%;
-  box-sizing: border-box;
-  border: 1px solid var(--color-border-interactive-muted);
-  background-color: var(--color-background-base-default);
-  color: var(--color-text-primary);
-  border-radius: var(--radius-base);
-  padding: var(--spacing-2);
-}
-
-.description-message:focus-visible {
-  outline: 1px solid var(--color-border-focus-default);
-  outline-offset: var(--spacing-focus-default);
-}
-
 /* Global Filter Notification Style */
 .filter-notification {
   background-color: var(--color-background-surface-default);
@@ -129,6 +85,7 @@ rux-status::part(status) {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .filter-notification rux-button::part(container) {
   padding-inline: var(--spacing-2);
   box-shadow: none;

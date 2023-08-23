@@ -6,8 +6,8 @@ import { useAppContext } from '../../providers/AppProvider';
 import './DashboardPage.css';
 
 const Dashboard = () => {
-  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(true);
   const { state, dispatch }: any = useAppContext();
+  const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(state.selectedEquipment.length ? false : true);
 
   const handleSelectedEquipment = (equipment: Equipment) => {
     // always set the selected equipment to the current equipment in app state.

@@ -50,30 +50,6 @@
   padding-right: var(--spacing-3);
 }
 
-.segmented-button-group rux-input::part(form-field) {
-  flex-direction: row;
-  align-items: center;
-  width: 16.5rem;
-  margin-top: var(--spacing-4);
-}
-
-.segmented-button-group rux-input::part(label) {
-  margin-right: var(--spacing-2);
-  width: 6rem;
-}
-
-.segmented-button-group rux-input:nth-of-type(1) {
-  margin-top: var(--spacing-14);
-}
-
-.equipment-details .equipment-title {
-  font-weight: var(--font-weights-medium);
-  font-size: var(--font-size-xl);
-  padding-bottom: var(--spacing-2);
-  display: flex;
-  margin-left: var(--spacing-2);
-}
-
 .contacts-table rux-status {
   width: 100%;
 }
