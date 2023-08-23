@@ -22,7 +22,6 @@ import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPane
 import Alerts from '../AlertsPanel/Alerts';
 import ContactsTable from '../ContactsList/ContactsTable';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
-import { stat } from 'graceful-fs';
 
 type PropType = {
   inoperablePanelShow: boolean;
@@ -37,7 +36,7 @@ const EquipmentDetailsPage = ({
 }: PropType) => {
   const { state, dispatch }: any = useAppContext();
   const [showMenu, setShowMenu] = useState(false);
-  const [openPopup, setOpenPopup] = useState(false);
+  const [popUpOpen, setPopupOpen] = useState(false);
 
   const setCurrentEquipment = (
     e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>
@@ -55,6 +54,7 @@ const EquipmentDetailsPage = ({
     } else {
       for (const equipment of state.selectedEquipment) {
         if (target.id === equipment.id) {
+          console.log('dispatching', equipment);
           dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
         }
       }
@@ -78,14 +78,6 @@ const EquipmentDetailsPage = ({
       : setShowMenu(false);
   }, [state.selectedEquipment.length]);
 
-  const firstEqupimentTabs = state.selectedEquipment
-    .map((equipment: Equipment) => equipment)
-    .slice(0, 8);
-
-  const remainingEquipmentItems = state.selectedEquipment
-    .map((equipment: Equipment) => equipment)
-    .slice(8, 56);
-
   const equipmentSelect = (e: any) => {
     const { detail } = e;
     for (const equipment of state.selectedEquipment) {
@@ -93,15 +85,9 @@ const EquipmentDetailsPage = ({
         dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
       }
     }
-    setOpenPopup(true);
+    setPopupOpen(true);
     setInoperablePanelShow(false);
   };
-
-  const equipId = firstEqupimentTabs.filter(
-    (equipment: Equipment) => equipment.id === state.currentEquipment.id
-  );
-  console.log(equipId.pop(), 'equip');
-  console.log(state.currentEquipment);
 
   return (
     <div className='dashboard_equipment-wrapper'>
@@ -118,10 +104,11 @@ const EquipmentDetailsPage = ({
           >
             Inoperable
           </RuxTab>
-          {firstEqupimentTabs.map((equipment: Equipment) => (
-            <>
+          {state.selectedEquipment
+            .slice(0, 8)
+            .map((equipment: Equipment, index: number) => (
               <RuxTab
-                key={equipment.id}
+                key={equipment.id + equipment.category + index}
                 id={equipment.id}
                 selected={
                   state.currentEquipment &&
@@ -139,39 +126,52 @@ const EquipmentDetailsPage = ({
                   onClick={() => handleClearClick(equipment)}
                 />
               </RuxTab>
-            </>
-          ))}
+            ))}
         </RuxTabs>
-        {showMenu && (
+        {showMenu && state.selectedEquipment.length > 8 && (
           <RuxPopUp
             placement='bottom-start'
-            open={equipId.pop() === state.currentEquipment ? false : true}
+            closeOnSelect
+            onRuxpopupopened={() => setPopupOpen(true)}
+            onRuxpopupclosed={() => setPopupOpen(false)}
           >
-            <RuxIcon icon='chevron-right' slot='trigger' />
+            {popUpOpen ? (
+              <RuxIcon
+                icon='arrow-drop-down'
+                slot='trigger'
+                size='large'
+                className='open-popup'
+              />
+            ) : (
+              <RuxIcon icon='arrow-right' slot='trigger' size='large' />
+            )}
+
             <RuxMenu onRuxmenuselected={(e) => equipmentSelect(e)}>
-              {remainingEquipmentItems.map((equipment: Equipment) => (
-                <RuxMenuItem
-                  value={equipment.id}
-                  key={equipment.id}
-                  id={equipment.id}
-                  selected={
-                    state.currentEquipment &&
-                    equipment.id === state.currentEquipment.id
-                      ? true
-                      : false
-                  }
-                >
-                  {equipment.config}-{equipment.equipmentString}
-                  <span>
-                    <RuxButton
-                      iconOnly
-                      borderless
-                      icon='clear'
-                      onClick={() => handleClearClick(equipment)}
-                    />
-                  </span>
-                </RuxMenuItem>
-              ))}
+              {state.selectedEquipment
+                .slice(8)
+                .map((equipment: Equipment, index: any) => (
+                  <RuxMenuItem
+                    value={equipment.id}
+                    key={equipment.id + index}
+                    id={equipment.id}
+                    selected={
+                      state.currentEquipment &&
+                      equipment.id === state.currentEquipment.id
+                        ? true
+                        : false
+                    }
+                  >
+                    <span>
+                      {equipment.config}-{equipment.equipmentString}
+                      <RuxButton
+                        iconOnly
+                        borderless
+                        icon='clear'
+                        onClick={() => handleClearClick(equipment)}
+                      />
+                    </span>
+                  </RuxMenuItem>
+                ))}
             </RuxMenu>
           </RuxPopUp>
         )}

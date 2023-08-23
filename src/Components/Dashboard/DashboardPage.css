@@ -40,13 +40,25 @@
 
 .tabs-and-menu-wrapper rux-icon {
   cursor: pointer;
-  margin-top: var(--spacing-1);
+height: 3.5rem;
+}
+
+.tabs-and-menu-wrapper .open-popup{
+  border-bottom: 4px solid var(--color-background-interactive-default);
+  color: var(--color-palette-neutral-000);
 }
 
 .tabs-and-menu-wrapper rux-menu-item span {
-  height: 1rem;
-  /* background-color: rebeccapurple; */
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ pointer-events: none;
 }
+
+.tabs-and-menu-wrapper rux-menu-item span rux-button {
+  pointer-events: all;
+}
+
 
 .tabs-and-menu-wrapper rux-menu-item span rux-button rux-icon {
   margin: auto;
