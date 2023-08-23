@@ -47,10 +47,10 @@ const JobDetails = () => {
   const [searchValue, setSearchValue] = useState('');
   const [showOtherJob, setShowOtherJob] = useState(false);
   const [showOtherTech, setShowOtherTech] = useState(false);
-  const [disableJob, setDisableJob] = useState(false);
-  const [disableTech, setDisableTech] = useState(false);
   const jobSelect = useRef<HTMLRuxSelectElement | null>(null);
   const techSelect = useRef<HTMLRuxSelectElement | null>(null);
+  const jobInput = useRef<HTMLRuxInputElement | null>(null);
+  const techInput = useRef<HTMLRuxInputElement | null>(null);
 
   const handleCancel = () => {
     if (isModifying) {
@@ -87,7 +87,7 @@ const JobDetails = () => {
     setIsModifying(false);
     if (job.jobId) {
       dispatch({ type: 'EDIT_JOB', payload: modifiedJob });
-      setJob(modifiedJob);
+      setJob({ ...modifiedJob });
     }
   };
 
@@ -107,6 +107,10 @@ const JobDetails = () => {
   const handleTechSelection = (e: any) => {
     if (e.target.value === 'OtherTech') {
       setShowOtherTech(true);
+      setJob((prevState: any) => ({
+        ...prevState,
+        [e.target.name]: techInput.current?.value,
+      }));
     } else {
       setShowOtherTech(false);
       setJob((prevState: any) => ({
@@ -119,6 +123,10 @@ const JobDetails = () => {
   const handleJobSelection = (e: any) => {
     if (e.target.value === 'OtherJob') {
       setShowOtherJob(true);
+      setJob((prevState: any) => ({
+        ...prevState,
+        [e.target.name]: jobInput.current?.value || '',
+      }));
     } else {
       setShowOtherJob(false);
       setJob((prevState: any) => ({
@@ -129,15 +137,12 @@ const JobDetails = () => {
   };
 
   const handleJobInput = (e: any) => {
-    e.target.value !== '' ? setDisableJob(true) : setDisableJob(false);
     setJob((prevState: any) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
-
   const handleTechInput = (e: any) => {
-    e.target.value !== '' ? setDisableTech(true) : setDisableTech(false);
     setJob((prevState: any) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -155,6 +160,19 @@ const JobDetails = () => {
       ) {
         element?.classList.add('active');
       }
+    }
+
+    //determine whether or not job/tech select should be disabled
+    if (techSelect.current && techInput.current) {
+      techInput.current.value !== '' && showOtherTech
+        ? techSelect.current.setAttribute('disabled', '')
+        : techSelect.current.removeAttribute('disabled');
+    }
+
+    if (jobSelect.current && jobInput.current) {
+      jobInput.current?.value !== '' && showOtherJob
+        ? jobSelect.current!.setAttribute('disabled', '')
+        : jobSelect.current!.removeAttribute('disabled');
     }
   });
 
@@ -191,7 +209,6 @@ const JobDetails = () => {
                       : 'OtherJob'
                   }
                   name='jobType'
-                  disabled={disableJob}
                   ref={jobSelect}
                 >
                   {jobOptions.map((option, index) => (
@@ -209,6 +226,7 @@ const JobDetails = () => {
                     onRuxinput={handleJobInput}
                     value={isOption(job, 'jobType') ? '' : job.jobType}
                     size='small'
+                    ref={jobInput}
                   />
                 ) : null}
               </div>
@@ -248,7 +266,6 @@ const JobDetails = () => {
                       : 'OtherTech'
                   }
                   name='technician'
-                  disabled={disableTech}
                   ref={techSelect}
                 >
                   {techOptions.map((option, index) => (
@@ -266,6 +283,7 @@ const JobDetails = () => {
                     name='technician'
                     value={isOption(job, 'technician') ? '' : job.technician}
                     onRuxinput={handleTechInput}
+                    ref={techInput}
                   />
                 ) : null}
               </div>
