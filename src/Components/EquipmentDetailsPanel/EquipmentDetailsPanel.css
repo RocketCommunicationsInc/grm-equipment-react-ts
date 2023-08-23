@@ -1,6 +1,5 @@
 #equipment-panel:not(.hidden-panel) {
   height: 100%;
-  overflow: auto;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-areas:
@@ -11,6 +10,10 @@
 .equipment-details {
   height: 100%;
   width: 100%;
+}
+
+.equipment-details::part(body) {
+  overflow: auto;
 }
 
 .equipment-details_wrapper {

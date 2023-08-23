@@ -5,6 +5,7 @@
 
 .inoperable-equipment::part(body) {
   gap: var(--spacing-4);
+  overflow: auto;
 }
 
 .inoperable-equipment span {
