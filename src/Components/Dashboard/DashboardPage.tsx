@@ -10,8 +10,8 @@ const Dashboard = () => {
   const [inoperablePanelShow, setInoperablePanelShow] = useState<boolean>(
     state.selectedEquipment.length ? false : true
   );
-  // const [selectedTreeNode, setSelectedTreeNode] = useState(false);
 
+  // const [selectedTreeNode, setSelectedTreeNode] = useState(false);
   const handleSelectedEquipment = (equipment: Equipment) => {
     // always set the selected equipment to the current equipment in app state.
     dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
