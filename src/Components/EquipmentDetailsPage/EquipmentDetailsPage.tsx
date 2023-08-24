@@ -149,7 +149,7 @@ const EquipmentDetailsPage = ({
             </RuxTab>
           ))}
         </RuxTabs>
-        {showMenu && (
+        {showMenu && state.selectedEquipment.length >= 9 ? (
           <RuxPopUp
             placement='bottom-start'
             closeOnSelect
@@ -198,7 +198,7 @@ const EquipmentDetailsPage = ({
               </RuxMenu>
             </div>
           </RuxPopUp>
-        )}
+        ) : null}
       </div>
       <div
         id='inoperable-equipment-panel'
