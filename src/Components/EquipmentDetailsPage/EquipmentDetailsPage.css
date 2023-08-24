@@ -10,6 +10,7 @@
   grid-area: tab-navigation;
   overflow: hidden;
   white-space: nowrap;
+  overflow: auto;
 }
 
 .dashboard_equipment-wrapper rux-tab::part(container) {
@@ -19,6 +20,7 @@
 #inoperable-equipment-panel,
 #equipment-panel {
   grid-area: tab-panel;
+  overflow: auto;
 }
 
 .tabs-and-menu-wrapper {
