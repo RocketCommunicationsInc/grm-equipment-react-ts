@@ -75,7 +75,7 @@ const EquipmentDetailsPage = ({
   };
 
   useEffect(() => {
-    state.selectedEquipment.length >= 9
+    state.selectedEquipment.length >= 8
       ? setShowMenu(true)
       : setShowMenu(false);
   }, [state.selectedEquipment.length]);
@@ -96,20 +96,15 @@ const EquipmentDetailsPage = ({
       const element = menuItemArr[i] as any;
       if (element.value === state.currentEquipment.id) {
         if (element.selected) {
-          console.log(element.selected, 'menu');
           setMenuItemSelected(true);
         } else setMenuItemSelected(false);
       }
     }
-  }, [state.currentEquipment]);
-
-  useEffect(() => {
     const ruxTabsArr = document.getElementsByClassName('equipment-tabs');
     for (let i = 0; i < ruxTabsArr.length; i++) {
       const element = ruxTabsArr[i] as any;
       if (element.id === state.currentEquipment.id) {
         if (element.selected) {
-          console.log(element.selected, 'tabs');
           setMenuItemSelected(false);
         } else setMenuItemSelected(true);
       }
@@ -169,7 +164,7 @@ const EquipmentDetailsPage = ({
                 slot='trigger'
                 className='open-popup'
               />
-            ) : (
+            ) : state.selectedEquipment.length === 8 ? null : (
               <RuxIcon icon='arrow-right' slot='trigger' />
             )}
             <div className='menu-wrapper'>
