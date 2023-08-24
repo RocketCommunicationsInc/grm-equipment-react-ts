@@ -94,7 +94,7 @@ const EquipmentDetailsPage = ({
     const menuItemArr = document.getElementsByClassName('equip-menu-item');
     for (let i = 0; i < menuItemArr.length; i++) {
       const element = menuItemArr[i] as any;
-      if (element.value === state.currentEquipment.id) {
+      if (element?.value === state.currentEquipment?.id) {
         if (element.selected) {
           setMenuItemSelected(true);
         } else setMenuItemSelected(false);
@@ -103,7 +103,7 @@ const EquipmentDetailsPage = ({
     const ruxTabsArr = document.getElementsByClassName('equipment-tabs');
     for (let i = 0; i < ruxTabsArr.length; i++) {
       const element = ruxTabsArr[i] as any;
-      if (element.id === state.currentEquipment.id) {
+      if (element?.id === state.currentEquipment?.id) {
         if (element.selected) {
           setMenuItemSelected(false);
         } else setMenuItemSelected(true);
