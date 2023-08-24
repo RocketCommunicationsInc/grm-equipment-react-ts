@@ -162,7 +162,7 @@ const EquipmentDetailsPage = ({
               <RuxIcon
                 icon='arrow-drop-down'
                 slot='trigger'
-                className='open-popup'
+                className='open-popup-selected-item'
               />
             ) : state.selectedEquipment.length === 8 ? null : (
               <RuxIcon icon='arrow-right' slot='trigger' />

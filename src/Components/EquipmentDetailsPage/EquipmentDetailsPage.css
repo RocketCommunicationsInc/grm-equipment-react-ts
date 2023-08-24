@@ -33,7 +33,7 @@
   margin-top: var(--spacing-1);
 }
 
-.tabs-and-menu-wrapper .open-popup {
+.tabs-and-menu-wrapper .open-popup-selected-item {
   border-bottom: 4px solid var(--color-background-interactive-default);
   color: var(--color-palette-neutral-000);
 }
