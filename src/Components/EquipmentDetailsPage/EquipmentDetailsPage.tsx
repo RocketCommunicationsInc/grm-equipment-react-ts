@@ -50,10 +50,6 @@ const EquipmentDetailsPage = ({
     //if the target is a tab but is the remove button don't change tabs
     if (target.classList.contains('equipment-panel_tab-clear-button')) return;
 
-    if ((e.target as any).selected) {
-      setMenuItemSelected(false);
-    }
-
     if (target.id === 'inoperable-equipment') {
       setInoperablePanelShow(true);
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
@@ -89,13 +85,36 @@ const EquipmentDetailsPage = ({
     for (const equipment of state.selectedEquipment) {
       if (detail.value === equipment.id) {
         dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
-        if (detail.selected) {
-          setMenuItemSelected(true);
-        } else setMenuItemSelected(false);
       }
     }
     setInoperablePanelShow(false);
   };
+
+  useEffect(() => {
+    const menuItemArr = document.getElementsByClassName('equip-menu-item');
+    for (let i = 0; i < menuItemArr.length; i++) {
+      const element = menuItemArr[i] as any;
+      if (element.value === state.currentEquipment.id) {
+        if (element.selected) {
+          console.log(element.selected, 'menu');
+          setMenuItemSelected(true);
+        } else setMenuItemSelected(false);
+      }
+    }
+  }, [state.currentEquipment]);
+
+  useEffect(() => {
+    const ruxTabsArr = document.getElementsByClassName('equipment-tabs');
+    for (let i = 0; i < ruxTabsArr.length; i++) {
+      const element = ruxTabsArr[i] as any;
+      if (element.id === state.currentEquipment.id) {
+        if (element.selected) {
+          console.log(element.selected, 'tabs');
+          setMenuItemSelected(false);
+        } else setMenuItemSelected(true);
+      }
+    }
+  }, [state.currentEquipment]);
 
   return (
     <div className='dashboard_equipment-wrapper'>
@@ -135,7 +154,7 @@ const EquipmentDetailsPage = ({
             </RuxTab>
           ))}
         </RuxTabs>
-        {showMenu && state.selectedEquipment.length > 8 && (
+        {showMenu && (
           <RuxPopUp
             placement='bottom-start'
             closeOnSelect
