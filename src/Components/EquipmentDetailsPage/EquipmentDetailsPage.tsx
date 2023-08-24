@@ -158,7 +158,7 @@ const EquipmentDetailsPage = ({
           >
             {popUpOpen ? (
               <RuxIcon icon='arrow-drop-down' slot='trigger' />
-            ) : menuItemSelected ? (
+            ) : menuItemSelected && state.selectedEquipment.length > 8 ? (
               <RuxIcon
                 icon='arrow-drop-down'
                 slot='trigger'
@@ -170,7 +170,7 @@ const EquipmentDetailsPage = ({
             <div className='menu-wrapper'>
               <RuxMenu onRuxmenuselected={(e) => equipmentSelect(e)}>
                 {state.selectedEquipment
-                  .slice(8)
+                  .slice(8, 49)
                   .map((equipment: Equipment) => (
                     <RuxMenuItem
                       className='equip-menu-item'
