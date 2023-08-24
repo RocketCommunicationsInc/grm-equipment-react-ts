@@ -33,7 +33,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
         <span>Digital ({digital.length})</span>
         <ul>
           {digital.map((equipment: Equipment, index: number) => (
-            <li key={equipment.id + equipment.config}>
+            <li key={index}>
               <RuxMonitoringIcon
                 status='normal'
                 icon='center-focus-weak'
@@ -48,7 +48,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
         <span>Facilities ({facilities.length})</span>
         <ul>
           {facilities.map((equipment: Equipment, index: number) => (
-            <li key={equipment.id + equipment.category}>
+            <li key={index}>
               <RuxMonitoringIcon
                 status='normal'
                 icon='center-focus-weak'
@@ -63,7 +63,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
         <span>Comms ({comms.length})</span>
         <ul>
           {comms.map((equipment: Equipment, index: number) => (
-            <li key={equipment.id + equipment.equipmentString}>
+            <li key={index}>
               <RuxMonitoringIcon
                 status='normal'
                 icon='center-focus-weak'
@@ -78,7 +78,7 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
         <span>RF ({RF.length})</span>
         <ul>
           {RF.map((equipment: Equipment, index: number) => (
-            <li key={equipment.id + equipment.status}>
+            <li key={index}>
               <RuxMonitoringIcon
                 status='normal'
                 icon='center-focus-weak'

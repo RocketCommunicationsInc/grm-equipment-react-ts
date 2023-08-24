@@ -1,0 +1,57 @@
+.dashboard_equipment-wrapper {
+  grid-area: equipment-panel;
+  display: grid;
+  grid-template-rows: max-content auto;
+  grid-template-areas: 'tab-navigation' 'tab-panel';
+}
+
+.dashboard_equipment-wrapper rux-tabs {
+  height: auto;
+  grid-area: tab-navigation;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dashboard_equipment-wrapper rux-tab::part(container) {
+  min-width: fit-content;
+}
+
+#inoperable-equipment-panel,
+#equipment-panel {
+  grid-area: tab-panel;
+}
+
+.tabs-and-menu-wrapper {
+  display: flex;
+}
+
+.tabs-and-menu-wrapper rux-icon {
+  cursor: pointer;
+  height: 3.25rem;
+  margin-top: var(--spacing-1);
+}
+
+.tabs-and-menu-wrapper .open-popup {
+  border-bottom: 4px solid var(--color-background-interactive-default);
+  color: var(--color-palette-neutral-000);
+}
+
+.tabs-and-menu-wrapper .menu-wrapper {
+  max-height: 20rem;
+  overflow: auto;
+}
+
+.tabs-and-menu-wrapper rux-menu-item span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.tabs-and-menu-wrapper rux-menu-item span rux-button {
+  pointer-events: all;
+}
+
+.tabs-and-menu-wrapper rux-menu-item span rux-button rux-icon {
+  margin: auto;
+}
