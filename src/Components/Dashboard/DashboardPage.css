@@ -10,28 +10,3 @@
   grid-template-rows: minmax(0, 1fr);
   grid-template-areas: 'equipment-tree equipment-panel';
 }
-
-.dashboard_equipment-wrapper {
-  grid-area: equipment-panel;
-  display: grid;
-  grid-template-rows: max-content auto;
-  grid-template-areas: 'tab-navigation' 'tab-panel';
-}
-
-.dashboard_equipment-wrapper rux-tabs {
-  height: auto;
-  grid-area: tab-navigation;
-  overflow: hidden;
-  white-space: nowrap;
-  overflow: auto;
-}
-
-.dashboard_equipment-wrapper rux-tab::part(container) {
-  min-width: fit-content;
-}
-
-#inoperable-equipment-panel,
-#equipment-panel {
-  grid-area: tab-panel;
-  overflow: auto;
-}
