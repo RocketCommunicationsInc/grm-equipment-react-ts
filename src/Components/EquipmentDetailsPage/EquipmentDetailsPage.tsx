@@ -1,3 +1,4 @@
+import { useRef, useMemo, MouseEvent } from 'react';
 import {
   RuxButton,
   RuxContainer,
@@ -9,13 +10,6 @@ import {
   RuxTabs,
 } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
-import {
-  Dispatch,
-  MouseEvent,
-  SetStateAction,
-  useState,
-  useEffect,
-} from 'react';
 import { Equipment } from '../../Types/Equipment';
 import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
 import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPanel';
@@ -24,34 +18,21 @@ import ContactsTable from '../ContactsList/ContactsTable';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 import './EquipmentDetailsPage.css';
 
-type PropType = {
-  inoperablePanelShow: boolean;
-  setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
-  handleSelectedEquipment: (equipment: Equipment) => void;
-};
-
-const EquipmentDetailsPage = ({
-  inoperablePanelShow,
-  setInoperablePanelShow,
-  handleSelectedEquipment,
-}: PropType) => {
+const EquipmentDetailsPage = () => {
   const { state, dispatch }: any = useAppContext();
-  const [showMenu, setShowMenu] = useState(false);
-  const [popUpOpen, setPopupOpen] = useState(false);
-  const [menuItemSelected, setMenuItemSelected] = useState(false);
+  const tabsRef = useRef<Set<HTMLRuxTabElement>>(new Set());
+  const menuItemsRef = useRef<Set<HTMLRuxMenuItemElement>>(new Set());
+
+  const menuItemIsSelected = useMemo(
+    () => state.selectedEquipment.slice(8).includes(state.currentEquipment),
+    [state.currentEquipment, state.selectedEquipment]
+  );
 
   const setCurrentEquipment = (
     e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>
   ) => {
     const target = e.target as HTMLElement;
-
-    //if the target isn't a tab do nothing
-    if (!target.closest('rux-tab')) return;
-    //if the target is a tab but is the remove button don't change tabs
-    if (target.classList.contains('equipment-panel_tab-clear-button')) return;
-
     if (target.id === 'inoperable-equipment') {
-      setInoperablePanelShow(true);
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
       return;
     } else {
@@ -60,7 +41,6 @@ const EquipmentDetailsPage = ({
           dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
         }
       }
-      setInoperablePanelShow(false);
     }
   };
 
@@ -68,17 +48,9 @@ const EquipmentDetailsPage = ({
     // if the tab being cleared is the currently selected one, fallback to inoperable equipment
     if (state.currentEquipment && state.currentEquipment.id === equipment.id) {
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
-      // sets fallback panel
-      setInoperablePanelShow(true);
     }
     dispatch({ type: 'REMOVE_SELECTED_EQUIPMENT', payload: equipment });
   };
-
-  useEffect(() => {
-    state.selectedEquipment.length >= 8
-      ? setShowMenu(true)
-      : setShowMenu(false);
-  }, [state.selectedEquipment.length]);
 
   const equipmentSelect = (e: any) => {
     const { detail } = e;
@@ -87,29 +59,7 @@ const EquipmentDetailsPage = ({
         dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
       }
     }
-    setInoperablePanelShow(false);
   };
-
-  useEffect(() => {
-    const menuItemArr = document.getElementsByClassName('equip-menu-item');
-    for (let i = 0; i < menuItemArr.length; i++) {
-      const element = menuItemArr[i] as any;
-      if (element?.value === state.currentEquipment?.id) {
-        if (element.selected) {
-          setMenuItemSelected(true);
-        } else setMenuItemSelected(false);
-      }
-    }
-    const ruxTabsArr = document.getElementsByClassName('equipment-tabs');
-    for (let i = 0; i < ruxTabsArr.length; i++) {
-      const element = ruxTabsArr[i] as any;
-      if (element?.id === state.currentEquipment?.id) {
-        if (element.selected) {
-          setMenuItemSelected(false);
-        } else setMenuItemSelected(true);
-      }
-    }
-  }, [state.currentEquipment]);
 
   return (
     <div className='dashboard_equipment-wrapper'>
@@ -120,23 +70,28 @@ const EquipmentDetailsPage = ({
           onClick={(e) => setCurrentEquipment(e)}
         >
           <RuxTab
+            ref={(el) => {
+              if (el) {
+                tabsRef.current.add(el);
+              }
+            }}
             id='inoperable-equipment'
             key='inoperable-equipment'
-            selected={state.currentEquipment === null ? true : false}
+            selected={state.currentEquipment === null}
           >
             Inoperable
           </RuxTab>
           {state.selectedEquipment.slice(0, 8).map((equipment: Equipment) => (
             <RuxTab
               className='equipment-tabs'
+              ref={(el) => {
+                if (el) {
+                  tabsRef.current.add(el);
+                }
+              }}
               key={equipment.id}
               id={equipment.id}
-              selected={
-                state.currentEquipment &&
-                equipment.id === state.currentEquipment.id
-                  ? true
-                  : false
-              }
+              selected={equipment?.id === state?.currentEquipment?.id}
             >
               {equipment.config}-{equipment.equipmentString}
               <RuxButton
@@ -149,22 +104,19 @@ const EquipmentDetailsPage = ({
             </RuxTab>
           ))}
         </RuxTabs>
-        {showMenu && (
+        {
           <RuxPopUp
+            hidden={state.selectedEquipment.length <= 8}
             placement='bottom-start'
             closeOnSelect
-            onRuxpopupopened={() => setPopupOpen(true)}
-            onRuxpopupclosed={() => setPopupOpen(false)}
           >
-            {popUpOpen ? (
-              <RuxIcon icon='arrow-drop-down' slot='trigger' />
-            ) : menuItemSelected ? (
+            {menuItemIsSelected ? (
               <RuxIcon
                 icon='arrow-drop-down'
                 slot='trigger'
                 className='open-popup-selected-item'
               />
-            ) : state.selectedEquipment.length === 8 ? null : (
+            ) : (
               <RuxIcon icon='arrow-right' slot='trigger' />
             )}
             <div className='menu-wrapper'>
@@ -174,15 +126,15 @@ const EquipmentDetailsPage = ({
                   .map((equipment: Equipment) => (
                     <RuxMenuItem
                       className='equip-menu-item'
+                      ref={(el) => {
+                        if (el) {
+                          menuItemsRef.current.add(el);
+                        }
+                      }}
                       value={equipment.id}
                       key={equipment.id}
                       id={equipment.id}
-                      selected={
-                        state.currentEquipment &&
-                        equipment.id === state.currentEquipment.id
-                          ? true
-                          : false
-                      }
+                      selected={equipment.id === state?.currentEquipment?.id}
                     >
                       <span>
                         {equipment.config}-{equipment.equipmentString}
@@ -198,19 +150,17 @@ const EquipmentDetailsPage = ({
               </RuxMenu>
             </div>
           </RuxPopUp>
-        )}
+        }
       </div>
       <div
         id='inoperable-equipment-panel'
-        className={`${!inoperablePanelShow && 'hidden-panel'}`}
+        className={`${state.currentEquipment && 'hidden-panel'}`}
       >
-        <InoperableEquipment
-          handleSelectedEquipment={handleSelectedEquipment}
-        />
+        <InoperableEquipment />
       </div>
       <div
         id='equipment-panel'
-        className={`${inoperablePanelShow && 'hidden-panel'}`}
+        className={`${!state.currentEquipment && 'hidden-panel'}`}
       >
         <RuxContainer className='equipment-details'>
           <header slot='header'>Equipment Details</header>

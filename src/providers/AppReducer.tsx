@@ -1,4 +1,4 @@
-import { Job } from '../Types/Equipment';
+import { Job, Equipment } from '../Types/Equipment';
 
 export const appReducer = (state: any, { type, payload }: any) => {
   switch (type) {
@@ -140,16 +140,25 @@ export const appReducer = (state: any, { type, payload }: any) => {
     }
 
     case 'CURRENT_EQUIPMENT': {
-      return {
-        ...state,
-        currentEquipment: payload,
-      };
-    }
+      // check if equipment already has an existing tab (if it is in selectedEquipment state)
+      const equipmentAlreadySelected = state?.selectedEquipment?.some(
+        (equipmentItem: Equipment) => {
+          if (equipmentItem.id === payload?.id) {
+            return true;
+          }
+          return false;
+        }
+      );
 
-    case 'ADD_SELECTED_EQUIPMENT': {
+      const newSelectedEquipment =
+        !equipmentAlreadySelected && payload !== null
+          ? [...state.selectedEquipment, payload]
+          : state.selectedEquipment;
       return {
         ...state,
-        selectedEquipment: [...state.selectedEquipment, payload],
+        // if it doesn't have a tab, add to selectedEquipment state array, which will then re-render component and create new tab.
+        selectedEquipment: newSelectedEquipment,
+        currentEquipment: payload,
       };
     }
 
