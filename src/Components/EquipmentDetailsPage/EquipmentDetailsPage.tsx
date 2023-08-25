@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, MouseEvent } from 'react';
 import {
   RuxButton,
   RuxContainer,
@@ -10,7 +10,6 @@ import {
   RuxTabs,
 } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
-import { Dispatch, MouseEvent, SetStateAction } from 'react';
 import { Equipment } from '../../Types/Equipment';
 import InoperableEquipment from '../InoperableEquipment/InoperableEquipment';
 import EquipmentDetailsPanel from '../EquipmentDetailsPanel/EquipmentDetailsPanel';
@@ -21,15 +20,9 @@ import './EquipmentDetailsPage.css';
 
 type PropType = {
   inoperablePanelShow: boolean;
-  setInoperablePanelShow: Dispatch<SetStateAction<boolean>>;
-  handleSelectedEquipment: (equipment: Equipment) => void;
 };
 
-const EquipmentDetailsPage = ({
-  inoperablePanelShow,
-  setInoperablePanelShow,
-  handleSelectedEquipment,
-}: PropType) => {
+const EquipmentDetailsPage = ({ inoperablePanelShow }: PropType) => {
   const { state, dispatch }: any = useAppContext();
   const tabsRef = useRef<Set<HTMLRuxTabElement>>(new Set());
   const menuItemsRef = useRef<Set<HTMLRuxMenuItemElement>>(new Set());
@@ -43,14 +36,7 @@ const EquipmentDetailsPage = ({
     e: MouseEvent<HTMLRuxTabsElement, globalThis.MouseEvent>
   ) => {
     const target = e.target as HTMLElement;
-
-    //if the target isn't a tab do nothing
-    if (!target.closest('rux-tab')) return;
-    //if the target is a tab but is the remove button don't change tabs
-    if (target.classList.contains('equipment-panel_tab-clear-button')) return;
-
     if (target.id === 'inoperable-equipment') {
-      setInoperablePanelShow(true);
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
       return;
     } else {
@@ -59,7 +45,6 @@ const EquipmentDetailsPage = ({
           dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
         }
       }
-      setInoperablePanelShow(false);
     }
   };
 
@@ -67,8 +52,6 @@ const EquipmentDetailsPage = ({
     // if the tab being cleared is the currently selected one, fallback to inoperable equipment
     if (state.currentEquipment && state.currentEquipment.id === equipment.id) {
       dispatch({ type: 'CURRENT_EQUIPMENT', payload: null });
-      // sets fallback panel
-      setInoperablePanelShow(true);
     }
     dispatch({ type: 'REMOVE_SELECTED_EQUIPMENT', payload: equipment });
   };
@@ -80,7 +63,6 @@ const EquipmentDetailsPage = ({
         dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
       }
     }
-    setInoperablePanelShow(false);
   };
 
   return (
@@ -103,30 +85,28 @@ const EquipmentDetailsPage = ({
           >
             Inoperable
           </RuxTab>
-          {state.selectedEquipment
-            .slice(0, 8)
-            .map((equipment: Equipment, i: number) => (
-              <RuxTab
-                className='equipment-tabs'
-                ref={(el) => {
-                  if (el) {
-                    tabsRef.current.add(el);
-                  }
-                }}
-                key={equipment.id}
-                id={equipment.id}
-                selected={equipment?.id === state?.currentEquipment?.id}
-              >
-                {equipment.config}-{equipment.equipmentString}
-                <RuxButton
-                  className='equipment-panel_tab-clear-button'
-                  iconOnly
-                  borderless
-                  icon='clear'
-                  onClick={() => handleClearClick(equipment)}
-                />
-              </RuxTab>
-            ))}
+          {state.selectedEquipment.slice(0, 8).map((equipment: Equipment) => (
+            <RuxTab
+              className='equipment-tabs'
+              ref={(el) => {
+                if (el) {
+                  tabsRef.current.add(el);
+                }
+              }}
+              key={equipment.id}
+              id={equipment.id}
+              selected={equipment?.id === state?.currentEquipment?.id}
+            >
+              {equipment.config}-{equipment.equipmentString}
+              <RuxButton
+                className='equipment-panel_tab-clear-button'
+                iconOnly
+                borderless
+                icon='clear'
+                onClick={() => handleClearClick(equipment)}
+              />
+            </RuxTab>
+          ))}
         </RuxTabs>
         {
           <RuxPopUp
@@ -180,9 +160,7 @@ const EquipmentDetailsPage = ({
         id='inoperable-equipment-panel'
         className={`${!inoperablePanelShow && 'hidden-panel'}`}
       >
-        <InoperableEquipment
-          handleSelectedEquipment={handleSelectedEquipment}
-        />
+        <InoperableEquipment />
       </div>
       <div
         id='equipment-panel'

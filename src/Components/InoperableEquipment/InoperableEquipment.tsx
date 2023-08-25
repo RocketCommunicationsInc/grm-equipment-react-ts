@@ -3,12 +3,8 @@ import { useAppContext } from '../../providers/AppProvider';
 import './InoperableEquipment.css';
 import { Equipment } from '../../Types/Equipment';
 
-type PropTypes = {
-  handleSelectedEquipment: (equipment: Equipment) => void;
-};
-
-const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
-  const { state }: any = useAppContext();
+const InoperableEquipment = () => {
+  const { state, dispatch }: any = useAppContext();
 
   const category = state.equipment.map((equip: string) => equip);
 
@@ -26,6 +22,9 @@ const InoperableEquipment = ({ handleSelectedEquipment }: PropTypes) => {
 
   const RF = category.filter((category: any) => category.category === 'rf');
 
+  const handleSelectedEquipment = (equipment: Equipment) => {
+    dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+  };
   return (
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>
