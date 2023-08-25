@@ -9,14 +9,14 @@ import { capitalize } from '../../utils';
 import './EquipmentTree.css';
 import { Equipment } from '../../Types/Equipment';
 
-type PropTypes = {
-  handleSelectedEquipment: (equipment: Equipment) => void;
-};
-
-const EquipmentTree = ({ handleSelectedEquipment }: PropTypes) => {
-  const { state }: any = useAppContext();
+const EquipmentTree = () => {
+  const { state, dispatch }: any = useAppContext();
   const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
   const categoryArray: string[] = ['digital', 'facilities', 'comms', 'rf'];
+
+  const handleSelectedEquipment = (equipment: Equipment) => {
+    dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+  };
 
   return (
     <RuxContainer className='equipment-tree'>

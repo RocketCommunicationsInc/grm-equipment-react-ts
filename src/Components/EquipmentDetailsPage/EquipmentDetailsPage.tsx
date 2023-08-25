@@ -18,11 +18,7 @@ import ContactsTable from '../ContactsList/ContactsTable';
 import MaintenancePanel from '../MaintenancePanel/MaintenancePanel';
 import './EquipmentDetailsPage.css';
 
-type PropType = {
-  inoperablePanelShow: boolean;
-};
-
-const EquipmentDetailsPage = ({ inoperablePanelShow }: PropType) => {
+const EquipmentDetailsPage = () => {
   const { state, dispatch }: any = useAppContext();
   const tabsRef = useRef<Set<HTMLRuxTabElement>>(new Set());
   const menuItemsRef = useRef<Set<HTMLRuxMenuItemElement>>(new Set());
@@ -158,13 +154,13 @@ const EquipmentDetailsPage = ({ inoperablePanelShow }: PropType) => {
       </div>
       <div
         id='inoperable-equipment-panel'
-        className={`${!inoperablePanelShow && 'hidden-panel'}`}
+        className={`${state.currentEquipment && 'hidden-panel'}`}
       >
         <InoperableEquipment />
       </div>
       <div
         id='equipment-panel'
-        className={`${inoperablePanelShow && 'hidden-panel'}`}
+        className={`${!state.currentEquipment && 'hidden-panel'}`}
       >
         <RuxContainer className='equipment-details'>
           <header slot='header'>Equipment Details</header>
