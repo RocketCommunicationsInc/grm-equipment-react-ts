@@ -11,10 +11,16 @@
   text-align: right;
 }
 
-.table-wrapper rux-table-cell.jobs-cell::after {
+.table-wrapper rux-table-header-cell:has(rux-icon.visible) .job-table_right-align,
+.table-wrapper rux-table-header-cell:hover .job-table_right-align {
+  grid-template-columns: auto 32px;
+  justify-content: flex-end;
+}
+
+/* .table-wrapper rux-table-cell.jobs-cell::after {
   content: '';
   padding-right: var(--spacing-8);
-}
+} */
 
 .table-wrapper .jobs-cell:nth-of-type(1) {
   border-left: transparent 5px solid;

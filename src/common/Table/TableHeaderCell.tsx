@@ -19,16 +19,19 @@ const TableHeaderCell = ({
     <RuxTableHeaderCell
       data-sortprop={columnDefinition.property}
       onClick={handleClick}
-      className={columnDefinition.isRightAligned ? 'right-align' : ''}
+      className={columnDefinition.property === 'status' ? 'status-align' : ''}
     >
-      {columnDefinition.label}
-      <RuxIcon
-        icon={sortDirection === 'ASC' ? 'arrow-drop-down' : 'arrow-drop-up'}
-        size='small'
-        className={
-          sortProp === columnDefinition.property ? 'visible' : 'hidden'
-        }
-      />
+      <div>
+        <span>{columnDefinition.label}</span>
+
+        <RuxIcon
+          icon={sortDirection === 'ASC' ? 'arrow-drop-down' : 'arrow-drop-up'}
+          size='32px'
+          className={
+            sortProp === columnDefinition.property ? 'visible' : 'hidden'
+          }
+        />
+      </div>
     </RuxTableHeaderCell>
   );
 };

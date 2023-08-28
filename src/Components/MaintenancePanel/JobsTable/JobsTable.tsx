@@ -82,6 +82,8 @@ const JobsTable = ({ jobs }: PropTypes) => {
     navigate('job-details');
   };
 
+  console.log(columnDefs)
+
   return (
     <div className='table-wrapper'>
       <RuxTable>
@@ -94,18 +96,20 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 onClick={handleHeaderCellClick}
                 className='jobs-header-cell'
               >
-                {colDef.label}
-                <RuxIcon
-                  icon={
-                    sortDirection === 'ASC'
-                      ? 'arrow-drop-down'
-                      : 'arrow-drop-up'
-                  }
-                  size='small'
-                  className={
-                    sortProp === colDef.property ? 'visible' : 'hidden'
-                  }
-                />
+                <div className={ (colDef.property === 'createdOn' || colDef.property === 'startedOn' || colDef.propery === 'stoppedOn') ? 'job-table_right-align' : '' }>
+                  <span>{colDef.label}</span>
+                  <RuxIcon
+                    icon={
+                      sortDirection === 'ASC'
+                        ? 'arrow-drop-down'
+                        : 'arrow-drop-up'
+                    }
+                    size='small'
+                    className={
+                      sortProp === colDef.property ? 'visible' : 'hidden'
+                    }
+                  />
+                </div>
               </RuxTableHeaderCell>
             ))}
           </RuxTableHeaderRow>
