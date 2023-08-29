@@ -19,7 +19,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-12-28T03:35:37",
-        "equipment": "SFEP128CH1",
+        "equipment": "SFEP12H1",
         "equipmentStatus": "serious"
       },
       {
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEC4",
     "description": "id mollit amet qui nostrud ad cillum do eu eu ut consectetur",
     "online": false,
     "considered": false,
@@ -96,13 +96,13 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2022-10-07T05:08:15",
-        "equipment": "SFEP128CH1",
+        "equipment": "SFEP1291",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECED1",
     "description": "magna ex ut duis ullamco deserunt aute sunt laboris exercitation tempor eu",
     "online": true,
     "considered": false,
@@ -134,7 +134,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-05-26T11:42:13",
-        "equipment": "ECEU6",
+        "equipment": "ECED2",
         "equipmentStatus": "serious"
       },
       {
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "equipmentString": "PAFB1",
+    "equipmentString": "PAGB1",
     "description": "reprehenderit consequat culpa sunt esse consectetur excepteur consectetur tempor excepteur Lorem commodo",
     "online": false,
     "considered": false,
@@ -172,7 +172,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-06-18T11:00:15",
-        "equipment": "BAFB1",
+        "equipment": "BAFB2",
         "equipmentStatus": "standby"
       },
       {
@@ -185,7 +185,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-01-20T03:34:37",
-        "equipment": "VAFB1",
+        "equipment": "VAFB2",
         "equipmentStatus": "off"
       },
       {
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEUD3",
     "description": "irure nostrud laboris Lorem eu aute cillum aliqua amet do veniam aliqua",
     "online": true,
     "considered": true,
@@ -249,13 +249,13 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2023-07-13T01:49:03",
-        "equipment": "ECEU6",
+        "equipment": "ECEUD4",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "ANT133",
+    "equipmentString": "ANT138",
     "description": "sit non nulla ex officia esse ex culpa adipisicing aliqua nulla pariatur",
     "online": true,
     "considered": false,
@@ -300,13 +300,13 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2023-05-07T10:20:00",
-        "equipment": "VAFB1",
+        "equipment": "VAFB3",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "SFEP378CH1",
+    "equipmentString": "SFEP37H1",
     "description": "qui aliqua proident commodo do culpa incididunt sunt labore amet elit labore",
     "online": false,
     "considered": true,
@@ -325,7 +325,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-04-03T02:03:46",
-        "equipment": "ANT35",
+        "equipment": "ANT15",
         "equipmentStatus": "normal"
       },
       {
@@ -338,7 +338,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-04-15T02:36:48",
-        "equipment": "ANT35",
+        "equipment": "ANT05",
         "equipmentStatus": "standby"
       },
       {
@@ -351,7 +351,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-11-09T05:01:09",
-        "equipment": "ECEU6",
+        "equipment": "ECED5",
         "equipmentStatus": "off"
       }
     ]
@@ -376,7 +376,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-08-05T12:08:58",
-        "equipment": "SFEP378CH1",
+        "equipment": "SFE378C0",
         "equipmentStatus": "standby"
       },
       {
@@ -389,7 +389,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-11-01T08:34:45",
-        "equipment": "ECEU6",
+        "equipment": "ECED6",
         "equipmentStatus": "off"
       },
       {
@@ -402,13 +402,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-01-04T12:29:32",
-        "equipment": "VAFB1",
+        "equipment": "VAFB4",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "SFEP480CH1",
+    "equipmentString": "SFEP48H1",
     "description": "consequat pariatur in incididunt veniam aliqua enim enim amet aute enim consectetur",
     "online": true,
     "considered": true,
@@ -440,7 +440,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-05-22T10:56:46",
-        "equipment": "VAFB1",
+        "equipment": "VAFB5",
         "equipmentStatus": "caution"
       },
       {
@@ -453,13 +453,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-01-20T01:31:06",
-        "equipment": "SFEP128CH1",
+        "equipment": "SFEP3CH1",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "PAFB1",
+    "equipmentString": "PAFB0",
     "description": "sunt dolor adipisicing incididunt est eiusmod ut esse sit eiusmod Lorem id",
     "online": true,
     "considered": false,
@@ -478,7 +478,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-03-24T01:48:19",
-        "equipment": "ECEU6",
+        "equipment": "ECED7",
         "equipmentStatus": "serious"
       },
       {
@@ -491,7 +491,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-06-05T05:37:01",
-        "equipment": "ECEU6",
+        "equipment": "ECED8",
         "equipmentStatus": "serious"
       },
       {
@@ -504,13 +504,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-02-10T10:50:35",
-        "equipment": "USP296",
+        "equipment": "USP2M0",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "PAFB1",
+    "equipmentString": "PAFB2",
     "description": "esse esse culpa cupidatat occaecat ex labore anim dolore minim qui aute",
     "online": false,
     "considered": false,
@@ -529,7 +529,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-09-10T02:15:41",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH0",
         "equipmentStatus": "normal"
       },
       {
@@ -542,7 +542,7 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2022-09-15T09:34:25",
-        "equipment": "WS388",
+        "equipment": "WS381",
         "equipmentStatus": "caution"
       },
       {
@@ -555,13 +555,13 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2022-11-24T10:33:25",
-        "equipment": "ECEU6",
+        "equipment": "ECED9",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "SFEP358CH1",
+    "equipmentString": "SFEP35H1",
     "description": "velit nostrud anim laboris veniam reprehenderit aliquip veniam adipisicing labore et laborum",
     "online": false,
     "considered": false,
@@ -580,7 +580,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-12-05T08:07:49",
-        "equipment": "ANT35",
+        "equipment": "ANT25",
         "equipmentStatus": "off"
       },
       {
@@ -593,7 +593,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-03-17T02:04:13",
-        "equipment": "PAFB1",
+        "equipment": "PAFB3",
         "equipmentStatus": "serious"
       },
       {
@@ -606,13 +606,13 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-03-31T07:34:26",
-        "equipment": "USP194",
+        "equipment": "USQ104",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "PAFB1",
+    "equipmentString": "PAFB4",
     "description": "dolor elit anim incididunt Lorem non nulla enim voluptate sit proident in",
     "online": false,
     "considered": true,
@@ -631,7 +631,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-05-12T04:57:00",
-        "equipment": "VAFB1",
+        "equipment": "VAFB6",
         "equipmentStatus": "critical"
       },
       {
@@ -644,7 +644,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2022-12-05T01:09:47",
-        "equipment": "ECEU6",
+        "equipment": "ECEU1",
         "equipmentStatus": "off"
       },
       {
@@ -657,13 +657,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-06-25T11:11:25",
-        "equipment": "VAFB1",
+        "equipment": "VAFB7",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEU2",
     "description": "non in aute id nostrud mollit qui consectetur quis tempor magna ex",
     "online": false,
     "considered": false,
@@ -682,7 +682,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-09-04T12:15:03",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFEP3LH0",
         "equipmentStatus": "critical"
       },
       {
@@ -695,7 +695,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-12-25T07:48:08",
-        "equipment": "ECEU6",
+        "equipment": "ECEU3",
         "equipmentStatus": "off"
       },
       {
@@ -708,13 +708,13 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-02-21T11:08:40",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFEP35H3",
         "equipmentStatus": "caution"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFB8",
     "description": "ipsum velit nostrud duis nostrud sunt aliquip non sunt tempor officia cillum",
     "online": false,
     "considered": true,
@@ -733,7 +733,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2022-11-04T12:39:42",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH1",
         "equipmentStatus": "caution"
       },
       {
@@ -746,7 +746,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-12-24T09:55:07",
-        "equipment": "VAFB1",
+        "equipment": "VAFB9",
         "equipmentStatus": "standby"
       },
       {
@@ -759,7 +759,7 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2022-11-18T06:09:45",
-        "equipment": "USP296",
+        "equipment": "USP2M1",
         "equipmentStatus": "standby"
       }
     ]
@@ -784,7 +784,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-01-09T12:14:20",
-        "equipment": "USP182",
+        "equipment": "UNP102",
         "equipmentStatus": "off"
       },
       {
@@ -797,7 +797,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-03-13T02:24:46",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFE8LH4",
         "equipmentStatus": "standby"
       },
       {
@@ -810,13 +810,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2022-12-01T08:41:24",
-        "equipment": "USP194",
+        "equipment": "USQ114",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFY1",
     "description": "tempor nulla ut ad ad irure eu amet adipisicing ullamco sunt enim",
     "online": true,
     "considered": false,
@@ -835,7 +835,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2022-11-09T03:14:39",
-        "equipment": "ECEU6",
+        "equipment": "ECEU4",
         "equipmentStatus": "serious"
       },
       {
@@ -848,7 +848,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2022-10-11T09:44:42",
-        "equipment": "ANT87",
+        "equipment": "ANW87",
         "equipmentStatus": "standby"
       },
       {
@@ -867,7 +867,7 @@
     ]
   },
   {
-    "equipmentString": "USP194",
+    "equipmentString": "USQ124",
     "description": "ad laboris qui aliqua fugiat aute magna sint culpa veniam et aliqua",
     "online": true,
     "considered": true,
@@ -886,7 +886,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-04-13T02:50:05",
-        "equipment": "WS195",
+        "equipment": "WS191",
         "equipmentStatus": "off"
       },
       {
@@ -899,7 +899,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2023-03-03T01:11:29",
-        "equipment": "USP194",
+        "equipment": "USQ134",
         "equipmentStatus": "off"
       },
       {
@@ -912,13 +912,13 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2022-11-13T09:08:27",
-        "equipment": "VAFB1",
+        "equipment": "VAFY2",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "ANT178",
+    "equipmentString": "AHT170",
     "description": "aliquip deserunt pariatur dolore proident est dolor id nulla exercitation consectetur magna",
     "online": false,
     "considered": true,
@@ -937,7 +937,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-01-02T11:37:33",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFE58LH5",
         "equipmentStatus": "critical"
       },
       {
@@ -950,7 +950,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-10-11T07:27:27",
-        "equipment": "ANT178",
+        "equipment": "AHT171",
         "equipmentStatus": "normal"
       },
       {
@@ -963,13 +963,13 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2022-10-10T10:00:53",
-        "equipment": "ECEU6",
+        "equipment": "ECEU5",
         "equipmentStatus": "caution"
       }
     ]
   },
   {
-    "equipmentString": "USP182",
+    "equipmentString": "UNP100",
     "description": "eu aliqua eu dolor excepteur qui magna ad aute ut magna adipisicing",
     "online": false,
     "considered": true,
@@ -988,7 +988,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-01-02T09:19:33",
-        "equipment": "WS173",
+        "equipment": "WS174",
         "equipmentStatus": "caution"
       },
       {
@@ -1014,13 +1014,13 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-02-11T10:35:06",
-        "equipment": "USP302",
+        "equipment": "JMP302",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEU7",
     "description": "ex voluptate nisi sit voluptate tempor fugiat amet aliquip nisi occaecat sunt",
     "online": true,
     "considered": false,
@@ -1039,7 +1039,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2022-09-12T07:50:59",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFEP35H6",
         "equipmentStatus": "off"
       },
       {
@@ -1052,7 +1052,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-01-24T03:00:58",
-        "equipment": "ANT178",
+        "equipment": "AHT172",
         "equipmentStatus": "critical"
       },
       {
@@ -1065,13 +1065,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-03-13T08:28:29",
-        "equipment": "PAFB1",
+        "equipment": "PAFB5",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "ANT35",
+    "equipmentString": "ANT75",
     "description": "Lorem aute voluptate ut in commodo amet voluptate pariatur consectetur incididunt nostrud",
     "online": true,
     "considered": false,
@@ -1090,7 +1090,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-03-26T03:14:33",
-        "equipment": "VAFB1",
+        "equipment": "VAFY3",
         "equipmentStatus": "critical"
       },
       {
@@ -1103,7 +1103,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-07-14T08:05:26",
-        "equipment": "USP194",
+        "equipment": "USQ144",
         "equipmentStatus": "caution"
       },
       {
@@ -1116,13 +1116,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-03-29T07:39:09",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFP35LH7",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "ANT142",
+    "equipmentString": "ANT140",
     "description": "consequat cillum dolore ad sunt aliqua dolore dolore cillum consectetur non aliqua",
     "online": true,
     "considered": false,
@@ -1141,7 +1141,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-02-28T09:55:09",
-        "equipment": "ECEU6",
+        "equipment": "ECEU8",
         "equipmentStatus": "normal"
       },
       {
@@ -1154,7 +1154,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-07-05T11:29:48",
-        "equipment": "ECEU6",
+        "equipment": "ECEU9",
         "equipmentStatus": "off"
       },
       {
@@ -1167,13 +1167,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-01-28T06:59:17",
-        "equipment": "USP302",
+        "equipment": "JMP303",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "USP251",
+    "equipmentString": "NKL251",
     "description": "culpa elit magna duis velit reprehenderit deserunt labore irure voluptate qui cillum",
     "online": true,
     "considered": true,
@@ -1192,7 +1192,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-07-19T04:26:56",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH2",
         "equipmentStatus": "normal"
       },
       {
@@ -1205,7 +1205,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-03-05T10:44:48",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFE58LH8",
         "equipmentStatus": "standby"
       },
       {
@@ -1218,13 +1218,13 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-01-16T12:49:05",
-        "equipment": "ANT142",
+        "equipment": "ANT141",
         "equipmentStatus": "caution"
       }
     ]
   },
   {
-    "equipmentString": "ANT87",
+    "equipmentString": "ANW07",
     "description": "duis ut labore proident ea qui magna exercitation esse amet ut non",
     "online": true,
     "considered": false,
@@ -1243,7 +1243,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-07-16T05:18:14",
-        "equipment": "WS141",
+        "equipment": "WS144",
         "equipmentStatus": "critical"
       },
       {
@@ -1256,7 +1256,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-11-14T02:59:05",
-        "equipment": "SFEP358CH1",
+        "equipment": "SFE58LH9",
         "equipmentStatus": "caution"
       },
       {
@@ -1269,13 +1269,13 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2022-12-20T08:47:30",
-        "equipment": "WS154",
+        "equipment": "WS254",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "USP194",
+    "equipmentString": "USQ154",
     "description": "anim ea aliquip mollit laboris duis nostrud tempor commodo labore culpa eiusmod",
     "online": false,
     "considered": true,
@@ -1294,7 +1294,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-01-08T12:01:22",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH3",
         "equipmentStatus": "caution"
       },
       {
@@ -1307,7 +1307,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2022-10-15T02:11:16",
-        "equipment": "WS173",
+        "equipment": "WS175",
         "equipmentStatus": "standby"
       },
       {
@@ -1320,13 +1320,13 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2022-11-27T02:29:52",
-        "equipment": "ANT142",
+        "equipment": "ANT143",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEC1",
     "description": "et labore aliquip dolore mollit sunt reprehenderit deserunt est qui ea proident",
     "online": true,
     "considered": false,
@@ -1345,7 +1345,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-03-14T07:09:40",
-        "equipment": "WS173",
+        "equipment": "WS176",
         "equipmentStatus": "serious"
       },
       {
@@ -1358,7 +1358,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-10-01T04:22:57",
-        "equipment": "WS154",
+        "equipment": "WS354",
         "equipmentStatus": "serious"
       },
       {
@@ -1371,13 +1371,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-07-19T03:36:44",
-        "equipment": "USP296",
+        "equipment": "USP2M2",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFY4",
     "description": "pariatur excepteur ex elit ea amet eiusmod occaecat dolor consectetur minim excepteur",
     "online": false,
     "considered": true,
@@ -1396,7 +1396,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-04-23T02:37:22",
-        "equipment": "USP296",
+        "equipment": "USP2M3",
         "equipmentStatus": "critical"
       },
       {
@@ -1409,7 +1409,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-03-23T12:53:54",
-        "equipment": "ECEU6",
+        "equipment": "ECEC1",
         "equipmentStatus": "standby"
       },
       {
@@ -1422,13 +1422,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-07-18T09:28:11",
-        "equipment": "ANT133",
+        "equipment": "ANT139",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFY5",
     "description": "tempor do dolore velit sunt exercitation ipsum dolore quis esse quis adipisicing",
     "online": true,
     "considered": true,
@@ -1447,7 +1447,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2022-09-14T04:54:30",
-        "equipment": "SFEP128CH1",
+        "equipment": "SFEP8CH0",
         "equipmentStatus": "critical"
       },
       {
@@ -1460,7 +1460,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-01-13T11:33:07",
-        "equipment": "ECEU6",
+        "equipment": "ECEC5",
         "equipmentStatus": "normal"
       },
       {
@@ -1473,13 +1473,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-08-04T01:09:46",
-        "equipment": "BAFB1",
+        "equipment": "BAFB3",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "SFEP128CH1",
+    "equipmentString": "SFEP8CH1",
     "description": "elit pariatur aliquip irure aute commodo laboris commodo exercitation ipsum sunt elit",
     "online": false,
     "considered": true,
@@ -1498,7 +1498,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-10-20T05:58:29",
-        "equipment": "ECEU6",
+        "equipment": "ECEC6",
         "equipmentStatus": "caution"
       },
       {
@@ -1511,7 +1511,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2023-06-21T02:55:23",
-        "equipment": "USP251",
+        "equipment": "NKL252",
         "equipmentStatus": "standby"
       },
       {
@@ -1524,13 +1524,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-07-14T12:57:06",
-        "equipment": "ANT87",
+        "equipment": "ANW17",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "ANT35",
+    "equipmentString": "ANT85",
     "description": "est commodo exercitation et exercitation ut culpa aute mollit nostrud nisi ad",
     "online": false,
     "considered": true,
@@ -1549,7 +1549,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-02-17T08:38:03",
-        "equipment": "USP296",
+        "equipment": "USP2M4",
         "equipmentStatus": "normal"
       },
       {
@@ -1575,13 +1575,13 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2022-12-30T08:03:17",
-        "equipment": "WS173",
+        "equipment": "WS177",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "BAFB1",
+    "equipmentString": "BAFB4",
     "description": "magna aliquip ipsum sit occaecat aliquip mollit officia esse et aute qui",
     "online": false,
     "considered": true,
@@ -1600,7 +1600,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-06-24T11:19:39",
-        "equipment": "USP302",
+        "equipment": "JMP304",
         "equipmentStatus": "caution"
       },
       {
@@ -1613,7 +1613,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2022-12-04T10:54:26",
-        "equipment": "ECEU6",
+        "equipment": "ECEC7",
         "equipmentStatus": "critical"
       },
       {
@@ -1626,13 +1626,13 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-01-01T12:47:03",
-        "equipment": "ECEU6",
+        "equipment": "ECEC8",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFY6",
     "description": "voluptate veniam exercitation irure eiusmod et proident aliquip non ex sit consequat",
     "online": false,
     "considered": true,
@@ -1651,7 +1651,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-02-21T07:48:31",
-        "equipment": "BAFB1",
+        "equipment": "BAFB5",
         "equipmentStatus": "off"
       },
       {
@@ -1664,7 +1664,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2023-04-21T10:24:08",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH4",
         "equipmentStatus": "normal"
       },
       {
@@ -1677,13 +1677,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-10-17T04:10:08",
-        "equipment": "SFEP378CH1",
+        "equipment": "SFE378C1",
         "equipmentStatus": "caution"
       }
     ]
   },
   {
-    "equipmentString": "USP194",
+    "equipmentString": "USQ164",
     "description": "voluptate id irure reprehenderit laborum et aute in nisi culpa ex enim",
     "online": false,
     "considered": false,
@@ -1702,7 +1702,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-01-30T03:28:30",
-        "equipment": "ANT178",
+        "equipment": "AHT173",
         "equipmentStatus": "normal"
       },
       {
@@ -1715,7 +1715,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2023-05-12T08:31:29",
-        "equipment": "VAFB1",
+        "equipment": "VAFY7",
         "equipmentStatus": "standby"
       },
       {
@@ -1728,13 +1728,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-01-30T02:48:21",
-        "equipment": "ANT178",
+        "equipment": "AHT174",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "WS195",
+    "equipmentString": "WS192",
     "description": "velit reprehenderit aute mollit in magna labore incididunt ea nulla mollit esse",
     "online": false,
     "considered": false,
@@ -1753,7 +1753,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-09-25T12:03:53",
-        "equipment": "PAFB1",
+        "equipment": "PAFB6",
         "equipmentStatus": "standby"
       },
       {
@@ -1766,7 +1766,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-12-24T02:26:57",
-        "equipment": "WS141",
+        "equipment": "WS145",
         "equipmentStatus": "standby"
       },
       {
@@ -1779,13 +1779,13 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2022-09-25T10:07:15",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH5",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEC9",
     "description": "in nulla eu sit reprehenderit consectetur id consectetur qui aute quis ullamco",
     "online": false,
     "considered": false,
@@ -1804,7 +1804,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-11-09T07:20:01",
-        "equipment": "VAFB1",
+        "equipment": "VAFY8",
         "equipmentStatus": "normal"
       },
       {
@@ -1817,7 +1817,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-04-29T12:24:27",
-        "equipment": "ECEU6",
+        "equipment": "ECEE1",
         "equipmentStatus": "standby"
       },
       {
@@ -1830,13 +1830,13 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-07-03T10:19:34",
-        "equipment": "VAFB1",
+        "equipment": "VAFY9",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "USP251",
+    "equipmentString": "NKL253",
     "description": "aute veniam officia exercitation officia sint dolore adipisicing do ullamco dolor culpa",
     "online": true,
     "considered": true,
@@ -1855,7 +1855,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-05-20T03:12:42",
-        "equipment": "ECEU6",
+        "equipment": "ECEE2",
         "equipmentStatus": "normal"
       },
       {
@@ -1868,7 +1868,7 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-05-06T02:39:19",
-        "equipment": "BAFB1",
+        "equipment": "BAFB6",
         "equipmentStatus": "standby"
       },
       {
@@ -1881,13 +1881,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-03-07T03:46:22",
-        "equipment": "ECEU6",
+        "equipment": "ECEE3",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "USP164",
+    "equipmentString": "USP174",
     "description": "consectetur nisi sit et laboris irure duis officia ex eu et ex",
     "online": false,
     "considered": false,
@@ -1906,7 +1906,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-04-19T07:11:38",
-        "equipment": "ECEU6",
+        "equipment": "ECEE4",
         "equipmentStatus": "critical"
       },
       {
@@ -1919,7 +1919,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-05-30T04:51:26",
-        "equipment": "PAFB1",
+        "equipment": "PAFB7",
         "equipmentStatus": "normal"
       },
       {
@@ -1932,13 +1932,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-07-28T12:57:11",
-        "equipment": "USP296",
+        "equipment": "USP2M5",
         "equipmentStatus": "caution"
       }
     ]
   },
   {
-    "equipmentString": "USP296",
+    "equipmentString": "USP2M6",
     "description": "dolor do esse sunt ad proident voluptate mollit occaecat enim ea sunt",
     "online": false,
     "considered": false,
@@ -1957,7 +1957,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2022-10-31T06:22:13",
-        "equipment": "VAFB1",
+        "equipment": "VAFY0",
         "equipmentStatus": "critical"
       },
       {
@@ -1970,7 +1970,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2022-11-23T08:05:49",
-        "equipment": "BAFB1",
+        "equipment": "BAFB7",
         "equipmentStatus": "off"
       },
       {
@@ -1983,13 +1983,13 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-05-31T09:43:21",
-        "equipment": "ANT87",
+        "equipment": "ANW27",
         "equipmentStatus": "caution"
       }
     ]
   },
   {
-    "equipmentString": "BAFB1",
+    "equipmentString": "BAFB8",
     "description": "minim incididunt proident irure eiusmod sint nisi magna proident dolore veniam dolore",
     "online": false,
     "considered": false,
@@ -2008,7 +2008,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-04-02T10:28:22",
-        "equipment": "USP302",
+        "equipment": "JMP305",
         "equipmentStatus": "normal"
       },
       {
@@ -2034,13 +2034,13 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2022-11-29T06:45:14",
-        "equipment": "SFEP439CH1",
+        "equipment": "SFE39CH1",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "SFEP378CH1",
+    "equipmentString": "SFE378C2",
     "description": "nisi reprehenderit incididunt duis consectetur irure cupidatat sit proident incididunt do nostrud",
     "online": true,
     "considered": true,
@@ -2059,7 +2059,7 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2022-09-15T11:37:18",
-        "equipment": "SFEP378CH1",
+        "equipment": "SFE378C3",
         "equipmentStatus": "off"
       },
       {
@@ -2072,7 +2072,7 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-03-05T12:18:32",
-        "equipment": "USP302",
+        "equipment": "JMP306",
         "equipmentStatus": "standby"
       },
       {
@@ -2085,13 +2085,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-05-28T03:45:07",
-        "equipment": "ECEU6",
+        "equipment": "ECEE5",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFT1",
     "description": "est commodo eu mollit dolore reprehenderit mollit fugiat eu excepteur minim sunt",
     "online": true,
     "considered": true,
@@ -2110,7 +2110,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-04-04T09:10:43",
-        "equipment": "SFEP215CH1",
+        "equipment": "SFEP5CH1",
         "equipmentStatus": "normal"
       },
       {
@@ -2123,7 +2123,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2022-10-12T12:16:49",
-        "equipment": "USP302",
+        "equipment": "JMP307",
         "equipmentStatus": "caution"
       },
       {
@@ -2136,13 +2136,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-12-14T12:55:59",
-        "equipment": "ECEU6",
+        "equipment": "ECEE6",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "ANT133",
+    "equipmentString": "ANT233",
     "description": "nulla id quis voluptate sint culpa officia cupidatat eiusmod exercitation ullamco exercitation",
     "online": true,
     "considered": true,
@@ -2161,7 +2161,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-03-23T08:51:57",
-        "equipment": "USP302",
+        "equipment": "JMP308",
         "equipmentStatus": "serious"
       },
       {
@@ -2174,7 +2174,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-03-09T08:59:08",
-        "equipment": "SFEP358CH1",
+        "equipment": "SEP38L9",
         "equipmentStatus": "normal"
       },
       {
@@ -2187,13 +2187,13 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-08-05T04:34:48",
-        "equipment": "WS154",
+        "equipment": "WS454",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEE7",
     "description": "est est culpa aute magna deserunt mollit dolore laboris elit dolor laborum",
     "online": false,
     "considered": true,
@@ -2212,7 +2212,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-12-16T09:14:33",
-        "equipment": "USP194",
+        "equipment": "USQ174",
         "equipmentStatus": "caution"
       },
       {
@@ -2225,7 +2225,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-03-14T04:45:58",
-        "equipment": "WS388",
+        "equipment": "WS382",
         "equipmentStatus": "standby"
       },
       {
@@ -2238,13 +2238,13 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-01-07T08:36:08",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH6",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFT2",
     "description": "ut occaecat aute mollit aliquip reprehenderit anim pariatur ipsum duis qui occaecat",
     "online": false,
     "considered": true,
@@ -2263,7 +2263,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-02-19T01:26:55",
-        "equipment": "USP164",
+        "equipment": "USP184",
         "equipmentStatus": "serious"
       },
       {
@@ -2276,7 +2276,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-03-24T07:50:14",
-        "equipment": "WS195",
+        "equipment": "WS193",
         "equipmentStatus": "serious"
       },
       {
@@ -2289,13 +2289,13 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-04-28T10:23:09",
-        "equipment": "ANT87",
+        "equipment": "ANW37",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "SFEP128CH1",
+    "equipmentString": "SFE09CH1",
     "description": "aute et in voluptate labore sunt anim excepteur excepteur sit ullamco ut",
     "online": false,
     "considered": true,
@@ -2314,7 +2314,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-12-13T05:51:09",
-        "equipment": "USP194",
+        "equipment": "USQ184",
         "equipmentStatus": "serious"
       },
       {
@@ -2327,7 +2327,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-06-24T06:25:05",
-        "equipment": "ECEU6",
+        "equipment": "ECEE8",
         "equipmentStatus": "serious"
       },
       {
@@ -2340,13 +2340,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2022-10-19T02:41:22",
-        "equipment": "ECEU6",
+        "equipment": "ECEE9",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFT3",
     "description": "est aute est qui quis reprehenderit dolore aute aute non excepteur sint",
     "online": false,
     "considered": true,
@@ -2365,7 +2365,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-05-26T03:11:50",
-        "equipment": "SFEP480CH1",
+        "equipment": "SFEP0CH7",
         "equipmentStatus": "normal"
       },
       {
@@ -2378,7 +2378,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-12-22T04:22:19",
-        "equipment": "USP302",
+        "equipment": "JMP309",
         "equipmentStatus": "serious"
       },
       {
@@ -2391,13 +2391,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-10-27T12:51:21",
-        "equipment": "BAFB1",
+        "equipment": "BAFB9",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "USP182",
+    "equipmentString": "UNP101",
     "description": "est do deserunt sunt ipsum fugiat non velit laborum exercitation non amet",
     "online": true,
     "considered": false,
@@ -2416,7 +2416,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2022-11-12T05:41:39",
-        "equipment": "SFEP358CH1",
+        "equipment": "SEP38L0",
         "equipmentStatus": "critical"
       },
       {
@@ -2429,7 +2429,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-02-12T06:46:59",
-        "equipment": "USP251",
+        "equipment": "NKL254",
         "equipmentStatus": "normal"
       },
       {
@@ -2442,13 +2442,13 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-11-24T10:42:52",
-        "equipment": "PAFB1",
+        "equipment": "PAFB8",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "WS154",
+    "equipmentString": "WS554",
     "description": "sunt officia voluptate consectetur sunt exercitation proident veniam duis exercitation pariatur enim",
     "online": false,
     "considered": false,
@@ -2467,7 +2467,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2022-12-21T07:58:26",
-        "equipment": "SFEP215CH1",
+        "equipment": "SFEP2CH1",
         "equipmentStatus": "off"
       },
       {
@@ -2480,7 +2480,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-01-28T09:56:21",
-        "equipment": "SFEP378CH1",
+        "equipment": "SFE378C4",
         "equipmentStatus": "caution"
       },
       {
@@ -2493,13 +2493,13 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2022-09-30T06:17:59",
-        "equipment": "WS154",
+        "equipment": "WS654",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "PAFB1",
+    "equipmentString": "PAFB9",
     "description": "elit consectetur labore dolore sit ullamco consectetur esse officia sint esse id",
     "online": true,
     "considered": true,
@@ -2518,7 +2518,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2022-09-03T01:03:14",
-        "equipment": "ANT35",
+        "equipment": "ANT95",
         "equipmentStatus": "standby"
       },
       {
@@ -2531,7 +2531,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-07-22T06:50:41",
-        "equipment": "USP296",
+        "equipment": "USP2M7",
         "equipmentStatus": "serious"
       },
       {
@@ -2544,13 +2544,13 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-05-17T07:14:14",
-        "equipment": "USP194",
+        "equipment": "USQ194",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "BAFB1",
+    "equipmentString": "BAFM1",
     "description": "elit quis minim labore velit do velit ad quis est occaecat sint",
     "online": false,
     "considered": true,
@@ -2569,7 +2569,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-05-02T01:44:43",
-        "equipment": "SFEP439CH1",
+        "equipment": "SFEP4CH1",
         "equipmentStatus": "normal"
       },
       {
@@ -2582,7 +2582,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-06-26T10:04:49",
-        "equipment": "ECEU6",
+        "equipment": "ECEH1",
         "equipmentStatus": "off"
       },
       {
@@ -2595,13 +2595,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-01-14T08:11:19",
-        "equipment": "ANT35",
+        "equipment": "ANR35",
         "equipmentStatus": "critical"
       }
     ]
   },
   {
-    "equipmentString": "SFEP215CH1",
+    "equipmentString": "SFE15CH1",
     "description": "est qui sunt esse Lorem duis cillum quis dolor veniam ex incididunt",
     "online": false,
     "considered": false,
@@ -2620,7 +2620,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-02-21T08:37:23",
-        "equipment": "USP296",
+        "equipment": "USP2M8",
         "equipmentStatus": "caution"
       },
       {
@@ -2633,7 +2633,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2023-08-03T06:52:09",
-        "equipment": "ECEU6",
+        "equipment": "ECEH2",
         "equipmentStatus": "normal"
       },
       {
@@ -2646,13 +2646,13 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2022-10-18T01:40:08",
-        "equipment": "ANT178",
+        "equipment": "AHT175",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "ANT133",
+    "equipmentString": "ANT433",
     "description": "aliqua et laborum exercitation minim reprehenderit aliquip quis et laboris fugiat proident",
     "online": false,
     "considered": false,
@@ -2671,7 +2671,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-02-04T04:08:34",
-        "equipment": "SFEP358CH1",
+        "equipment": "SEP38L1",
         "equipmentStatus": "normal"
       },
       {
@@ -2684,7 +2684,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2023-06-01T11:52:28",
-        "equipment": "PAFB1",
+        "equipment": "PAAB1",
         "equipmentStatus": "off"
       },
       {
@@ -2697,13 +2697,13 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2022-09-29T01:16:35",
-        "equipment": "ANT87",
+        "equipment": "ANW47",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "ANT142",
+    "equipmentString": "ANT144",
     "description": "quis voluptate nisi ullamco elit adipisicing aliquip laboris do excepteur ex reprehenderit",
     "online": false,
     "considered": false,
@@ -2722,7 +2722,7 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-10-24T07:18:00",
-        "equipment": "ANT87",
+        "equipment": "ANW57",
         "equipmentStatus": "standby"
       },
       {
@@ -2735,7 +2735,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2022-10-28T02:26:54",
-        "equipment": "ECEU6",
+        "equipment": "ECEH3",
         "equipmentStatus": "critical"
       },
       {
@@ -2748,13 +2748,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-09-23T08:22:36",
-        "equipment": "PAFB1",
+        "equipment": "PASB1",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "ANT133",
+    "equipmentString": "ANT733",
     "description": "dolor laborum ut velit tempor eu deserunt ullamco non dolor ullamco elit",
     "online": true,
     "considered": true,
@@ -2773,7 +2773,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-03-21T10:41:03",
-        "equipment": "ANT178",
+        "equipment": "AHT176",
         "equipmentStatus": "caution"
       },
       {
@@ -2786,7 +2786,7 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-01-08T07:47:08",
-        "equipment": "SFEP215CH1",
+        "equipment": "SF15CH1",
         "equipmentStatus": "standby"
       },
       {
@@ -2799,13 +2799,13 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2022-12-27T12:27:11",
-        "equipment": "ANT142",
+        "equipment": "ANT145",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "SFEP378CH1",
+    "equipmentString": "SFE378C5",
     "description": "id ipsum sint nulla duis aliqua exercitation aliqua occaecat in anim irure",
     "online": false,
     "considered": false,
@@ -2824,7 +2824,7 @@
         "follow": true,
         "jobStatus": "started",
         "createdOn": "2022-12-22T11:23:37",
-        "equipment": "WS141",
+        "equipment": "WS146",
         "equipmentStatus": "caution"
       },
       {
@@ -2837,7 +2837,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2022-10-05T04:43:48",
-        "equipment": "VAFB1",
+        "equipment": "VAFT4",
         "equipmentStatus": "serious"
       },
       {
@@ -2850,13 +2850,13 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2022-11-26T04:24:57",
-        "equipment": "ECEU6",
+        "equipment": "ECEH4",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEH5",
     "description": "anim non id sunt laborum nulla ullamco laboris aliqua eu labore velit",
     "online": false,
     "considered": true,
@@ -2875,7 +2875,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-04-10T02:30:04",
-        "equipment": "ECEU6",
+        "equipment": "ECEH6",
         "equipmentStatus": "critical"
       },
       {
@@ -2888,7 +2888,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-01-25T08:16:37",
-        "equipment": "ANT178",
+        "equipment": "AHT177",
         "equipmentStatus": "off"
       },
       {
@@ -2901,13 +2901,13 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2022-09-28T10:26:37",
-        "equipment": "VAFB1",
+        "equipment": "VAFT5",
         "equipmentStatus": "normal"
       }
     ]
   },
   {
-    "equipmentString": "VAFB1",
+    "equipmentString": "VAFT6",
     "description": "laboris incididunt deserunt consectetur veniam ex dolor quis ipsum Lorem est occaecat",
     "online": false,
     "considered": true,
@@ -2926,7 +2926,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-03-30T05:23:36",
-        "equipment": "ECEU6",
+        "equipment": "ECEH7",
         "equipmentStatus": "caution"
       },
       {
@@ -2939,7 +2939,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-06-23T04:02:55",
-        "equipment": "ANT35",
+        "equipment": "ANK35",
         "equipmentStatus": "serious"
       },
       {
@@ -2952,13 +2952,13 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-01-15T04:32:11",
-        "equipment": "ANT35",
+        "equipment": "ANP35",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "BAFB1",
+    "equipmentString": "BAFM2",
     "description": "aute esse proident culpa officia nostrud nisi Lorem tempor mollit fugiat enim",
     "online": true,
     "considered": true,
@@ -2977,7 +2977,7 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2022-10-10T10:50:05",
-        "equipment": "USP194",
+        "equipment": "USQ190",
         "equipmentStatus": "standby"
       },
       {
@@ -2990,7 +2990,7 @@
         "follow": true,
         "jobStatus": "submitted",
         "createdOn": "2023-04-24T09:47:55",
-        "equipment": "ECEU6",
+        "equipment": "ECEH8",
         "equipmentStatus": "normal"
       },
       {
@@ -3003,13 +3003,13 @@
         "follow": false,
         "jobStatus": "online",
         "createdOn": "2023-06-13T04:04:40",
-        "equipment": "VAFB1",
+        "equipment": "VAFT7",
         "equipmentStatus": "serious"
       }
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEH9",
     "description": "incididunt mollit mollit elit laboris laborum aliquip eu aliquip aute do esse",
     "online": false,
     "considered": false,
@@ -3041,7 +3041,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-07-24T01:35:52",
-        "equipment": "SFEP128CH1",
+        "equipment": "SP778CH1",
         "equipmentStatus": "serious"
       },
       {
@@ -3054,13 +3054,13 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-02-17T11:18:21",
-        "equipment": "ECEU6",
+        "equipment": "ECEN1",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "SFEP215CH1",
+    "equipmentString": "SFEP21H1",
     "description": "enim cillum labore nostrud consequat mollit proident dolor fugiat excepteur excepteur officia",
     "online": false,
     "considered": false,
@@ -3079,7 +3079,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-06-06T10:45:46",
-        "equipment": "ANT142",
+        "equipment": "ANT146",
         "equipmentStatus": "normal"
       },
       {
@@ -3092,7 +3092,7 @@
         "follow": true,
         "jobStatus": "online",
         "createdOn": "2023-01-21T08:23:02",
-        "equipment": "BAFB1",
+        "equipment": "BAFM3",
         "equipmentStatus": "off"
       },
       {
@@ -3105,13 +3105,13 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-01-26T10:09:16",
-        "equipment": "USP296",
+        "equipment": "USP2M89",
         "equipmentStatus": "standby"
       }
     ]
   },
   {
-    "equipmentString": "BAFB1",
+    "equipmentString": "BAFM4",
     "description": "magna enim commodo ipsum aute fugiat aliqua labore sit irure eu eu",
     "online": true,
     "considered": false,
@@ -3130,7 +3130,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-04-14T08:24:32",
-        "equipment": "ECEU6",
+        "equipment": "ECEN2",
         "equipmentStatus": "caution"
       },
       {
@@ -3143,7 +3143,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2022-12-25T09:21:51",
-        "equipment": "ECEU6",
+        "equipment": "ECEN3",
         "equipmentStatus": "serious"
       },
       {
@@ -3156,13 +3156,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2022-12-09T05:10:26",
-        "equipment": "PAFB1",
+        "equipment": "PADB1",
         "equipmentStatus": "off"
       }
     ]
   },
   {
-    "equipmentString": "SFEP378CH1",
+    "equipmentString": "SFE378C6",
     "description": "aliquip excepteur ea ut amet ipsum anim consequat occaecat ad ex Lorem",
     "online": false,
     "considered": false,
@@ -3181,7 +3181,7 @@
         "follow": false,
         "jobStatus": "submitted",
         "createdOn": "2022-11-08T05:35:19",
-        "equipment": "ECEU6",
+        "equipment": "ECEN4",
         "equipmentStatus": "normal"
       },
       {
@@ -3194,7 +3194,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-02-20T11:11:56",
-        "equipment": "USP302",
+        "equipment": "JMP300",
         "equipmentStatus": "caution"
       },
       {
@@ -3213,7 +3213,7 @@
     ]
   },
   {
-    "equipmentString": "ECEU6",
+    "equipmentString": "ECEN8",
     "description": "minim occaecat cupidatat est cupidatat ipsum reprehenderit ipsum consequat aliquip voluptate sit",
     "online": false,
     "considered": false,
@@ -3232,7 +3232,7 @@
         "follow": true,
         "jobStatus": "stopped",
         "createdOn": "2023-05-24T12:24:39",
-        "equipment": "ANT178",
+        "equipment": "AHT178",
         "equipmentStatus": "off"
       },
       {
@@ -3245,7 +3245,7 @@
         "follow": true,
         "jobStatus": "approved",
         "createdOn": "2023-07-21T12:37:31",
-        "equipment": "WS388",
+        "equipment": "WS383",
         "equipmentStatus": "critical"
       },
       {
@@ -3258,13 +3258,13 @@
         "follow": false,
         "jobStatus": "started",
         "createdOn": "2023-05-03T06:55:35",
-        "equipment": "USP251",
+        "equipment": "NKL255",
         "equipmentStatus": "caution"
       }
     ]
   },
   {
-    "equipmentString": "USP164",
+    "equipmentString": "USP264",
     "description": "occaecat dolor do incididunt irure occaecat consectetur et nisi laborum est commodo",
     "online": true,
     "considered": true,
@@ -3283,7 +3283,7 @@
         "follow": false,
         "jobStatus": "approved",
         "createdOn": "2023-01-27T01:54:31",
-        "equipment": "ECEU6",
+        "equipment": "ECEN9",
         "equipmentStatus": "off"
       },
       {
@@ -3296,7 +3296,7 @@
         "follow": false,
         "jobStatus": "stopped",
         "createdOn": "2023-02-07T06:29:19",
-        "equipment": "ANT142",
+        "equipment": "ANT147",
         "equipmentStatus": "critical"
       },
       {
