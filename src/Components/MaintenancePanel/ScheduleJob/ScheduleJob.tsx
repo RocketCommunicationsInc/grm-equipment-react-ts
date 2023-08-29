@@ -230,9 +230,11 @@ const ScheduleJob = () => {
 
         <RuxContainer className='conflicts-section'>
           {!calculateConflicts ? (
-            <span>Conflicts (0)</span>
+            <span className='conflicts-total'>Conflicts (0)</span>
           ) : (
-            <span>Conflicts ({filteredContacts.length})</span>
+            <span className='conflicts-total'>
+              Conflicts ({filteredContacts.length})
+            </span>
           )}
           <span>
             This equpiment may be allocated to contacts within the timeframe of

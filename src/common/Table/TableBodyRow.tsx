@@ -16,10 +16,7 @@ const ContactsTable = ({ columnDefs, rowData }: PropTypes) => {
           ? colDef.valueFn(rowData[property])
           : rowData[property];
         return (
-          <RuxTableCell
-            className={colDef.isRightAligned ? 'right-align' : ''}
-            key={colDef.label}
-          >
+          <RuxTableCell key={colDef.label}>
             {property === 'status' ? (
               <RuxStatus status={cellValue}></RuxStatus>
             ) : (
