@@ -19,3 +19,11 @@
 .table-wrapper .jobs-cell:nth-of-type(1) {
   border-left: transparent 5px solid;
 }
+
+.table-wrapper.jobs-table {
+  max-height: 13rem;
+}
+
+.table-wrapper.jobs-table rux-table-row {
+  cursor: pointer;
+}

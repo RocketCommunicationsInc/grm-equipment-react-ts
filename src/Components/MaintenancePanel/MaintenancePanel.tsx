@@ -16,7 +16,7 @@ const MaintenancePanel = () => {
 
   const handleJobDetailsClick = (job: Job) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
-    navigate('job-details');
+    navigate('maintenance-details');
   };
 
   const filteredJobs = state.currentEquipment
@@ -61,17 +61,19 @@ const MaintenancePanel = () => {
           </RuxButton>
           <div className='job-card-wrapper'>
             {state.currentEquipment &&
-              filteredJobs.map((job: Job) => (
-                <JobIDCard
-                  key={job.jobId}
-                  type={job.jobType}
-                  id={Number(job.jobId)}
-                  startTime={job.startTime}
-                  stopTime={job.stopTime}
-                  status={capitalize(job.jobStatus) as string}
-                  viewJob={() => handleJobDetailsClick(job)}
-                />
-              ))}
+              filteredJobs
+                .reverse()
+                .map((job: Job) => (
+                  <JobIDCard
+                    key={job.jobId}
+                    type={job.jobType}
+                    id={Number(job.jobId)}
+                    startTime={job.startTime}
+                    stopTime={job.stopTime}
+                    status={capitalize(job.jobStatus) as string}
+                    viewJob={() => handleJobDetailsClick(job)}
+                  />
+                ))}
           </div>
         </div>
       </RuxContainer>
