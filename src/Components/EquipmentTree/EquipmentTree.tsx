@@ -14,7 +14,7 @@ const EquipmentTree = () => {
   const { state, dispatch }: any = useAppContext();
   const treeNodeRef = useRef<Set<HTMLRuxTreeNodeElement>>(new Set());
   const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
-  const categoryArray: string[] = ['digital', 'facilities', 'comms', 'rf'];
+  const categoryArray: string[] = ['comms', 'digital', 'facilities', 'rf'];
 
   const handleSelectedEquipment = (equipment: Equipment) => {
     dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
