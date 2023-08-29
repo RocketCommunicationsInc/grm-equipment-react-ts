@@ -60,7 +60,7 @@ const EquipmentDetailsPanel = () => {
         <RuxTextarea
           label='Description'
           size='large'
-          disabled
+          readonly
           value={capitalize(state.currentEquipment.description)}
         />
         <div className='equipment-details-log'>

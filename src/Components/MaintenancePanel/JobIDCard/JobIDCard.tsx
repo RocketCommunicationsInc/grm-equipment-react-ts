@@ -29,18 +29,21 @@ const JobIDCard = ({
         placeholder='Value'
         size='small'
         label='Job Type'
+        readonly
       />
       <RuxInput
         value={startTime}
         placeholder='YYY DDD HH:MM'
         size='small'
         label='Start'
+        readonly
       />
       <RuxInput
         value={stopTime}
         placeholder='YYY DDD HH:MM'
         size='small'
         label='Stop'
+        readonly
       />
       <RuxButton onClick={viewJob}>View Details</RuxButton>
     </RuxCard>
