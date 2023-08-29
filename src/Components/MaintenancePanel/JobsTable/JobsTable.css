@@ -23,3 +23,7 @@
 .table-wrapper.jobs-table {
   max-height: 13rem;
 }
+
+.table-wrapper.jobs-table rux-table-row {
+  cursor: pointer;
+}

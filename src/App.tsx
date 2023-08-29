@@ -33,7 +33,7 @@ const router = createBrowserRouter(
           errorElement={<NoDataFound dataType='job' />}
         />
         <Route
-          path='job-details'
+          path='maintenance-details'
           element={<JobDetailsPage />}
           errorElement={<NoDataFound dataType='job' />}
         />

@@ -74,6 +74,10 @@ rux-table-header {
   z-index: 10;
 }
 
+rux-table-header-cell {
+  cursor: pointer;
+}
+
 rux-status::part(status) {
   margin-inline: auto;
 }

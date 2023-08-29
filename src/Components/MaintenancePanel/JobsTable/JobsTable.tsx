@@ -79,7 +79,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
 
   const handleTabeRowClick = (job: Job) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
-    navigate('job-details');
+    navigate('maintenance-details');
   };
 
   return (

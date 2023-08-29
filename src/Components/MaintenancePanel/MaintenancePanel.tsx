@@ -16,7 +16,7 @@ const MaintenancePanel = () => {
 
   const handleJobDetailsClick = (job: Job) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
-    navigate('job-details');
+    navigate('maintenance-details');
   };
 
   const filteredJobs = state.currentEquipment
