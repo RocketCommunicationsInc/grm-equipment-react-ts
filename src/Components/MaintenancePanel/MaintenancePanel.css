@@ -41,6 +41,8 @@ rux-container.schedule-job-wrapper {
   justify-content: space-between;
   flex-grow: 1;
   gap: var(--spacing-3);
+  max-height: 35rem;
+  overflow: auto;
 }
 
 .maintenance-history-panel {

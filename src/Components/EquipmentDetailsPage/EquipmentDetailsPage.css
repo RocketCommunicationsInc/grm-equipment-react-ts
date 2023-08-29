@@ -62,3 +62,7 @@
 .dashboard_equipment-wrapper rux-tab::part(container) {
   outline-offset: -1px;
 }
+
+.dashboard_equipment-wrapper rux-button::part(container) {
+    outline-offset: -3px;
+}
