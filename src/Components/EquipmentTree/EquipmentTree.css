@@ -5,3 +5,8 @@ rux-tree-node {
 .equipment-tree::part(body) {
   overflow: auto;
 }
+
+.equipment-tree rux-tree-node::part(text) {
+  display: flex;
+  align-items: center;
+}

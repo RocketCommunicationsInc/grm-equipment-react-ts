@@ -42,13 +42,19 @@
   height: 1.6rem;
 }
 
+.alert-list-headers span {
+  cursor: pointer;
+}
+
 .alert-list-headers rux-icon {
   vertical-align: middle;
   width: 32px;
 }
 
-.alert-list-headers rux-icon.visible {
+.alert-list-headers rux-icon.visible, 
+.alert-list-headers span[data-sortprop]:hover rux-icon {
   visibility: visible;
+  position: absolute;
 }
 
 .alert-list-headers rux-icon.hidden {
@@ -102,7 +108,7 @@ rux-container.alerts::part(body) {
 
 .alert-list-headers span:nth-of-type(2),
 .alert-list-label span:nth-of-type(2) {
-  width: 22%;
+  width: 26%;
   text-transform: capitalize;
   overflow: hidden;
   text-overflow: ellipsis;
