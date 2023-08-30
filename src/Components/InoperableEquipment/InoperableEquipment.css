@@ -16,7 +16,6 @@
 
 .inoperable-equipment .section {
   height: auto;
-  max-height: 11.75rem;
 }
 
 .inoperable-equipment .section::part(body) {
