@@ -5,7 +5,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79bdb18c16a00fe1587",
-    "status": "off",
+    "status": "normal",
     "category": "digital",
     "config": "E",
     "scheduledJobs": [
@@ -107,7 +107,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79b6638178962cc9f07",
-    "status": "serious",
+    "status": "normal",
     "category": "digital",
     "config": "D",
     "scheduledJobs": [
@@ -158,7 +158,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79ba08a7df94001770e",
-    "status": "standby",
+    "status": "normal",
     "category": "comms",
     "config": "B",
     "scheduledJobs": [
@@ -260,7 +260,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79b9528af2768066e7b",
-    "status": "critical",
+    "status": "normal",
     "category": "digital",
     "config": "B",
     "scheduledJobs": [
@@ -311,7 +311,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bb67bd1f40ae3dbc4",
-    "status": "standby",
+    "status": "normal",
     "category": "facilities",
     "config": "B",
     "scheduledJobs": [
@@ -464,7 +464,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79be319a02efc54a58a",
-    "status": "caution",
+    "status": "normal",
     "category": "comms",
     "config": "D",
     "scheduledJobs": [
@@ -566,7 +566,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79b52af01c03c513a1f",
-    "status": "standby",
+    "status": "normal",
     "category": "digital",
     "config": "C",
     "scheduledJobs": [
@@ -668,7 +668,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79befa61acd97f4834c",
-    "status": "serious",
+    "status": "normal",
     "category": "facilities",
     "config": "D",
     "scheduledJobs": [
@@ -719,7 +719,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bb1da9a4da9588061",
-    "status": "caution",
+    "status": "normal",
     "category": "rf",
     "config": "C",
     "scheduledJobs": [
@@ -770,7 +770,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b48330d45c0040404",
-    "status": "standby",
+    "status": "serious",
     "category": "digital",
     "config": "C",
     "scheduledJobs": [
@@ -821,7 +821,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79b8a01afff7daf4f49",
-    "status": "serious",
+    "status": "normal",
     "category": "rf",
     "config": "E",
     "scheduledJobs": [
@@ -872,7 +872,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b0bec3eb2299e5900",
-    "status": "off",
+    "status": "normal",
     "category": "digital",
     "config": "D",
     "scheduledJobs": [
@@ -923,7 +923,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bbb20e97c92ebe108",
-    "status": "standby",
+    "status": "normal",
     "category": "comms",
     "config": "B",
     "scheduledJobs": [
@@ -974,7 +974,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79b62b1237c23c08e33",
-    "status": "caution",
+    "status": "normal",
     "category": "comms",
     "config": "D",
     "scheduledJobs": [
@@ -1076,7 +1076,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79bb8ae66c8e07494bb",
-    "status": "serious",
+    "status": "normal",
     "category": "rf",
     "config": "C",
     "scheduledJobs": [
@@ -1178,7 +1178,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b4d8ef7d514a65dde",
-    "status": "critical",
+    "status": "normal",
     "category": "comms",
     "config": "D",
     "scheduledJobs": [
@@ -1229,7 +1229,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79bedd72afce699e7a0",
-    "status": "serious",
+    "status": "normal",
     "category": "digital",
     "config": "C",
     "scheduledJobs": [
@@ -1280,7 +1280,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79ba3641e24f08285cf",
-    "status": "off",
+    "status": "normal",
     "category": "facilities",
     "config": "B",
     "scheduledJobs": [
@@ -1331,7 +1331,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79b7f92bc1a5a6afc5e",
-    "status": "serious",
+    "status": "normal",
     "category": "rf",
     "config": "A",
     "scheduledJobs": [
@@ -1382,7 +1382,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79b88434f28b51eabb0",
-    "status": "standby",
+    "status": "normal",
     "category": "digital",
     "config": "E",
     "scheduledJobs": [
@@ -1433,7 +1433,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b10abf5488ceac2d5",
-    "status": "standby",
+    "status": "normal",
     "category": "facilities",
     "config": "A",
     "scheduledJobs": [
@@ -1484,7 +1484,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bbbbd3d42633dc555",
-    "status": "off",
+    "status": "normal",
     "category": "rf",
     "config": "B",
     "scheduledJobs": [
@@ -1535,7 +1535,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bb4575df9f7332b45",
-    "status": "critical",
+    "status": "normal",
     "category": "comms",
     "config": "E",
     "scheduledJobs": [
@@ -1586,7 +1586,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bb171d7ae0aca7e16",
-    "status": "caution",
+    "status": "normal",
     "category": "facilities",
     "config": "C",
     "scheduledJobs": [
@@ -1637,7 +1637,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79b202cf28264445915",
-    "status": "caution",
+    "status": "normal",
     "category": "rf",
     "config": "A",
     "scheduledJobs": [
@@ -1688,7 +1688,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79b86c82442a605e26a",
-    "status": "off",
+    "status": "caution",
     "category": "digital",
     "config": "E",
     "scheduledJobs": [
@@ -1790,7 +1790,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79bf6f517d3666506b4",
-    "status": "critical",
+    "status": "normal",
     "category": "facilities",
     "config": "D",
     "scheduledJobs": [
@@ -1841,7 +1841,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79ba646f26b81e8b32b",
-    "status": "caution",
+    "status": "normal",
     "category": "digital",
     "config": "C",
     "scheduledJobs": [
@@ -1943,7 +1943,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79ba60f59d14c613f01",
-    "status": "off",
+    "status": "normal",
     "category": "facilities",
     "config": "D",
     "scheduledJobs": [
@@ -1994,7 +1994,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79b6c26a1b77b70d6b7",
-    "status": "serious",
+    "status": "normal",
     "category": "rf",
     "config": "D",
     "scheduledJobs": [
@@ -2045,7 +2045,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b97c318e423aa0f02",
-    "status": "critical",
+    "status": "normal",
     "category": "facilities",
     "config": "C",
     "scheduledJobs": [
@@ -2096,7 +2096,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b3af76b9c2fa9b603",
-    "status": "off",
+    "status": "normal",
     "category": "facilities",
     "config": "A",
     "scheduledJobs": [
@@ -2147,7 +2147,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b1044085b859501f6",
-    "status": "serious",
+    "status": "normal",
     "category": "comms",
     "config": "C",
     "scheduledJobs": [
@@ -2249,7 +2249,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79b79be70ab6d5296aa",
-    "status": "serious",
+    "status": "normal",
     "category": "comms",
     "config": "E",
     "scheduledJobs": [
@@ -2351,7 +2351,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bddb478d621af5c69",
-    "status": "off",
+    "status": "normal",
     "category": "rf",
     "config": "B",
     "scheduledJobs": [
@@ -2402,7 +2402,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79b15b105ecc3e6c65b",
-    "status": "serious",
+    "status": "normal",
     "category": "facilities",
     "config": "E",
     "scheduledJobs": [
@@ -2453,7 +2453,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79bfbce9072b9247430",
-    "status": "standby",
+    "status": "normal",
     "category": "facilities",
     "config": "B",
     "scheduledJobs": [
@@ -2606,7 +2606,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79baf4587cb61254d05",
-    "status": "critical",
+    "status": "normal",
     "category": "comms",
     "config": "C",
     "scheduledJobs": [
@@ -2657,7 +2657,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79b2310461c22e451c2",
-    "status": "off",
+    "status": "normal",
     "category": "facilities",
     "config": "E",
     "scheduledJobs": [
@@ -2759,7 +2759,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b18c00a1fbe899982",
-    "status": "off",
+    "status": "normal",
     "category": "facilities",
     "config": "A",
     "scheduledJobs": [
@@ -2810,7 +2810,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79ba816a9a3612e03a7",
-    "status": "off",
+    "status": "caution",
     "category": "digital",
     "config": "E",
     "scheduledJobs": [
@@ -2861,7 +2861,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79b904009fe1b7be5b5",
-    "status": "caution",
+    "status": "normal",
     "category": "digital",
     "config": "A",
     "scheduledJobs": [
@@ -2912,7 +2912,7 @@
     "online": false,
     "considered": true,
     "id": "64d2b79bd8d515e593ce81ab",
-    "status": "caution",
+    "status": "normal",
     "category": "comms",
     "config": "C",
     "scheduledJobs": [
@@ -2963,7 +2963,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b9e6471245ae238ec",
-    "status": "caution",
+    "status": "normal",
     "category": "comms",
     "config": "A",
     "scheduledJobs": [
@@ -3065,7 +3065,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79b22df0893828fc1f8",
-    "status": "standby",
+    "status": "caution",
     "category": "facilities",
     "config": "A",
     "scheduledJobs": [
@@ -3167,7 +3167,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79bb8d6cd1649eee3d8",
-    "status": "standby",
+    "status": "normal",
     "category": "rf",
     "config": "E",
     "scheduledJobs": [
@@ -3218,7 +3218,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79bdd49ae1b1b7298cd",
-    "status": "critical",
+    "status": "normal",
     "category": "rf",
     "config": "E",
     "scheduledJobs": [
@@ -3269,7 +3269,7 @@
     "online": true,
     "considered": true,
     "id": "64d2b79b833f373f81120332",
-    "status": "caution",
+    "status": "normal",
     "category": "rf",
     "config": "A",
     "scheduledJobs": [

@@ -9,7 +9,8 @@
 
 .inoperable-equipment span {
   font-weight: var(--font-weights-medium);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-2xl);
+  padding-bottom: var(--spacing-2);
   margin-top: 0;
 }
 
