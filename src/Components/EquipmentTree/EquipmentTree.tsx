@@ -13,6 +13,7 @@ import { Equipment } from '../../Types/Equipment';
 const EquipmentTree = () => {
   const { state, dispatch }: any = useAppContext();
   const treeNodeRef = useRef<Set<HTMLRuxTreeNodeElement>>(new Set());
+  const tree = useRef<HTMLRuxTreeElement | null>(null);
   const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
   const categoryArray: string[] = ['digital', 'facilities', 'comms', 'rf'];
 
@@ -45,23 +46,35 @@ const EquipmentTree = () => {
     }
 
     for (const node of treeNodeSet) {
-      if (node?.id === state?.currentEquipment?.id) {
-        node.selected = true;
+      if (node.selected === true) {
         expandTreeNodeParent(node);
-      } else {
-        node.selected = false;
       }
     }
-    return () => {
-      for (const node of treeNodeSet) {
-        node.selected = false;
+  }, [state.currentEquipment]);
+
+  useEffect(() => {
+    if (!tree.current) return;
+    const ruxTree = tree.current;
+    const handleTreeClick = (event: any) => {
+      const target = event.target as HTMLRuxTreeNodeElement;
+      //if the target isn't the bottom node of the tree then we don't want it to do normal tree things
+      //such as get a 'selected' state
+      if (target.getAttribute('aria-level') !== '3') {
+        event.stopImmediatePropagation();
+        target.toggleAttribute('expanded');
       }
     };
-  }, [state.currentEquipment]);
+
+    ruxTree.addEventListener('click', handleTreeClick, { capture: true });
+
+    return () => {
+      ruxTree.removeEventListener('click', handleTreeClick, { capture: true });
+    };
+  }, [tree]);
 
   return (
     <RuxContainer className='equipment-tree'>
-      <RuxTree>
+      <RuxTree ref={tree}>
         {categoryArray.map((category) => (
           <RuxTreeNode key={category}>
             {category === 'rf' ? category.toUpperCase() : capitalize(category)}
@@ -79,6 +92,7 @@ const EquipmentTree = () => {
                         onRuxtreenodeselected={() =>
                           handleSelectedEquipment(equipment)
                         }
+                        selected={equipment.id === state?.currentEquipment?.id}
                         ref={(el) => {
                           if (el) {
                             treeNodeRef.current.add(el);
