@@ -79,13 +79,15 @@ const JobsTable = ({ jobs }: PropTypes) => {
 
   const handleTabeRowClick = (job: Job) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
-    navigate('maintenance-details');
+    navigate('job-details');
   };
 
-  console.log(columnDefs)
+  console.log(columnDefs);
+
+  const rightAlignedColumns = ['createdOn', 'startTime', 'stopTime']
 
   return (
-    <div className='table-wrapper jobs-table'>
+    <div className='table-wrapper'>
       <RuxTable>
         <RuxTableHeader>
           <RuxTableHeaderRow>
@@ -96,7 +98,9 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 onClick={handleHeaderCellClick}
                 className='jobs-header-cell'
               >
-                <div className={ (colDef.property === 'createdOn' || colDef.property === 'startedOn' || colDef.propery === 'stoppedOn') ? 'job-table_right-align' : '' }>
+                <div
+                className={ rightAlignedColumns.includes(colDef.property) ? 'right-align' : '' }
+                >
                   <span>{colDef.label}</span>
                   <RuxIcon
                     icon={
