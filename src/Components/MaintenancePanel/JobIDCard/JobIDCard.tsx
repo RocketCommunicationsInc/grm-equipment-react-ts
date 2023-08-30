@@ -45,7 +45,9 @@ const JobIDCard = ({
         label='Stop'
         readonly
       />
-      <RuxButton onClick={viewJob}>View Details</RuxButton>
+      <RuxButton secondary onClick={viewJob}>
+        View Details
+      </RuxButton>
     </RuxCard>
   );
 };
