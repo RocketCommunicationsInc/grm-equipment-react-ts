@@ -38,3 +38,28 @@
 .section ul li {
   cursor: pointer;
 }
+
+/* There is currently no good solution for
+   monitoring status icons on light theme
+   this represents one proposed solution */
+
+.light-theme .inoperable-equipment rux-monitoring-icon {
+  &[status='off']::part(icon) {
+    color: #7b8089;
+  }
+  &[status='standby']::part(icon) {
+    color: #2d8ba9;
+  }
+  &[status='normal']::part(icon) {
+    color: #00942c;
+  }
+  &[status='caution']::part(icon) {
+    color: #998200;
+  }
+  &[status='serious']::part(icon) {
+    color: #c26c0a;
+  }
+  &[status='critical']::part(icon) {
+    color: #d72809;
+  }
+}

@@ -2402,7 +2402,7 @@
     "online": true,
     "considered": false,
     "id": "64d2b79b15b105ecc3e6c65b",
-    "status": "normal",
+    "status": "off",
     "category": "facilities",
     "config": "E",
     "scheduledJobs": [
@@ -2708,7 +2708,7 @@
     "online": false,
     "considered": false,
     "id": "64d2b79badc2397a3648187f",
-    "status": "normal",
+    "status": "standby",
     "category": "comms",
     "config": "C",
     "scheduledJobs": [
