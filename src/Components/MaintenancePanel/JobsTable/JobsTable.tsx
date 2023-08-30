@@ -79,10 +79,8 @@ const JobsTable = ({ jobs }: PropTypes) => {
 
   const handleTabeRowClick = (job: Job) => {
     dispatch({ type: 'EDIT_JOB', payload: job });
-    navigate('job-details');
+    navigate('maintenance-details');
   };
-
-  console.log(columnDefs);
 
   const rightAlignedColumns = ['createdOn', 'startTime', 'stopTime']
 
