@@ -4,16 +4,23 @@
 
 .table-wrapper .jobs-header-cell:nth-of-type(3),
 .table-wrapper .jobs-header-cell:nth-of-type(4),
-.table-wrapper .jobs-header-cell:nth-of-type(5) ,
+.table-wrapper .jobs-header-cell:nth-of-type(5),
 .table-wrapper .jobs-cell:nth-of-type(5),
 .table-wrapper .jobs-cell:nth-of-type(4),
 .table-wrapper .jobs-cell:nth-of-type(3) {
   text-align: right;
 }
 
-.table-wrapper rux-table-cell.jobs-cell::after {
-  content: '';
-  padding-right: var(--spacing-8);
+rux-table-header-cell.jobs-header-cell:has(rux-icon.visible) div.right-align,
+rux-table-header-cell.jobs-header-cell:hover div.right-align {
+  width: fit-content;
+  margin-left: auto;
+}
+
+rux-table-header-cell.jobs-header-cell:has(rux-icon.visible) div.right-align span,
+rux-table-header-cell.jobs-header-cell:hover div.right-align span {
+  width: calc(100% - 32px);
+  margin-left: auto;
 }
 
 .table-wrapper .jobs-cell:nth-of-type(1) {

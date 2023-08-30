@@ -42,6 +42,26 @@
   height: 1.6rem;
 }
 
+.alert-list-headers .header-label-wrapper {
+  display: grid;
+  grid-template-columns: 100% 0%;
+  align-items: center;
+}
+
+.alert-list-headers .header-label-wrapper:has(rux-icon.visible),
+.alert-list-headers .header-label-wrapper:hover
+ {
+  grid-template-columns: auto 1fr;
+}
+
+.alert-list-headers .header-label-wrapper span {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
 .alert-list-headers span {
   cursor: pointer;
 }
@@ -51,10 +71,9 @@
   width: 32px;
 }
 
-.alert-list-headers rux-icon.visible, 
+.alert-list-headers rux-icon.visible,
 .alert-list-headers span[data-sortprop]:hover rux-icon {
   visibility: visible;
-  position: absolute;
 }
 
 .alert-list-headers rux-icon.hidden {
@@ -99,14 +118,14 @@ rux-container.alerts::part(body) {
   margin-right: 44px;
 }
 
-.alert-list-headers span:nth-of-type(1),
+.alert-list-headers .header-label-wrapper:nth-of-type(1),
 .alert-list-label span:nth-of-type(1) {
   width: 50%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.alert-list-headers span:nth-of-type(2),
+.alert-list-headers .header-label-wrapper:nth-of-type(2),
 .alert-list-label span:nth-of-type(2) {
   width: 26%;
   text-transform: capitalize;
@@ -114,7 +133,7 @@ rux-container.alerts::part(body) {
   text-overflow: ellipsis;
 }
 
-.alert-list-headers span:nth-of-type(3),
+.alert-list-headers .header-label-wrapper:nth-of-type(3),
 .alert-list-label span:nth-of-type(3) {
   width: 20%;
   overflow: hidden;
