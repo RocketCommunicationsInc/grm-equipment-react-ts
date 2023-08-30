@@ -230,12 +230,14 @@ const ScheduleJob = () => {
 
         <RuxContainer className='conflicts-section'>
           {!calculateConflicts ? (
-            <span>Conflicts (0)</span>
+            <span className='conflicts-total'>Conflicts (0)</span>
           ) : (
-            <span>Conflicts ({filteredContacts.length})</span>
+            <span className='conflicts-total'>
+              Conflicts ({filteredContacts.length})
+            </span>
           )}
           <span>
-            This equpiment may be allocated to contacts within the timeframe of
+            This equipment may be allocated to contacts within the timeframe of
             this maintenance job. A list of these contacts is provided below
             after clicking "Calculate Conflicts".
           </span>

@@ -104,19 +104,19 @@ const GlobalStatusBar = () => {
           <RuxMonitoringIcon
             status={status1}
             icon='antenna-receive'
-            label='COMMS'
+            label='Comms'
             notifications={notifications1}
           />
           <RuxMonitoringIcon
             status={status2}
             icon='processor'
-            label='DIGITAL'
+            label='Digital'
             notifications={notifications1}
           />
           <RuxMonitoringIcon
             status={status3}
             icon='antenna-off'
-            label='FACILITIES'
+            label='Facilities'
             notifications={notifications2}
           />
           <RuxMonitoringIcon

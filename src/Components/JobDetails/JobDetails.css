@@ -73,7 +73,6 @@
   justify-content: space-between;
 }
 
-.job-details-conflicts-section span:nth-of-type(1),
-.jobs-details-section span:nth-of-type(1) {
+.conflicts-total {
   font-size: var(--font-size-2xl);
 }

@@ -29,6 +29,21 @@ const InoperableEquipment = () => {
     <RuxContainer className='inoperable-equipment'>
       <div slot='header'>Inoperable Equipment</div>
       <RuxContainer className='section'>
+        <span>Comms ({comms.length})</span>
+        <ul>
+          {comms.map((equipment: Equipment, index: number) => (
+            <li key={index}>
+              <RuxMonitoringIcon
+                status='normal'
+                icon='center-focus-weak'
+                label={equipment.equipmentString}
+                onClick={() => handleSelectedEquipment(equipment)}
+              />
+            </li>
+          ))}
+        </ul>
+      </RuxContainer>
+      <RuxContainer className='section'>
         <span>Digital ({digital.length})</span>
         <ul>
           {digital.map((equipment: Equipment, index: number) => (
@@ -47,21 +62,6 @@ const InoperableEquipment = () => {
         <span>Facilities ({facilities.length})</span>
         <ul>
           {facilities.map((equipment: Equipment, index: number) => (
-            <li key={index}>
-              <RuxMonitoringIcon
-                status='normal'
-                icon='center-focus-weak'
-                label={equipment.equipmentString}
-                onClick={() => handleSelectedEquipment(equipment)}
-              />
-            </li>
-          ))}
-        </ul>
-      </RuxContainer>
-      <RuxContainer className='section'>
-        <span>Comms ({comms.length})</span>
-        <ul>
-          {comms.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
                 status='normal'

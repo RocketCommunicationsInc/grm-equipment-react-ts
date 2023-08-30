@@ -3,6 +3,7 @@
   display: grid;
   grid-template-rows: max-content auto;
   grid-template-areas: 'tab-navigation' 'tab-panel';
+  height: calc(100% - 1px);
 }
 
 .dashboard_equipment-wrapper rux-tabs {
@@ -56,4 +57,12 @@
 
 .tabs-and-menu-wrapper rux-menu-item span rux-button rux-icon {
   margin: auto;
+}
+
+.dashboard_equipment-wrapper rux-tab::part(container) {
+  outline-offset: -1px;
+}
+
+.dashboard_equipment-wrapper rux-button::part(container) {
+    outline-offset: -3px;
 }
