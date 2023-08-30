@@ -117,24 +117,24 @@ const AlertsList = ({ severitySelection, categorySelection }: PropTypes) => {
           checked={allSelected}
           indeterminate={anySelected && !allSelected}
         />
-        <span data-sortprop='message' onClick={handleClick}>
-          Message
+        <span className="header-label-wrapper" data-sortprop='message' onClick={handleClick}>
+          <span>Message</span>
           <RuxIcon
             icon={sortDirection === 'ASC' ? 'arrow-drop-down' : 'arrow-drop-up'}
             size='small'
             className={sortProp === 'message' ? 'visible' : 'hidden'}
           />
         </span>
-        <span data-sortprop='category' onClick={handleClick}>
-          Category
+        <span className="header-label-wrapper" data-sortprop='category' onClick={handleClick}>
+          <span>Category</span>
           <RuxIcon
             icon={sortDirection === 'ASC' ? 'arrow-drop-down' : 'arrow-drop-up'}
             size='small'
             className={sortProp === 'category' ? 'visible' : 'hidden'}
           />
         </span>
-        <span data-sortprop='timestamp' onClick={handleClick}>
-          Time
+        <span className="header-label-wrapper" data-sortprop='timestamp' onClick={handleClick}>
+          <span>Time</span>
           <RuxIcon
             icon={sortDirection === 'ASC' ? 'arrow-drop-down' : 'arrow-drop-up'}
             size='small'
