@@ -42,7 +42,7 @@
    monitoring status icons on light theme
    this represents one proposed solution */
 
-.light-theme .inoperable-equipment rux-monitoring-icon {
+/* .light-theme .inoperable-equipment rux-monitoring-icon {
   &[status='off']::part(icon) {
     color: #7b8089;
   }
@@ -61,4 +61,4 @@
   &[status='critical']::part(icon) {
     color: #d72809;
   }
-}
+} */
