@@ -9,13 +9,13 @@
 
 .inoperable-equipment span {
   font-weight: var(--font-weights-medium);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-2xl);
+  padding-bottom: var(--spacing-2);
   margin-top: 0;
 }
 
 .inoperable-equipment .section {
   height: auto;
-  max-height: 11.75rem;
 }
 
 .inoperable-equipment .section::part(body) {

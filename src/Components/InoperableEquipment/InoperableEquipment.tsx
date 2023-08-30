@@ -34,7 +34,7 @@ const InoperableEquipment = () => {
           {comms.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                status='normal'
+                status={equipment.status}
                 icon='center-focus-weak'
                 label={equipment.equipmentString}
                 onClick={() => handleSelectedEquipment(equipment)}
@@ -49,7 +49,7 @@ const InoperableEquipment = () => {
           {digital.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                status='normal'
+                status={equipment.status}
                 icon='center-focus-weak'
                 label={equipment.equipmentString}
                 onClick={() => handleSelectedEquipment(equipment)}
@@ -64,7 +64,7 @@ const InoperableEquipment = () => {
           {facilities.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                status='normal'
+                status={equipment.status}
                 icon='center-focus-weak'
                 label={equipment.equipmentString}
                 onClick={() => handleSelectedEquipment(equipment)}
@@ -79,7 +79,7 @@ const InoperableEquipment = () => {
           {RF.map((equipment: Equipment, index: number) => (
             <li key={index}>
               <RuxMonitoringIcon
-                status='normal'
+                status={equipment.status}
                 icon='center-focus-weak'
                 label={equipment.equipmentString}
                 onClick={() => handleSelectedEquipment(equipment)}
