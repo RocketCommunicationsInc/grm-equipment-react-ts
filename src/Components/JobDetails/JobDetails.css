@@ -14,6 +14,7 @@
 .jobs-wrapper rux-input::part(form-field) {
   flex-direction: row;
   width: 18rem;
+  align-items: center;
 }
 
 .jobs-wrapper rux-select::part(select) {

@@ -56,7 +56,10 @@ const MaintenancePanel = () => {
       <RuxContainer className='jobs-section'>
         <h2>Jobs</h2>
         <div className='schedule-job-wrapper'>
-          <RuxButton onClick={() => navigate('schedule-job')}>
+          <RuxButton
+            className='schedule-job-btn'
+            onClick={() => navigate('schedule-job')}
+          >
             Schedule Job
           </RuxButton>
           <div className='job-card-wrapper'>
