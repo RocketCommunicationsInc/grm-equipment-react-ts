@@ -94,7 +94,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 key={`${colDef.property}${index}`}
                 data-sortprop={colDef.property}
                 onClick={handleHeaderCellClick}
-                className='jobs-header-cell'
+                className={ rightAlignedColumns.includes(colDef.property) ? 'jobs-header-cell right-align' : 'jobs-header-cell' }
               >
                 <div
                 className={ rightAlignedColumns.includes(colDef.property) ? 'right-align' : '' }
@@ -126,8 +126,8 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 {columnDefs.map((colDef, index) => {
                   const property: keyof Job = colDef.property;
                   return (
-                    <RuxTableCell className='jobs-cell' key={colDef.label}>
-                      <span>
+                    <RuxTableCell className={rightAlignedColumns.includes(colDef.property) ? 'jobs-cell right-align' : 'jobs-cell'} key={colDef.label}>
+                      <span className={ rightAlignedColumns.includes(colDef.property) ? 'right-align' : '' }>
                       {property === 'jobDescription'
                         ? capitalize(job[property])
                         : property === 'createdOn' ||
