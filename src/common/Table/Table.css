@@ -42,7 +42,7 @@
 .table-wrapper rux-table-header-cell:hover div {
   grid-template-columns: auto 1fr;
 }
-
+.table-wrapper rux-table-header-cell:has(rux-icon.visible) div.right-align,
 .table-wrapper rux-table-header-cell div.right-align {
   grid-template-columns: auto 32px;
 }
