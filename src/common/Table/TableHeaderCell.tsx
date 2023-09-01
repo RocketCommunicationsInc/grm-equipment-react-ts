@@ -28,8 +28,9 @@ const TableHeaderCell = ({
       }
     >
       <div className={columnDefinition.isRightAligned ? 'right-align' : ''}>
-        <span>{columnDefinition.label}</span>
-
+        <span className={columnDefinition.isRightAligned ? 'right-align' : ''}>
+          {columnDefinition.label}
+        </span>
         <RuxIcon
           icon={sortDirection === 'ASC' ? 'arrow-drop-down' : 'arrow-drop-up'}
           size='32px'
