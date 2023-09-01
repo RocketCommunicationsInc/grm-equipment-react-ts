@@ -39,7 +39,7 @@ const ScheduleJob = () => {
   const randomStatus = Math.floor(Math.random() * statusValues.length);
   const randomJobStatus = Math.floor(Math.random() * jobValues.length);
   const equipmentValues = ['ANT3', 'BAFB4', 'ANT9', 'BAFB5', 'ANT12', 'BAFB8'];
-  const randomEqupiment = Math.floor(Math.random() * equipmentValues.length);
+  const randomEquipment = Math.floor(Math.random() * equipmentValues.length);
 
   const [newJob, setNewJob] = useState({
     jobId: uniqueJobId,
@@ -51,7 +51,7 @@ const ScheduleJob = () => {
     follow: true,
     jobStatus: jobValues[randomJobStatus],
     createdOn: Date.now(),
-    equipment: equipmentValues[randomEqupiment],
+    equipment: equipmentValues[randomEquipment],
     equipmentStatus: statusValues[randomStatus],
   });
 
@@ -210,7 +210,7 @@ const ScheduleJob = () => {
             <li>
               4. Would you like to follow this job? Following will send all
               updates and alerts from this job to the GRM Dashboard. If you do
-              not follow this job, you must view the job from the Equpiment
+              not follow this job, you must view the job from the Equipment
               Manager for any updates or alerts.
             </li>
             <li>
@@ -242,7 +242,7 @@ const ScheduleJob = () => {
             after clicking "Calculate Conflicts".
           </span>
           <span>
-            To ensure that these contacts have the equpiment they need to
+            To ensure that these contacts have the equipment they need to
             execute, change the timeframe of the maintenance job using the
             Start/Stop fields, or change the equipment allocated to these
             contacts in the GRM Schedule app.
