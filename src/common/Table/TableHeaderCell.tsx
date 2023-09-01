@@ -7,6 +7,7 @@ type PropTypes = {
   handleClick: React.MouseEventHandler<HTMLElement>;
   sortDirection: 'ASC' | 'DESC';
   sortProp: keyof Contact;
+  activeHeader: keyof Contact | undefined;
 };
 
 const TableHeaderCell = ({
@@ -14,6 +15,7 @@ const TableHeaderCell = ({
   handleClick,
   sortDirection,
   sortProp,
+  activeHeader,
 }: PropTypes) => {
   return (
     <RuxTableHeaderCell
@@ -32,7 +34,7 @@ const TableHeaderCell = ({
           {columnDefinition.label}
         </span>
         <RuxIcon
-          icon={sortDirection === 'ASC' ? 'arrow-drop-down' : 'arrow-drop-up'}
+          icon={(sortDirection === 'ASC' || activeHeader !== columnDefinition.property) ? 'arrow-drop-down' : 'arrow-drop-up'}
           size='32px'
           className={
             sortProp === columnDefinition.property ? 'visible' : 'hidden'
