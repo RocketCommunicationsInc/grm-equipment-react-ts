@@ -38,11 +38,15 @@ rux-container.schedule-job-wrapper {
   margin-top: 0px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-grow: 1;
-  gap: var(--spacing-3);
+  gap: var(--spacing-8);
   max-height: 35rem;
   overflow: auto;
+}
+
+.schedule-job-btn {
+  margin-right: var(--spacing-8);
 }
 
 .maintenance-history-panel {

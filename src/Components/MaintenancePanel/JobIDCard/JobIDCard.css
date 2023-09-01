@@ -19,6 +19,11 @@
   padding-top: var(--spacing-3);
 }
 
+.job-id-card rux-input::part(input) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .job-id-card rux-input::part(label) {
   margin-right: var(--spacing-2);
   width: 90%;
