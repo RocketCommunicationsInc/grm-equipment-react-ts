@@ -127,6 +127,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
                   const property: keyof Job = colDef.property;
                   return (
                     <RuxTableCell className='jobs-cell' key={colDef.label}>
+                      <span>
                       {property === 'jobDescription'
                         ? capitalize(job[property])
                         : property === 'createdOn' ||
@@ -134,6 +135,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
                           (property === 'stopTime' && job[property] !== '')
                         ? setHhMmSs(job[property])
                         : job[property]}
+                        </span>
                     </RuxTableCell>
                   );
                 })}
