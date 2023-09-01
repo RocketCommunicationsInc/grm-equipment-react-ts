@@ -141,10 +141,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
                       >
                         {property === 'jobDescription'
                           ? capitalize(job[property])
-                          : property === 'createdOn' ||
-                            (property === 'startTime' &&
-                              job[property] !== '') ||
-                            (property === 'stopTime' && job[property] !== '')
+                          : colDef.isRightAligned
                           ? setHhMmSs(job[property])
                           : job[property]}
                       </span>
