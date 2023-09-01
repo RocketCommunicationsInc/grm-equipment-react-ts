@@ -2,8 +2,10 @@
   width: 23%;
 }
 
-.table-wrapper rux-table-header-cell.jobs-header-cell.right-align
-.table-wrapper rux-table-cell.jobs-cell.right-align {
+.table-wrapper
+  rux-table-header-cell.jobs-header-cell.right-align
+  .table-wrapper
+  rux-table-cell.jobs-cell.right-align {
   text-align: right;
 }
 

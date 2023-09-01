@@ -21,7 +21,6 @@ const Table = ({ columnDefs, filteredData }: PropTypes) => {
   const [sortDirection, setSortDirection] = useState<'ASC' | 'DESC'>('ASC');
   const [sortProp, setSortProp] = useState<keyof Contact>('id');
   const [sortedData, setSortedData] = useState<Contact[]>([]);
-
   const sortData = useCallback(
     (property: keyof Contact, sortDirection: 'ASC' | 'DESC') => {
       const sortedData = [...filteredData].sort((a: Contact, b: Contact) => {

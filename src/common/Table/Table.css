@@ -38,12 +38,9 @@
   grid-template-columns: 100% 0%;
 }
 
-.table-wrapper rux-table-header-cell div.right-align {
-  grid-template-columns: auto 32px;
-}
-
 .table-wrapper rux-table-header-cell:has(rux-icon.visible) div,
-.table-wrapper rux-table-header-cell:hover div {
+.table-wrapper rux-table-header-cell:hover div,
+.table-wrapper rux-table-header-cell div.right-align {
   grid-template-columns: auto 1fr;
 }
 
@@ -67,8 +64,6 @@ rux-container .table-wrapper {
   text-align: right;
 }
 
-/* to make up the difference for the sort icon in header cell */
-/* .table-wrapper rux-table-cell.right-align::after {
-  content: '';
-  padding-right: var(--spacing-8);
-} */
+rux-table-cell.right-align span.right-align {
+  padding-inline-end: var(--spacing-8);
+}

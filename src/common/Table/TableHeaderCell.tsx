@@ -19,9 +19,15 @@ const TableHeaderCell = ({
     <RuxTableHeaderCell
       data-sortprop={columnDefinition.property}
       onClick={handleClick}
-      className={columnDefinition.property === 'status' ? 'status-align' : ''}
+      className={
+        columnDefinition.property === 'status'
+          ? 'status-align'
+          : columnDefinition.isRightAligned
+          ? 'right-align'
+          : ''
+      }
     >
-      <div>
+      <div className={columnDefinition.isRightAligned ? 'right-align' : ''}>
         <span>{columnDefinition.label}</span>
 
         <RuxIcon
