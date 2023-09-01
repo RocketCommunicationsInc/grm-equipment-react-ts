@@ -35,6 +35,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
   const [sortDirection, setSortDirection] = useState<'ASC' | 'DESC'>('ASC');
   const [sortProp, setSortProp] = useState<keyof Job>('jobId');
   const [sortedData, setSortedData] = useState<Job[]>([]);
+  const [activeHeader, setActiveHeader] = useState<keyof Job>()
 
   const sortData = useCallback(
     (property: keyof Job, sortDirection: 'ASC' | 'DESC') => {
@@ -63,6 +64,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
   const handleHeaderCellClick = (event: React.MouseEvent<HTMLElement>) => {
     const target = event.currentTarget as HTMLElement;
     const sortProperty = target.dataset.sortprop as keyof Job;
+    setActiveHeader(sortProperty)
     if (sortProperty === sortProp) {
       // clicked same currently sorted column
       if (sortDirection === 'ASC') {
@@ -102,7 +104,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
                   <span>{colDef.label}</span>
                   <RuxIcon
                     icon={
-                      sortDirection === 'ASC'
+                      (sortDirection === 'ASC' || activeHeader !== colDef.property)
                         ? 'arrow-drop-down'
                         : 'arrow-drop-up'
                     }
