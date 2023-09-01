@@ -18,9 +18,9 @@ import './JobsTable.css';
 const columnDefs: any[] = [
   { label: 'Job ID', property: 'jobId' },
   { label: 'Type', property: 'jobType' },
-  { label: 'Created On', property: 'createdOn' },
-  { label: 'Started On', property: 'startTime' },
-  { label: 'Completed On', property: 'stopTime' },
+  { label: 'Created On', property: 'createdOn', isRightAligned: true, },
+  { label: 'Started On', property: 'startTime', isRightAligned: true, },
+  { label: 'Completed On', property: 'stopTime', isRightAligned: true, },
   { label: 'Technician', property: 'technician' },
   { label: 'Description', property: 'jobDescription' },
 ];
@@ -35,6 +35,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
   const [sortDirection, setSortDirection] = useState<'ASC' | 'DESC'>('ASC');
   const [sortProp, setSortProp] = useState<keyof Job>('jobId');
   const [sortedData, setSortedData] = useState<Job[]>([]);
+  const [activeHeader, setActiveHeader] = useState<keyof Job>()
 
   const sortData = useCallback(
     (property: keyof Job, sortDirection: 'ASC' | 'DESC') => {
@@ -63,6 +64,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
   const handleHeaderCellClick = (event: React.MouseEvent<HTMLElement>) => {
     const target = event.currentTarget as HTMLElement;
     const sortProperty = target.dataset.sortprop as keyof Job;
+    setActiveHeader(sortProperty)
     if (sortProperty === sortProp) {
       // clicked same currently sorted column
       if (sortDirection === 'ASC') {
@@ -82,8 +84,6 @@ const JobsTable = ({ jobs }: PropTypes) => {
     navigate('maintenance-details');
   };
 
-  const rightAlignedColumns = ['createdOn', 'startTime', 'stopTime']
-
   return (
     <div className='table-wrapper'>
       <RuxTable>
@@ -94,15 +94,17 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 key={`${colDef.property}${index}`}
                 data-sortprop={colDef.property}
                 onClick={handleHeaderCellClick}
-                className='jobs-header-cell'
+                className={
+                  colDef.isRightAligned
+                    ? 'jobs-header-cell right-align'
+                    : 'jobs-header-cell'
+                }
               >
-                <div
-                className={ rightAlignedColumns.includes(colDef.property) ? 'right-align' : '' }
-                >
+                <div className={colDef.isRightAligned ? 'right-align' : ''}>
                   <span>{colDef.label}</span>
                   <RuxIcon
                     icon={
-                      sortDirection === 'ASC'
+                      (sortDirection === 'ASC' || activeHeader !== colDef.property)
                         ? 'arrow-drop-down'
                         : 'arrow-drop-up'
                     }
@@ -123,17 +125,26 @@ const JobsTable = ({ jobs }: PropTypes) => {
                 key={`${job.jobId}${index}`}
                 onClick={() => handleTabeRowClick(job)}
               >
-                {columnDefs.map((colDef, index) => {
+                {columnDefs.map((colDef) => {
                   const property: keyof Job = colDef.property;
                   return (
-                    <RuxTableCell className='jobs-cell' key={colDef.label}>
-                      {property === 'jobDescription'
-                        ? capitalize(job[property])
-                        : property === 'createdOn' ||
-                          (property === 'startTime' && job[property] !== '') ||
-                          (property === 'stopTime' && job[property] !== '')
-                        ? setHhMmSs(job[property])
-                        : job[property]}
+                    <RuxTableCell
+                      className={
+                        colDef.isRightAligned
+                          ? 'jobs-cell right-align'
+                          : 'jobs-cell'
+                      }
+                      key={colDef.label}
+                    >
+                      <span
+                        className={colDef.isRightAligned ? 'right-align' : ''}
+                      >
+                        {property === 'jobDescription'
+                          ? capitalize(job[property])
+                          : colDef.isRightAligned
+                          ? setHhMmSs(job[property])
+                          : job[property]}
+                      </span>
                     </RuxTableCell>
                   );
                 })}

@@ -342,7 +342,7 @@ const JobDetails = () => {
             after clicking "Calculate Conflicts".
           </span>
           <span>
-            To ensure that these contacts have the equpiment they need to
+            To ensure that these contacts have the equipment they need to
             execute, change the timeframe of the maintenance job using the
             Start/Stop fields, or change the equipment allocated to these
             contacts in the GRM Schedule app.

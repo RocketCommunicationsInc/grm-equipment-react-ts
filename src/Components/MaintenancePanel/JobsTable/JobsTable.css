@@ -2,24 +2,21 @@
   width: 23%;
 }
 
-.table-wrapper .jobs-header-cell:nth-of-type(3),
-.table-wrapper .jobs-header-cell:nth-of-type(4),
-.table-wrapper .jobs-header-cell:nth-of-type(5),
-.table-wrapper .jobs-cell:nth-of-type(5),
-.table-wrapper .jobs-cell:nth-of-type(4),
-.table-wrapper .jobs-cell:nth-of-type(3) {
+.table-wrapper
+  rux-table-header-cell.jobs-header-cell.right-align
+  .table-wrapper
+  rux-table-cell.jobs-cell.right-align {
   text-align: right;
+}
+
+.table-wrapper rux-table-cell.jobs-cell.right-align span {
+  /* 32px of padding to match icon and padding in header on right-aligned columns */
+  padding-inline-end: var(--spacing-8);
 }
 
 rux-table-header-cell.jobs-header-cell:has(rux-icon.visible) div.right-align,
 rux-table-header-cell.jobs-header-cell:hover div.right-align {
   width: fit-content;
-  margin-left: auto;
-}
-
-rux-table-header-cell.jobs-header-cell:has(rux-icon.visible) div.right-align span,
-rux-table-header-cell.jobs-header-cell:hover div.right-align span {
-  width: calc(100% - 32px);
   margin-left: auto;
 }
 
