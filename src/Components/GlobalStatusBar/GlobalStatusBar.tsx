@@ -54,6 +54,7 @@ const GlobalStatusBar = () => {
 
   function menuSelect(e: CustomEvent) {
     const { detail } = e;
+    if (!detail.value) return;
     if (detail.value === 'themeToggle') {
       setLightTheme(!lightTheme);
       document.body.classList.toggle('light-theme');
@@ -89,7 +90,13 @@ const GlobalStatusBar = () => {
             icon='apps'
           />
           <RuxMenu onRuxmenuselected={(e) => menuSelect(e)}>
-            <RuxMenuItem value='investigate'>TTC Investigate</RuxMenuItem>
+            <RuxMenuItem href='https://grm-dashboard-react.netlify.app'>
+              GRM Dashboard
+            </RuxMenuItem>
+            <RuxMenuItem href='/'>GRM Equipment Manager</RuxMenuItem>
+            <RuxMenuItem href='https://grm-schedule-react.netlify.app/'>
+              GRM Schedule
+            </RuxMenuItem>
             <RuxMenuItemDivider />
             <RuxMenuItem value='themeToggle'>
               {lightTheme ? 'Dark' : 'Light'} Theme
