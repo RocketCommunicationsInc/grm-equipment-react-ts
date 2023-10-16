@@ -4,7 +4,7 @@ import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-comp
 import './index.css';
 import App from './App.tsx';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(
   <React.StrictMode>
     <App />
