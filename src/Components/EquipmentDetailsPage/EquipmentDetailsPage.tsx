@@ -93,7 +93,7 @@ const EquipmentDetailsPage = () => {
               id={equipment.id}
               selected={equipment?.id === state?.currentEquipment?.id}
             >
-              {equipment.config}-{equipment.equipmentString}
+              {equipment.config}-{equipment.name}
               <RuxButton
                 className='equipment-panel_tab-clear-button'
                 iconOnly
@@ -137,7 +137,7 @@ const EquipmentDetailsPage = () => {
                       selected={equipment.id === state?.currentEquipment?.id}
                     >
                       <span>
-                        {equipment.config}-{equipment.equipmentString}
+                        {equipment.config}-{equipment.name}
                         <RuxButton
                           iconOnly
                           borderless

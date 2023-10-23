@@ -1,3 +1,4 @@
+import React from 'react'; //for webpack
 import GlobalStatusBar from './Components/GlobalStatusBar/GlobalStatusBar';
 import AppProvider from './providers/AppProvider';
 import { TTCGRMProvider } from '@astrouxds/mock-data';

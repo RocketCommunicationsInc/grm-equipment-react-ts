@@ -1,24 +1,31 @@
-import { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; //for webpack
 import {
   RuxContainer,
   RuxStatus,
   RuxTree,
   RuxTreeNode,
 } from '@astrouxds/react';
-import { useAppContext } from '../../providers/AppProvider';
 import { capitalize } from '../../utils';
 import './EquipmentTree.css';
 import { Equipment } from '../../Types/Equipment';
 
 const EquipmentTree = () => {
-  const { state, dispatch }: any = useAppContext();
+  const [equipment, setEquipment] = useState<Equipment[]>([]);
+  const [currentEquipment, setCurrentEquipment] = useState<Equipment | null>(
+    null
+  );
   const treeNodeRef = useRef<Set<HTMLRuxTreeNodeElement>>(new Set());
   const tree = useRef<HTMLRuxTreeElement | null>(null);
   const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
   const categoryArray: string[] = ['comms', 'digital', 'facilities', 'rf'];
 
   const handleSelectedEquipment = (equipment: Equipment) => {
-    dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
+    setCurrentEquipment(equipment);
+    const currentEquipChanged = new CustomEvent('currentEquipChanged', {
+      detail: equipment,
+      bubbles: true,
+    });
+    tree.current?.dispatchEvent(currentEquipChanged);
   };
 
   const expandTreeNodeParent = (treeNode: HTMLRuxTreeNodeElement) => {
@@ -40,6 +47,13 @@ const EquipmentTree = () => {
   };
 
   useEffect(() => {
+    fetch(`https://grm-api-3a31afd8ee4e.herokuapp.com/equipment`)
+      .then((res) => res.json())
+      .then((data) => setEquipment(data))
+      .catch((err) => console.log('error', err));
+  }, []);
+
+  useEffect(() => {
     const treeNodeSet = treeNodeRef.current;
     for (const node of treeNodeSet) {
       collapseTreeNodeParent(node);
@@ -50,7 +64,7 @@ const EquipmentTree = () => {
         expandTreeNodeParent(node);
       }
     }
-  }, [state.currentEquipment]);
+  }, [equipment]);
 
   useEffect(() => {
     if (!tree.current) return;
@@ -79,28 +93,40 @@ const EquipmentTree = () => {
           <RuxTreeNode key={category}>
             {category === 'rf' ? category.toUpperCase() : capitalize(category)}
             {configArray.map((config) => (
-              <RuxTreeNode slot='node' key={`${category}${config}`}>
+              <RuxTreeNode
+                slot='node'
+                key={`${category}${config}`}
+                hidden={
+                  equipment.filter(
+                    (equip) =>
+                      equip.category.toLowerCase() === category.toLowerCase() &&
+                      equip.config.toLowerCase() === config.toLowerCase()
+                  ).length < 1
+                }
+              >
                 Component {config}
-                {state.equipment.map(
-                  (equipment: any, index: number) =>
-                    equipment.category === category &&
-                    equipment.config === config && (
+                {equipment.map(
+                  (equip: Equipment, index: number) =>
+                    equip.category.toLowerCase() === category.toLowerCase() &&
+                    equip.config.toLowerCase() === config.toLowerCase() && (
                       <RuxTreeNode
                         key={`${category}${config}${index}`}
-                        id={equipment.id}
+                        id={equip.id}
                         slot='node'
                         onRuxtreenodeselected={() =>
-                          handleSelectedEquipment(equipment)
+                          handleSelectedEquipment(equip)
                         }
-                        selected={equipment.id === state?.currentEquipment?.id}
+                        selected={equip.id === currentEquipment?.id}
                         ref={(el) => {
                           if (el) {
                             treeNodeRef.current.add(el);
                           }
                         }}
                       >
-                        <RuxStatus slot='prefix' status={equipment.status} />
-                        {equipment.config}-{equipment.equipmentString}
+                        {equip.status && (
+                          <RuxStatus slot='prefix' status={equip.status} />
+                        )}
+                        {equip.config}-{equip.name}
                       </RuxTreeNode>
                     )
                 )}

@@ -66,14 +66,14 @@ const MaintenancePanel = () => {
             {state.currentEquipment &&
               filteredJobs
                 .reverse()
-                .map((job: Job) => (
+                .map((job: any) => (
                   <JobIDCard
-                    key={job.jobId}
+                    key={job.id}
                     type={job.jobType}
-                    id={Number(job.jobId)}
-                    startTime={job.startTime}
-                    stopTime={job.stopTime}
-                    status={capitalize(job.jobStatus) as string}
+                    id={Number(job.id)}
+                    startTime={job.startsAt}
+                    stopTime={job.endsAt}
+                    status={capitalize(job.status) as string}
                     viewJob={() => handleJobDetailsClick(job)}
                   />
                 ))}
