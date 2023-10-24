@@ -53,7 +53,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         // which exposes
-        './EquipDetails':
+        './EquipmentDetails':
           './src/Components/EquipmentDetailsPanel/EquipmentDetailsPanel.tsx',
       },
       shared: {
