@@ -1,12 +1,13 @@
 import { RuxButton, RuxCard, RuxInput } from '@astrouxds/react';
 import './JobIDCard.css';
+import { getDate } from '../../../utils';
 
 type PropTypes = {
-  id: number;
+  id: string;
   status: string;
   type: string;
-  startTime: string;
-  stopTime: string;
+  startsAt: string;
+  endsAt: string;
   viewJob: () => void;
 };
 
@@ -14,8 +15,8 @@ const JobIDCard = ({
   id,
   status,
   type,
-  startTime,
-  stopTime,
+  startsAt,
+  endsAt,
   viewJob,
 }: PropTypes) => {
   return (
@@ -32,14 +33,14 @@ const JobIDCard = ({
         readonly
       />
       <RuxInput
-        value={startTime}
+        value={getDate(startsAt)}
         placeholder='YYY DDD HH:MM'
         size='small'
         label='Start'
         readonly
       />
       <RuxInput
-        value={stopTime}
+        value={getDate(endsAt)}
         placeholder='YYY DDD HH:MM'
         size='small'
         label='Stop'

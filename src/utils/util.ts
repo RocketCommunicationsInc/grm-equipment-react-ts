@@ -30,3 +30,9 @@ export function capitalize(str: string) {
   );
   return capitalized.join(' ');
 }
+
+export const getDate = (input: string | number) => {
+  if (typeof input === 'string') return input;
+  const date = new Date(input).toISOString();
+  return date;
+};

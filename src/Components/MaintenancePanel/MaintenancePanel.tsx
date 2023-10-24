@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { RuxButton, RuxContainer } from '@astrouxds/react';
 import { useAppContext } from '../../providers/AppProvider';
 import JobIDCard from './JobIDCard/JobIDCard';
-import { capitalize, setHhMmSs } from '../../utils';
+import { capitalize, setHhMmSs, getDate } from '../../utils';
 import SearchBar from '../../common/SearchBar/SearchBar';
 import JobsTable from './JobsTable/JobsTable';
 import { Job } from '../../Types/Equipment';
@@ -23,7 +23,7 @@ const MaintenancePanel = () => {
     ? state.currentEquipment.scheduledJobs.reduce(
         (results: any[], job: any) => {
           if (
-            job === 'startTime' || job === 'stopTime' || job === 'createdOn'
+            job === 'startsAt' || job === 'endsAt' || job === 'createdOn'
               ? Object.values(setHhMmSs(job))
                   .toString()
                   .toLowerCase()
@@ -70,9 +70,9 @@ const MaintenancePanel = () => {
                   <JobIDCard
                     key={job.id}
                     type={job.type}
-                    id={Number(job.id)}
-                    startTime={job.startsAt}
-                    stopTime={job.endsAt}
+                    id={job.id}
+                    startsAt={getDate(job.startsAt)}
+                    endsAt={getDate(job.endsAt)}
                     status={capitalize(job.status) as string}
                     viewJob={() => handleJobDetailsClick(job)}
                   />
@@ -83,7 +83,11 @@ const MaintenancePanel = () => {
       <RuxContainer className='maintenance-history-panel'>
         <div className='maintenance-wrapper'>
           <h2>Maintenance History</h2>
-          <JobsTable jobs={filteredJobs} />
+          {filteredJobs.lenth > 0 ? (
+            <JobsTable jobs={filteredJobs} />
+          ) : (
+            <p>No Past Jobs</p>
+          )}
         </div>
       </RuxContainer>
     </RuxContainer>

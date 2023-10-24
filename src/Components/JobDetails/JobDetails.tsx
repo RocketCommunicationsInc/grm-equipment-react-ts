@@ -16,7 +16,7 @@ import { filterContacts } from '../../utils/filterContacts';
 import Stepper from './Stepper/Stepper';
 import { useTTCGRMContacts } from '@astrouxds/mock-data';
 import SearchBar from '../../common/SearchBar/SearchBar';
-import { capitalize } from '../../utils';
+import { capitalize, getDate } from '../../utils';
 import DeleteConfirmation from './DeleteConfirmation/DeleteConfirmation';
 import './JobDetails.css';
 
@@ -155,8 +155,8 @@ const JobDetails = () => {
     for (let i = 0; i < stepperTitle.length; i++) {
       const element = stepperTitle[i].parentElement;
       if (
-        stepperTitle[i].innerHTML === job.jobStatus ||
-        stepperTitle[i].innerHTML.toLowerCase() === job.jobStatus
+        stepperTitle[i].innerHTML === job.status ||
+        stepperTitle[i].innerHTML.toLowerCase() === job.status
       ) {
         element?.classList.add('active');
       }
@@ -239,19 +239,19 @@ const JobDetails = () => {
               />
               <RuxInput
                 onRuxinput={handleChange}
-                value={job.startTime}
+                value={getDate(job.startsAt)}
                 size='small'
                 type='datetime-local'
                 label='Start'
-                name='startTime'
+                name='startsAt'
               />
               <RuxInput
                 onRuxinput={handleChange}
-                value={job.stopTime}
+                value={getDate(job.endsAt)}
                 size='small'
                 type='datetime-local'
                 label='Stop'
-                name='stopTime'
+                name='endsAt'
               />
               <div className='other-options'>
                 <RuxSelect
@@ -310,13 +310,13 @@ const JobDetails = () => {
                 readonly
                 size='small'
                 label='Start'
-                value={job.startTime}
+                value={getDate(job.startsAt)}
               />
               <RuxInput
                 readonly
                 size='small'
                 label='Stop'
-                value={job.stopTime}
+                value={getDate(job.endsAt)}
               />
               <RuxInput
                 readonly

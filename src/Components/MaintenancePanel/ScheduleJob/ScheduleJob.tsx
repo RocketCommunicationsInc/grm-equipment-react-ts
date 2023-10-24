@@ -37,7 +37,7 @@ const ScheduleJob = () => {
   const jobValues = ['Approved', 'Started', 'Stopped', 'Submitted', 'Online'];
 
   const randomStatus = Math.floor(Math.random() * statusValues.length);
-  const randomJobStatus = Math.floor(Math.random() * jobValues.length);
+  const randomstatus = Math.floor(Math.random() * jobValues.length);
   const equipmentValues = ['ANT3', 'BAFB4', 'ANT9', 'BAFB5', 'ANT12', 'BAFB8'];
   const randomEquipment = Math.floor(Math.random() * equipmentValues.length);
 
@@ -45,11 +45,11 @@ const ScheduleJob = () => {
     id: uniqueid,
     type: '',
     description: '',
-    startTime: '',
-    stopTime: '',
+    startsAt: '',
+    endsAt: '',
     technician: '',
     follow: true,
-    jobStatus: jobValues[randomJobStatus],
+    status: jobValues[randomstatus],
     createdOn: Date.now(),
     equipment: equipmentValues[randomEquipment],
     equipmentStatus: statusValues[randomStatus],
@@ -166,19 +166,19 @@ const ScheduleJob = () => {
             <li>2. Select Time</li>
             <RuxInput
               onRuxinput={handleChange}
-              value={newJob.startTime}
+              value={newJob.startsAt}
               size='small'
               type='datetime-local'
               label='Start'
-              name='startTime'
+              name='startsAt'
             />
             <RuxInput
               onRuxinput={handleChange}
-              value={newJob.stopTime}
+              value={newJob.endsAt}
               size='small'
               type='datetime-local'
               label='Stop'
-              name='stopTime'
+              name='endsAt'
             />
 
             <li>3. Select Technician</li>
