@@ -1,6 +1,6 @@
 [
   {
-    "equipmentString": "USP164",
+    "name": "USP164",
     "description": "in elit aliquip dolore Lorem esse sunt pariatur aliquip exercitation consectetur adipisicing",
     "online": true,
     "considered": true,
@@ -10,9 +10,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 21884,
-        "jobType": "Maintenance",
-        "jobDescription": "anim laboris do sunt sunt pariatur consectetur officia sunt ullamco",
+        "id": 21884,
+        "type": "Maintenance",
+        "description": "anim laboris do sunt sunt pariatur consectetur officia sunt ullamco",
         "startTime": "2023-03-05T04:51:04",
         "stopTime": "2023-08-18T07:48:05",
         "technician": "Angelique Hurley",
@@ -23,9 +23,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 11606,
-        "jobType": "IT Support",
-        "jobDescription": "irure nisi elit dolor aliqua pariatur dolore Lorem ullamco consequat",
+        "id": 11606,
+        "type": "IT Support",
+        "description": "irure nisi elit dolor aliqua pariatur dolore Lorem ullamco consequat",
         "startTime": "2023-06-30T11:24:34",
         "stopTime": "2023-08-16T02:29:32",
         "technician": "Lucia Dudley",
@@ -36,9 +36,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 77691,
-        "jobType": "Software",
-        "jobDescription": "enim esse aliqua nostrud magna aliquip aute ullamco laborum laboris",
+        "id": 77691,
+        "type": "Software",
+        "description": "enim esse aliqua nostrud magna aliquip aute ullamco laborum laboris",
         "startTime": "2023-03-16T01:46:38",
         "stopTime": "2023-08-16T10:00:39",
         "technician": "Eve Reeves",
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "equipmentString": "ECEC4",
+    "name": "ECEC4",
     "description": "id mollit amet qui nostrud ad cillum do eu eu ut consectetur",
     "online": false,
     "considered": false,
@@ -61,9 +61,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 40592,
-        "jobType": "IT Support",
-        "jobDescription": "officia dolor mollit Lorem voluptate amet excepteur consequat laborum minim",
+        "id": 40592,
+        "type": "IT Support",
+        "description": "officia dolor mollit Lorem voluptate amet excepteur consequat laborum minim",
         "startTime": "2023-04-30T01:04:12",
         "stopTime": "2023-08-17T06:37:02",
         "technician": "Moon Waller",
@@ -74,9 +74,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 90772,
-        "jobType": "IT Support",
-        "jobDescription": "dolor duis aliqua incididunt enim Lorem cillum in minim reprehenderit",
+        "id": 90772,
+        "type": "IT Support",
+        "description": "dolor duis aliqua incididunt enim Lorem cillum in minim reprehenderit",
         "startTime": "2022-12-12T09:46:13",
         "stopTime": "2023-08-13T12:19:50",
         "technician": "Jeannette Conner",
@@ -87,9 +87,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 14209,
-        "jobType": "Other",
-        "jobDescription": "mollit do qui sunt enim irure eu eu officia cupidatat",
+        "id": 14209,
+        "type": "Other",
+        "description": "mollit do qui sunt enim irure eu eu officia cupidatat",
         "startTime": "2023-06-11T06:58:58",
         "stopTime": "2023-08-22T09:46:09",
         "technician": "Lois Valenzuela",
@@ -102,7 +102,7 @@
     ]
   },
   {
-    "equipmentString": "ECED1",
+    "name": "ECED1",
     "description": "magna ex ut duis ullamco deserunt aute sunt laboris exercitation tempor eu",
     "online": true,
     "considered": false,
@@ -112,9 +112,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 20611,
-        "jobType": "IT Support",
-        "jobDescription": "qui eiusmod occaecat officia enim dolore minim pariatur esse laboris",
+        "id": 20611,
+        "type": "IT Support",
+        "description": "qui eiusmod occaecat officia enim dolore minim pariatur esse laboris",
         "startTime": "2023-03-08T08:38:33",
         "stopTime": "2023-08-20T06:04:53",
         "technician": "Rollins Kelly",
@@ -125,9 +125,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 27226,
-        "jobType": "Hardware",
-        "jobDescription": "culpa mollit laboris ipsum reprehenderit consectetur sint elit cupidatat id",
+        "id": 27226,
+        "type": "Hardware",
+        "description": "culpa mollit laboris ipsum reprehenderit consectetur sint elit cupidatat id",
         "startTime": "2022-12-30T09:31:55",
         "stopTime": "2023-08-12T09:19:49",
         "technician": "Deena Aguilar",
@@ -138,9 +138,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 52953,
-        "jobType": "Maintenance",
-        "jobDescription": "veniam laborum sint ipsum consequat enim laborum consectetur proident aliquip",
+        "id": 52953,
+        "type": "Maintenance",
+        "description": "veniam laborum sint ipsum consequat enim laborum consectetur proident aliquip",
         "startTime": "2023-05-04T09:00:44",
         "stopTime": "2023-08-31T07:35:15",
         "technician": "Greta Montgomery",
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "equipmentString": "PAGB1",
+    "name": "PAGB1",
     "description": "reprehenderit consequat culpa sunt esse consectetur excepteur consectetur tempor excepteur Lorem commodo",
     "online": false,
     "considered": false,
@@ -163,9 +163,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 17474,
-        "jobType": "IT Support",
-        "jobDescription": "tempor ipsum consequat ea quis Lorem ipsum Lorem incididunt id",
+        "id": 17474,
+        "type": "IT Support",
+        "description": "tempor ipsum consequat ea quis Lorem ipsum Lorem incididunt id",
         "startTime": "2023-01-01T06:39:43",
         "stopTime": "2023-08-25T12:08:34",
         "technician": "Luna Gilbert",
@@ -176,9 +176,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 90908,
-        "jobType": "Other",
-        "jobDescription": "sint ipsum adipisicing exercitation eiusmod nostrud est aliquip deserunt est",
+        "id": 90908,
+        "type": "Other",
+        "description": "sint ipsum adipisicing exercitation eiusmod nostrud est aliquip deserunt est",
         "startTime": "2023-07-13T07:29:13",
         "stopTime": "2023-08-31T07:05:18",
         "technician": "Cannon Calderon",
@@ -189,9 +189,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 37740,
-        "jobType": "Other",
-        "jobDescription": "ut sunt esse pariatur cillum ex fugiat est excepteur eiusmod",
+        "id": 37740,
+        "type": "Other",
+        "description": "ut sunt esse pariatur cillum ex fugiat est excepteur eiusmod",
         "startTime": "2022-12-19T06:46:42",
         "stopTime": "2023-08-18T04:17:54",
         "technician": "Susan Cannon",
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "equipmentString": "ECEUD3",
+    "name": "ECEUD3",
     "description": "irure nostrud laboris Lorem eu aute cillum aliqua amet do veniam aliqua",
     "online": true,
     "considered": true,
@@ -214,9 +214,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 74385,
-        "jobType": "Other",
-        "jobDescription": "pariatur reprehenderit est dolor ipsum sint est ad est anim",
+        "id": 74385,
+        "type": "Other",
+        "description": "pariatur reprehenderit est dolor ipsum sint est ad est anim",
         "startTime": "2023-03-16T05:51:56",
         "stopTime": "2023-08-18T06:07:05",
         "technician": "Amalia Odonnell",
@@ -227,9 +227,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 15872,
-        "jobType": "IT Support",
-        "jobDescription": "sunt id incididunt adipisicing adipisicing duis minim et esse pariatur",
+        "id": 15872,
+        "type": "IT Support",
+        "description": "sunt id incididunt adipisicing adipisicing duis minim et esse pariatur",
         "startTime": "2023-04-23T04:52:26",
         "stopTime": "2023-08-30T08:51:36",
         "technician": "Crawford Donovan",
@@ -240,9 +240,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 49939,
-        "jobType": "Hardware",
-        "jobDescription": "quis labore velit qui incididunt aliquip nisi exercitation esse elit",
+        "id": 49939,
+        "type": "Hardware",
+        "description": "quis labore velit qui incididunt aliquip nisi exercitation esse elit",
         "startTime": "2023-07-22T01:51:49",
         "stopTime": "2023-08-24T08:20:44",
         "technician": "Curtis Nelson",
@@ -255,7 +255,7 @@
     ]
   },
   {
-    "equipmentString": "ANT138",
+    "name": "ANT138",
     "description": "sit non nulla ex officia esse ex culpa adipisicing aliqua nulla pariatur",
     "online": true,
     "considered": false,
@@ -265,9 +265,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 35657,
-        "jobType": "Maintenance",
-        "jobDescription": "laboris deserunt qui enim esse sit eiusmod labore in aute",
+        "id": 35657,
+        "type": "Maintenance",
+        "description": "laboris deserunt qui enim esse sit eiusmod labore in aute",
         "startTime": "2022-12-27T02:46:33",
         "stopTime": "2023-08-24T12:05:40",
         "technician": "Edwards Woodward",
@@ -278,9 +278,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 64310,
-        "jobType": "IT Support",
-        "jobDescription": "qui anim duis commodo deserunt irure minim cillum ea elit",
+        "id": 64310,
+        "type": "IT Support",
+        "description": "qui anim duis commodo deserunt irure minim cillum ea elit",
         "startTime": "2023-02-11T02:47:37",
         "stopTime": "2023-08-19T02:04:49",
         "technician": "Emilia Russell",
@@ -291,9 +291,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 83556,
-        "jobType": "Other",
-        "jobDescription": "commodo dolor culpa non non qui dolor sunt excepteur eu",
+        "id": 83556,
+        "type": "Other",
+        "description": "commodo dolor culpa non non qui dolor sunt excepteur eu",
         "startTime": "2023-01-12T09:07:24",
         "stopTime": "2023-08-31T02:45:06",
         "technician": "Patrica Torres",
@@ -306,7 +306,7 @@
     ]
   },
   {
-    "equipmentString": "SFEP37H1",
+    "name": "SFEP37H1",
     "description": "qui aliqua proident commodo do culpa incididunt sunt labore amet elit labore",
     "online": false,
     "considered": true,
@@ -316,9 +316,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 92535,
-        "jobType": "Hardware",
-        "jobDescription": "ut aliquip incididunt duis ad dolor duis ullamco eiusmod aute",
+        "id": 92535,
+        "type": "Hardware",
+        "description": "ut aliquip incididunt duis ad dolor duis ullamco eiusmod aute",
         "startTime": "2023-05-03T09:53:46",
         "stopTime": "2023-08-15T06:10:10",
         "technician": "Crosby Lindsay",
@@ -329,9 +329,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 54073,
-        "jobType": "IT Support",
-        "jobDescription": "aliqua dolore non enim enim amet eu sit do Lorem",
+        "id": 54073,
+        "type": "IT Support",
+        "description": "aliqua dolore non enim enim amet eu sit do Lorem",
         "startTime": "2023-02-22T07:39:02",
         "stopTime": "2023-08-12T06:06:35",
         "technician": "Mathis Mercer",
@@ -342,9 +342,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 48674,
-        "jobType": "IT Support",
-        "jobDescription": "nisi labore eiusmod labore Lorem dolor nostrud ipsum dolore aliqua",
+        "id": 48674,
+        "type": "IT Support",
+        "description": "nisi labore eiusmod labore Lorem dolor nostrud ipsum dolore aliqua",
         "startTime": "2023-08-02T08:07:50",
         "stopTime": "2023-08-31T06:54:29",
         "technician": "Deidre Bailey",
@@ -357,7 +357,7 @@
     ]
   },
   {
-    "equipmentString": "USP182",
+    "name": "USP182",
     "description": "minim proident velit aliquip enim est cillum cillum irure sunt ipsum amet",
     "online": false,
     "considered": true,
@@ -367,9 +367,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 24729,
-        "jobType": "IT Support",
-        "jobDescription": "proident ex cillum excepteur quis est esse adipisicing sint adipisicing",
+        "id": 24729,
+        "type": "IT Support",
+        "description": "proident ex cillum excepteur quis est esse adipisicing sint adipisicing",
         "startTime": "2022-12-29T02:13:20",
         "stopTime": "2023-08-24T06:14:56",
         "technician": "Carter Greene",
@@ -380,9 +380,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 98064,
-        "jobType": "Maintenance",
-        "jobDescription": "laboris cillum nisi culpa amet consequat amet Lorem cillum voluptate",
+        "id": 98064,
+        "type": "Maintenance",
+        "description": "laboris cillum nisi culpa amet consequat amet Lorem cillum voluptate",
         "startTime": "2023-03-17T06:35:23",
         "stopTime": "2023-08-21T08:05:45",
         "technician": "Bean Osborn",
@@ -393,9 +393,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 37075,
-        "jobType": "Hardware",
-        "jobDescription": "non et ex quis ex esse ullamco duis esse veniam",
+        "id": 37075,
+        "type": "Hardware",
+        "description": "non et ex quis ex esse ullamco duis esse veniam",
         "startTime": "2023-04-03T04:47:01",
         "stopTime": "2023-08-09T04:11:43",
         "technician": "Mathews Cortez",
@@ -408,7 +408,7 @@
     ]
   },
   {
-    "equipmentString": "SFEP48H1",
+    "name": "SFEP48H1",
     "description": "consequat pariatur in incididunt veniam aliqua enim enim amet aute enim consectetur",
     "online": true,
     "considered": true,
@@ -418,9 +418,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 68838,
-        "jobType": "Hardware",
-        "jobDescription": "eu officia eiusmod culpa nostrud incididunt sint ex culpa deserunt",
+        "id": 68838,
+        "type": "Hardware",
+        "description": "eu officia eiusmod culpa nostrud incididunt sint ex culpa deserunt",
         "startTime": "2023-05-04T09:46:35",
         "stopTime": "2023-08-12T05:12:05",
         "technician": "Delia Park",
@@ -431,9 +431,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 51916,
-        "jobType": "Other",
-        "jobDescription": "quis amet laboris exercitation commodo eu excepteur mollit ipsum et",
+        "id": 51916,
+        "type": "Other",
+        "description": "quis amet laboris exercitation commodo eu excepteur mollit ipsum et",
         "startTime": "2023-01-07T07:42:09",
         "stopTime": "2023-08-25T03:23:45",
         "technician": "Barker Olsen",
@@ -444,9 +444,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 54647,
-        "jobType": "IT Support",
-        "jobDescription": "sint anim cillum ea cupidatat exercitation amet ea fugiat laborum",
+        "id": 54647,
+        "type": "IT Support",
+        "description": "sint anim cillum ea cupidatat exercitation amet ea fugiat laborum",
         "startTime": "2023-03-08T01:59:06",
         "stopTime": "2023-08-11T03:29:25",
         "technician": "Knox Haynes",
@@ -459,7 +459,7 @@
     ]
   },
   {
-    "equipmentString": "PAFB0",
+    "name": "PAFB0",
     "description": "sunt dolor adipisicing incididunt est eiusmod ut esse sit eiusmod Lorem id",
     "online": true,
     "considered": false,
@@ -469,9 +469,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 29957,
-        "jobType": "Other",
-        "jobDescription": "et aute amet dolor duis voluptate nostrud eu consequat et",
+        "id": 29957,
+        "type": "Other",
+        "description": "et aute amet dolor duis voluptate nostrud eu consequat et",
         "startTime": "2023-07-31T05:36:07",
         "stopTime": "2023-08-29T08:06:14",
         "technician": "Elma Hood",
@@ -482,9 +482,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 51932,
-        "jobType": "Maintenance",
-        "jobDescription": "adipisicing ullamco elit culpa consectetur magna id consectetur ullamco proident",
+        "id": 51932,
+        "type": "Maintenance",
+        "description": "adipisicing ullamco elit culpa consectetur magna id consectetur ullamco proident",
         "startTime": "2023-06-02T07:21:50",
         "stopTime": "2023-08-26T11:02:32",
         "technician": "Gates Barron",
@@ -495,9 +495,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 16714,
-        "jobType": "Software",
-        "jobDescription": "laborum enim exercitation esse sint consectetur cillum dolore qui qui",
+        "id": 16714,
+        "type": "Software",
+        "description": "laborum enim exercitation esse sint consectetur cillum dolore qui qui",
         "startTime": "2023-01-09T10:41:00",
         "stopTime": "2023-08-27T01:49:59",
         "technician": "Charlotte Callahan",
@@ -510,7 +510,7 @@
     ]
   },
   {
-    "equipmentString": "PAFB2",
+    "name": "PAFB2",
     "description": "esse esse culpa cupidatat occaecat ex labore anim dolore minim qui aute",
     "online": false,
     "considered": false,
@@ -520,9 +520,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 91703,
-        "jobType": "Hardware",
-        "jobDescription": "aliquip aute quis ea aute reprehenderit velit ipsum nostrud dolore",
+        "id": 91703,
+        "type": "Hardware",
+        "description": "aliquip aute quis ea aute reprehenderit velit ipsum nostrud dolore",
         "startTime": "2023-07-24T08:20:17",
         "stopTime": "2023-08-25T02:51:14",
         "technician": "Aisha Moss",
@@ -533,9 +533,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 53377,
-        "jobType": "IT Support",
-        "jobDescription": "est pariatur elit mollit occaecat et et aute sunt mollit",
+        "id": 53377,
+        "type": "IT Support",
+        "description": "est pariatur elit mollit occaecat et et aute sunt mollit",
         "startTime": "2023-02-02T03:10:03",
         "stopTime": "2023-08-20T03:55:47",
         "technician": "Torres Wright",
@@ -546,9 +546,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 54653,
-        "jobType": "Hardware",
-        "jobDescription": "commodo esse aliquip sunt reprehenderit dolor culpa nisi excepteur duis",
+        "id": 54653,
+        "type": "Hardware",
+        "description": "commodo esse aliquip sunt reprehenderit dolor culpa nisi excepteur duis",
         "startTime": "2022-12-17T03:18:20",
         "stopTime": "2023-08-30T05:28:34",
         "technician": "Hobbs Cardenas",
@@ -561,7 +561,7 @@
     ]
   },
   {
-    "equipmentString": "SFEP35H1",
+    "name": "SFEP35H1",
     "description": "velit nostrud anim laboris veniam reprehenderit aliquip veniam adipisicing labore et laborum",
     "online": false,
     "considered": false,
@@ -571,9 +571,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 46939,
-        "jobType": "Hardware",
-        "jobDescription": "voluptate dolore anim do ea est magna eiusmod tempor voluptate",
+        "id": 46939,
+        "type": "Hardware",
+        "description": "voluptate dolore anim do ea est magna eiusmod tempor voluptate",
         "startTime": "2023-06-20T06:01:37",
         "stopTime": "2023-08-16T02:39:28",
         "technician": "Lindsay Aguirre",
@@ -584,9 +584,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 79804,
-        "jobType": "IT Support",
-        "jobDescription": "exercitation ex occaecat nostrud laborum elit sit est nisi ipsum",
+        "id": 79804,
+        "type": "IT Support",
+        "description": "exercitation ex occaecat nostrud laborum elit sit est nisi ipsum",
         "startTime": "2023-01-08T02:41:57",
         "stopTime": "2023-08-13T06:38:25",
         "technician": "Vera Riggs",
@@ -597,9 +597,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 38799,
-        "jobType": "Hardware",
-        "jobDescription": "duis tempor consequat non officia nisi et aliquip anim ad",
+        "id": 38799,
+        "type": "Hardware",
+        "description": "duis tempor consequat non officia nisi et aliquip anim ad",
         "startTime": "2023-01-29T07:10:14",
         "stopTime": "2023-08-23T07:38:22",
         "technician": "Desiree Potter",
@@ -612,7 +612,7 @@
     ]
   },
   {
-    "equipmentString": "PAFB4",
+    "name": "PAFB4",
     "description": "dolor elit anim incididunt Lorem non nulla enim voluptate sit proident in",
     "online": false,
     "considered": true,
@@ -622,9 +622,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 52281,
-        "jobType": "IT Support",
-        "jobDescription": "anim laborum qui esse nostrud do ullamco dolor reprehenderit culpa",
+        "id": 52281,
+        "type": "IT Support",
+        "description": "anim laborum qui esse nostrud do ullamco dolor reprehenderit culpa",
         "startTime": "2023-02-26T12:04:23",
         "stopTime": "2023-08-22T08:49:18",
         "technician": "Lynn Barlow",
@@ -635,9 +635,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 57306,
-        "jobType": "IT Support",
-        "jobDescription": "adipisicing sint elit et labore laboris sunt occaecat exercitation laborum",
+        "id": 57306,
+        "type": "IT Support",
+        "description": "adipisicing sint elit et labore laboris sunt occaecat exercitation laborum",
         "startTime": "2023-04-15T10:34:29",
         "stopTime": "2023-08-31T11:10:37",
         "technician": "Jensen Coleman",
@@ -648,9 +648,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 84066,
-        "jobType": "Maintenance",
-        "jobDescription": "commodo in reprehenderit dolore reprehenderit amet amet consectetur proident officia",
+        "id": 84066,
+        "type": "Maintenance",
+        "description": "commodo in reprehenderit dolore reprehenderit amet amet consectetur proident officia",
         "startTime": "2023-03-05T03:48:10",
         "stopTime": "2023-08-13T01:07:47",
         "technician": "Terra Hull",
@@ -663,7 +663,7 @@
     ]
   },
   {
-    "equipmentString": "ECEU2",
+    "name": "ECEU2",
     "description": "non in aute id nostrud mollit qui consectetur quis tempor magna ex",
     "online": false,
     "considered": false,
@@ -673,9 +673,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 15788,
-        "jobType": "Maintenance",
-        "jobDescription": "ad velit ea nostrud minim consequat amet proident do aute",
+        "id": 15788,
+        "type": "Maintenance",
+        "description": "ad velit ea nostrud minim consequat amet proident do aute",
         "startTime": "2023-03-08T01:31:04",
         "stopTime": "2023-08-21T05:59:44",
         "technician": "Pearson Farley",
@@ -686,9 +686,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 52286,
-        "jobType": "Maintenance",
-        "jobDescription": "sint mollit exercitation veniam esse aute et ex anim est",
+        "id": 52286,
+        "type": "Maintenance",
+        "description": "sint mollit exercitation veniam esse aute et ex anim est",
         "startTime": "2023-05-31T05:31:29",
         "stopTime": "2023-08-29T02:34:59",
         "technician": "Marsha Hurst",
@@ -699,9 +699,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 62767,
-        "jobType": "Maintenance",
-        "jobDescription": "duis exercitation cupidatat incididunt amet sunt deserunt do veniam laborum",
+        "id": 62767,
+        "type": "Maintenance",
+        "description": "duis exercitation cupidatat incididunt amet sunt deserunt do veniam laborum",
         "startTime": "2023-07-25T12:26:34",
         "stopTime": "2023-08-17T09:19:35",
         "technician": "Melva Buckley",
@@ -714,7 +714,7 @@
     ]
   },
   {
-    "equipmentString": "VAFB8",
+    "name": "VAFB8",
     "description": "ipsum velit nostrud duis nostrud sunt aliquip non sunt tempor officia cillum",
     "online": false,
     "considered": true,
@@ -724,9 +724,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 36140,
-        "jobType": "Maintenance",
-        "jobDescription": "quis est mollit ut labore enim laborum proident ipsum culpa",
+        "id": 36140,
+        "type": "Maintenance",
+        "description": "quis est mollit ut labore enim laborum proident ipsum culpa",
         "startTime": "2023-01-20T12:39:49",
         "stopTime": "2023-08-10T03:32:27",
         "technician": "Dunn Williamson",
@@ -737,9 +737,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 95559,
-        "jobType": "Maintenance",
-        "jobDescription": "culpa ad ipsum officia magna sunt reprehenderit dolore sint et",
+        "id": 95559,
+        "type": "Maintenance",
+        "description": "culpa ad ipsum officia magna sunt reprehenderit dolore sint et",
         "startTime": "2023-03-31T12:36:01",
         "stopTime": "2023-08-12T06:19:12",
         "technician": "Gale Maddox",
@@ -750,9 +750,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 29259,
-        "jobType": "Maintenance",
-        "jobDescription": "do reprehenderit ad anim minim nulla excepteur do eiusmod nulla",
+        "id": 29259,
+        "type": "Maintenance",
+        "description": "do reprehenderit ad anim minim nulla excepteur do eiusmod nulla",
         "startTime": "2023-05-22T08:03:23",
         "stopTime": "2023-08-10T09:31:07",
         "technician": "Susanne Vinson",
@@ -765,7 +765,7 @@
     ]
   },
   {
-    "equipmentString": "USP302",
+    "name": "USP302",
     "description": "tempor aliqua exercitation dolor ipsum eiusmod sint dolor voluptate enim laborum consectetur",
     "online": true,
     "considered": true,
@@ -775,9 +775,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 29178,
-        "jobType": "Software",
-        "jobDescription": "do laboris nostrud dolor elit tempor velit est cillum esse",
+        "id": 29178,
+        "type": "Software",
+        "description": "do laboris nostrud dolor elit tempor velit est cillum esse",
         "startTime": "2023-01-09T05:19:57",
         "stopTime": "2023-08-17T03:09:23",
         "technician": "Kellie Chaney",
@@ -788,9 +788,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 88745,
-        "jobType": "Hardware",
-        "jobDescription": "veniam commodo pariatur cillum magna non cillum ad cillum dolor",
+        "id": 88745,
+        "type": "Hardware",
+        "description": "veniam commodo pariatur cillum magna non cillum ad cillum dolor",
         "startTime": "2022-12-04T03:09:35",
         "stopTime": "2023-08-23T07:53:16",
         "technician": "Tommie Hoover",
@@ -801,9 +801,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 59635,
-        "jobType": "Software",
-        "jobDescription": "commodo veniam voluptate esse id laborum pariatur dolore commodo voluptate",
+        "id": 59635,
+        "type": "Software",
+        "description": "commodo veniam voluptate esse id laborum pariatur dolore commodo voluptate",
         "startTime": "2023-05-29T04:43:50",
         "stopTime": "2023-08-24T02:07:58",
         "technician": "Bauer Little",
@@ -816,7 +816,7 @@
     ]
   },
   {
-    "equipmentString": "VAFY1",
+    "name": "VAFY1",
     "description": "tempor nulla ut ad ad irure eu amet adipisicing ullamco sunt enim",
     "online": true,
     "considered": false,
@@ -826,9 +826,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 22789,
-        "jobType": "IT Support",
-        "jobDescription": "sit irure eiusmod fugiat cillum do velit nulla laborum anim",
+        "id": 22789,
+        "type": "IT Support",
+        "description": "sit irure eiusmod fugiat cillum do velit nulla laborum anim",
         "startTime": "2023-07-02T10:56:19",
         "stopTime": "2023-08-28T06:33:08",
         "technician": "Cathryn Fulton",
@@ -839,9 +839,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 93482,
-        "jobType": "IT Support",
-        "jobDescription": "cupidatat dolore sit culpa duis dolore ullamco amet est aliqua",
+        "id": 93482,
+        "type": "IT Support",
+        "description": "cupidatat dolore sit culpa duis dolore ullamco amet est aliqua",
         "startTime": "2023-04-15T12:52:21",
         "stopTime": "2023-08-26T05:14:54",
         "technician": "Sabrina Bell",
@@ -852,9 +852,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 85876,
-        "jobType": "Maintenance",
-        "jobDescription": "sunt minim proident dolor ea dolore veniam esse proident adipisicing",
+        "id": 85876,
+        "type": "Maintenance",
+        "description": "sunt minim proident dolor ea dolore veniam esse proident adipisicing",
         "startTime": "2023-06-23T12:18:18",
         "stopTime": "2023-08-26T12:35:37",
         "technician": "Hatfield Carver",
@@ -867,7 +867,7 @@
     ]
   },
   {
-    "equipmentString": "USQ124",
+    "name": "USQ124",
     "description": "ad laboris qui aliqua fugiat aute magna sint culpa veniam et aliqua",
     "online": true,
     "considered": true,
@@ -877,9 +877,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 73593,
-        "jobType": "Hardware",
-        "jobDescription": "irure aliqua sunt tempor sunt aute proident occaecat esse velit",
+        "id": 73593,
+        "type": "Hardware",
+        "description": "irure aliqua sunt tempor sunt aute proident occaecat esse velit",
         "startTime": "2023-03-30T05:37:26",
         "stopTime": "2023-08-19T11:40:14",
         "technician": "White Mueller",
@@ -890,9 +890,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 37726,
-        "jobType": "Other",
-        "jobDescription": "nostrud cupidatat consectetur exercitation proident reprehenderit reprehenderit nulla consectetur cupidatat",
+        "id": 37726,
+        "type": "Other",
+        "description": "nostrud cupidatat consectetur exercitation proident reprehenderit reprehenderit nulla consectetur cupidatat",
         "startTime": "2022-12-03T07:55:03",
         "stopTime": "2023-08-10T11:38:03",
         "technician": "Baker Stephenson",
@@ -903,9 +903,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 69659,
-        "jobType": "Software",
-        "jobDescription": "velit aliqua irure consectetur qui culpa reprehenderit Lorem tempor non",
+        "id": 69659,
+        "type": "Software",
+        "description": "velit aliqua irure consectetur qui culpa reprehenderit Lorem tempor non",
         "startTime": "2023-04-13T10:37:54",
         "stopTime": "2023-08-12T07:48:41",
         "technician": "Kim Roman",
@@ -918,7 +918,7 @@
     ]
   },
   {
-    "equipmentString": "AHT170",
+    "name": "AHT170",
     "description": "aliquip deserunt pariatur dolore proident est dolor id nulla exercitation consectetur magna",
     "online": false,
     "considered": true,
@@ -928,9 +928,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 92703,
-        "jobType": "Other",
-        "jobDescription": "labore id officia cupidatat nostrud deserunt fugiat nisi labore ullamco",
+        "id": 92703,
+        "type": "Other",
+        "description": "labore id officia cupidatat nostrud deserunt fugiat nisi labore ullamco",
         "startTime": "2023-03-26T05:45:01",
         "stopTime": "2023-08-20T11:04:40",
         "technician": "Katharine Oneill",
@@ -941,9 +941,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 33332,
-        "jobType": "Maintenance",
-        "jobDescription": "labore exercitation aliqua occaecat reprehenderit do aute qui occaecat ad",
+        "id": 33332,
+        "type": "Maintenance",
+        "description": "labore exercitation aliqua occaecat reprehenderit do aute qui occaecat ad",
         "startTime": "2022-12-09T10:06:15",
         "stopTime": "2023-08-14T10:09:37",
         "technician": "Betty Mcdowell",
@@ -954,9 +954,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 56073,
-        "jobType": "IT Support",
-        "jobDescription": "qui ullamco ut culpa sint do duis labore aute sit",
+        "id": 56073,
+        "type": "IT Support",
+        "description": "qui ullamco ut culpa sint do duis labore aute sit",
         "startTime": "2023-05-24T08:52:23",
         "stopTime": "2023-08-29T04:24:57",
         "technician": "Dolly Watkins",
@@ -969,7 +969,7 @@
     ]
   },
   {
-    "equipmentString": "UNP100",
+    "name": "UNP100",
     "description": "eu aliqua eu dolor excepteur qui magna ad aute ut magna adipisicing",
     "online": false,
     "considered": true,
@@ -979,9 +979,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 67422,
-        "jobType": "Maintenance",
-        "jobDescription": "velit sint eiusmod adipisicing ad do tempor proident consectetur aliquip",
+        "id": 67422,
+        "type": "Maintenance",
+        "description": "velit sint eiusmod adipisicing ad do tempor proident consectetur aliquip",
         "startTime": "2023-03-10T02:28:10",
         "stopTime": "2023-08-22T04:46:15",
         "technician": "Powers Fernandez",
@@ -992,9 +992,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 77874,
-        "jobType": "Maintenance",
-        "jobDescription": "dolore esse mollit ullamco culpa eu exercitation nulla ea nisi",
+        "id": 77874,
+        "type": "Maintenance",
+        "description": "dolore esse mollit ullamco culpa eu exercitation nulla ea nisi",
         "startTime": "2023-02-15T06:30:31",
         "stopTime": "2023-08-16T05:02:54",
         "technician": "Abigail Benson",
@@ -1005,9 +1005,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 20462,
-        "jobType": "Hardware",
-        "jobDescription": "commodo qui proident irure voluptate ut sunt quis veniam consectetur",
+        "id": 20462,
+        "type": "Hardware",
+        "description": "commodo qui proident irure voluptate ut sunt quis veniam consectetur",
         "startTime": "2023-07-22T07:03:08",
         "stopTime": "2023-08-11T12:40:20",
         "technician": "Estrada Zamora",
@@ -1020,7 +1020,7 @@
     ]
   },
   {
-    "equipmentString": "ECEU7",
+    "name": "ECEU7",
     "description": "ex voluptate nisi sit voluptate tempor fugiat amet aliquip nisi occaecat sunt",
     "online": true,
     "considered": false,
@@ -1030,9 +1030,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 16651,
-        "jobType": "Maintenance",
-        "jobDescription": "consectetur proident proident sint ea adipisicing nostrud elit velit et",
+        "id": 16651,
+        "type": "Maintenance",
+        "description": "consectetur proident proident sint ea adipisicing nostrud elit velit et",
         "startTime": "2023-04-25T10:23:46",
         "stopTime": "2023-08-19T02:22:22",
         "technician": "Morgan Guerrero",
@@ -1043,9 +1043,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 39307,
-        "jobType": "Maintenance",
-        "jobDescription": "ut laboris sunt proident velit veniam sit veniam est nostrud",
+        "id": 39307,
+        "type": "Maintenance",
+        "description": "ut laboris sunt proident velit veniam sit veniam est nostrud",
         "startTime": "2023-07-23T09:22:36",
         "stopTime": "2023-08-29T08:06:07",
         "technician": "Luz Holman",
@@ -1056,9 +1056,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 48979,
-        "jobType": "Hardware",
-        "jobDescription": "reprehenderit aute ex aliquip labore labore est commodo veniam excepteur",
+        "id": 48979,
+        "type": "Hardware",
+        "description": "reprehenderit aute ex aliquip labore labore est commodo veniam excepteur",
         "startTime": "2023-08-06T10:28:05",
         "stopTime": "2023-08-19T07:42:20",
         "technician": "Rebecca Soto",
@@ -1071,7 +1071,7 @@
     ]
   },
   {
-    "equipmentString": "ANT75",
+    "name": "ANT75",
     "description": "Lorem aute voluptate ut in commodo amet voluptate pariatur consectetur incididunt nostrud",
     "online": true,
     "considered": false,
@@ -1081,9 +1081,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 75647,
-        "jobType": "Software",
-        "jobDescription": "voluptate amet ullamco labore excepteur velit esse irure ut pariatur",
+        "id": 75647,
+        "type": "Software",
+        "description": "voluptate amet ullamco labore excepteur velit esse irure ut pariatur",
         "startTime": "2023-02-22T10:39:35",
         "stopTime": "2023-08-11T02:16:53",
         "technician": "Christy Stevens",
@@ -1094,9 +1094,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 82731,
-        "jobType": "Other",
-        "jobDescription": "in excepteur nulla commodo dolor irure do dolor adipisicing magna",
+        "id": 82731,
+        "type": "Other",
+        "description": "in excepteur nulla commodo dolor irure do dolor adipisicing magna",
         "startTime": "2023-05-11T09:17:03",
         "stopTime": "2023-08-19T06:31:24",
         "technician": "Jill Ryan",
@@ -1107,9 +1107,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 69007,
-        "jobType": "Hardware",
-        "jobDescription": "adipisicing quis irure dolor sit dolor dolor ex ex nulla",
+        "id": 69007,
+        "type": "Hardware",
+        "description": "adipisicing quis irure dolor sit dolor dolor ex ex nulla",
         "startTime": "2023-07-03T09:57:00",
         "stopTime": "2023-08-09T04:37:15",
         "technician": "Travis Vang",
@@ -1122,7 +1122,7 @@
     ]
   },
   {
-    "equipmentString": "ANT140",
+    "name": "ANT140",
     "description": "consequat cillum dolore ad sunt aliqua dolore dolore cillum consectetur non aliqua",
     "online": true,
     "considered": false,
@@ -1132,9 +1132,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 82852,
-        "jobType": "Maintenance",
-        "jobDescription": "commodo do qui qui incididunt nisi non et proident in",
+        "id": 82852,
+        "type": "Maintenance",
+        "description": "commodo do qui qui incididunt nisi non et proident in",
         "startTime": "2023-06-13T01:53:03",
         "stopTime": "2023-08-15T11:47:14",
         "technician": "Kline Alvarez",
@@ -1145,9 +1145,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 57033,
-        "jobType": "Maintenance",
-        "jobDescription": "consectetur dolor exercitation proident ullamco reprehenderit in laboris magna id",
+        "id": 57033,
+        "type": "Maintenance",
+        "description": "consectetur dolor exercitation proident ullamco reprehenderit in laboris magna id",
         "startTime": "2022-12-31T06:44:38",
         "stopTime": "2023-08-19T06:15:20",
         "technician": "Candace Kemp",
@@ -1158,9 +1158,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 10523,
-        "jobType": "Software",
-        "jobDescription": "fugiat dolor sit enim cillum elit veniam ut excepteur deserunt",
+        "id": 10523,
+        "type": "Software",
+        "description": "fugiat dolor sit enim cillum elit veniam ut excepteur deserunt",
         "startTime": "2023-04-27T12:29:54",
         "stopTime": "2023-08-25T06:39:00",
         "technician": "Lucas Francis",
@@ -1173,7 +1173,7 @@
     ]
   },
   {
-    "equipmentString": "NKL251",
+    "name": "NKL251",
     "description": "culpa elit magna duis velit reprehenderit deserunt labore irure voluptate qui cillum",
     "online": true,
     "considered": true,
@@ -1183,9 +1183,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 27929,
-        "jobType": "Software",
-        "jobDescription": "amet aute quis enim enim ea aute magna aute ad",
+        "id": 27929,
+        "type": "Software",
+        "description": "amet aute quis enim enim ea aute magna aute ad",
         "startTime": "2023-03-27T09:25:52",
         "stopTime": "2023-08-26T11:10:26",
         "technician": "Graciela Moses",
@@ -1196,9 +1196,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 62790,
-        "jobType": "Other",
-        "jobDescription": "proident anim sunt sit ad ut elit irure dolore proident",
+        "id": 62790,
+        "type": "Other",
+        "description": "proident anim sunt sit ad ut elit irure dolore proident",
         "startTime": "2023-08-08T03:05:42",
         "stopTime": "2023-08-21T11:11:35",
         "technician": "Berry Short",
@@ -1209,9 +1209,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 38057,
-        "jobType": "Maintenance",
-        "jobDescription": "quis esse incididunt ea id exercitation cupidatat ullamco exercitation ea",
+        "id": 38057,
+        "type": "Maintenance",
+        "description": "quis esse incididunt ea id exercitation cupidatat ullamco exercitation ea",
         "startTime": "2023-05-22T03:45:31",
         "stopTime": "2023-08-16T11:06:57",
         "technician": "Rivera Juarez",
@@ -1224,7 +1224,7 @@
     ]
   },
   {
-    "equipmentString": "ANW07",
+    "name": "ANW07",
     "description": "duis ut labore proident ea qui magna exercitation esse amet ut non",
     "online": true,
     "considered": false,
@@ -1234,9 +1234,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 21097,
-        "jobType": "Other",
-        "jobDescription": "fugiat aliqua adipisicing sit esse veniam occaecat exercitation aute eu",
+        "id": 21097,
+        "type": "Other",
+        "description": "fugiat aliqua adipisicing sit esse veniam occaecat exercitation aute eu",
         "startTime": "2023-04-01T08:25:32",
         "stopTime": "2023-08-26T03:53:06",
         "technician": "Willis Clarke",
@@ -1247,9 +1247,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 13062,
-        "jobType": "Other",
-        "jobDescription": "consequat ea esse dolore labore do qui duis adipisicing velit",
+        "id": 13062,
+        "type": "Other",
+        "description": "consequat ea esse dolore labore do qui duis adipisicing velit",
         "startTime": "2023-05-10T08:07:03",
         "stopTime": "2023-08-18T12:55:51",
         "technician": "Perkins Bean",
@@ -1260,9 +1260,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 86385,
-        "jobType": "Hardware",
-        "jobDescription": "voluptate cillum aute voluptate officia in ut aliqua veniam quis",
+        "id": 86385,
+        "type": "Hardware",
+        "description": "voluptate cillum aute voluptate officia in ut aliqua veniam quis",
         "startTime": "2023-04-02T02:05:35",
         "stopTime": "2023-08-16T12:11:43",
         "technician": "Ford Haley",
@@ -1275,7 +1275,7 @@
     ]
   },
   {
-    "equipmentString": "USQ154",
+    "name": "USQ154",
     "description": "anim ea aliquip mollit laboris duis nostrud tempor commodo labore culpa eiusmod",
     "online": false,
     "considered": true,
@@ -1285,9 +1285,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 96694,
-        "jobType": "Hardware",
-        "jobDescription": "amet ipsum elit do irure labore culpa ut magna adipisicing",
+        "id": 96694,
+        "type": "Hardware",
+        "description": "amet ipsum elit do irure labore culpa ut magna adipisicing",
         "startTime": "2023-02-06T04:09:06",
         "stopTime": "2023-08-13T12:46:50",
         "technician": "Tracy French",
@@ -1298,9 +1298,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 19151,
-        "jobType": "Software",
-        "jobDescription": "consequat labore nisi ad Lorem eu nostrud anim excepteur dolore",
+        "id": 19151,
+        "type": "Software",
+        "description": "consequat labore nisi ad Lorem eu nostrud anim excepteur dolore",
         "startTime": "2023-04-29T06:46:29",
         "stopTime": "2023-08-25T06:30:35",
         "technician": "Cherry Ramos",
@@ -1311,9 +1311,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 22132,
-        "jobType": "Hardware",
-        "jobDescription": "occaecat ex aliqua occaecat ad ipsum occaecat mollit ipsum proident",
+        "id": 22132,
+        "type": "Hardware",
+        "description": "occaecat ex aliqua occaecat ad ipsum occaecat mollit ipsum proident",
         "startTime": "2023-04-29T07:33:53",
         "stopTime": "2023-08-17T10:42:18",
         "technician": "Weaver Jenkins",
@@ -1326,7 +1326,7 @@
     ]
   },
   {
-    "equipmentString": "ECEC1",
+    "name": "ECEC1",
     "description": "et labore aliquip dolore mollit sunt reprehenderit deserunt est qui ea proident",
     "online": true,
     "considered": false,
@@ -1336,9 +1336,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 88870,
-        "jobType": "IT Support",
-        "jobDescription": "labore velit enim ea aute laborum eu quis veniam nulla",
+        "id": 88870,
+        "type": "IT Support",
+        "description": "labore velit enim ea aute laborum eu quis veniam nulla",
         "startTime": "2023-04-24T01:47:13",
         "stopTime": "2023-08-26T01:50:06",
         "technician": "Latisha Meyer",
@@ -1349,9 +1349,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 42970,
-        "jobType": "Hardware",
-        "jobDescription": "incididunt dolore laborum labore aliquip laborum occaecat anim commodo fugiat",
+        "id": 42970,
+        "type": "Hardware",
+        "description": "incididunt dolore laborum labore aliquip laborum occaecat anim commodo fugiat",
         "startTime": "2023-02-15T10:52:36",
         "stopTime": "2023-08-16T08:51:46",
         "technician": "Barnett Burnett",
@@ -1362,9 +1362,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 38370,
-        "jobType": "Other",
-        "jobDescription": "cupidatat sint sunt in ea duis occaecat enim irure ea",
+        "id": 38370,
+        "type": "Other",
+        "description": "cupidatat sint sunt in ea duis occaecat enim irure ea",
         "startTime": "2023-04-04T04:11:50",
         "stopTime": "2023-08-09T09:51:20",
         "technician": "Heather Norman",
@@ -1377,7 +1377,7 @@
     ]
   },
   {
-    "equipmentString": "VAFY4",
+    "name": "VAFY4",
     "description": "pariatur excepteur ex elit ea amet eiusmod occaecat dolor consectetur minim excepteur",
     "online": false,
     "considered": true,
@@ -1387,9 +1387,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 93984,
-        "jobType": "Hardware",
-        "jobDescription": "voluptate tempor in id fugiat excepteur laborum dolore cupidatat reprehenderit",
+        "id": 93984,
+        "type": "Hardware",
+        "description": "voluptate tempor in id fugiat excepteur laborum dolore cupidatat reprehenderit",
         "startTime": "2023-05-03T02:37:12",
         "stopTime": "2023-08-30T02:47:01",
         "technician": "Daugherty Hicks",
@@ -1400,9 +1400,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 33505,
-        "jobType": "IT Support",
-        "jobDescription": "dolore nulla est do culpa adipisicing laborum officia enim qui",
+        "id": 33505,
+        "type": "IT Support",
+        "description": "dolore nulla est do culpa adipisicing laborum officia enim qui",
         "startTime": "2022-12-10T03:43:20",
         "stopTime": "2023-08-28T03:12:20",
         "technician": "Shauna Lopez",
@@ -1413,9 +1413,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 98454,
-        "jobType": "Software",
-        "jobDescription": "do proident fugiat pariatur qui amet fugiat proident cupidatat id",
+        "id": 98454,
+        "type": "Software",
+        "description": "do proident fugiat pariatur qui amet fugiat proident cupidatat id",
         "startTime": "2023-02-19T02:51:02",
         "stopTime": "2023-08-20T02:03:34",
         "technician": "Nguyen Briggs",
@@ -1428,7 +1428,7 @@
     ]
   },
   {
-    "equipmentString": "VAFY5",
+    "name": "VAFY5",
     "description": "tempor do dolore velit sunt exercitation ipsum dolore quis esse quis adipisicing",
     "online": true,
     "considered": true,
@@ -1438,9 +1438,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 18993,
-        "jobType": "Other",
-        "jobDescription": "fugiat incididunt proident veniam magna cupidatat reprehenderit nostrud laborum mollit",
+        "id": 18993,
+        "type": "Other",
+        "description": "fugiat incididunt proident veniam magna cupidatat reprehenderit nostrud laborum mollit",
         "startTime": "2023-04-21T11:43:32",
         "stopTime": "2023-08-29T02:58:45",
         "technician": "Woodward Chambers",
@@ -1451,9 +1451,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 50679,
-        "jobType": "IT Support",
-        "jobDescription": "elit mollit minim eu enim ea nostrud esse ut amet",
+        "id": 50679,
+        "type": "IT Support",
+        "description": "elit mollit minim eu enim ea nostrud esse ut amet",
         "startTime": "2022-12-25T04:40:20",
         "stopTime": "2023-08-22T10:50:17",
         "technician": "Jami Emerson",
@@ -1464,9 +1464,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 54204,
-        "jobType": "Other",
-        "jobDescription": "sint officia nisi et aliqua fugiat pariatur officia sint dolore",
+        "id": 54204,
+        "type": "Other",
+        "description": "sint officia nisi et aliqua fugiat pariatur officia sint dolore",
         "startTime": "2023-04-19T01:10:56",
         "stopTime": "2023-08-17T03:20:05",
         "technician": "Mable Crane",
@@ -1479,7 +1479,7 @@
     ]
   },
   {
-    "equipmentString": "SFEP8CH1",
+    "name": "SFEP8CH1",
     "description": "elit pariatur aliquip irure aute commodo laboris commodo exercitation ipsum sunt elit",
     "online": false,
     "considered": true,
@@ -1489,9 +1489,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 67830,
-        "jobType": "Maintenance",
-        "jobDescription": "magna duis labore esse aliquip excepteur occaecat ea irure enim",
+        "id": 67830,
+        "type": "Maintenance",
+        "description": "magna duis labore esse aliquip excepteur occaecat ea irure enim",
         "startTime": "2023-05-25T10:54:02",
         "stopTime": "2023-08-21T09:45:53",
         "technician": "Judy Cleveland",
@@ -1502,9 +1502,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 67806,
-        "jobType": "Other",
-        "jobDescription": "ipsum et mollit quis cillum pariatur laboris labore minim ex",
+        "id": 67806,
+        "type": "Other",
+        "description": "ipsum et mollit quis cillum pariatur laboris labore minim ex",
         "startTime": "2023-06-09T01:39:32",
         "stopTime": "2023-08-10T05:37:58",
         "technician": "Pam Jordan",
@@ -1515,9 +1515,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 17877,
-        "jobType": "Other",
-        "jobDescription": "dolor do consectetur aliquip duis nulla ad occaecat nulla laborum",
+        "id": 17877,
+        "type": "Other",
+        "description": "dolor do consectetur aliquip duis nulla ad occaecat nulla laborum",
         "startTime": "2023-04-13T03:52:32",
         "stopTime": "2023-08-19T03:20:12",
         "technician": "Medina Mullen",
@@ -1530,7 +1530,7 @@
     ]
   },
   {
-    "equipmentString": "ANT85",
+    "name": "ANT85",
     "description": "est commodo exercitation et exercitation ut culpa aute mollit nostrud nisi ad",
     "online": false,
     "considered": true,
@@ -1540,9 +1540,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 84470,
-        "jobType": "Other",
-        "jobDescription": "sit in deserunt ullamco pariatur excepteur culpa et eiusmod ea",
+        "id": 84470,
+        "type": "Other",
+        "description": "sit in deserunt ullamco pariatur excepteur culpa et eiusmod ea",
         "startTime": "2023-02-26T02:03:13",
         "stopTime": "2023-08-21T02:28:56",
         "technician": "Velma Gallegos",
@@ -1553,9 +1553,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 86828,
-        "jobType": "Maintenance",
-        "jobDescription": "ullamco cillum exercitation cupidatat commodo tempor veniam excepteur dolor ad",
+        "id": 86828,
+        "type": "Maintenance",
+        "description": "ullamco cillum exercitation cupidatat commodo tempor veniam excepteur dolor ad",
         "startTime": "2022-12-08T08:44:21",
         "stopTime": "2023-08-22T09:54:00",
         "technician": "Genevieve Duncan",
@@ -1566,9 +1566,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 85004,
-        "jobType": "Maintenance",
-        "jobDescription": "nostrud Lorem ea quis minim culpa enim duis duis aliquip",
+        "id": 85004,
+        "type": "Maintenance",
+        "description": "nostrud Lorem ea quis minim culpa enim duis duis aliquip",
         "startTime": "2022-12-13T10:26:54",
         "stopTime": "2023-08-12T06:57:37",
         "technician": "Kirk Floyd",
@@ -1581,7 +1581,7 @@
     ]
   },
   {
-    "equipmentString": "BAFB4",
+    "name": "BAFB4",
     "description": "magna aliquip ipsum sit occaecat aliquip mollit officia esse et aute qui",
     "online": false,
     "considered": true,
@@ -1591,9 +1591,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 85227,
-        "jobType": "Software",
-        "jobDescription": "nisi cillum mollit fugiat aute deserunt ipsum ex amet Lorem",
+        "id": 85227,
+        "type": "Software",
+        "description": "nisi cillum mollit fugiat aute deserunt ipsum ex amet Lorem",
         "startTime": "2023-07-26T01:31:53",
         "stopTime": "2023-08-25T05:36:44",
         "technician": "Gallagher Pitts",
@@ -1604,9 +1604,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 41692,
-        "jobType": "Maintenance",
-        "jobDescription": "minim consequat fugiat dolore id ullamco ipsum excepteur fugiat mollit",
+        "id": 41692,
+        "type": "Maintenance",
+        "description": "minim consequat fugiat dolore id ullamco ipsum excepteur fugiat mollit",
         "startTime": "2023-04-17T04:40:27",
         "stopTime": "2023-08-24T09:38:41",
         "technician": "Berg Brennan",
@@ -1617,9 +1617,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 86288,
-        "jobType": "Software",
-        "jobDescription": "non aliquip sit ut id officia cillum nulla adipisicing exercitation",
+        "id": 86288,
+        "type": "Software",
+        "description": "non aliquip sit ut id officia cillum nulla adipisicing exercitation",
         "startTime": "2023-07-08T10:23:00",
         "stopTime": "2023-08-18T04:38:59",
         "technician": "Dawn Dillard",
@@ -1632,7 +1632,7 @@
     ]
   },
   {
-    "equipmentString": "VAFY6",
+    "name": "VAFY6",
     "description": "voluptate veniam exercitation irure eiusmod et proident aliquip non ex sit consequat",
     "online": false,
     "considered": true,
@@ -1642,9 +1642,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 15109,
-        "jobType": "Other",
-        "jobDescription": "cupidatat minim cillum culpa et duis qui ad nulla pariatur",
+        "id": 15109,
+        "type": "Other",
+        "description": "cupidatat minim cillum culpa et duis qui ad nulla pariatur",
         "startTime": "2023-06-29T04:32:02",
         "stopTime": "2023-08-24T08:26:55",
         "technician": "Kim Villarreal",
@@ -1655,9 +1655,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 83932,
-        "jobType": "Software",
-        "jobDescription": "exercitation do culpa officia nulla dolore qui commodo dolore do",
+        "id": 83932,
+        "type": "Software",
+        "description": "exercitation do culpa officia nulla dolore qui commodo dolore do",
         "startTime": "2023-03-13T07:18:21",
         "stopTime": "2023-08-24T12:48:28",
         "technician": "Mcneil Levine",
@@ -1668,9 +1668,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 50391,
-        "jobType": "Hardware",
-        "jobDescription": "velit et anim duis ad nisi aliqua voluptate est officia",
+        "id": 50391,
+        "type": "Hardware",
+        "description": "velit et anim duis ad nisi aliqua voluptate est officia",
         "startTime": "2023-06-25T04:58:32",
         "stopTime": "2023-08-19T06:47:32",
         "technician": "Belinda Padilla",
@@ -1683,7 +1683,7 @@
     ]
   },
   {
-    "equipmentString": "USQ164",
+    "name": "USQ164",
     "description": "voluptate id irure reprehenderit laborum et aute in nisi culpa ex enim",
     "online": false,
     "considered": false,
@@ -1693,9 +1693,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 67422,
-        "jobType": "Software",
-        "jobDescription": "anim dolor culpa ullamco ipsum deserunt in laboris aliquip ea",
+        "id": 67422,
+        "type": "Software",
+        "description": "anim dolor culpa ullamco ipsum deserunt in laboris aliquip ea",
         "startTime": "2022-12-10T07:27:10",
         "stopTime": "2023-08-15T06:47:25",
         "technician": "Dean Dejesus",
@@ -1706,9 +1706,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 41366,
-        "jobType": "Other",
-        "jobDescription": "ullamco officia deserunt quis aute ut do ut sunt ad",
+        "id": 41366,
+        "type": "Other",
+        "description": "ullamco officia deserunt quis aute ut do ut sunt ad",
         "startTime": "2023-07-22T09:01:08",
         "stopTime": "2023-08-22T03:12:54",
         "technician": "Debra Hill",
@@ -1719,9 +1719,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 89983,
-        "jobType": "Hardware",
-        "jobDescription": "ut non dolore excepteur irure anim et nostrud et amet",
+        "id": 89983,
+        "type": "Hardware",
+        "description": "ut non dolore excepteur irure anim et nostrud et amet",
         "startTime": "2023-07-06T07:51:35",
         "stopTime": "2023-08-16T07:35:05",
         "technician": "Hays Warner",
@@ -1734,7 +1734,7 @@
     ]
   },
   {
-    "equipmentString": "WS192",
+    "name": "WS192",
     "description": "velit reprehenderit aute mollit in magna labore incididunt ea nulla mollit esse",
     "online": false,
     "considered": false,
@@ -1744,9 +1744,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 87984,
-        "jobType": "IT Support",
-        "jobDescription": "nostrud culpa qui occaecat anim labore enim sint enim voluptate",
+        "id": 87984,
+        "type": "IT Support",
+        "description": "nostrud culpa qui occaecat anim labore enim sint enim voluptate",
         "startTime": "2023-06-21T03:01:50",
         "stopTime": "2023-08-19T08:36:39",
         "technician": "Rosanne Davenport",
@@ -1757,9 +1757,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 63839,
-        "jobType": "Hardware",
-        "jobDescription": "commodo velit eiusmod est voluptate non ullamco nostrud voluptate Lorem",
+        "id": 63839,
+        "type": "Hardware",
+        "description": "commodo velit eiusmod est voluptate non ullamco nostrud voluptate Lorem",
         "startTime": "2023-06-01T08:53:00",
         "stopTime": "2023-08-20T12:58:31",
         "technician": "Hogan Bowers",
@@ -1770,9 +1770,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 61692,
-        "jobType": "Maintenance",
-        "jobDescription": "laboris minim nisi duis proident nulla fugiat cupidatat nulla exercitation",
+        "id": 61692,
+        "type": "Maintenance",
+        "description": "laboris minim nisi duis proident nulla fugiat cupidatat nulla exercitation",
         "startTime": "2023-04-09T07:41:01",
         "stopTime": "2023-08-31T07:04:52",
         "technician": "Fulton Sargent",
@@ -1785,7 +1785,7 @@
     ]
   },
   {
-    "equipmentString": "ECEC9",
+    "name": "ECEC9",
     "description": "in nulla eu sit reprehenderit consectetur id consectetur qui aute quis ullamco",
     "online": false,
     "considered": false,
@@ -1795,9 +1795,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 95997,
-        "jobType": "Hardware",
-        "jobDescription": "voluptate laborum consequat eu anim est aliqua voluptate voluptate dolor",
+        "id": 95997,
+        "type": "Hardware",
+        "description": "voluptate laborum consequat eu anim est aliqua voluptate voluptate dolor",
         "startTime": "2023-08-04T07:18:03",
         "stopTime": "2023-08-18T07:00:07",
         "technician": "Lacy Golden",
@@ -1808,9 +1808,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 31827,
-        "jobType": "IT Support",
-        "jobDescription": "esse sit commodo amet non veniam commodo mollit excepteur fugiat",
+        "id": 31827,
+        "type": "IT Support",
+        "description": "esse sit commodo amet non veniam commodo mollit excepteur fugiat",
         "startTime": "2023-05-18T11:58:40",
         "stopTime": "2023-08-11T01:24:43",
         "technician": "Norma Fowler",
@@ -1821,9 +1821,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 80190,
-        "jobType": "IT Support",
-        "jobDescription": "ullamco aliquip aliqua est incididunt ad id fugiat nisi voluptate",
+        "id": 80190,
+        "type": "IT Support",
+        "description": "ullamco aliquip aliqua est incididunt ad id fugiat nisi voluptate",
         "startTime": "2023-05-04T12:24:15",
         "stopTime": "2023-08-09T09:27:41",
         "technician": "Kaye Savage",
@@ -1836,7 +1836,7 @@
     ]
   },
   {
-    "equipmentString": "NKL253",
+    "name": "NKL253",
     "description": "aute veniam officia exercitation officia sint dolore adipisicing do ullamco dolor culpa",
     "online": true,
     "considered": true,
@@ -1846,9 +1846,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 18948,
-        "jobType": "Other",
-        "jobDescription": "esse nisi deserunt cupidatat aute consectetur eu voluptate labore nisi",
+        "id": 18948,
+        "type": "Other",
+        "description": "esse nisi deserunt cupidatat aute consectetur eu voluptate labore nisi",
         "startTime": "2023-02-19T04:14:41",
         "stopTime": "2023-08-13T10:35:54",
         "technician": "Alyce Witt",
@@ -1859,9 +1859,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 59251,
-        "jobType": "Other",
-        "jobDescription": "et consequat minim aute qui commodo ea velit excepteur enim",
+        "id": 59251,
+        "type": "Other",
+        "description": "et consequat minim aute qui commodo ea velit excepteur enim",
         "startTime": "2023-02-02T10:36:32",
         "stopTime": "2023-08-10T07:51:05",
         "technician": "Carole Benton",
@@ -1872,9 +1872,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 14337,
-        "jobType": "IT Support",
-        "jobDescription": "eiusmod sint reprehenderit sit velit voluptate laborum proident id voluptate",
+        "id": 14337,
+        "type": "IT Support",
+        "description": "eiusmod sint reprehenderit sit velit voluptate laborum proident id voluptate",
         "startTime": "2023-03-27T02:47:16",
         "stopTime": "2023-08-24T08:32:28",
         "technician": "Caitlin Head",
@@ -1887,7 +1887,7 @@
     ]
   },
   {
-    "equipmentString": "USP174",
+    "name": "USP174",
     "description": "consectetur nisi sit et laboris irure duis officia ex eu et ex",
     "online": false,
     "considered": false,
@@ -1897,9 +1897,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 98502,
-        "jobType": "Hardware",
-        "jobDescription": "id nostrud culpa fugiat sunt enim sint mollit nostrud eiusmod",
+        "id": 98502,
+        "type": "Hardware",
+        "description": "id nostrud culpa fugiat sunt enim sint mollit nostrud eiusmod",
         "startTime": "2023-01-24T03:33:33",
         "stopTime": "2023-08-14T06:01:12",
         "technician": "Stout Moore",
@@ -1910,9 +1910,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 32941,
-        "jobType": "Maintenance",
-        "jobDescription": "excepteur irure mollit est est velit nostrud dolor esse ad",
+        "id": 32941,
+        "type": "Maintenance",
+        "description": "excepteur irure mollit est est velit nostrud dolor esse ad",
         "startTime": "2022-12-31T12:11:42",
         "stopTime": "2023-08-26T05:58:53",
         "technician": "Deann Mosley",
@@ -1923,9 +1923,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 67709,
-        "jobType": "Other",
-        "jobDescription": "officia voluptate quis nisi adipisicing ullamco in cupidatat nostrud enim",
+        "id": 67709,
+        "type": "Other",
+        "description": "officia voluptate quis nisi adipisicing ullamco in cupidatat nostrud enim",
         "startTime": "2022-12-05T02:18:04",
         "stopTime": "2023-08-30T09:42:18",
         "technician": "Elvira Baldwin",
@@ -1938,7 +1938,7 @@
     ]
   },
   {
-    "equipmentString": "USP2M6",
+    "name": "USP2M6",
     "description": "dolor do esse sunt ad proident voluptate mollit occaecat enim ea sunt",
     "online": false,
     "considered": false,
@@ -1948,9 +1948,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 35102,
-        "jobType": "Maintenance",
-        "jobDescription": "sint ad duis ut pariatur adipisicing nostrud magna ipsum consequat",
+        "id": 35102,
+        "type": "Maintenance",
+        "description": "sint ad duis ut pariatur adipisicing nostrud magna ipsum consequat",
         "startTime": "2023-03-16T04:22:12",
         "stopTime": "2023-08-21T11:46:31",
         "technician": "Angela Butler",
@@ -1961,9 +1961,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 56150,
-        "jobType": "IT Support",
-        "jobDescription": "ad elit esse sunt esse fugiat consequat ipsum laboris quis",
+        "id": 56150,
+        "type": "IT Support",
+        "description": "ad elit esse sunt esse fugiat consequat ipsum laboris quis",
         "startTime": "2023-07-05T10:31:02",
         "stopTime": "2023-08-13T01:26:05",
         "technician": "Bennett Farmer",
@@ -1974,9 +1974,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 64085,
-        "jobType": "Software",
-        "jobDescription": "cillum irure labore adipisicing aliquip occaecat ut Lorem consequat veniam",
+        "id": 64085,
+        "type": "Software",
+        "description": "cillum irure labore adipisicing aliquip occaecat ut Lorem consequat veniam",
         "startTime": "2023-01-12T08:09:05",
         "stopTime": "2023-08-14T05:51:20",
         "technician": "Fay Ellison",
@@ -1989,7 +1989,7 @@
     ]
   },
   {
-    "equipmentString": "BAFB8",
+    "name": "BAFB8",
     "description": "minim incididunt proident irure eiusmod sint nisi magna proident dolore veniam dolore",
     "online": false,
     "considered": false,
@@ -1999,9 +1999,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 84658,
-        "jobType": "Maintenance",
-        "jobDescription": "elit adipisicing qui et reprehenderit duis id ipsum ad anim",
+        "id": 84658,
+        "type": "Maintenance",
+        "description": "elit adipisicing qui et reprehenderit duis id ipsum ad anim",
         "startTime": "2023-03-02T10:27:53",
         "stopTime": "2023-08-15T09:43:46",
         "technician": "Marva Reilly",
@@ -2012,9 +2012,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 61454,
-        "jobType": "Hardware",
-        "jobDescription": "eu sint do aute et ad sint consequat culpa amet",
+        "id": 61454,
+        "type": "Hardware",
+        "description": "eu sint do aute et ad sint consequat culpa amet",
         "startTime": "2023-05-10T06:56:09",
         "stopTime": "2023-08-17T12:27:30",
         "technician": "Sharpe Dunn",
@@ -2025,9 +2025,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 39018,
-        "jobType": "Software",
-        "jobDescription": "Lorem officia cupidatat ad laborum nisi adipisicing irure non eiusmod",
+        "id": 39018,
+        "type": "Software",
+        "description": "Lorem officia cupidatat ad laborum nisi adipisicing irure non eiusmod",
         "startTime": "2023-04-23T09:07:50",
         "stopTime": "2023-08-29T02:23:49",
         "technician": "Mcdaniel Atkinson",
@@ -2040,7 +2040,7 @@
     ]
   },
   {
-    "equipmentString": "SFE378C2",
+    "name": "SFE378C2",
     "description": "nisi reprehenderit incididunt duis consectetur irure cupidatat sit proident incididunt do nostrud",
     "online": true,
     "considered": true,
@@ -2050,9 +2050,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 66304,
-        "jobType": "Maintenance",
-        "jobDescription": "incididunt voluptate ex veniam deserunt ipsum cupidatat aliqua non ea",
+        "id": 66304,
+        "type": "Maintenance",
+        "description": "incididunt voluptate ex veniam deserunt ipsum cupidatat aliqua non ea",
         "startTime": "2023-06-28T04:28:02",
         "stopTime": "2023-08-10T11:15:18",
         "technician": "Madge Walls",
@@ -2063,9 +2063,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 39036,
-        "jobType": "Other",
-        "jobDescription": "velit exercitation sint eu sunt consectetur ullamco aute adipisicing id",
+        "id": 39036,
+        "type": "Other",
+        "description": "velit exercitation sint eu sunt consectetur ullamco aute adipisicing id",
         "startTime": "2023-02-03T09:03:35",
         "stopTime": "2023-08-18T07:04:17",
         "technician": "Mcintyre Schneider",
@@ -2076,9 +2076,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 41460,
-        "jobType": "Hardware",
-        "jobDescription": "eu cillum Lorem aliquip culpa est adipisicing laboris non officia",
+        "id": 41460,
+        "type": "Hardware",
+        "description": "eu cillum Lorem aliquip culpa est adipisicing laboris non officia",
         "startTime": "2023-05-27T03:45:14",
         "stopTime": "2023-08-27T02:51:24",
         "technician": "Ollie Young",
@@ -2091,7 +2091,7 @@
     ]
   },
   {
-    "equipmentString": "VAFT1",
+    "name": "VAFT1",
     "description": "est commodo eu mollit dolore reprehenderit mollit fugiat eu excepteur minim sunt",
     "online": true,
     "considered": true,
@@ -2101,9 +2101,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 16400,
-        "jobType": "Software",
-        "jobDescription": "ipsum nulla labore non in non sunt reprehenderit in consequat",
+        "id": 16400,
+        "type": "Software",
+        "description": "ipsum nulla labore non in non sunt reprehenderit in consequat",
         "startTime": "2022-12-24T03:17:38",
         "stopTime": "2023-08-15T08:24:12",
         "technician": "Kelly Cruz",
@@ -2114,9 +2114,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 89275,
-        "jobType": "Hardware",
-        "jobDescription": "exercitation commodo mollit reprehenderit adipisicing sunt adipisicing exercitation dolor proident",
+        "id": 89275,
+        "type": "Hardware",
+        "description": "exercitation commodo mollit reprehenderit adipisicing sunt adipisicing exercitation dolor proident",
         "startTime": "2023-05-15T09:43:28",
         "stopTime": "2023-08-20T08:13:42",
         "technician": "Ruthie Bender",
@@ -2127,9 +2127,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 80075,
-        "jobType": "Hardware",
-        "jobDescription": "id Lorem et dolore ut aliquip in laborum veniam velit",
+        "id": 80075,
+        "type": "Hardware",
+        "description": "id Lorem et dolore ut aliquip in laborum veniam velit",
         "startTime": "2023-06-14T01:26:51",
         "stopTime": "2023-08-11T02:45:14",
         "technician": "Evelyn Santiago",
@@ -2142,7 +2142,7 @@
     ]
   },
   {
-    "equipmentString": "ANT233",
+    "name": "ANT233",
     "description": "nulla id quis voluptate sint culpa officia cupidatat eiusmod exercitation ullamco exercitation",
     "online": true,
     "considered": true,
@@ -2152,9 +2152,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 34677,
-        "jobType": "Maintenance",
-        "jobDescription": "elit sint minim ullamco in Lorem ad duis nostrud labore",
+        "id": 34677,
+        "type": "Maintenance",
+        "description": "elit sint minim ullamco in Lorem ad duis nostrud labore",
         "startTime": "2023-07-31T07:52:23",
         "stopTime": "2023-08-22T10:17:44",
         "technician": "Chaney Mayo",
@@ -2165,9 +2165,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 51320,
-        "jobType": "Hardware",
-        "jobDescription": "sunt occaecat consequat Lorem aute voluptate in consectetur sunt ullamco",
+        "id": 51320,
+        "type": "Hardware",
+        "description": "sunt occaecat consequat Lorem aute voluptate in consectetur sunt ullamco",
         "startTime": "2023-03-23T09:06:39",
         "stopTime": "2023-08-23T11:44:33",
         "technician": "Howe Murray",
@@ -2178,9 +2178,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 25584,
-        "jobType": "IT Support",
-        "jobDescription": "ullamco aliqua nulla velit nostrud anim consequat ad cillum tempor",
+        "id": 25584,
+        "type": "IT Support",
+        "description": "ullamco aliqua nulla velit nostrud anim consequat ad cillum tempor",
         "startTime": "2023-03-01T04:14:39",
         "stopTime": "2023-08-23T06:04:57",
         "technician": "Ross Bryan",
@@ -2193,7 +2193,7 @@
     ]
   },
   {
-    "equipmentString": "ECEE7",
+    "name": "ECEE7",
     "description": "est est culpa aute magna deserunt mollit dolore laboris elit dolor laborum",
     "online": false,
     "considered": true,
@@ -2203,9 +2203,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 30198,
-        "jobType": "IT Support",
-        "jobDescription": "mollit et consectetur amet occaecat aute consectetur sit sint est",
+        "id": 30198,
+        "type": "IT Support",
+        "description": "mollit et consectetur amet occaecat aute consectetur sit sint est",
         "startTime": "2023-06-28T03:07:40",
         "stopTime": "2023-08-16T05:31:52",
         "technician": "Penelope Newton",
@@ -2216,9 +2216,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 64392,
-        "jobType": "Software",
-        "jobDescription": "commodo fugiat consequat id elit qui quis ad qui excepteur",
+        "id": 64392,
+        "type": "Software",
+        "description": "commodo fugiat consequat id elit qui quis ad qui excepteur",
         "startTime": "2023-07-11T10:16:43",
         "stopTime": "2023-08-17T01:38:59",
         "technician": "Roman Nolan",
@@ -2229,9 +2229,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 42289,
-        "jobType": "Maintenance",
-        "jobDescription": "magna minim sit velit nisi mollit aute do consectetur irure",
+        "id": 42289,
+        "type": "Maintenance",
+        "description": "magna minim sit velit nisi mollit aute do consectetur irure",
         "startTime": "2023-01-11T10:49:35",
         "stopTime": "2023-08-08T09:20:04",
         "technician": "Helene Bass",
@@ -2244,7 +2244,7 @@
     ]
   },
   {
-    "equipmentString": "VAFT2",
+    "name": "VAFT2",
     "description": "ut occaecat aute mollit aliquip reprehenderit anim pariatur ipsum duis qui occaecat",
     "online": false,
     "considered": true,
@@ -2254,9 +2254,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 48144,
-        "jobType": "Other",
-        "jobDescription": "deserunt in pariatur ut exercitation labore deserunt occaecat enim minim",
+        "id": 48144,
+        "type": "Other",
+        "description": "deserunt in pariatur ut exercitation labore deserunt occaecat enim minim",
         "startTime": "2023-05-14T03:02:32",
         "stopTime": "2023-08-25T03:12:36",
         "technician": "Fitzgerald Houston",
@@ -2267,9 +2267,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 69913,
-        "jobType": "IT Support",
-        "jobDescription": "ea cillum ut dolor occaecat eiusmod commodo eu ipsum amet",
+        "id": 69913,
+        "type": "IT Support",
+        "description": "ea cillum ut dolor occaecat eiusmod commodo eu ipsum amet",
         "startTime": "2023-03-26T07:47:15",
         "stopTime": "2023-08-16T02:59:47",
         "technician": "Kaufman Dean",
@@ -2280,9 +2280,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 69259,
-        "jobType": "Other",
-        "jobDescription": "voluptate minim excepteur sunt id sunt proident excepteur dolore mollit",
+        "id": 69259,
+        "type": "Other",
+        "description": "voluptate minim excepteur sunt id sunt proident excepteur dolore mollit",
         "startTime": "2023-05-06T08:26:14",
         "stopTime": "2023-08-26T10:08:13",
         "technician": "Aileen Ayers",
@@ -2295,7 +2295,7 @@
     ]
   },
   {
-    "equipmentString": "SFE09CH1",
+    "name": "SFE09CH1",
     "description": "aute et in voluptate labore sunt anim excepteur excepteur sit ullamco ut",
     "online": false,
     "considered": true,
@@ -2305,9 +2305,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 92857,
-        "jobType": "Hardware",
-        "jobDescription": "dolore tempor ea qui commodo pariatur nulla reprehenderit nisi sint",
+        "id": 92857,
+        "type": "Hardware",
+        "description": "dolore tempor ea qui commodo pariatur nulla reprehenderit nisi sint",
         "startTime": "2023-05-27T10:11:16",
         "stopTime": "2023-08-23T04:04:14",
         "technician": "Mckee Castro",
@@ -2318,9 +2318,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 61111,
-        "jobType": "IT Support",
-        "jobDescription": "sunt dolor ea exercitation elit elit elit eiusmod nostrud ex",
+        "id": 61111,
+        "type": "IT Support",
+        "description": "sunt dolor ea exercitation elit elit elit eiusmod nostrud ex",
         "startTime": "2023-03-16T05:42:29",
         "stopTime": "2023-08-14T07:11:20",
         "technician": "Karyn Dotson",
@@ -2331,9 +2331,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 21833,
-        "jobType": "Maintenance",
-        "jobDescription": "labore est cupidatat dolore quis quis non minim ad adipisicing",
+        "id": 21833,
+        "type": "Maintenance",
+        "description": "labore est cupidatat dolore quis quis non minim ad adipisicing",
         "startTime": "2023-01-07T07:09:13",
         "stopTime": "2023-08-23T05:35:22",
         "technician": "Bryant Clay",
@@ -2346,7 +2346,7 @@
     ]
   },
   {
-    "equipmentString": "VAFT3",
+    "name": "VAFT3",
     "description": "est aute est qui quis reprehenderit dolore aute aute non excepteur sint",
     "online": false,
     "considered": true,
@@ -2356,9 +2356,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 73088,
-        "jobType": "Hardware",
-        "jobDescription": "sit nulla dolore sit incididunt mollit veniam fugiat pariatur adipisicing",
+        "id": 73088,
+        "type": "Hardware",
+        "description": "sit nulla dolore sit incididunt mollit veniam fugiat pariatur adipisicing",
         "startTime": "2023-01-19T04:11:49",
         "stopTime": "2023-08-13T09:44:09",
         "technician": "Drake Rosario",
@@ -2369,9 +2369,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 17314,
-        "jobType": "Maintenance",
-        "jobDescription": "laboris consectetur exercitation veniam ullamco nisi irure excepteur aute est",
+        "id": 17314,
+        "type": "Maintenance",
+        "description": "laboris consectetur exercitation veniam ullamco nisi irure excepteur aute est",
         "startTime": "2023-05-28T03:10:12",
         "stopTime": "2023-08-16T02:41:02",
         "technician": "Nell Whitaker",
@@ -2382,9 +2382,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 20796,
-        "jobType": "Other",
-        "jobDescription": "amet excepteur deserunt quis nostrud id enim eu minim enim",
+        "id": 20796,
+        "type": "Other",
+        "description": "amet excepteur deserunt quis nostrud id enim eu minim enim",
         "startTime": "2023-05-15T03:48:41",
         "stopTime": "2023-08-23T12:40:23",
         "technician": "Lindsey Figueroa",
@@ -2397,7 +2397,7 @@
     ]
   },
   {
-    "equipmentString": "UNP101",
+    "name": "UNP101",
     "description": "est do deserunt sunt ipsum fugiat non velit laborum exercitation non amet",
     "online": true,
     "considered": false,
@@ -2407,9 +2407,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 70777,
-        "jobType": "IT Support",
-        "jobDescription": "sint ex ullamco deserunt aliqua adipisicing adipisicing in do sit",
+        "id": 70777,
+        "type": "IT Support",
+        "description": "sint ex ullamco deserunt aliqua adipisicing adipisicing in do sit",
         "startTime": "2023-03-11T05:59:59",
         "stopTime": "2023-08-30T12:03:41",
         "technician": "Rena Avila",
@@ -2420,9 +2420,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 41989,
-        "jobType": "Hardware",
-        "jobDescription": "velit labore aliqua enim id proident tempor nisi aliqua cupidatat",
+        "id": 41989,
+        "type": "Hardware",
+        "description": "velit labore aliqua enim id proident tempor nisi aliqua cupidatat",
         "startTime": "2023-04-07T10:01:48",
         "stopTime": "2023-08-30T03:29:54",
         "technician": "Tabatha Clark",
@@ -2433,9 +2433,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 53201,
-        "jobType": "Software",
-        "jobDescription": "fugiat ex Lorem non eiusmod eu est laborum voluptate mollit",
+        "id": 53201,
+        "type": "Software",
+        "description": "fugiat ex Lorem non eiusmod eu est laborum voluptate mollit",
         "startTime": "2023-04-06T05:15:22",
         "stopTime": "2023-08-10T11:40:14",
         "technician": "Brown Lowery",
@@ -2448,7 +2448,7 @@
     ]
   },
   {
-    "equipmentString": "WS554",
+    "name": "WS554",
     "description": "sunt officia voluptate consectetur sunt exercitation proident veniam duis exercitation pariatur enim",
     "online": false,
     "considered": false,
@@ -2458,9 +2458,9 @@
     "config": "B",
     "scheduledJobs": [
       {
-        "jobId": 98359,
-        "jobType": "Other",
-        "jobDescription": "enim fugiat est irure cillum magna id consectetur deserunt enim",
+        "id": 98359,
+        "type": "Other",
+        "description": "enim fugiat est irure cillum magna id consectetur deserunt enim",
         "startTime": "2023-01-01T02:58:36",
         "stopTime": "2023-08-28T05:49:59",
         "technician": "Frederick Martin",
@@ -2471,9 +2471,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 72197,
-        "jobType": "Maintenance",
-        "jobDescription": "minim velit anim consequat voluptate ullamco quis amet cillum irure",
+        "id": 72197,
+        "type": "Maintenance",
+        "description": "minim velit anim consequat voluptate ullamco quis amet cillum irure",
         "startTime": "2022-12-24T02:21:22",
         "stopTime": "2023-08-31T01:38:12",
         "technician": "Frieda Jennings",
@@ -2484,9 +2484,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 94633,
-        "jobType": "Maintenance",
-        "jobDescription": "ullamco amet nisi proident ullamco elit pariatur ea dolore consequat",
+        "id": 94633,
+        "type": "Maintenance",
+        "description": "ullamco amet nisi proident ullamco elit pariatur ea dolore consequat",
         "startTime": "2023-05-28T05:44:55",
         "stopTime": "2023-08-25T04:53:56",
         "technician": "Bowers Hodges",
@@ -2499,7 +2499,7 @@
     ]
   },
   {
-    "equipmentString": "PAFB9",
+    "name": "PAFB9",
     "description": "elit consectetur labore dolore sit ullamco consectetur esse officia sint esse id",
     "online": true,
     "considered": true,
@@ -2509,9 +2509,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 69966,
-        "jobType": "Other",
-        "jobDescription": "aliqua veniam ut sunt id incididunt consectetur minim aliquip nulla",
+        "id": 69966,
+        "type": "Other",
+        "description": "aliqua veniam ut sunt id incididunt consectetur minim aliquip nulla",
         "startTime": "2023-05-23T12:40:18",
         "stopTime": "2023-08-23T01:06:39",
         "technician": "Jacklyn Mcconnell",
@@ -2522,9 +2522,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 60699,
-        "jobType": "Maintenance",
-        "jobDescription": "est et ullamco ex laboris elit dolor id pariatur dolor",
+        "id": 60699,
+        "type": "Maintenance",
+        "description": "est et ullamco ex laboris elit dolor id pariatur dolor",
         "startTime": "2023-01-05T09:55:14",
         "stopTime": "2023-08-22T07:18:49",
         "technician": "Summers Kennedy",
@@ -2535,9 +2535,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 71476,
-        "jobType": "Maintenance",
-        "jobDescription": "laboris dolor mollit esse nulla proident consectetur ad nulla in",
+        "id": 71476,
+        "type": "Maintenance",
+        "description": "laboris dolor mollit esse nulla proident consectetur ad nulla in",
         "startTime": "2023-04-26T10:03:14",
         "stopTime": "2023-08-15T01:26:00",
         "technician": "George Vargas",
@@ -2550,7 +2550,7 @@
     ]
   },
   {
-    "equipmentString": "BAFM1",
+    "name": "BAFM1",
     "description": "elit quis minim labore velit do velit ad quis est occaecat sint",
     "online": false,
     "considered": true,
@@ -2560,9 +2560,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 21913,
-        "jobType": "Software",
-        "jobDescription": "consequat consequat tempor amet nulla voluptate veniam exercitation esse ex",
+        "id": 21913,
+        "type": "Software",
+        "description": "consequat consequat tempor amet nulla voluptate veniam exercitation esse ex",
         "startTime": "2023-06-19T05:10:48",
         "stopTime": "2023-08-10T04:21:19",
         "technician": "Sanchez Malone",
@@ -2573,9 +2573,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 45865,
-        "jobType": "Hardware",
-        "jobDescription": "officia cillum dolore sit ullamco duis voluptate cupidatat Lorem anim",
+        "id": 45865,
+        "type": "Hardware",
+        "description": "officia cillum dolore sit ullamco duis voluptate cupidatat Lorem anim",
         "startTime": "2023-02-07T09:50:18",
         "stopTime": "2023-08-11T11:48:27",
         "technician": "Lola Gaines",
@@ -2586,9 +2586,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 74522,
-        "jobType": "IT Support",
-        "jobDescription": "laborum non sint minim qui sunt velit mollit proident magna",
+        "id": 74522,
+        "type": "IT Support",
+        "description": "laborum non sint minim qui sunt velit mollit proident magna",
         "startTime": "2023-07-25T01:50:00",
         "stopTime": "2023-08-27T12:18:18",
         "technician": "Gibson Craft",
@@ -2601,7 +2601,7 @@
     ]
   },
   {
-    "equipmentString": "SFE15CH1",
+    "name": "SFE15CH1",
     "description": "est qui sunt esse Lorem duis cillum quis dolor veniam ex incididunt",
     "online": false,
     "considered": false,
@@ -2611,9 +2611,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 90914,
-        "jobType": "Maintenance",
-        "jobDescription": "fugiat nulla cupidatat in elit ad proident elit id labore",
+        "id": 90914,
+        "type": "Maintenance",
+        "description": "fugiat nulla cupidatat in elit ad proident elit id labore",
         "startTime": "2022-12-31T07:06:27",
         "stopTime": "2023-08-18T05:13:21",
         "technician": "Barton Finch",
@@ -2624,9 +2624,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 16180,
-        "jobType": "Software",
-        "jobDescription": "culpa sit id dolor ullamco occaecat excepteur reprehenderit fugiat mollit",
+        "id": 16180,
+        "type": "Software",
+        "description": "culpa sit id dolor ullamco occaecat excepteur reprehenderit fugiat mollit",
         "startTime": "2023-07-07T11:51:20",
         "stopTime": "2023-08-17T01:59:48",
         "technician": "Carney Allison",
@@ -2637,9 +2637,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 17835,
-        "jobType": "Hardware",
-        "jobDescription": "excepteur aute cillum sit reprehenderit dolor consectetur do commodo mollit",
+        "id": 17835,
+        "type": "Hardware",
+        "description": "excepteur aute cillum sit reprehenderit dolor consectetur do commodo mollit",
         "startTime": "2023-05-11T09:38:18",
         "stopTime": "2023-08-28T09:05:27",
         "technician": "Joan Dickson",
@@ -2652,7 +2652,7 @@
     ]
   },
   {
-    "equipmentString": "ANT433",
+    "name": "ANT433",
     "description": "aliqua et laborum exercitation minim reprehenderit aliquip quis et laboris fugiat proident",
     "online": false,
     "considered": false,
@@ -2662,9 +2662,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 76710,
-        "jobType": "Other",
-        "jobDescription": "sint aliqua nostrud excepteur esse adipisicing officia in pariatur minim",
+        "id": 76710,
+        "type": "Other",
+        "description": "sint aliqua nostrud excepteur esse adipisicing officia in pariatur minim",
         "startTime": "2023-07-29T01:53:52",
         "stopTime": "2023-08-09T11:40:01",
         "technician": "Campbell Mason",
@@ -2675,9 +2675,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 52663,
-        "jobType": "Other",
-        "jobDescription": "eu pariatur commodo magna exercitation aute veniam officia dolore eu",
+        "id": 52663,
+        "type": "Other",
+        "description": "eu pariatur commodo magna exercitation aute veniam officia dolore eu",
         "startTime": "2023-06-14T04:15:49",
         "stopTime": "2023-08-11T09:11:05",
         "technician": "Tessa Hinton",
@@ -2688,9 +2688,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 82583,
-        "jobType": "Other",
-        "jobDescription": "cupidatat id ullamco deserunt amet nulla et sit aute sit",
+        "id": 82583,
+        "type": "Other",
+        "description": "cupidatat id ullamco deserunt amet nulla et sit aute sit",
         "startTime": "2023-04-07T10:31:04",
         "stopTime": "2023-08-13T05:43:45",
         "technician": "Cora Watts",
@@ -2703,7 +2703,7 @@
     ]
   },
   {
-    "equipmentString": "ANT144",
+    "name": "ANT144",
     "description": "quis voluptate nisi ullamco elit adipisicing aliquip laboris do excepteur ex reprehenderit",
     "online": false,
     "considered": false,
@@ -2713,9 +2713,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 30485,
-        "jobType": "IT Support",
-        "jobDescription": "elit commodo anim labore commodo do consequat magna nostrud reprehenderit",
+        "id": 30485,
+        "type": "IT Support",
+        "description": "elit commodo anim labore commodo do consequat magna nostrud reprehenderit",
         "startTime": "2023-04-10T04:17:38",
         "stopTime": "2023-08-11T01:07:49",
         "technician": "Tran Lynch",
@@ -2726,9 +2726,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 34556,
-        "jobType": "IT Support",
-        "jobDescription": "eu veniam ut aute incididunt sunt tempor Lorem elit voluptate",
+        "id": 34556,
+        "type": "IT Support",
+        "description": "eu veniam ut aute incididunt sunt tempor Lorem elit voluptate",
         "startTime": "2023-06-14T05:10:59",
         "stopTime": "2023-08-23T02:41:42",
         "technician": "Leola Dale",
@@ -2739,9 +2739,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 26503,
-        "jobType": "Other",
-        "jobDescription": "ex occaecat qui excepteur cillum ad consequat excepteur enim nulla",
+        "id": 26503,
+        "type": "Other",
+        "description": "ex occaecat qui excepteur cillum ad consequat excepteur enim nulla",
         "startTime": "2023-04-29T05:14:39",
         "stopTime": "2023-08-25T03:39:08",
         "technician": "Callahan Munoz",
@@ -2754,7 +2754,7 @@
     ]
   },
   {
-    "equipmentString": "ANT733",
+    "name": "ANT733",
     "description": "dolor laborum ut velit tempor eu deserunt ullamco non dolor ullamco elit",
     "online": true,
     "considered": true,
@@ -2764,9 +2764,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 83177,
-        "jobType": "Hardware",
-        "jobDescription": "incididunt et aute laboris ullamco aliquip dolore sit minim est",
+        "id": 83177,
+        "type": "Hardware",
+        "description": "incididunt et aute laboris ullamco aliquip dolore sit minim est",
         "startTime": "2023-07-09T12:10:35",
         "stopTime": "2023-08-27T06:26:35",
         "technician": "Randolph Gibson",
@@ -2777,9 +2777,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 97557,
-        "jobType": "Hardware",
-        "jobDescription": "aliquip esse aute sunt elit minim est ipsum sit deserunt",
+        "id": 97557,
+        "type": "Hardware",
+        "description": "aliquip esse aute sunt elit minim est ipsum sit deserunt",
         "startTime": "2023-01-12T03:40:29",
         "stopTime": "2023-08-23T12:33:51",
         "technician": "Geneva Mcclain",
@@ -2790,9 +2790,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 23143,
-        "jobType": "IT Support",
-        "jobDescription": "et ad ut excepteur cillum occaecat cupidatat cillum mollit aliquip",
+        "id": 23143,
+        "type": "IT Support",
+        "description": "et ad ut excepteur cillum occaecat cupidatat cillum mollit aliquip",
         "startTime": "2023-03-20T10:17:59",
         "stopTime": "2023-08-21T01:06:30",
         "technician": "Strickland Wolfe",
@@ -2805,7 +2805,7 @@
     ]
   },
   {
-    "equipmentString": "SFE378C5",
+    "name": "SFE378C5",
     "description": "id ipsum sint nulla duis aliqua exercitation aliqua occaecat in anim irure",
     "online": false,
     "considered": false,
@@ -2815,9 +2815,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 57765,
-        "jobType": "IT Support",
-        "jobDescription": "dolore veniam nulla est eu reprehenderit in ullamco quis minim",
+        "id": 57765,
+        "type": "IT Support",
+        "description": "dolore veniam nulla est eu reprehenderit in ullamco quis minim",
         "startTime": "2023-05-27T11:37:16",
         "stopTime": "2023-08-11T02:53:26",
         "technician": "Terrell Cline",
@@ -2828,9 +2828,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 74326,
-        "jobType": "Software",
-        "jobDescription": "cillum anim est laborum occaecat enim in anim ex excepteur",
+        "id": 74326,
+        "type": "Software",
+        "description": "cillum anim est laborum occaecat enim in anim ex excepteur",
         "startTime": "2023-08-02T06:48:01",
         "stopTime": "2023-08-30T10:14:02",
         "technician": "Valenzuela Manning",
@@ -2841,9 +2841,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 14011,
-        "jobType": "Software",
-        "jobDescription": "culpa enim aliquip mollit quis magna reprehenderit dolore commodo quis",
+        "id": 14011,
+        "type": "Software",
+        "description": "culpa enim aliquip mollit quis magna reprehenderit dolore commodo quis",
         "startTime": "2023-01-23T05:24:33",
         "stopTime": "2023-08-26T07:18:53",
         "technician": "Kathryn Saunders",
@@ -2856,7 +2856,7 @@
     ]
   },
   {
-    "equipmentString": "ECEH5",
+    "name": "ECEH5",
     "description": "anim non id sunt laborum nulla ullamco laboris aliqua eu labore velit",
     "online": false,
     "considered": true,
@@ -2866,9 +2866,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 61120,
-        "jobType": "Other",
-        "jobDescription": "anim officia excepteur sunt consectetur id quis elit eu nisi",
+        "id": 61120,
+        "type": "Other",
+        "description": "anim officia excepteur sunt consectetur id quis elit eu nisi",
         "startTime": "2023-03-16T02:07:56",
         "stopTime": "2023-08-26T08:34:38",
         "technician": "Odom Jarvis",
@@ -2879,9 +2879,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 31859,
-        "jobType": "Hardware",
-        "jobDescription": "minim dolor Lorem pariatur excepteur id id laborum in labore",
+        "id": 31859,
+        "type": "Hardware",
+        "description": "minim dolor Lorem pariatur excepteur id id laborum in labore",
         "startTime": "2023-01-07T07:27:31",
         "stopTime": "2023-08-17T05:43:48",
         "technician": "Kirkland Small",
@@ -2892,9 +2892,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 97082,
-        "jobType": "Maintenance",
-        "jobDescription": "aliqua sit labore commodo ipsum pariatur deserunt veniam irure ut",
+        "id": 97082,
+        "type": "Maintenance",
+        "description": "aliqua sit labore commodo ipsum pariatur deserunt veniam irure ut",
         "startTime": "2023-05-23T05:25:45",
         "stopTime": "2023-08-31T01:48:58",
         "technician": "Beatriz Suarez",
@@ -2907,7 +2907,7 @@
     ]
   },
   {
-    "equipmentString": "VAFT6",
+    "name": "VAFT6",
     "description": "laboris incididunt deserunt consectetur veniam ex dolor quis ipsum Lorem est occaecat",
     "online": false,
     "considered": true,
@@ -2917,9 +2917,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 27795,
-        "jobType": "Maintenance",
-        "jobDescription": "duis in ullamco ut fugiat commodo esse aliquip labore quis",
+        "id": 27795,
+        "type": "Maintenance",
+        "description": "duis in ullamco ut fugiat commodo esse aliquip labore quis",
         "startTime": "2023-05-06T03:10:48",
         "stopTime": "2023-08-22T04:43:06",
         "technician": "Candice Ellis",
@@ -2930,9 +2930,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 38956,
-        "jobType": "Software",
-        "jobDescription": "aliqua Lorem mollit nulla fugiat ipsum et dolor labore proident",
+        "id": 38956,
+        "type": "Software",
+        "description": "aliqua Lorem mollit nulla fugiat ipsum et dolor labore proident",
         "startTime": "2023-05-05T10:44:01",
         "stopTime": "2023-08-15T11:39:20",
         "technician": "Yvette Rowe",
@@ -2943,9 +2943,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 65663,
-        "jobType": "IT Support",
-        "jobDescription": "proident reprehenderit sit proident voluptate dolor nostrud velit nulla nulla",
+        "id": 65663,
+        "type": "IT Support",
+        "description": "proident reprehenderit sit proident voluptate dolor nostrud velit nulla nulla",
         "startTime": "2023-06-04T11:25:36",
         "stopTime": "2023-08-26T06:40:44",
         "technician": "Bobbi Heath",
@@ -2958,7 +2958,7 @@
     ]
   },
   {
-    "equipmentString": "BAFM2",
+    "name": "BAFM2",
     "description": "aute esse proident culpa officia nostrud nisi Lorem tempor mollit fugiat enim",
     "online": true,
     "considered": true,
@@ -2968,9 +2968,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 37892,
-        "jobType": "Software",
-        "jobDescription": "sunt fugiat pariatur laborum ut amet amet aliquip laborum do",
+        "id": 37892,
+        "type": "Software",
+        "description": "sunt fugiat pariatur laborum ut amet amet aliquip laborum do",
         "startTime": "2022-12-13T05:48:24",
         "stopTime": "2023-08-21T05:55:55",
         "technician": "Park Mckee",
@@ -2981,9 +2981,9 @@
         "equipmentStatus": "standby"
       },
       {
-        "jobId": 48686,
-        "jobType": "Other",
-        "jobDescription": "ullamco est do mollit sint commodo non deserunt laborum laboris",
+        "id": 48686,
+        "type": "Other",
+        "description": "ullamco est do mollit sint commodo non deserunt laborum laboris",
         "startTime": "2022-12-16T06:06:26",
         "stopTime": "2023-08-23T09:33:54",
         "technician": "Lena Hester",
@@ -2994,9 +2994,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 16589,
-        "jobType": "Hardware",
-        "jobDescription": "excepteur ullamco dolor incididunt nulla ea nulla proident exercitation mollit",
+        "id": 16589,
+        "type": "Hardware",
+        "description": "excepteur ullamco dolor incididunt nulla ea nulla proident exercitation mollit",
         "startTime": "2022-12-12T01:50:10",
         "stopTime": "2023-08-28T06:42:51",
         "technician": "Francesca Duffy",
@@ -3009,7 +3009,7 @@
     ]
   },
   {
-    "equipmentString": "ECEH9",
+    "name": "ECEH9",
     "description": "incididunt mollit mollit elit laboris laborum aliquip eu aliquip aute do esse",
     "online": false,
     "considered": false,
@@ -3019,9 +3019,9 @@
     "config": "D",
     "scheduledJobs": [
       {
-        "jobId": 29462,
-        "jobType": "Hardware",
-        "jobDescription": "aute exercitation id sunt aliqua ea excepteur amet esse velit",
+        "id": 29462,
+        "type": "Hardware",
+        "description": "aute exercitation id sunt aliqua ea excepteur amet esse velit",
         "startTime": "2023-07-05T06:03:44",
         "stopTime": "2023-08-28T01:29:15",
         "technician": "Bertha Vaughn",
@@ -3032,9 +3032,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 13395,
-        "jobType": "Hardware",
-        "jobDescription": "ipsum commodo exercitation irure quis do fugiat occaecat adipisicing dolore",
+        "id": 13395,
+        "type": "Hardware",
+        "description": "ipsum commodo exercitation irure quis do fugiat occaecat adipisicing dolore",
         "startTime": "2023-05-08T04:10:10",
         "stopTime": "2023-08-22T07:50:04",
         "technician": "Ashley Murphy",
@@ -3045,9 +3045,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 24139,
-        "jobType": "Other",
-        "jobDescription": "eiusmod labore eu ad laboris consequat elit incididunt commodo velit",
+        "id": 24139,
+        "type": "Other",
+        "description": "eiusmod labore eu ad laboris consequat elit incididunt commodo velit",
         "startTime": "2023-06-09T09:45:04",
         "stopTime": "2023-08-29T12:41:24",
         "technician": "Nadia Powell",
@@ -3060,7 +3060,7 @@
     ]
   },
   {
-    "equipmentString": "SFEP21H1",
+    "name": "SFEP21H1",
     "description": "enim cillum labore nostrud consequat mollit proident dolor fugiat excepteur excepteur officia",
     "online": false,
     "considered": false,
@@ -3070,9 +3070,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 97442,
-        "jobType": "Hardware",
-        "jobDescription": "consequat esse enim magna pariatur nulla esse dolor consectetur veniam",
+        "id": 97442,
+        "type": "Hardware",
+        "description": "consequat esse enim magna pariatur nulla esse dolor consectetur veniam",
         "startTime": "2022-12-07T07:23:37",
         "stopTime": "2023-08-26T05:01:02",
         "technician": "Kristin Herrera",
@@ -3083,9 +3083,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 10942,
-        "jobType": "Software",
-        "jobDescription": "ex officia eu nostrud excepteur ullamco Lorem occaecat consectetur duis",
+        "id": 10942,
+        "type": "Software",
+        "description": "ex officia eu nostrud excepteur ullamco Lorem occaecat consectetur duis",
         "startTime": "2022-12-21T11:57:42",
         "stopTime": "2023-08-23T01:48:30",
         "technician": "Hebert Harmon",
@@ -3096,9 +3096,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 12451,
-        "jobType": "Maintenance",
-        "jobDescription": "incididunt ea et sunt et pariatur non sunt non occaecat",
+        "id": 12451,
+        "type": "Maintenance",
+        "description": "incididunt ea et sunt et pariatur non sunt non occaecat",
         "startTime": "2023-02-15T02:13:27",
         "stopTime": "2023-08-09T12:01:43",
         "technician": "Tameka Fleming",
@@ -3111,7 +3111,7 @@
     ]
   },
   {
-    "equipmentString": "BAFM4",
+    "name": "BAFM4",
     "description": "magna enim commodo ipsum aute fugiat aliqua labore sit irure eu eu",
     "online": true,
     "considered": false,
@@ -3121,9 +3121,9 @@
     "config": "C",
     "scheduledJobs": [
       {
-        "jobId": 53287,
-        "jobType": "IT Support",
-        "jobDescription": "ea esse eu irure ullamco consequat anim quis irure laborum",
+        "id": 53287,
+        "type": "IT Support",
+        "description": "ea esse eu irure ullamco consequat anim quis irure laborum",
         "startTime": "2023-03-01T07:01:13",
         "stopTime": "2023-08-26T05:58:06",
         "technician": "Williams Bonner",
@@ -3134,9 +3134,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 74887,
-        "jobType": "Other",
-        "jobDescription": "laboris est aliquip sint laboris voluptate veniam adipisicing deserunt enim",
+        "id": 74887,
+        "type": "Other",
+        "description": "laboris est aliquip sint laboris voluptate veniam adipisicing deserunt enim",
         "startTime": "2022-12-22T12:08:25",
         "stopTime": "2023-08-10T02:20:54",
         "technician": "Mckinney May",
@@ -3147,9 +3147,9 @@
         "equipmentStatus": "serious"
       },
       {
-        "jobId": 69615,
-        "jobType": "Other",
-        "jobDescription": "labore est exercitation sit fugiat id aliquip occaecat Lorem cillum",
+        "id": 69615,
+        "type": "Other",
+        "description": "labore est exercitation sit fugiat id aliquip occaecat Lorem cillum",
         "startTime": "2023-08-03T02:35:05",
         "stopTime": "2023-08-21T05:12:25",
         "technician": "Carmen Lambert",
@@ -3162,7 +3162,7 @@
     ]
   },
   {
-    "equipmentString": "SFE378C6",
+    "name": "SFE378C6",
     "description": "aliquip excepteur ea ut amet ipsum anim consequat occaecat ad ex Lorem",
     "online": false,
     "considered": false,
@@ -3172,9 +3172,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 57219,
-        "jobType": "Hardware",
-        "jobDescription": "officia cillum excepteur aliquip eu veniam anim laborum fugiat laboris",
+        "id": 57219,
+        "type": "Hardware",
+        "description": "officia cillum excepteur aliquip eu veniam anim laborum fugiat laboris",
         "startTime": "2022-12-27T04:14:45",
         "stopTime": "2023-08-28T09:29:29",
         "technician": "Margaret Cain",
@@ -3185,9 +3185,9 @@
         "equipmentStatus": "normal"
       },
       {
-        "jobId": 98253,
-        "jobType": "Other",
-        "jobDescription": "anim ut quis sunt velit dolor aliqua dolor officia Lorem",
+        "id": 98253,
+        "type": "Other",
+        "description": "anim ut quis sunt velit dolor aliqua dolor officia Lorem",
         "startTime": "2023-04-20T08:43:53",
         "stopTime": "2023-08-13T06:18:51",
         "technician": "Robbie Hooper",
@@ -3198,9 +3198,9 @@
         "equipmentStatus": "caution"
       },
       {
-        "jobId": 64502,
-        "jobType": "Hardware",
-        "jobDescription": "id exercitation velit velit non ipsum fugiat deserunt esse qui",
+        "id": 64502,
+        "type": "Hardware",
+        "description": "id exercitation velit velit non ipsum fugiat deserunt esse qui",
         "startTime": "2023-04-12T11:34:20",
         "stopTime": "2023-08-16T11:59:55",
         "technician": "Jones Massey",
@@ -3213,7 +3213,7 @@
     ]
   },
   {
-    "equipmentString": "ECEN8",
+    "name": "ECEN8",
     "description": "minim occaecat cupidatat est cupidatat ipsum reprehenderit ipsum consequat aliquip voluptate sit",
     "online": false,
     "considered": false,
@@ -3223,9 +3223,9 @@
     "config": "E",
     "scheduledJobs": [
       {
-        "jobId": 15730,
-        "jobType": "Hardware",
-        "jobDescription": "mollit esse adipisicing officia tempor ut cupidatat nostrud fugiat eu",
+        "id": 15730,
+        "type": "Hardware",
+        "description": "mollit esse adipisicing officia tempor ut cupidatat nostrud fugiat eu",
         "startTime": "2023-05-19T10:23:55",
         "stopTime": "2023-08-09T09:58:33",
         "technician": "Shelia Molina",
@@ -3236,9 +3236,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 32616,
-        "jobType": "Other",
-        "jobDescription": "cupidatat irure qui aliqua eu voluptate officia excepteur magna labore",
+        "id": 32616,
+        "type": "Other",
+        "description": "cupidatat irure qui aliqua eu voluptate officia excepteur magna labore",
         "startTime": "2023-03-11T01:46:13",
         "stopTime": "2023-08-30T08:16:53",
         "technician": "James Meadows",
@@ -3249,9 +3249,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 62784,
-        "jobType": "Maintenance",
-        "jobDescription": "et proident Lorem commodo nisi in et enim nostrud laborum",
+        "id": 62784,
+        "type": "Maintenance",
+        "description": "et proident Lorem commodo nisi in et enim nostrud laborum",
         "startTime": "2023-06-17T11:43:34",
         "stopTime": "2023-08-12T03:20:01",
         "technician": "Elva Carr",
@@ -3264,7 +3264,7 @@
     ]
   },
   {
-    "equipmentString": "USP264",
+    "name": "USP264",
     "description": "occaecat dolor do incididunt irure occaecat consectetur et nisi laborum est commodo",
     "online": true,
     "considered": true,
@@ -3274,9 +3274,9 @@
     "config": "A",
     "scheduledJobs": [
       {
-        "jobId": 90770,
-        "jobType": "Maintenance",
-        "jobDescription": "id officia ex sunt dolor sint proident commodo minim ut",
+        "id": 90770,
+        "type": "Maintenance",
+        "description": "id officia ex sunt dolor sint proident commodo minim ut",
         "startTime": "2023-05-30T07:28:26",
         "stopTime": "2023-08-18T06:14:58",
         "technician": "Jaclyn Tyler",
@@ -3287,9 +3287,9 @@
         "equipmentStatus": "off"
       },
       {
-        "jobId": 69021,
-        "jobType": "Other",
-        "jobDescription": "dolore laboris enim sint ipsum magna Lorem cillum id laborum",
+        "id": 69021,
+        "type": "Other",
+        "description": "dolore laboris enim sint ipsum magna Lorem cillum id laborum",
         "startTime": "2023-04-22T07:54:52",
         "stopTime": "2023-08-10T07:28:37",
         "technician": "Leona Hartman",
@@ -3300,9 +3300,9 @@
         "equipmentStatus": "critical"
       },
       {
-        "jobId": 81548,
-        "jobType": "IT Support",
-        "jobDescription": "cupidatat laboris laboris ut et pariatur Lorem consequat consectetur voluptate",
+        "id": 81548,
+        "type": "IT Support",
+        "description": "cupidatat laboris laboris ut et pariatur Lorem consequat consectetur voluptate",
         "startTime": "2022-12-30T02:12:05",
         "stopTime": "2023-08-20T06:55:36",
         "technician": "Ada Douglas",

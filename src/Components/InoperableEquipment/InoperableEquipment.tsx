@@ -36,7 +36,7 @@ const InoperableEquipment = () => {
               <RuxMonitoringIcon
                 status={equipment.status}
                 icon='center-focus-weak'
-                label={equipment.equipmentString}
+                label={equipment.name}
                 onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>
@@ -51,7 +51,7 @@ const InoperableEquipment = () => {
               <RuxMonitoringIcon
                 status={equipment.status}
                 icon='center-focus-weak'
-                label={equipment.equipmentString}
+                label={equipment.name}
                 onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>
@@ -66,7 +66,7 @@ const InoperableEquipment = () => {
               <RuxMonitoringIcon
                 status={equipment.status}
                 icon='center-focus-weak'
-                label={equipment.equipmentString}
+                label={equipment.name}
                 onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>
@@ -81,7 +81,7 @@ const InoperableEquipment = () => {
               <RuxMonitoringIcon
                 status={equipment.status}
                 icon='center-focus-weak'
-                label={equipment.equipmentString}
+                label={equipment.name}
                 onClick={() => handleSelectedEquipment(equipment)}
               />
             </li>

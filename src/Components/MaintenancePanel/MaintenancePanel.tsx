@@ -69,7 +69,7 @@ const MaintenancePanel = () => {
                 .map((job: any) => (
                   <JobIDCard
                     key={job.id}
-                    type={job.jobType}
+                    type={job.type}
                     id={Number(job.id)}
                     startTime={job.startsAt}
                     stopTime={job.endsAt}

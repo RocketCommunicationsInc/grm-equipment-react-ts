@@ -19,8 +19,8 @@ const DeleteConfirmation = ({
 
   const handleDelete = (e: any) => {
     e.preventDefault();
-    if (e.detail && job.jobId) {
-      dispatch({ type: 'DELETE_JOB', payload: job.jobId });
+    if (e.detail && job.id) {
+      dispatch({ type: 'DELETE_JOB', payload: job.id });
       navigate('/');
     } else if (e.detail === false) {
       handleClose();
@@ -34,8 +34,8 @@ const DeleteConfirmation = ({
       confirmText='Delete'
       denyText='Cancel'
       onRuxdialogclosed={handleDelete}
-      message={`Please confirm you would like to DELETE ${job.equipment} Maintenance Job
-        ID ${job.jobId}`}
+      message={`Please confirm you would like to DELETE ${job.equipmentId} Maintenance Job
+        ID ${job.id}`}
     />
   );
 };

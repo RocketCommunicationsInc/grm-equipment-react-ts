@@ -27,7 +27,7 @@ const EquipmentDetailsPanel = () => {
     <RuxContainer className='equipment-details_details'>
       <span className='equipment-title'>
         <RuxStatus status={state.currentEquipment.status} slot='prefix' />
-        <span>{state.currentEquipment.equipmentString}</span>
+        <span>{state.currentEquipment.name}</span>
       </span>
       <div className='equipment-alerts'>
         <div>

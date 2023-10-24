@@ -33,7 +33,7 @@ const ScheduleJob = () => {
   const [disableTech, setDisableTech] = useState(false);
 
   const statusValues = ['off', 'caution', 'normal', 'standby'];
-  const uniqueJobId = Math.floor(Math.random() * 90000) + 10000;
+  const uniqueid = Math.floor(Math.random() * 90000) + 10000;
   const jobValues = ['Approved', 'Started', 'Stopped', 'Submitted', 'Online'];
 
   const randomStatus = Math.floor(Math.random() * statusValues.length);
@@ -42,9 +42,9 @@ const ScheduleJob = () => {
   const randomEquipment = Math.floor(Math.random() * equipmentValues.length);
 
   const [newJob, setNewJob] = useState({
-    jobId: uniqueJobId,
-    jobType: '',
-    jobDescription: '',
+    id: uniqueid,
+    type: '',
+    description: '',
     startTime: '',
     stopTime: '',
     technician: '',
@@ -136,8 +136,8 @@ const ScheduleJob = () => {
                 onRuxchange={handleJobSelection}
                 size='small'
                 label=' Job Type'
-                value={newJob.jobType}
-                name='jobType'
+                value={newJob.type}
+                name='type'
                 disabled={disableJob}
               >
                 <RuxOption value='' label='- Select -'></RuxOption>
@@ -149,7 +149,7 @@ const ScheduleJob = () => {
               {showOtherJob ? (
                 <RuxInput
                   label='Job Title'
-                  name='jobType'
+                  name='type'
                   onRuxinput={handleJobInput}
                   size='small'
                 />
@@ -159,8 +159,8 @@ const ScheduleJob = () => {
               onRuxinput={handleChange}
               placeholder='Enter Description'
               label='Description'
-              value={newJob.jobDescription}
-              name='jobDescription'
+              value={newJob.description}
+              name='description'
             />
 
             <li>2. Select Time</li>

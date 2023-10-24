@@ -36,18 +36,18 @@ export const appReducer = (state: any, { type, payload }: any) => {
         equipment: updatedEquipment,
         scheduledJobs: [...state.scheduledJobs, payload],
         selectedEquipment: updatedSelectedEquipment,
-        notification: 'Job ID ' + payload.jobId + ' has been submitted',
+        notification: 'Job ID ' + payload.id + ' has been submitted',
       };
     }
 
     case 'EDIT_JOB': {
       const selectedJob = state.scheduledJobs.find(
-        (job: { jobId: number }) => job.jobId === payload
+        (job: { id: number }) => job.id === payload
       );
       const modifiedJob = { ...selectedJob, ...payload };
       const updatedJobs = state.currentEquipment.scheduledJobs.map(
-        (job: { jobId: number }) => {
-          if (job.jobId === payload.jobId) {
+        (job: { id: number }) => {
+          if (job.id === payload.id) {
             return { ...job, ...payload };
           }
           return job;
@@ -92,7 +92,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
     case 'DELETE_JOB': {
       const updatedJobs = state.currentEquipment.scheduledJobs.filter(
         (job: Job) => {
-          return job.jobId !== payload;
+          return job.id !== payload;
         }
       );
 
@@ -120,7 +120,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
 
       const deletedJob = state.currentEquipment.scheduledJobs.filter(
         (job: Job) => {
-          return job.jobId === payload;
+          return job.id === payload;
         }
       );
 
@@ -135,7 +135,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
         currentJob: null,
         selectedEquipment: updatedSelectedEquipment,
         deletedJob: deletedJob,
-        notification: 'Job ID ' + deletedJob[0].jobId + ' has been deleted',
+        notification: 'Job ID ' + deletedJob[0].id + ' has been deleted',
       };
     }
 

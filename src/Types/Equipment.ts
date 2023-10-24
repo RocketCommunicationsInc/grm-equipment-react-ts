@@ -1,7 +1,7 @@
 import { Status } from '@astrouxds/mock-data';
 
 export interface Equipment {
-  equipmentString: string;
+  name: string;
   description: string;
   online: boolean;
   considered: boolean;
@@ -9,30 +9,28 @@ export interface Equipment {
   status: Status;
   category: string;
   config: string;
-  name?: string;
   scheduledJobs: {
-    jobId: number;
-    jobType: string;
+    id: number;
+    type: string;
     description: string;
-    startTime: string;
-    stopTime: string;
+    startsAt: number;
+    endsAt: number;
     technician: string;
     follow: boolean;
     status: Status;
-    createdOn: string;
-    equipment: string;
+    createdOn: number;
+    equipmentId: string;
   }[];
 }
 
 export type Job = {
-  jobId: string;
-  jobType: string;
-  createdOn: string;
-  startTime: string;
-  stopTime: string;
+  id: number;
+  type: string;
+  description: string;
+  startsAt: string;
+  stopsAt: string;
   technician: string;
-  jobDescription: string;
-  equipment: string;
-  equipmentStatus: string;
-  jobStatus: string;
+  status: Status;
+  createdOn: string;
+  equipmentId: string;
 };

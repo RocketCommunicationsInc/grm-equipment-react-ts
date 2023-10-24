@@ -16,13 +16,13 @@ import { capitalize, setHhMmSs } from '../../../utils';
 import './JobsTable.css';
 
 const columnDefs: any[] = [
-  { label: 'Job ID', property: 'jobId' },
-  { label: 'Type', property: 'jobType' },
-  { label: 'Created On', property: 'createdOn', isRightAligned: true, },
-  { label: 'Started On', property: 'startTime', isRightAligned: true, },
-  { label: 'Completed On', property: 'stopTime', isRightAligned: true, },
+  { label: 'Job ID', property: 'id' },
+  { label: 'Type', property: 'type' },
+  { label: 'Created On', property: 'createdOn', isRightAligned: true },
+  { label: 'Started On', property: 'startsAt', isRightAligned: true },
+  { label: 'Completed On', property: 'endsAt', isRightAligned: true },
   { label: 'Technician', property: 'technician' },
-  { label: 'Description', property: 'jobDescription' },
+  { label: 'Description', property: 'description' },
 ];
 
 type PropTypes = {
@@ -33,9 +33,9 @@ const JobsTable = ({ jobs }: PropTypes) => {
   const navigate = useNavigate();
   const { dispatch } = useAppContext() as any;
   const [sortDirection, setSortDirection] = useState<'ASC' | 'DESC'>('ASC');
-  const [sortProp, setSortProp] = useState<keyof Job>('jobId');
+  const [sortProp, setSortProp] = useState<keyof Job>('id');
   const [sortedData, setSortedData] = useState<Job[]>([]);
-  const [activeHeader, setActiveHeader] = useState<keyof Job>()
+  const [activeHeader, setActiveHeader] = useState<keyof Job>();
 
   const sortData = useCallback(
     (property: keyof Job, sortDirection: 'ASC' | 'DESC') => {
@@ -64,7 +64,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
   const handleHeaderCellClick = (event: React.MouseEvent<HTMLElement>) => {
     const target = event.currentTarget as HTMLElement;
     const sortProperty = target.dataset.sortprop as keyof Job;
-    setActiveHeader(sortProperty)
+    setActiveHeader(sortProperty);
     if (sortProperty === sortProp) {
       // clicked same currently sorted column
       if (sortDirection === 'ASC') {
@@ -104,7 +104,8 @@ const JobsTable = ({ jobs }: PropTypes) => {
                   <span>{colDef.label}</span>
                   <RuxIcon
                     icon={
-                      (sortDirection === 'ASC' || activeHeader !== colDef.property)
+                      sortDirection === 'ASC' ||
+                      activeHeader !== colDef.property
                         ? 'arrow-drop-down'
                         : 'arrow-drop-up'
                     }
@@ -122,7 +123,7 @@ const JobsTable = ({ jobs }: PropTypes) => {
           {sortedData.map((job, index) => {
             return (
               <RuxTableRow
-                key={`${job.jobId}${index}`}
+                key={`${job.id}${index}`}
                 onClick={() => handleTabeRowClick(job)}
               >
                 {columnDefs.map((colDef) => {
@@ -139,8 +140,10 @@ const JobsTable = ({ jobs }: PropTypes) => {
                       <span
                         className={colDef.isRightAligned ? 'right-align' : ''}
                       >
-                        {property === 'jobDescription'
+                        {property === 'description'
                           ? capitalize(job[property])
+                          : property === 'createdOn' && !job[property]
+                          ? setHhMmSs(new Date().getMilliseconds())
                           : colDef.isRightAligned
                           ? setHhMmSs(job[property])
                           : job[property]}

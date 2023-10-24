@@ -64,8 +64,8 @@ const JobDetails = () => {
   };
 
   const isOption = (job: any, type: string) => {
-    if (type === 'jobType') {
-      return jobOptions.some((option) => job.jobType === option.value);
+    if (type === 'type') {
+      return jobOptions.some((option) => job.type === option.value);
     }
 
     if (type === 'technician') {
@@ -75,8 +75,8 @@ const JobDetails = () => {
 
   const handleSubmit = (e: any) => {
     let modifiedJob = { ...job };
-    if (job.jobType === '' && jobSelect.current!.value === 'OtherJob') {
-      modifiedJob = { ...modifiedJob, jobType: 'Other' };
+    if (job.type === '' && jobSelect.current!.value === 'OtherJob') {
+      modifiedJob = { ...modifiedJob, type: 'Other' };
     }
     if (job.technician === '' && techSelect.current!.value === 'OtherTech') {
       modifiedJob = { ...modifiedJob, technician: 'Other' };
@@ -85,7 +85,7 @@ const JobDetails = () => {
     setShowOtherTech(false);
     setShowOtherJob(false);
     setIsModifying(false);
-    if (job.jobId) {
+    if (job.id) {
       dispatch({ type: 'EDIT_JOB', payload: modifiedJob });
       setJob({ ...modifiedJob });
     }
@@ -100,7 +100,7 @@ const JobDetails = () => {
 
   const handleModify = () => {
     if (!isOption(job, 'technician')) setShowOtherTech(true);
-    if (!isOption(job, 'jobType')) setShowOtherJob(true);
+    if (!isOption(job, 'type')) setShowOtherJob(true);
     setIsModifying(true);
   };
 
@@ -183,7 +183,7 @@ const JobDetails = () => {
   return (
     <RuxContainer className='job-details-panel'>
       <header slot='header'>
-        [{job.equipment}] Maintenance Job ID {job.jobId}
+        [{job.equipment}] Maintenance Job ID {job.id}
         <SearchBar
           placeholder='Search conflicts...'
           searchValue={searchValue}
@@ -204,11 +204,11 @@ const JobDetails = () => {
                   value={
                     showOtherJob
                       ? 'OtherJob'
-                      : isOption(job, 'jobType')
-                      ? job.jobType
+                      : isOption(job, 'type')
+                      ? job.type
                       : 'OtherJob'
                   }
-                  name='jobType'
+                  name='type'
                   ref={jobSelect}
                 >
                   {jobOptions.map((option, index) => (
@@ -222,9 +222,9 @@ const JobDetails = () => {
                 {showOtherJob ? (
                   <RuxInput
                     label='Job Title'
-                    name='jobType'
+                    name='type'
                     onRuxinput={handleJobInput}
-                    value={isOption(job, 'jobType') ? '' : job.jobType}
+                    value={isOption(job, 'type') ? '' : job.type}
                     size='small'
                     ref={jobInput}
                   />
@@ -234,8 +234,8 @@ const JobDetails = () => {
                 onRuxinput={handleChange}
                 placeholder='Enter Description'
                 label='Description'
-                value={capitalize(job.jobDescription)}
-                name='jobDescription'
+                value={capitalize(job.description)}
+                name='description'
               />
               <RuxInput
                 onRuxinput={handleChange}
@@ -299,12 +299,12 @@ const JobDetails = () => {
                 readonly
                 size='small'
                 label='Job Type'
-                value={job.jobType}
+                value={job.type}
               />
               <RuxTextarea
                 disabled
                 label='Description'
-                value={capitalize(job.jobDescription)}
+                value={capitalize(job.description)}
               />
               <RuxInput
                 readonly

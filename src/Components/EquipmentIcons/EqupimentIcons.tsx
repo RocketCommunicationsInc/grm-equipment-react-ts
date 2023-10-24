@@ -3,14 +3,14 @@ import { RuxMonitoringIcon } from '@astrouxds/react';
 import './EquipmentIcons.css';
 
 type PropTypes = {
-  equipmentString: string;
+  name: string;
   onClick: () => void;
 };
 
-const EquipmentIcons = ({ equipmentString, onClick }: PropTypes) => {
+const EquipmentIcons = ({ name, onClick }: PropTypes) => {
   return (
     <div className='equipment-icons'>
-      {equipmentString.split(' ').map((equipmentSubString: string) => (
+      {name.split(' ').map((equipmentSubString: string) => (
         <RuxMonitoringIcon
           key={equipmentSubString}
           status='normal'
