@@ -9,7 +9,6 @@ import { EventLog } from '../../common/EventLog/EventLog';
 import { addToast, capitalize } from '../../utils';
 import type { Equipment } from '../../Types/Equipment';
 import './EquipmentDetailsPanel.css';
-import React from 'react';
 
 const firstButton = [{ label: 'Online', selected: true }, { label: 'Offline' }];
 const secondButton = [

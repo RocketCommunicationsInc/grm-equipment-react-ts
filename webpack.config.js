@@ -59,6 +59,8 @@ module.exports = {
         // which exposes
         './EquipmentDetails':
           './src/Components/EquipmentDetailsPanel/EquipmentDetailsPanel.tsx',
+        './JobIDCards':
+          './src/Components/MaintenancePanel/JobIDCard/JobIDCard.tsx',
       },
       shared: {
         // and shared
