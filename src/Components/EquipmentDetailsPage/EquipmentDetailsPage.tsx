@@ -165,7 +165,9 @@ const EquipmentDetailsPage = () => {
         <RuxContainer className='equipment-details'>
           <header slot='header'>Equipment Details</header>
           <div className='equipment-details_wrapper'>
-            {state.currentEquipment && <EquipmentDetailsPanel />}
+            {state.currentEquipment && (
+              <EquipmentDetailsPanel equipmentData={state.currentEquipment} />
+            )}
 
             <Alerts />
             <ContactsTable />

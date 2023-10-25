@@ -14,6 +14,7 @@ import ScheduleJobPage from './Components/MaintenancePanel/ScheduleJob/ScheduleJ
 import JobDetailsPage from './Components/JobDetails/JobDetailsPage';
 import './App.css';
 import NoDataFound from './common/Error/NoDataFound';
+import React from 'react';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

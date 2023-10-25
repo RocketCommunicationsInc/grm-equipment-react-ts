@@ -6,9 +6,10 @@ import {
   RuxTextarea,
 } from '@astrouxds/react';
 import { EventLog } from '../../common/EventLog/EventLog';
-import { useAppContext } from '../../providers/AppProvider';
 import { addToast, capitalize } from '../../utils';
+import type { Equipment } from '../../Types/Equipment';
 import './EquipmentDetailsPanel.css';
+import React from 'react';
 
 const firstButton = [{ label: 'Online', selected: true }, { label: 'Offline' }];
 const secondButton = [
@@ -16,8 +17,12 @@ const secondButton = [
   { label: 'Deconsidered' },
 ];
 
-const EquipmentDetailsPanel = () => {
-  const { state }: any = useAppContext();
+type PropTypes = {
+  equipmentData: Equipment;
+};
+
+const EquipmentDetailsPanel = ({ equipmentData }: PropTypes) => {
+  const { status, equipmentString, category, description } = equipmentData;
 
   const handleSegmentedButton = () => {
     addToast('This feature has not been implemented', false, 3000);
@@ -26,8 +31,8 @@ const EquipmentDetailsPanel = () => {
   return (
     <RuxContainer className='equipment-details_details'>
       <span className='equipment-title'>
-        <RuxStatus status={state.currentEquipment.status} slot='prefix' />
-        <span>{state.currentEquipment.equipmentString}</span>
+        <RuxStatus status={status} slot='prefix' />
+        <span>{equipmentString}</span>
       </span>
       <div className='equipment-alerts'>
         <div>
@@ -51,7 +56,7 @@ const EquipmentDetailsPanel = () => {
             <RuxInput label='Type' value={'Iron'} readonly size='small' />
             <RuxInput
               label='Category'
-              value={capitalize(state.currentEquipment.category)}
+              value={capitalize(category)}
               readonly
               size='small'
             />
@@ -60,8 +65,7 @@ const EquipmentDetailsPanel = () => {
         <RuxTextarea
           label='Description'
           size='large'
-          readonly
-          value={capitalize(state.currentEquipment.description)}
+          value={capitalize(description)}
         />
         <div className='equipment-details-log'>
           <EventLog />
