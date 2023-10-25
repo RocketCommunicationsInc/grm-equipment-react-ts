@@ -1,25 +1,26 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   RuxContainer,
   RuxStatus,
   RuxTree,
   RuxTreeNode,
 } from '@astrouxds/react';
-import { useAppContext } from '../../providers/AppProvider';
 import { capitalize } from '../../utils';
 import './EquipmentTree.css';
 import { Equipment } from '../../Types/Equipment';
 
-const EquipmentTree = () => {
-  const { state, dispatch }: any = useAppContext();
+type PropTypes = {
+  equipmentList: Equipment[];
+  handleSelected: Function;
+};
+
+const EquipmentTree = ({ equipmentList, handleSelected }: PropTypes) => {
+  const [selected, setSelected] = useState<null | string>(null);
+
   const treeNodeRef = useRef<Set<HTMLRuxTreeNodeElement>>(new Set());
   const tree = useRef<HTMLRuxTreeElement | null>(null);
   const configArray: string[] = ['A', 'B', 'C', 'D', 'E'];
   const categoryArray: string[] = ['comms', 'digital', 'facilities', 'rf'];
-
-  const handleSelectedEquipment = (equipment: Equipment) => {
-    dispatch({ type: 'CURRENT_EQUIPMENT', payload: equipment });
-  };
 
   const expandTreeNodeParent = (treeNode: HTMLRuxTreeNodeElement) => {
     const parentNode = treeNode?.parentElement?.closest('rux-tree-node');
@@ -50,7 +51,14 @@ const EquipmentTree = () => {
         expandTreeNodeParent(node);
       }
     }
-  }, [state.currentEquipment]);
+  }, [selected]);
+
+  const handleSelectedEquipment = (equipment: Equipment) => {
+    setSelected(equipment.id);
+    if (handleSelected) {
+      handleSelected(equipment);
+    }
+  };
 
   useEffect(() => {
     if (!tree.current) return;
@@ -81,7 +89,7 @@ const EquipmentTree = () => {
             {configArray.map((config) => (
               <RuxTreeNode slot='node' key={`${category}${config}`}>
                 Component {config}
-                {state.equipment.map(
+                {equipmentList.map(
                   (equipment: any, index: number) =>
                     equipment.category === category &&
                     equipment.config === config && (
@@ -92,7 +100,7 @@ const EquipmentTree = () => {
                         onRuxtreenodeselected={() =>
                           handleSelectedEquipment(equipment)
                         }
-                        selected={equipment.id === state?.currentEquipment?.id}
+                        selected={equipment.id === selected}
                         ref={(el) => {
                           if (el) {
                             treeNodeRef.current.add(el);
