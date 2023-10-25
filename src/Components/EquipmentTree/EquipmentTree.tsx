@@ -80,21 +80,11 @@ const EquipmentTree = ({ equipmentList, handleSelected }: PropTypes) => {
     };
   }, [tree]);
 
-  const checkCategory = (category: string) => {
-    return (
-      equipmentList.filter(
-        (equip) => equip.category.toLowerCase() === category.toLowerCase()
-      ).length > 1
-    );
-  };
-
   const checkConfig = (category: string, config: string) => {
-    return (
-      equipmentList.filter(
-        (equip) =>
-          equip.category.toLowerCase() === category.toLowerCase() &&
-          equip.config.toLowerCase() === config.toLowerCase()
-      ).length > 1
+    return equipmentList.some(
+      (equip) =>
+        equip.category.toLowerCase() === category.toLowerCase() &&
+        equip.config.toLowerCase() === config.toLowerCase()
     );
   };
 
@@ -103,7 +93,9 @@ const EquipmentTree = ({ equipmentList, handleSelected }: PropTypes) => {
       <RuxTree ref={tree}>
         {categoryArray.map(
           (category) =>
-            checkCategory(category) && (
+            equipmentList.some(
+              (equip) => equip.category.toLowerCase() === category.toLowerCase()
+            ) && (
               <RuxTreeNode key={category}>
                 {category === 'rf'
                   ? category.toUpperCase()
