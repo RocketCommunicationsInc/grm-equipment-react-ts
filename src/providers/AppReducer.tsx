@@ -21,12 +21,12 @@ export const appReducer = (state: any, { type, payload }: any) => {
           jobType: job.type,
           jobDescription: job.description,
           jobStatus: job.status,
-          createdOn: new Date().toISOString(),
+          createdOn: new Date().toISOString().slice(0, 19),
           equipment: equipmentString,
           equipmentStatus: status,
           follow: false,
-          startTime: new Date(job.startsAt).toISOString(),
-          stopTime: new Date(job.endsAt).toISOString(),
+          startTime: new Date(job.startsAt).toISOString().slice(0, 19),
+          stopTime: new Date(job.endsAt).toISOString().slice(0, 19),
           technician: job.technician,
         }));
         return {
@@ -44,6 +44,7 @@ export const appReducer = (state: any, { type, payload }: any) => {
       console.log('data', newEquip);
       console.log('state:', state);
       return { ...state, equipment: newEquip };
+      // return state;
     }
 
     case 'SCHEDULE_NEW_JOB': {
