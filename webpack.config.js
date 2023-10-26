@@ -59,6 +59,7 @@ module.exports = {
         // which exposes
         './EquipmentDetails':
           './src/Components/EquipmentDetailsPanel/EquipmentDetailsPanel.tsx',
+        './EquipmentTree': './src/Components/EquipmentTree/EquipmentTree.tsx',
       },
       shared: {
         // and shared
