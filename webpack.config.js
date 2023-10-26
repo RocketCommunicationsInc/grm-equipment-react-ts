@@ -61,6 +61,7 @@ module.exports = {
           './src/Components/EquipmentDetailsPanel/EquipmentDetailsPanel.tsx',
         './JobIDCards':
           './src/Components/MaintenancePanel/JobIDCard/JobIDCard.tsx',
+        './EquipmentTree': './src/Components/EquipmentTree/EquipmentTree.tsx',
       },
       shared: {
         // and shared
