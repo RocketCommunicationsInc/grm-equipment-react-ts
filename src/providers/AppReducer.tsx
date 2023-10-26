@@ -2,6 +2,50 @@ import { Job, Equipment } from '../Types/Equipment';
 
 export const appReducer = (state: any, { type, payload }: any) => {
   switch (type) {
+    case 'SET_FETCHED_DATA': {
+      //massage server data into our context
+      const newEquip: Equipment[] = payload.map((equip: any) => {
+        const {
+          id,
+          name: equipmentString,
+          description,
+          category,
+          config,
+          status,
+          jobs: scheduledJobs,
+        } = equip;
+        const considered = Math.random() < 0.5;
+        const online = Math.random() < 0.5;
+        const newJobs: Job[] = scheduledJobs.map((job: any) => ({
+          jobId: job.id,
+          jobType: job.type,
+          jobDescription: job.description,
+          jobStatus: job.status,
+          createdOn: new Date().toISOString(),
+          equipment: equipmentString,
+          equipmentStatus: status,
+          follow: false,
+          startTime: new Date(job.startsAt).toISOString(),
+          stopTime: new Date(job.endsAt).toISOString(),
+          technician: job.technician,
+        }));
+        return {
+          id,
+          equipmentString,
+          description,
+          category: category.toLowerCase(),
+          config,
+          status,
+          scheduledJobs: newJobs,
+          considered,
+          online,
+        };
+      });
+      console.log('data', newEquip);
+      console.log('state:', state);
+      return { ...state, equipment: newEquip };
+    }
+
     case 'SCHEDULE_NEW_JOB': {
       const updatedSelectedEquipment = state.selectedEquipment.map(
         (equip: any) => {
