@@ -67,7 +67,7 @@ const Alerts = () => {
         className='filter-notification'
         hidden={severitySelection === 'all' && categorySelection === 'all'}
       >
-        One or more filters selected.
+        Filters selected.
         <RuxButton
           onClick={handleClearFilter}
           secondary
