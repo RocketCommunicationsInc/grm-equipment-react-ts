@@ -26,6 +26,7 @@
 
 .tabs-and-menu-wrapper {
   display: flex;
+  overflow: scroll;
 }
 
 .tabs-and-menu-wrapper rux-icon {
