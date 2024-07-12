@@ -11,7 +11,7 @@ import {
   RuxTable,
   RuxTableHeaderRow,
 } from '@astrouxds/react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../providers/AppProvider';
 import ConflictsTable from '../../JobDetails/ConflictsTable';
@@ -21,6 +21,7 @@ import { filterContacts } from '../../../utils/filterContacts';
 import './ScheduleJob.css';
 
 const ScheduleJob = () => {
+  
   const navigate = useNavigate();
   const { dispatch } = useAppContext() as any;
   const { dataArray: contacts } = useTTCGRMContacts();
@@ -55,6 +56,10 @@ const ScheduleJob = () => {
     equipmentStatus: statusValues[randomStatus],
   });
 
+  useEffect(() => {
+    if (newJob.startTime !== '' && newJob.stopTime !== '' && newJob.jobType !== '' && newJob.technician !== '') setInputsFilledOut(true);
+      }, [newJob]);
+
   const handleCancel = () => {
     navigate('/');
   };
@@ -70,7 +75,6 @@ const ScheduleJob = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    setInputsFilledOut(true);
   };
 
   const handleTechSelection = (e: any) => {
@@ -81,7 +85,6 @@ const ScheduleJob = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    setInputsFilledOut(true);
   };
 
   const handleJobSelection = (e: any) => {
@@ -92,7 +95,6 @@ const ScheduleJob = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    setInputsFilledOut(true);
   };
 
   const handleJobInput = (e: any) => {
@@ -110,7 +112,6 @@ const ScheduleJob = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    setInputsFilledOut(true);
   };
 
   const filteredContacts = useMemo(() => {

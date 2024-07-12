@@ -86,8 +86,6 @@ rux-status::part(status) {
 .filter-notification {
   background-color: var(--color-background-surface-default);
   padding: var(--spacing-2);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .filter-notification rux-button::part(container) {

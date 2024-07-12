@@ -41,7 +41,7 @@ rux-container.schedule-job-wrapper {
   justify-content: flex-start;
   flex-grow: 1;
   gap: var(--spacing-8);
-  max-height: 35rem;
+  max-height: 37rem;
   overflow: auto;
 }
 
