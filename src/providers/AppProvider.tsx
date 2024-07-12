@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useReducer } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useReducer,
+} from 'react';
 
 import { appReducer } from './AppReducer';
 import { scheduledJobs, equipmentArr } from '../data/data';
@@ -24,6 +30,12 @@ export const useAppContext = () => useContext(AppContext);
 
 const AppProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
+
+  useEffect(() => {
+    fetch(`https://grm-api-3a31afd8ee4e.herokuapp.com/equipment?_embed=jobs`)
+      .then((res) => res.json())
+      .then((payload) => dispatch({ type: 'SET_FETCHED_DATA', payload }));
+  }, []);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

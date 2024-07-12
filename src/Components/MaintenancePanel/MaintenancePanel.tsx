@@ -70,7 +70,7 @@ const MaintenancePanel = () => {
                   <JobIDCard
                     key={job.jobId}
                     type={job.jobType}
-                    id={Number(job.jobId)}
+                    id={job.jobId}
                     startTime={job.startTime}
                     stopTime={job.stopTime}
                     status={capitalize(job.jobStatus) as string}

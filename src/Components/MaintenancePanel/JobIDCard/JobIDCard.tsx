@@ -2,7 +2,7 @@ import { RuxButton, RuxCard, RuxInput } from '@astrouxds/react';
 import './JobIDCard.css';
 
 type PropTypes = {
-  id: number;
+  id: string | number;
   status: string;
   type: string;
   startTime: string;
