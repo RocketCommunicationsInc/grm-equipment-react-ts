@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrouxds/mock-data": "^0.6.5",
-    "@astrouxds/react": "^7.22.1",
+    "@astrouxds/react": "^7.24.1",
     "@astrouxds/tokens": "^1.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
